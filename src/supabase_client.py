@@ -2,6 +2,7 @@
 """Supabase client for storing trending repos."""
 
 import os
+from datetime import date
 from typing import List, Dict
 from supabase import create_client, Client
 
@@ -21,8 +22,16 @@ class SupabaseClient:
             return 0
 
         try:
-            response = self.client.table("repositories").insert(repos).execute()
-            print(f"Inserted {len(response.data)} repos")
+            today = date.today().isoformat()
+            for repo in repos:
+                repo["collected_date"] = today
+
+            response = (
+                self.client.table("repositories")
+                .upsert(repos, on_conflict="repo_name,collected_date")
+                .execute()
+            )
+            print(f"Upserted {len(response.data)} repos")
             return len(response.data)
         except Exception as e:
             print(f"Insert failed: {e}")

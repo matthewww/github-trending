@@ -20,7 +20,7 @@ Or paste the contents of `supabase/migrations/20260319193622_new-migration.sql` 
 ### 3. Set GitHub Actions Secrets
 In your GitHub repo settings, add:
 - `SUPABASE_URL` - Your Supabase project URL
-- `SUPABASE_KEY` - Your Supabase Publishable Key (anon/public key)
+- `SUPABASE_KEY` - Your Supabase Secret key (service role key) — required if RLS is not enabled
 - `GITHUB_TOKEN` - (auto-provided by GitHub)
 
 ### 4. Done
