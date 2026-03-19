@@ -40,7 +40,8 @@ def fetch_trending(language: str = "", since: str = "daily") -> List[Dict]:
             stars = None
             if stars_elem:
                 stars_text = stars_elem.get_text(strip=True)
-                stars = int(stars_text.replace(",", ""))
+                stars_digits = stars_text.split()[0].replace(",", "")
+                stars = int(stars_digits)
 
             repos.append({
                 "repo_name": repo_name,
