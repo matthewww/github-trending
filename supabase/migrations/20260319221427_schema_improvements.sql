@@ -1,3 +1,5 @@
+drop view if exists today_trending;
+
 alter table repositories
   rename column stars to stars_today;
 
@@ -7,8 +9,6 @@ alter table repositories
 alter table repositories
   add column total_stars integer,
   add column forks integer;
-
-drop view if exists today_trending;
 
 create view today_trending as
   select repo_name, language, stars_today, total_stars, forks, rank
