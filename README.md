@@ -9,29 +9,18 @@ Collects trending GitHub repositories daily via GitHub Actions and stores them i
 - Note your project URL and API key
 
 ### 2. Create Database Schema
-Run this SQL in your Supabase SQL editor:
+Apply the migration using the Supabase CLI:
 
-```sql
-create table repositories (
-  id bigserial primary key,
-  repo_name text not null,
-  url text not null,
-  description text,
-  language text,
-  stars integer,
-  rank integer,
-  collected_at timestamp default now(),
-  unique(repo_name, collected_at::date)
-);
-
-create index idx_repo_date on repositories(repo_name, collected_at);
-create index idx_collected_at on repositories(collected_at);
+```bash
+supabase db push
 ```
+
+Or paste the contents of `supabase/migrations/20260319193622_new-migration.sql` directly into the Supabase SQL editor.
 
 ### 3. Set GitHub Actions Secrets
 In your GitHub repo settings, add:
 - `SUPABASE_URL` - Your Supabase project URL
-- `SUPABASE_KEY` - Your Supabase API key (use anon/public key, not service role)
+- `SUPABASE_KEY` - Your Supabase Publishable Key (anon/public key)
 - `GITHUB_TOKEN` - (auto-provided by GitHub)
 
 ### 4. Done
