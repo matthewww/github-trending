@@ -27,8 +27,7 @@ def fetch_trending(language: str = "", since: str = "daily") -> List[Dict]:
     for idx, article in enumerate(soup.find_all("article", class_="Box-row"), 1):
         try:
             link = article.find("h2", class_="h3").find("a")
-            repo_name = link.get_text(strip=True)
-            repo_url = "https://github.com" + link["href"]
+            repo_name = link.get_text(strip=True).replace(" ", "")
 
             desc_elem = article.find("p", class_="col-9")
             description = desc_elem.get_text(strip=True) if desc_elem else None
@@ -36,19 +35,28 @@ def fetch_trending(language: str = "", since: str = "daily") -> List[Dict]:
             lang_elem = article.find("span", itemprop="programmingLanguage")
             language = lang_elem.get_text(strip=True) if lang_elem else None
 
+            total_stars, forks = None, None
+            for a in article.find_all("a", class_="Link--muted"):
+                href = a.get("href", "")
+                count = int(a.get_text(strip=True).replace(",", "")) if a.get_text(strip=True) else None
+                if href.endswith("/stargazers"):
+                    total_stars = count
+                elif href.endswith("/forks"):
+                    forks = count
+
+            stars_today = None
             stars_elem = article.find("span", class_="d-inline-block float-sm-right")
-            stars = None
             if stars_elem:
                 stars_text = stars_elem.get_text(strip=True)
-                stars_digits = stars_text.split()[0].replace(",", "")
-                stars = int(stars_digits)
+                stars_today = int(stars_text.split()[0].replace(",", ""))
 
             repos.append({
                 "repo_name": repo_name,
-                "url": repo_url,
                 "description": description,
                 "language": language,
-                "stars": stars,
+                "stars_today": stars_today,
+                "total_stars": total_stars,
+                "forks": forks,
                 "rank": idx,
             })
         except Exception as e:
@@ -62,4 +70,4 @@ if __name__ == "__main__":
     repos = fetch_trending(since="daily")
     print(f"Collected {len(repos)} trending repos")
     for repo in repos[:5]:
-        print(f"  {repo['rank']}. {repo['repo_name']} ({repo['stars']} stars)")
+        print(f"  {repo['rank']}. {repo['repo_name']} ({repo['stars_today']} stars today, {repo['total_stars']} total)")
