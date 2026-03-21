@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GitHub Trending Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      padding: 32px 24px;
+    }
+    h1 { font-size: 1.6rem; font-weight: 600; margin-bottom: 6px; color: #f0f6fc; }
+    .subtitle { color: #7d8590; font-size: 0.9rem; margin-bottom: 32px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .card.wide { grid-column: 1 / -1; }
+    .card h2 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #7d8590;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 18px;
+    }
+    canvas { width: 100% !important; }
+    .empty-state {
+      color: #7d8590;
+      font-size: 0.88rem;
+      text-align: center;
+      padding: 40px 0;
+    }
+    .loading { color: #7d8590; font-size: 0.88rem; padding: 20px 0; }
+    .digest-meta { font-size: 0.8rem; color: #7d8590; margin-bottom: 14px; }
+    .digest-headline {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #f0f6fc;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .digest-body {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: #cdd9e5;
+    }
+    .digest-body p { margin: 0 0 1em; }
+    .digest-body p:last-child { margin-bottom: 0; }
+    .digest-tags { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      background: #1f2937;
+      border: 1px solid #30363d;
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 0.78rem;
+      color: #58a6ff;
+    }
+    .tag.green { color: #3fb950; }
+    .connections-list { list-style: none; padding: 0; margin: 0; }
+    .connections-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid #21262d;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+    .connections-list li:last-child { border-bottom: none; }
+    .connections-list .owner { color: #58a6ff; font-weight: 600; }
+    .connections-list .repos { color: #7d8590; font-size: 0.82rem; }
+  </style>
+</head>
+<body>
+  <h1>🔥 GitHub Trending Dashboard</h1>
+  <p class="subtitle" id="subtitle">Loading…</p>
+
+  <div class="grid">
+    <div class="card wide">
+      <h2>📰 Weekly Digest</h2>
+      <div id="digest-content"><p class="loading">Loading…</p></div>
+    </div>
+
+    <div class="card">
+      <h2>Trending by Language</h2>
+      <canvas id="langChart" height="260"></canvas>
+    </div>
+
+    <div class="card">
+      <h2>Top 10 Peak Stars in a Single Day</h2>
+      <canvas id="peakChart" height="260"></canvas>
+    </div>
+
+    <div class="card">
+      <h2>Repo Categories (LLM-inferred)</h2>
+      <div id="categoryWrap"><canvas id="categoryChart" height="260"></canvas></div>
+    </div>
+
+    <div class="card">
+      <h2>Creator Types (LLM-inferred)</h2>
+      <div id="creatorWrap"><canvas id="creatorChart" height="260"></canvas></div>
+    </div>
+
+    <div class="card wide">
+      <h2>Notable Creator Connections</h2>
+      <div id="connections"><p class="loading">Loading…</p></div>
+    </div>
+  </div>
+
+  <script>
+    const SUPABASE_URL = 'https://opnvgqhnqltlooshzrfj.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9wbnZncWhucWx0bG9vc2h6cmZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5NDYwNjksImV4cCI6MjA4OTUyMjA2OX0.DgTiQ5zVI5hp56PWTM5hzLOFxaOipTgkgupp2MucDVE';
+    const db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const GRID_COLOR = 'rgba(255,255,255,0.06)';
+    const TICK_COLOR = '#7d8590';
+
+    function emptyState(el, msg) {
+      el.innerHTML = `<p class="empty-state">${msg}</p>`;
+    }
+
+    // ── Render digest ─────────────────────────────────────────────────────────
+    function renderDigest(row) {
+      const el = document.getElementById('digest-content');
+      if (!row) { emptyState(el, '⏳ Awaiting first weekly digest run'); return; }
+      const fmt = s => new Date(s + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+      el.innerHTML = `
+        <div class="digest-meta">Week of ${fmt(row.week_start)} – ${fmt(row.week_end)}</div>
+        <div class="digest-headline">${row.headline || ''}</div>
+        <div class="digest-body">${(row.digest || '').split('\n\n').map(p => `<p>${p}</p>`).join('')}</div>
+        <div class="digest-tags">
+          ${(row.emerging_themes || []).map(t => `<span class="tag">${t}</span>`).join('')}
+          ${(row.top_repos || []).map(r => `<span class="tag green">${r}</span>`).join('')}
+        </div>`;
+    }
+
+    // ── Render language donut ─────────────────────────────────────────────────
+    function renderLangChart(rows) {
+      const counts = {};
+      rows.forEach(r => { const l = r.language || 'Unknown'; counts[l] = (counts[l] || 0) + 1; });
+      const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 10);
+      const langColors = {
+        Python: '#3572A5', TypeScript: '#3178C6', Shell: '#89e051', Rust: '#DEA584',
+        JavaScript: '#F1E05A', Go: '#00ADD8', 'C++': '#f34b7d', Java: '#B07219',
+        'Jupyter Notebook': '#DA5B0B', Zig: '#EC915C', Kotlin: '#A97BFF',
+        Markdown: '#083fa1', HTML: '#e34c26'
+      };
+      new Chart(document.getElementById('langChart'), {
+        type: 'doughnut',
+        data: {
+          labels: sorted.map(([l]) => l),
+          datasets: [{ data: sorted.map(([, n]) => n),
+            backgroundColor: sorted.map(([l]) => langColors[l] || '#555'),
+            borderColor: '#161b22', borderWidth: 3, hoverOffset: 8 }]
+        },
+        options: { plugins: { legend: { position: 'right',
+          labels: { color: '#e6edf3', font: { size: 12 }, padding: 12, boxWidth: 14 } } }, cutout: '62%' }
+      });
+    }
+
+    // ── Render peak stars bar ─────────────────────────────────────────────────
+    function renderPeakChart(rows) {
+      const maxByRepo = {};
+      rows.forEach(r => {
+        if (!maxByRepo[r.repo_name] || r.stars_today > maxByRepo[r.repo_name])
+          maxByRepo[r.repo_name] = r.stars_today || 0;
+      });
+      const top10 = Object.entries(maxByRepo).sort((a, b) => b[1] - a[1]).slice(0, 10);
+      new Chart(document.getElementById('peakChart'), {
+        type: 'bar',
+        data: {
+          labels: top10.map(([n]) => n),
+          datasets: [{ label: 'Peak stars/day', data: top10.map(([, v]) => v),
+            backgroundColor: 'rgba(88,166,255,0.75)', borderColor: '#58a6ff',
+            borderWidth: 1, borderRadius: 4 }]
+        },
+        options: {
+          indexAxis: 'y',
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { grid: { color: GRID_COLOR }, ticks: { color: TICK_COLOR } },
+            y: { grid: { display: false }, ticks: { color: '#e6edf3', font: { size: 11 } } }
+          }
+        }
+      });
+    }
+
+    // ── Render category donut ─────────────────────────────────────────────────
+    function renderCategoryChart(insights) {
+      const wrap = document.getElementById('categoryWrap');
+      const cats = insights.filter(i => i.category && i.category !== 'Unknown');
+      if (cats.length === 0) { emptyState(wrap, '⏳ Awaiting first weekly analysis run'); return; }
+      const counts = {};
+      cats.forEach(i => { counts[i.category] = (counts[i.category] || 0) + 1; });
+      const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+      new Chart(document.getElementById('categoryChart'), {
+        type: 'doughnut',
+        data: {
+          labels: sorted.map(([c]) => c),
+          datasets: [{ data: sorted.map(([, n]) => n),
+            backgroundColor: ['#58a6ff','#3fb950','#d29922','#f85149','#bc8cff','#39d353','#ffa657','#79c0ff'],
+            borderColor: '#161b22', borderWidth: 3, hoverOffset: 8 }]
+        },
+        options: { plugins: { legend: { position: 'right',
+          labels: { color: '#e6edf3', font: { size: 12 }, padding: 10, boxWidth: 14 } } }, cutout: '55%' }
+      });
+    }
+
+    // ── Render creator type bar ───────────────────────────────────────────────
+    function renderCreatorChart(insights) {
+      const wrap = document.getElementById('creatorWrap');
+      const typed = insights.filter(i => i.creator_type);
+      if (typed.length === 0) { emptyState(wrap, '⏳ Awaiting first weekly analysis run'); return; }
+      const counts = {};
+      typed.forEach(i => { counts[i.creator_type] = (counts[i.creator_type] || 0) + 1; });
+      const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+      new Chart(document.getElementById('creatorChart'), {
+        type: 'bar',
+        data: {
+          labels: sorted.map(([c]) => c),
+          datasets: [{ label: 'Repos', data: sorted.map(([, n]) => n),
+            backgroundColor: 'rgba(188,140,255,0.75)', borderColor: '#bc8cff',
+            borderWidth: 1, borderRadius: 4 }]
+        },
+        options: {
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { grid: { color: GRID_COLOR }, ticks: { color: TICK_COLOR } },
+            y: { grid: { color: GRID_COLOR }, ticks: { color: TICK_COLOR }, beginAtZero: true }
+          }
+        }
+      });
+    }
+
+    // ── Render creator connections ────────────────────────────────────────────
+    function renderConnections(insights) {
+      const el = document.getElementById('connections');
+      const withPrior = insights.filter(i => i.creator_prior_repos && i.creator_prior_repos.length > 0);
+      if (withPrior.length === 0) {
+        emptyState(el, '⏳ Awaiting first weekly analysis run — owners with multiple trending repos will appear here');
+        return;
+      }
+      const byOwner = {};
+      insights.forEach(i => {
+        const owner = i.repo_name.split('/')[0];
+        if (!byOwner[owner]) byOwner[owner] = [];
+        byOwner[owner].push({ name: i.repo_name, purpose: i.purpose || '' });
+      });
+      const multi = Object.entries(byOwner).filter(([, repos]) => repos.length > 1)
+        .sort((a, b) => b[1].length - a[1].length);
+      if (multi.length === 0) { emptyState(el, '⏳ No owners with multiple trending repos yet'); return; }
+      const ul = document.createElement('ul');
+      ul.className = 'connections-list';
+      multi.forEach(([owner, repos]) => {
+        const li = document.createElement('li');
+        li.innerHTML = `<span class="owner">${owner}</span> — ${repos.length} trending repos<br>
+          <span class="repos">${repos.map(r => `<strong>${r.name}</strong>${r.purpose ? ': ' + r.purpose : ''}`).join(' · ')}</span>`;
+        ul.appendChild(li);
+      });
+      el.innerHTML = '';
+      el.appendChild(ul);
+    }
+
+    // ── Main: fetch all data and render ──────────────────────────────────────
+    async function init() {
+      const [digestRes, reposRes, insightsRes] = await Promise.all([
+        db.from('weekly_digest').select('*').order('week_start', { ascending: false }).limit(1),
+        db.from('repositories').select('repo_name, language, stars_today'),
+        db.from('repo_insights').select('repo_name, purpose, category, creator_type, creator_prior_repos'),
+      ]);
+
+      // Subtitle
+      if (reposRes.data) {
+        const total = reposRes.data.length;
+        const unique = new Set(reposRes.data.map(r => r.repo_name)).size;
+        document.getElementById('subtitle').textContent =
+          `${total.toLocaleString()} entries · ${unique.toLocaleString()} unique repos · live from Supabase`;
+      }
+
+      renderDigest(digestRes.data?.[0] || null);
+      if (reposRes.data) { renderLangChart(reposRes.data); renderPeakChart(reposRes.data); }
+      if (insightsRes.data) { renderCategoryChart(insightsRes.data); renderCreatorChart(insightsRes.data); renderConnections(insightsRes.data); }
+    }
+
+    init().catch(err => console.error('Dashboard load error:', err));
+  </script>
+</body>
+</html>
