@@ -1,0 +1,35 @@
+-- Backfill missing descriptions fetched from the GitHub API
+
+UPDATE repositories SET description = 'Composio powers 1000+ toolkits, tool search, context management, authentication, and a sandboxed workbench to help you build AI agents that turn intent into action.' WHERE repo_name = 'ComposioHQ/composio' AND description IS NULL;
+UPDATE repositories SET description = 'Core libraries and experimental work for Effect v4' WHERE repo_name = 'Effect-TS/effect-smol' AND description IS NULL;
+UPDATE repositories SET description = 'N64 Game-Engine and Editor using libdragon & tiny3d' WHERE repo_name = 'HailToDodongo/pyrite64' AND description IS NULL;
+UPDATE repositories SET description = 'Open Cyber Threat Intelligence Platform' WHERE repo_name = 'OpenCTI-Platform/opencti' AND description IS NULL;
+UPDATE repositories SET description = '🦔 PostHog is an all-in-one developer platform for building successful products. We offer product analytics, web analytics, session replay, error tracking, feature flags, experimentation, surveys, data warehouse, a CDP, and an AI product assistant to help debug your code, ship features faster, and keep all your usage and customer data in one stack.' WHERE repo_name = 'PostHog/posthog' AND description IS NULL;
+UPDATE repositories SET description = 'Synkra AIOS: AI-Orchestrated System for Full Stack Development - Core Framework v4.0' WHERE repo_name = 'SynkraAI/aios-core' AND description IS NULL;
+UPDATE repositories SET description = 'A lightweight, lightning-fast, in-process vector database' WHERE repo_name = 'alibaba/zvec' AND description IS NULL;
+UPDATE repositories SET description = '' WHERE repo_name = 'anthropics/anthropic-sdk-python' AND description IS NULL;
+UPDATE repositories SET description = 'Official, Anthropic-managed directory of high quality Claude Code Plugins.' WHERE repo_name = 'anthropics/claude-plugins-official' AND description IS NULL;
+UPDATE repositories SET description = 'A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API' WHERE repo_name = 'anthropics/claude-quickstarts' AND description IS NULL;
+UPDATE repositories SET description = 'Find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more' WHERE repo_name = 'aquasecurity/trivy' AND description IS NULL;
+UPDATE repositories SET description = 'Learn System Design concepts and prepare for interviews using free resources.' WHERE repo_name = 'ashishps1/awesome-system-design-resources' AND description IS NULL;
+UPDATE repositories SET description = 'Build ultra fast, tiny, and cross-platform desktop apps with Typescript.' WHERE repo_name = 'blackboardsh/electrobun' AND description IS NULL;
+UPDATE repositories SET description = 'Databricks Toolkit for Coding Agents provided by Field Engineering' WHERE repo_name = 'databricks-solutions/ai-dev-kit' AND description IS NULL;
+UPDATE repositories SET description = 'CLI tool for configuring and monitoring Claude Code' WHERE repo_name = 'davila7/claude-code-templates' AND description IS NULL;
+UPDATE repositories SET description = 'Find and fix problems in your JavaScript code.' WHERE repo_name = 'eslint/eslint' AND description IS NULL;
+UPDATE repositories SET description = 'Free Motion Capture for Everyone 💀✨' WHERE repo_name = 'freemocap/freemocap' AND description IS NULL;
+UPDATE repositories SET description = 'TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.' WHERE repo_name = 'google-research/timesfm' AND description IS NULL;
+UPDATE repositories SET description = 'Give your agents the power of the Hugging Face ecosystem' WHERE repo_name = 'huggingface/skills' AND description IS NULL;
+UPDATE repositories SET description = 'Open source software that helps you create and deploy high-frequency crypto trading bots' WHERE repo_name = 'hummingbot/hummingbot' AND description IS NULL;
+UPDATE repositories SET description = 'The memory-first coding agent' WHERE repo_name = 'letta-ai/letta-code' AND description IS NULL;
+UPDATE repositories SET description = 'Production-grade Rust-native trading engine with deterministic event-driven architecture' WHERE repo_name = 'nautechsystems/nautilus_trader' AND description IS NULL;
+UPDATE repositories SET description = 'An agentic skills framework & software development methodology that works.' WHERE repo_name = 'obra/superpowers' AND description IS NULL;
+UPDATE repositories SET description = 'Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ' WHERE repo_name = 'openclaw/openclaw' AND description IS NULL;
+UPDATE repositories SET description = 'Fully automatic censorship removal for language models' WHERE repo_name = 'p-e-w/heretic' AND description IS NULL;
+UPDATE repositories SET description = 'Trackers gives you clean, modular re-implementations of leading multi-object tracking algorithms released under the permissive Apache 2.0 license. You combine them with any detection model you already use.' WHERE repo_name = 'roboflow/trackers' AND description IS NULL;
+UPDATE repositories SET description = 'Open-source AI coworker, with memory' WHERE repo_name = 'rowboatlabs/rowboat' AND description IS NULL;
+UPDATE repositories SET description = 'π RuView: WiFi DensePose turns commodity WiFi signals into real-time human pose estimation, vital sign monitoring, and presence detection — all without a single pixel of video. ' WHERE repo_name = 'ruvnet/wifi-densepose' AND description IS NULL;
+UPDATE repositories SET description = 'Open-source media request and discovery manager for Jellyfin, Plex, and Emby.' WHERE repo_name = 'seerr-team/seerr' AND description IS NULL;
+UPDATE repositories SET description = 'Google Suite CLI: Gmail, GCal, GDrive, GContacts.' WHERE repo_name = 'steipete/gogcli' AND description IS NULL;
+UPDATE repositories SET description = 'Point at any URL/YouTube/Podcast or file. Get the gist. CLI and Chrome Extension.' WHERE repo_name = 'steipete/summarize' AND description IS NULL;
+UPDATE repositories SET description = 'The React Framework' WHERE repo_name = 'vercel/next.js' AND description IS NULL;
+UPDATE repositories SET description = 'Fully autonomous AI Agents system capable of performing complex penetration testing tasks' WHERE repo_name = 'vxcontrol/pentagi' AND description IS NULL;
