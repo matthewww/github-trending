@@ -213,11 +213,17 @@ def main():
 
     github_token = os.environ.get("GITHUB_TOKEN")
     if not github_token:
-        print("Warning: GITHUB_TOKEN not set — GitHub API rate limit is 60 req/hr; LLM calls will fail")
+        print("Warning: GITHUB_TOKEN not set — GitHub API rate limit is 60 req/hr")
+
+    llm_token = os.environ.get("GH_MODELS_TOKEN") or github_token
+    if not llm_token:
+        print("Error: Neither GH_MODELS_TOKEN nor GITHUB_TOKEN is set — LLM calls will fail")
+    elif not os.environ.get("GH_MODELS_TOKEN"):
+        print("Warning: GH_MODELS_TOKEN not set — falling back to GITHUB_TOKEN (requires models permission)")
 
     llm_client = OpenAI(
         base_url=MODELS_ENDPOINT,
-        api_key=github_token or "no-key",
+        api_key=llm_token or "no-key",
     )
 
     db = SupabaseClient()
