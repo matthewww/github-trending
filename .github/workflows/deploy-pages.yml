@@ -1,44 +1,26 @@
-name: Deploy Dashboard to GitHub Pages
+name: Deploy Pages
 
 on:
-  workflow_run:
-    workflows: ["Analyze Trending Repos (Weekly)"]
-    types: [completed]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Prepare deploy folder
+      - name: Inject Supabase credentials
         run: |
-          mkdir _site
-          cp trends_dashboard.html _site/index.html
-
-      - name: Upload dashboard
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
+          sed -i 's|{{SUPABASE_URL}}|${{ secrets.SUPABASE_URL }}|g' dashboard/index.html
+          sed -i 's|{{SUPABASE_PUBLIC_KEY}}|${{ secrets.SUPABASE_PUBLIC_KEY }}|g' dashboard/index.html
 
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        run: |
+          npm install gh-pages
+          npm run build
+          npx gh-pages -d dashboard/dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
