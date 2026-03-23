@@ -20,7 +20,6 @@ jobs:
       - name: Deploy to GitHub Pages
         run: |
           npm install gh-pages
-          npm run build
-          npx gh-pages -d dashboard/dist
+          npx gh-pages -d dashboard
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
