@@ -287,9 +287,9 @@ def main():
     if args.dry_run:
         print("DRY RUN — LLM call and DB write skipped")
 
-    github_token = os.environ.get("GITHUB_TOKEN")
+    github_token = os.environ.get("GH_MODELS_TOKEN") or os.environ.get("GITHUB_TOKEN")
     if not github_token and not args.dry_run:
-        print("Error: GITHUB_TOKEN required for LLM calls")
+        print("Error: GH_MODELS_TOKEN (or GITHUB_TOKEN) required for LLM calls")
         return 1
 
     db = SupabaseClient()
