@@ -3,292 +3,796 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GitHub Trending Dashboard</title>
+  <title>GitHub Trend Intelligence</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #0d1117;
-      color: #e6edf3;
-      padding: 32px 24px;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface-2: #21262d;
+      --border: #30363d;
+      --border-subtle: #21262d;
+      --text: #e6edf3;
+      --text-muted: #7d8590;
+      --accent: #58a6ff;
+      --green: #3fb950;
+      --radius: 10px;
     }
-    h1 { font-size: 1.6rem; font-weight: 600; margin-bottom: 6px; color: #f0f6fc; }
-    .subtitle { color: #7d8590; font-size: 0.9rem; margin-bottom: 32px; }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(180deg, #161b22 0%, #0d1117 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 32px;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .header-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .header-icon {
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #f0f6fc;
+      letter-spacing: -0.02em;
+    }
+    .header-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .stats-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .pill {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .pill strong { color: var(--text); }
+
+    /* ── Main layout ── */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 32px 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    /* ── Cards ── */
     .card {
-      background: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
       padding: 24px;
     }
-    .card.wide { grid-column: 1 / -1; }
-    .card h2 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #7d8590;
+    .card-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 18px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
     }
-    canvas { width: 100% !important; }
-    .empty-state {
-      color: #7d8590;
-      font-size: 0.88rem;
-      text-align: center;
-      padding: 40px 0;
+
+    /* ── Digest hero ── */
+    .digest-card {
+      border-left: 3px solid var(--accent);
     }
-    .loading { color: #7d8590; font-size: 0.88rem; padding: 20px 0; }
-    .digest-meta { font-size: 0.8rem; color: #7d8590; margin-bottom: 14px; }
     .digest-headline {
-      font-size: 1.05rem;
-      font-weight: 600;
+      font-size: 1.3rem;
+      font-weight: 700;
       color: #f0f6fc;
-      margin-bottom: 12px;
-      line-height: 1.4;
+      line-height: 1.35;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
     }
-    .digest-body {
+    .digest-prose {
+      color: #c9d1d9;
       font-size: 0.9rem;
-      line-height: 1.75;
-      color: #cdd9e5;
+      line-height: 1.7;
+      white-space: pre-line;
     }
-    .digest-body p { margin: 0 0 1em; }
-    .digest-body p:last-child { margin-bottom: 0; }
-    .digest-tags { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
-    .tag {
-      background: #1f2937;
-      border: 1px solid #30363d;
+    .digest-prose.truncated {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .read-more-btn {
+      background: none;
+      border: none;
+      color: var(--accent);
+      font-size: 0.82rem;
+      cursor: pointer;
+      padding: 6px 0 0;
+      display: block;
+    }
+    .read-more-btn:hover { text-decoration: underline; }
+    .digest-footer {
+      display: flex;
+      gap: 20px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    .digest-themes, .digest-cats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      flex: 1;
+    }
+    .theme-pill {
+      background: rgba(88, 166, 255, 0.1);
+      border: 1px solid rgba(88, 166, 255, 0.3);
+      color: var(--accent);
       border-radius: 20px;
       padding: 3px 10px;
-      font-size: 0.78rem;
-      color: #58a6ff;
+      font-size: 0.75rem;
     }
-    .tag.green { color: #3fb950; }
-    .connections-list { list-style: none; padding: 0; margin: 0; }
-    .connections-list li {
-      padding: 10px 0;
-      border-bottom: 1px solid #21262d;
-      font-size: 0.88rem;
+    .digest-meta {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    /* ── Period tabs ── */
+    .tabs-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .tabs-header h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f0f6fc;
+    }
+    .tabs {
+      display: flex;
+      gap: 4px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 3px;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      border-radius: 6px;
+      padding: 5px 14px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .tab-btn.active {
+      background: var(--surface);
+      color: var(--text);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+    .tab-btn:hover:not(.active) { color: var(--text); }
+
+    /* ── Repo grid ── */
+    .repo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 14px;
+    }
+    .repo-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--cat-color, var(--border));
+      border-radius: var(--radius);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+      animation: fadeUp 0.3s ease both;
+    }
+    .repo-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      border-color: var(--cat-color, var(--accent));
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .repo-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .repo-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #f0f6fc;
+      line-height: 1.3;
+    }
+    .repo-name .owner { color: var(--text-muted); font-weight: 400; }
+    .repo-name a:hover { color: var(--accent); }
+    .cat-badge {
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      color: #0d1117;
+      background: var(--cat-color, #8b949e);
+    }
+    .repo-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
       line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
-    .connections-list li:last-child { border-bottom: none; }
-    .connections-list .owner { color: #58a6ff; font-weight: 600; }
-    .connections-list .repos { color: #7d8590; font-size: 0.82rem; }
+    .repo-stats {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.8rem;
+    }
+    .repo-stars {
+      color: #e3b341;
+      font-weight: 600;
+    }
+    .repo-forks { color: var(--text-muted); }
+    .lang-pill {
+      margin-left: auto;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2px 8px;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .repo-themes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .kw-pill {
+      background: var(--surface-2);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 2px 8px;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+    .repo-purpose {
+      font-size: 0.78rem;
+      color: #8b949e;
+      font-style: italic;
+      line-height: 1.4;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 8px;
+    }
+    .no-data {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      padding: 48px;
+      text-align: center;
+      grid-column: 1 / -1;
+    }
+
+    /* ── Intelligence row ── */
+    .intel-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+    }
+    .card h2 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 18px;
+    }
+    .chart-wrap {
+      position: relative;
+      height: 220px;
+    }
+
+    /* ── Owner spotlight ── */
+    .owner-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 12px;
+    }
+    .owner-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .owner-name {
+      font-weight: 600;
+      font-size: 0.88rem;
+      margin-bottom: 4px;
+    }
+    .owner-type {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      text-transform: capitalize;
+    }
+    .owner-repos {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .owner-repo-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .owner-repo-link:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 16px 32px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--accent); }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      main, header { padding-left: 16px; padding-right: 16px; }
+      .intel-grid { grid-template-columns: 1fr; }
+      .repo-grid { grid-template-columns: 1fr; }
+      .digest-headline { font-size: 1.1rem; }
+    }
   </style>
 </head>
 <body>
-  <h1>🔥 GitHub Trending Dashboard</h1>
-  <p class="subtitle" id="subtitle">Loading…</p>
 
-  <div class="grid">
-    <div class="card wide">
-      <h2>📰 Weekly Digest</h2>
-      <div id="digest-content"><p class="loading">Loading…</p></div>
+<header>
+  <div class="header-inner">
+    <div class="header-title">
+      <span class="header-icon">📡</span>
+      <div>
+        <h1>GitHub Trend Intelligence</h1>
+        <div class="header-sub" id="header-date">Loading…</div>
+      </div>
     </div>
+    <div class="stats-pills" id="stats-pills"></div>
+  </div>
+</header>
 
-    <div class="card">
-      <h2>Trending by Language</h2>
-      <canvas id="langChart" height="260"></canvas>
+<main>
+
+  <!-- Digest hero -->
+  <div class="card digest-card" id="digest-section">
+    <div class="card-label">Weekly Signal</div>
+    <div class="loading" style="color:var(--text-muted)">Loading digest…</div>
+  </div>
+
+  <!-- Trending repos -->
+  <div>
+    <div class="tabs-header">
+      <h2>Trending Repositories</h2>
+      <div class="tabs">
+        <button class="tab-btn active" data-period="daily">Daily</button>
+        <button class="tab-btn" data-period="weekly">Weekly</button>
+        <button class="tab-btn" data-period="monthly">Monthly</button>
+      </div>
     </div>
-
-    <div class="card">
-      <h2>Top 10 Peak Stars in a Single Day</h2>
-      <canvas id="peakChart" height="260"></canvas>
-    </div>
-
-    <div class="card">
-      <h2>Repo Categories (LLM-inferred)</h2>
-      <div id="categoryWrap"><canvas id="categoryChart" height="260"></canvas></div>
-    </div>
-
-    <div class="card">
-      <h2>Creator Types (LLM-inferred)</h2>
-      <div id="creatorWrap"><canvas id="creatorChart" height="260"></canvas></div>
-    </div>
-
-    <div class="card wide">
-      <h2>Notable Creator Connections</h2>
-      <div id="connections"><p class="loading">Loading…</p></div>
+    <div class="repo-grid" id="repo-grid">
+      <div class="no-data">Loading…</div>
     </div>
   </div>
 
-  <script>
-    const SUPABASE_PUBLIC_URL = '';
-    const SUPABASE_ANON_KEY = '';
-    const db = supabase.createClient(SUPABASE_PUBLIC_URL, SUPABASE_ANON_KEY);
+  <!-- Charts -->
+  <div class="intel-grid">
+    <div class="card">
+      <h2>Category Trend — 30 days</h2>
+      <div class="chart-wrap"><canvas id="trend-chart"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>Languages today</h2>
+      <div class="chart-wrap"><canvas id="lang-chart"></canvas></div>
+    </div>
+  </div>
 
-    const GRID_COLOR = 'rgba(255,255,255,0.06)';
-    const TICK_COLOR = '#7d8590';
+  <!-- Owner spotlight -->
+  <div class="card" id="owner-section" style="display:none">
+    <div class="card-label">Owner Spotlight — multiple repos trending</div>
+    <div class="owner-grid" id="owner-grid"></div>
+  </div>
 
-    function emptyState(el, msg) {
-      el.innerHTML = `<p class="empty-state">${msg}</p>`;
+</main>
+
+<footer>
+  <span id="footer-ts"></span> ·
+  <a href="https://github.com/matthewww/github-trending" target="_blank">github-trending</a>
+</footer>
+
+<script>
+const CAT_COLORS = {
+  'AI/ML':            '#58a6ff',
+  'Developer Tools':  '#3fb950',
+  'Security':         '#f85149',
+  'Infrastructure':   '#e3b341',
+  'Education':        '#bc8cff',
+  'Web Framework':    '#79c0ff',
+  'Data Science':     '#ffa657',
+  'Productivity':     '#56d364',
+  'Game/Creative':    '#ff7b72',
+  'Other':            '#8b949e',
+  'Unknown':          '#484f58',
+};
+
+const PERIOD_LABELS = {
+  daily: 'Daily', weekly: 'Weekly', monthly: 'Monthly'
+};
+const STAR_LABELS = {
+  daily: 'stars today', weekly: 'stars this week', monthly: 'stars this month'
+};
+
+function catColor(cat) {
+  return CAT_COLORS[cat] || '#8b949e';
+}
+
+function fmt(n) {
+  if (!n && n !== 0) return '—';
+  return n >= 1000 ? (n / 1000).toFixed(1) + 'k' : String(n);
+}
+
+function escHtml(s) {
+  if (!s) return '';
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ── Digest ──────────────────────────────────────────────────
+function renderDigest(digest) {
+  const el = document.getElementById('digest-section');
+  if (!digest) {
+    el.innerHTML = '<div class="card-label">Weekly Signal</div><p style="color:var(--text-muted);font-size:.85rem">No digest available yet — runs weekly on Sundays.</p>';
+    return;
+  }
+
+  const prose = digest.digest || '';
+  const paras = prose.split(/\n\n+/).filter(Boolean);
+  const preview = paras.slice(0, 2).join('\n\n');
+  const hasMore = paras.length > 2;
+
+  const themes = (digest.emerging_themes || []).map(t =>
+    `<span class="theme-pill">${escHtml(t)}</span>`
+  ).join('');
+
+  const week = digest.week_start
+    ? new Date(digest.week_start).toLocaleDateString('en-GB', {day:'numeric',month:'short'}) + ' – ' +
+      new Date(digest.week_end).toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'})
+    : '';
+
+  el.innerHTML = `
+    <div class="card-label">Weekly Signal</div>
+    <div class="digest-meta">Week of ${escHtml(week)}</div>
+    <div class="digest-headline">${escHtml(digest.headline || '')}</div>
+    <div class="digest-prose truncated" id="digest-prose">${escHtml(preview)}</div>
+    ${hasMore ? `<button class="read-more-btn" id="read-more-btn">Read more ↓</button>` : ''}
+    <div class="digest-footer">
+      <div class="digest-themes">${themes}</div>
+    </div>
+  `;
+
+  if (hasMore) {
+    document.getElementById('read-more-btn').onclick = function() {
+      document.getElementById('digest-prose').classList.remove('truncated');
+      document.getElementById('digest-prose').textContent = prose;
+      this.remove();
+    };
+  }
+}
+
+// ── Repo cards ───────────────────────────────────────────────
+function renderRepoCard(repo, period) {
+  const color = catColor(repo.category);
+  const ghUrl = `https://github.com/${escHtml(repo.repo_name)}`;
+  const [owner, name] = (repo.repo_name || '/').split('/');
+  const themes = (repo.key_themes || []).slice(0, 4).map(t =>
+    `<span class="kw-pill">${escHtml(t)}</span>`
+  ).join('');
+  const starLabel = STAR_LABELS[period] || 'stars';
+
+  return `
+    <div class="repo-card" style="--cat-color:${color}">
+      <div class="repo-card-top">
+        <div class="repo-name">
+          <a href="${ghUrl}" target="_blank" rel="noopener">
+            <span class="owner">${escHtml(owner)}/</span><strong>${escHtml(name)}</strong>
+          </a>
+        </div>
+        <span class="cat-badge" style="background:${color}">${escHtml(repo.category)}</span>
+      </div>
+      ${repo.description ? `<div class="repo-desc">${escHtml(repo.description)}</div>` : ''}
+      <div class="repo-stats">
+        <span class="repo-stars">★ ${fmt(repo.stars_in_period)} ${starLabel}</span>
+        ${repo.forks ? `<span class="repo-forks">⑂ ${fmt(repo.forks)}</span>` : ''}
+        ${repo.language ? `<span class="lang-pill">${escHtml(repo.language)}</span>` : ''}
+      </div>
+      ${themes ? `<div class="repo-themes">${themes}</div>` : ''}
+      ${repo.purpose ? `<div class="repo-purpose">${escHtml(repo.purpose)}</div>` : ''}
+    </div>
+  `;
+}
+
+function renderRepos(todayData, period) {
+  const grid = document.getElementById('repo-grid');
+  const repos = todayData[period] || [];
+  if (!repos.length) {
+    grid.innerHTML = `<div class="no-data">No ${period} data for this date.</div>`;
+    return;
+  }
+  grid.innerHTML = repos.map((r, i) => {
+    const card = renderRepoCard(r, period);
+    // Stagger animation delay
+    return card.replace('class="repo-card"', `class="repo-card" style="--cat-color:${catColor(r.category)};animation-delay:${i * 0.03}s"`);
+  }).join('');
+}
+
+// ── Owner spotlight ───────────────────────────────────────────
+function renderOwners(todayData) {
+  const allRepos = [
+    ...(todayData.daily || []),
+    ...(todayData.weekly || []),
+    ...(todayData.monthly || []),
+  ];
+
+  const byOwner = {};
+  for (const r of allRepos) {
+    const o = r.owner_name;
+    if (!o) continue;
+    if (!byOwner[o]) byOwner[o] = { type: r.owner_type, repos: new Map() };
+    byOwner[o].repos.set(r.repo_name, r);
+  }
+
+  const multi = Object.entries(byOwner).filter(([, v]) => v.repos.size > 1);
+  if (!multi.length) return;
+
+  const section = document.getElementById('owner-section');
+  const grid = document.getElementById('owner-grid');
+  section.style.display = '';
+
+  grid.innerHTML = multi.sort((a, b) => b[1].repos.size - a[1].repos.size).map(([owner, v]) => {
+    const repoLinks = [...v.repos.values()].map(r =>
+      `<a class="owner-repo-link" href="https://github.com/${escHtml(r.repo_name)}" target="_blank" rel="noopener">
+        ${escHtml(r.repo_name.split('/')[1])}
+        ${r.category !== 'Unknown' ? `<span style="color:${catColor(r.category)};font-size:.68rem"> · ${escHtml(r.category)}</span>` : ''}
+      </a>`
+    ).join('');
+    return `
+      <div class="owner-card">
+        <div class="owner-name"><a href="https://github.com/${escHtml(owner)}" target="_blank" rel="noopener">@${escHtml(owner)}</a></div>
+        <div class="owner-type">${escHtml((v.type || 'unknown').replace(/_/g, ' '))}</div>
+        <div class="owner-repos">${repoLinks}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ── Charts ────────────────────────────────────────────────────
+let trendChart, langChart;
+
+function renderTrendChart(history) {
+  const ctx = document.getElementById('trend-chart').getContext('2d');
+  if (trendChart) trendChart.destroy();
+
+  const days = history.slice(0, 30).reverse();
+  const labels = days.map(d => {
+    const dt = new Date(d.date);
+    return dt.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+  });
+
+  // Find top 5 categories across all days
+  const totals = {};
+  for (const d of days) {
+    for (const [cat, n] of Object.entries(d.category_counts || {})) {
+      totals[cat] = (totals[cat] || 0) + n;
     }
+  }
+  const topCats = Object.entries(totals)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 6)
+    .map(([c]) => c)
+    .filter(c => c !== 'Unknown');
 
-    // ── Render digest ─────────────────────────────────────────────────────────
-    function renderDigest(row) {
-      const el = document.getElementById('digest-content');
-      if (!row) { emptyState(el, '⏳ Awaiting first weekly digest run'); return; }
-      const fmt = s => new Date(s + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-      el.innerHTML = `
-        <div class="digest-meta">Week of ${fmt(row.week_start)} – ${fmt(row.week_end)}</div>
-        <div class="digest-headline">${row.headline || ''}</div>
-        <div class="digest-body">${(row.digest || '').split('\n\n').map(p => `<p>${p}</p>`).join('')}</div>
-        <div class="digest-tags">
-          ${(row.emerging_themes || []).map(t => `<span class="tag">${t}</span>`).join('')}
-          ${(row.top_repos || []).map(r => `<span class="tag green">${r}</span>`).join('')}
-        </div>`;
-    }
+  const datasets = topCats.map(cat => ({
+    label: cat,
+    data: days.map(d => (d.category_counts || {})[cat] || 0),
+    borderColor: catColor(cat),
+    backgroundColor: catColor(cat) + '22',
+    tension: 0.3,
+    pointRadius: 2,
+    borderWidth: 2,
+    fill: false,
+  }));
 
-    // ── Render language donut ─────────────────────────────────────────────────
-    function renderLangChart(rows) {
-      const counts = {};
-      rows.forEach(r => { const l = r.language || 'Unknown'; counts[l] = (counts[l] || 0) + 1; });
-      const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 10);
-      const langColors = {
-        Python: '#3572A5', TypeScript: '#3178C6', Shell: '#89e051', Rust: '#DEA584',
-        JavaScript: '#F1E05A', Go: '#00ADD8', 'C++': '#f34b7d', Java: '#B07219',
-        'Jupyter Notebook': '#DA5B0B', Zig: '#EC915C', Kotlin: '#A97BFF',
-        Markdown: '#083fa1', HTML: '#e34c26'
-      };
-      new Chart(document.getElementById('langChart'), {
-        type: 'doughnut',
-        data: {
-          labels: sorted.map(([l]) => l),
-          datasets: [{ data: sorted.map(([, n]) => n),
-            backgroundColor: sorted.map(([l]) => langColors[l] || '#555'),
-            borderColor: '#161b22', borderWidth: 3, hoverOffset: 8 }]
+  trendChart = new Chart(ctx, {
+    type: 'line',
+    data: { labels, datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: { duration: 600 },
+      plugins: {
+        legend: {
+          labels: { color: '#7d8590', font: { size: 11 }, boxWidth: 12, padding: 12 },
+          position: 'bottom',
         },
-        options: { plugins: { legend: { position: 'right',
-          labels: { color: '#e6edf3', font: { size: 12 }, padding: 12, boxWidth: 14 } } }, cutout: '62%' }
-      });
-    }
-
-    // ── Render peak stars bar ─────────────────────────────────────────────────
-    function renderPeakChart(rows) {
-      const maxByRepo = {};
-      rows.forEach(r => {
-        if (!maxByRepo[r.repo_name] || r.stars_today > maxByRepo[r.repo_name])
-          maxByRepo[r.repo_name] = r.stars_today || 0;
-      });
-      const top10 = Object.entries(maxByRepo).sort((a, b) => b[1] - a[1]).slice(0, 10);
-      new Chart(document.getElementById('peakChart'), {
-        type: 'bar',
-        data: {
-          labels: top10.map(([n]) => n),
-          datasets: [{ label: 'Peak stars/day', data: top10.map(([, v]) => v),
-            backgroundColor: 'rgba(88,166,255,0.75)', borderColor: '#58a6ff',
-            borderWidth: 1, borderRadius: 4 }]
+        tooltip: { mode: 'index', intersect: false },
+      },
+      scales: {
+        x: {
+          ticks: { color: '#7d8590', maxTicksLimit: 8, font: { size: 10 } },
+          grid: { color: '#21262d' },
         },
-        options: {
-          indexAxis: 'y',
-          plugins: { legend: { display: false } },
-          scales: {
-            x: { grid: { color: GRID_COLOR }, ticks: { color: TICK_COLOR } },
-            y: { grid: { display: false }, ticks: { color: '#e6edf3', font: { size: 11 } } }
-          }
-        }
-      });
-    }
-
-    // ── Render category donut ─────────────────────────────────────────────────
-    function renderCategoryChart(insights) {
-      const wrap = document.getElementById('categoryWrap');
-      const cats = insights.filter(i => i.category && i.category !== 'Unknown');
-      if (cats.length === 0) { emptyState(wrap, '⏳ Awaiting first weekly analysis run'); return; }
-      const counts = {};
-      cats.forEach(i => { counts[i.category] = (counts[i.category] || 0) + 1; });
-      const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
-      new Chart(document.getElementById('categoryChart'), {
-        type: 'doughnut',
-        data: {
-          labels: sorted.map(([c]) => c),
-          datasets: [{ data: sorted.map(([, n]) => n),
-            backgroundColor: ['#58a6ff','#3fb950','#d29922','#f85149','#bc8cff','#39d353','#ffa657','#79c0ff'],
-            borderColor: '#161b22', borderWidth: 3, hoverOffset: 8 }]
+        y: {
+          ticks: { color: '#7d8590', font: { size: 10 }, stepSize: 1 },
+          grid: { color: '#21262d' },
+          beginAtZero: true,
         },
-        options: { plugins: { legend: { position: 'right',
-          labels: { color: '#e6edf3', font: { size: 12 }, padding: 10, boxWidth: 14 } } }, cutout: '55%' }
-      });
-    }
+      },
+    },
+  });
+}
 
-    // ── Render creator type bar ───────────────────────────────────────────────
-    function renderCreatorChart(insights) {
-      const wrap = document.getElementById('creatorWrap');
-      const typed = insights.filter(i => i.creator_type);
-      if (typed.length === 0) { emptyState(wrap, '⏳ Awaiting first weekly analysis run'); return; }
-      const counts = {};
-      typed.forEach(i => { counts[i.creator_type] = (counts[i.creator_type] || 0) + 1; });
-      const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
-      new Chart(document.getElementById('creatorChart'), {
-        type: 'bar',
-        data: {
-          labels: sorted.map(([c]) => c),
-          datasets: [{ label: 'Repos', data: sorted.map(([, n]) => n),
-            backgroundColor: 'rgba(188,140,255,0.75)', borderColor: '#bc8cff',
-            borderWidth: 1, borderRadius: 4 }]
+function renderLangChart(todayData) {
+  const ctx = document.getElementById('lang-chart').getContext('2d');
+  if (langChart) langChart.destroy();
+
+  const repos = todayData.daily || [];
+  const counts = {};
+  for (const r of repos) {
+    if (r.language) counts[r.language] = (counts[r.language] || 0) + 1;
+  }
+  const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 8);
+
+  const LANG_PALETTE = [
+    '#58a6ff','#3fb950','#ffa657','#bc8cff','#f85149',
+    '#e3b341','#56d364','#79c0ff',
+  ];
+
+  langChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: sorted.map(([l]) => l),
+      datasets: [{
+        data: sorted.map(([, n]) => n),
+        backgroundColor: LANG_PALETTE,
+        borderColor: '#161b22',
+        borderWidth: 2,
+      }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: { duration: 600 },
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { color: '#7d8590', font: { size: 11 }, boxWidth: 12, padding: 10 },
         },
-        options: {
-          plugins: { legend: { display: false } },
-          scales: {
-            x: { grid: { color: GRID_COLOR }, ticks: { color: TICK_COLOR } },
-            y: { grid: { color: GRID_COLOR }, ticks: { color: TICK_COLOR }, beginAtZero: true }
-          }
-        }
-      });
-    }
+      },
+      cutout: '62%',
+    },
+  });
+}
 
-    // ── Render creator connections ────────────────────────────────────────────
-    function renderConnections(insights) {
-      const el = document.getElementById('connections');
-      const withPrior = insights.filter(i => i.creator_prior_repos && i.creator_prior_repos.length > 0);
-      if (withPrior.length === 0) {
-        emptyState(el, '⏳ Awaiting first weekly analysis run — owners with multiple trending repos will appear here');
-        return;
-      }
-      const byOwner = {};
-      insights.forEach(i => {
-        const owner = i.repo_name.split('/')[0];
-        if (!byOwner[owner]) byOwner[owner] = [];
-        byOwner[owner].push({ name: i.repo_name, purpose: i.purpose || '' });
-      });
-      const multi = Object.entries(byOwner).filter(([, repos]) => repos.length > 1)
-        .sort((a, b) => b[1].length - a[1].length);
-      if (multi.length === 0) { emptyState(el, '⏳ No owners with multiple trending repos yet'); return; }
-      const ul = document.createElement('ul');
-      ul.className = 'connections-list';
-      multi.forEach(([owner, repos]) => {
-        const li = document.createElement('li');
-        li.innerHTML = `<span class="owner">${owner}</span> — ${repos.length} trending repos<br>
-          <span class="repos">${repos.map(r => `<strong>${r.name}</strong>${r.purpose ? ': ' + r.purpose : ''}`).join(' · ')}</span>`;
-        ul.appendChild(li);
-      });
-      el.innerHTML = '';
-      el.appendChild(ul);
-    }
+// ── Tab switching ────────────────────────────────────────────
+let currentData = null;
 
-    // ── Main: fetch all data and render ──────────────────────────────────────
-    async function init() {
-      const [digestRes, reposRes, insightsRes] = await Promise.all([
-        db.from('weekly_digest').select('*').order('week_start', { ascending: false }).limit(1),
-        db.from('repositories').select('repo_name, language, stars_today'),
-        db.from('repo_insights').select('repo_name, purpose, category, creator_type, creator_prior_repos'),
-      ]);
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    if (currentData) renderRepos(currentData.today, this.dataset.period);
+  });
+});
 
-      // Subtitle
-      if (reposRes.data) {
-        const total = reposRes.data.length;
-        const unique = new Set(reposRes.data.map(r => r.repo_name)).size;
-        document.getElementById('subtitle').textContent =
-          `${total.toLocaleString()} entries · ${unique.toLocaleString()} unique repos · live from Supabase`;
-      }
+// ── Main ─────────────────────────────────────────────────────
+async function init() {
+  let data;
+  try {
+    const res = await fetch('data/snapshot.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    data = await res.json();
+  } catch (e) {
+    document.getElementById('digest-section').innerHTML =
+      '<div class="card-label">Weekly Signal</div>' +
+      '<p style="color:var(--text-muted);font-size:.85rem">Data not yet available — the pipeline runs daily at 10:00 UTC.</p>';
+    document.getElementById('repo-grid').innerHTML =
+      '<div class="no-data">No snapshot found. Check back after the first pipeline run.</div>';
+    return;
+  }
 
-      renderDigest(digestRes.data?.[0] || null);
-      if (reposRes.data) { renderLangChart(reposRes.data); renderPeakChart(reposRes.data); }
-      if (insightsRes.data) { renderCategoryChart(insightsRes.data); renderCreatorChart(insightsRes.data); renderConnections(insightsRes.data); }
-    }
+  currentData = data;
 
-    init().catch(err => console.error('Dashboard load error:', err));
-  </script>
+  // Header
+  const d = new Date(data.as_of_date);
+  document.getElementById('header-date').textContent =
+    'As of ' + d.toLocaleDateString('en-GB', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+
+  const s = data.stats || {};
+  document.getElementById('stats-pills').innerHTML = [
+    s.total_repos   ? `<span class="pill"><strong>${s.total_repos}</strong> repos tracked</span>` : '',
+    s.days_tracked  ? `<span class="pill"><strong>${s.days_tracked}</strong> days of data</span>` : '',
+    (data.today?.daily?.length || 0) > 0
+      ? `<span class="pill"><strong>${data.today.daily.length}</strong> trending today</span>` : '',
+  ].join('');
+
+  // Digest
+  renderDigest(data.digest);
+
+  // Repos — default daily
+  renderRepos(data.today || {}, 'daily');
+
+  // Owner spotlight
+  renderOwners(data.today || {});
+
+  // Charts
+  if ((data.history || []).length > 1) {
+    renderTrendChart(data.history);
+  }
+  renderLangChart(data.today || {});
+
+  // Footer
+  const ts = new Date(data.generated_at);
+  document.getElementById('footer-ts').textContent =
+    'Updated ' + ts.toLocaleString('en-GB', { dateStyle:'medium', timeStyle:'short', timeZone:'UTC' }) + ' UTC';
+}
+
+init();
+</script>
 </body>
 </html>

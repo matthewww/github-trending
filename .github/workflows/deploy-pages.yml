@@ -4,18 +4,13 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Inject Supabase credentials
-        run: |
-          sed -i 's|{{SUPABASE_URL}}|${{ secrets.SUPABASE_URL }}|g' dashboard/index.html
-          sed -i 's|{{SUPABASE_PUBLIC_KEY}}|${{ secrets.SUPABASE_PUBLIC_KEY }}|g' dashboard/index.html
+      - uses: actions/checkout@v4
 
       - name: Deploy to GitHub Pages
         run: |
