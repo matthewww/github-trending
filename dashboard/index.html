@@ -417,6 +417,24 @@
     <div class="loading" style="color:var(--text-muted)">Loading digest…</div>
   </div>
 
+  <!-- Charts -->
+  <div class="intel-grid">
+    <div class="card">
+      <h2>Category Trend — 30 days</h2>
+      <div class="chart-wrap"><canvas id="trend-chart"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>Languages — last 7 days</h2>
+      <div class="chart-wrap"><canvas id="lang-chart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Owner spotlight -->
+  <div class="card" id="owner-section">
+    <div class="card-label">Owner Spotlight</div>
+    <div class="owner-grid" id="owner-grid"></div>
+  </div>
+
   <!-- Trending repos -->
   <div>
     <div class="tabs-header">
@@ -430,24 +448,6 @@
     <div class="repo-grid" id="repo-grid">
       <div class="no-data">Loading…</div>
     </div>
-  </div>
-
-  <!-- Charts -->
-  <div class="intel-grid">
-    <div class="card">
-      <h2>Category Trend — 30 days</h2>
-      <div class="chart-wrap"><canvas id="trend-chart"></canvas></div>
-    </div>
-    <div class="card">
-      <h2>Languages today</h2>
-      <div class="chart-wrap"><canvas id="lang-chart"></canvas></div>
-    </div>
-  </div>
-
-  <!-- Owner spotlight -->
-  <div class="card" id="owner-section" style="display:none">
-    <div class="card-label">Owner Spotlight — multiple repos trending</div>
-    <div class="owner-grid" id="owner-grid"></div>
   </div>
 
 </main>
@@ -597,24 +597,29 @@ function renderOwners(todayData) {
     byOwner[o].repos.set(r.repo_name, r);
   }
 
-  const multi = Object.entries(byOwner).filter(([, v]) => v.repos.size > 1);
-  if (!multi.length) return;
+  // Always show top 4, sorted by repo count desc
+  const top4 = Object.entries(byOwner)
+    .sort((a, b) => b[1].repos.size - a[1].repos.size)
+    .slice(0, 4);
 
-  const section = document.getElementById('owner-section');
+  if (!top4.length) return;
+
   const grid = document.getElementById('owner-grid');
-  section.style.display = '';
 
-  grid.innerHTML = multi.sort((a, b) => b[1].repos.size - a[1].repos.size).map(([owner, v]) => {
+  grid.innerHTML = top4.map(([owner, v]) => {
     const repoLinks = [...v.repos.values()].map(r =>
       `<a class="owner-repo-link" href="https://github.com/${escHtml(r.repo_name)}" target="_blank" rel="noopener">
         ${escHtml(r.repo_name.split('/')[1])}
         ${r.category !== 'Unknown' ? `<span style="color:${catColor(r.category)};font-size:.68rem"> · ${escHtml(r.category)}</span>` : ''}
       </a>`
     ).join('');
+    const badge = v.repos.size > 1
+      ? `<span style="color:var(--accent);font-size:.72rem;font-weight:600">${v.repos.size} repos trending</span>`
+      : `<span style="color:var(--text-muted);font-size:.72rem">1 repo trending</span>`;
     return `
       <div class="owner-card">
         <div class="owner-name"><a href="https://github.com/${escHtml(owner)}" target="_blank" rel="noopener">@${escHtml(owner)}</a></div>
-        <div class="owner-type">${escHtml((v.type || 'unknown').replace(/_/g, ' '))}</div>
+        <div class="owner-type">${escHtml((v.type || 'unknown').replace(/_/g, ' '))} · ${badge}</div>
         <div class="owner-repos">${repoLinks}</div>
       </div>
     `;
@@ -687,14 +692,16 @@ function renderTrendChart(history) {
   });
 }
 
-function renderLangChart(todayData) {
+function renderLangChart(history) {
   const ctx = document.getElementById('lang-chart').getContext('2d');
   if (langChart) langChart.destroy();
 
-  const repos = todayData.daily || [];
+  // Aggregate language counts across last 7 days
   const counts = {};
-  for (const r of repos) {
-    if (r.language) counts[r.language] = (counts[r.language] || 0) + 1;
+  for (const day of (history || []).slice(0, 7)) {
+    for (const [lang, n] of Object.entries(day.language_counts || {})) {
+      counts[lang] = (counts[lang] || 0) + n;
+    }
   }
   const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 8);
 
@@ -784,7 +791,7 @@ async function init() {
   if ((data.history || []).length > 1) {
     renderTrendChart(data.history);
   }
-  renderLangChart(data.today || {});
+  renderLangChart(data.history || []);
 
   // Footer
   const ts = new Date(data.generated_at);
