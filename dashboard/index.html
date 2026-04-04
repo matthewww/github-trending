@@ -407,6 +407,95 @@
     }
     .owner-repo-link:hover { text-decoration: underline; }
 
+    /* ── Cluster section ── */
+    .cluster-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    .chart-wrap-scatter {
+      position: relative;
+      height: 340px;
+    }
+    .cluster-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 340px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+    .cluster-item {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--cl-color, var(--accent));
+      border-radius: 8px;
+      padding: 10px 14px;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+    .cluster-item:hover { border-color: var(--cl-color, var(--accent)); opacity: 0.85; }
+    .cluster-item-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .cluster-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: var(--cl-color, var(--accent));
+    }
+    .cluster-label {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #f0f6fc;
+    }
+    .cluster-size {
+      margin-left: auto;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1px 7px;
+    }
+    .cluster-desc {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+    .cluster-repos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .cluster-repo-pill {
+      font-size: 0.68rem;
+      background: var(--surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 2px 7px;
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .cluster-repo-pill:hover { text-decoration: underline; }
+    .no-clusters {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      padding: 32px;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      .cluster-layout { grid-template-columns: 1fr; }
+      .cluster-list { max-height: none; }
+    }
+
     /* ── Footer ── */
     footer {
       border-top: 1px solid var(--border);
@@ -473,6 +562,21 @@
   <div class="card" id="owner-section">
     <div class="card-label">Owner Spotlight</div>
     <div class="owner-grid" id="owner-grid"></div>
+  </div>
+
+  <!-- Semantic Clusters -->
+  <div class="card" id="cluster-section" style="display:none">
+    <div class="card-label">Semantic Clusters — this week</div>
+    <div class="cluster-layout">
+      <div>
+        <h2 style="margin-bottom:12px">Semantic Map</h2>
+        <div class="chart-wrap-scatter"><canvas id="cluster-chart"></canvas></div>
+      </div>
+      <div>
+        <h2 style="margin-bottom:12px">Cluster Breakdown</h2>
+        <div class="cluster-list" id="cluster-list"></div>
+      </div>
+    </div>
   </div>
 
   <!-- Trending repos -->
@@ -814,6 +918,107 @@ function renderLangChart(history) {
   });
 }
 
+// ── Semantic Clusters ─────────────────────────────────────────
+const CLUSTER_PALETTE = [
+  '#58a6ff','#3fb950','#f85149','#e3b341','#bc8cff',
+  '#79c0ff','#ffa657','#56d364','#ff7b72','#d2a8ff',
+  '#a5d6ff','#7ee787','#ffdcd7','#ffe585','#cae8ff',
+];
+
+let clusterChart;
+
+function renderClusters(clusterData) {
+  const section = document.getElementById('cluster-section');
+  const listEl = document.getElementById('cluster-list');
+
+  if (!clusterData || !clusterData.clusters || !clusterData.clusters.length) {
+    section.style.display = 'none';
+    return;
+  }
+  section.style.display = '';
+
+  const clusters = clusterData.clusters;
+  const scatter = clusterData.scatter || [];
+
+  const colorMap = {};
+  clusters.forEach((c, i) => {
+    colorMap[c.id] = CLUSTER_PALETTE[i % CLUSTER_PALETTE.length];
+  });
+
+  const ctx = document.getElementById('cluster-chart').getContext('2d');
+  if (clusterChart) clusterChart.destroy();
+
+  const datasets = clusters.map(c => {
+    const points = scatter.filter(p => p.cluster_id === c.id);
+    return {
+      label: c.label,
+      data: points.map(p => ({ x: p.x, y: p.y, repo: p.repo_name })),
+      backgroundColor: colorMap[c.id] + 'cc',
+      pointRadius: 6,
+      pointHoverRadius: 9,
+    };
+  });
+
+  clusterChart = new Chart(ctx, {
+    type: 'scatter',
+    data: { datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: { duration: 600 },
+      plugins: {
+        legend: {
+          display: clusters.length <= 8,
+          position: 'bottom',
+          labels: { color: '#7d8590', font: { size: 10 }, boxWidth: 10, padding: 8 },
+        },
+        tooltip: {
+          callbacks: {
+            label(ctx) {
+              const pt = ctx.raw;
+              const name = (pt.repo || '').split('/')[1] || pt.repo;
+              return `${name} (${ctx.dataset.label})`;
+            },
+          },
+        },
+      },
+      scales: {
+        x: { ticks: { display: false }, grid: { color: '#21262d' } },
+        y: { ticks: { display: false }, grid: { color: '#21262d' } },
+      },
+      onClick(event, elements) {
+        if (!elements.length) return;
+        const el = elements[0];
+        const pt = datasets[el.datasetIndex].data[el.index];
+        if (pt.repo) window.open(`https://github.com/${pt.repo}`, '_blank');
+      },
+    },
+  });
+
+  listEl.innerHTML = clusters.map(c => {
+    const color = colorMap[c.id];
+    const repoLinks = (c.repos || []).slice(0, 6).map(r => {
+      const name = r.split('/')[1] || r;
+      return `<a class="cluster-repo-pill" href="https://github.com/${escHtml(r)}" target="_blank" rel="noopener">${escHtml(name)}</a>`;
+    }).join('');
+    const moreCount = (c.repos || []).length - 6;
+    const more = moreCount > 0
+      ? `<span class="cluster-repo-pill" style="color:var(--text-muted)">+${moreCount} more</span>`
+      : '';
+    return `
+      <div class="cluster-item" style="--cl-color:${color}">
+        <div class="cluster-item-header">
+          <span class="cluster-dot"></span>
+          <span class="cluster-label">${escHtml(c.label)}</span>
+          <span class="cluster-size">${c.size} repos</span>
+        </div>
+        ${c.description ? `<div class="cluster-desc">${escHtml(c.description)}</div>` : ''}
+        <div class="cluster-repos">${repoLinks}${more}</div>
+      </div>
+    `;
+  }).join('');
+}
+
 // ── Tab switching ────────────────────────────────────────────
 let currentData = null;
 
@@ -853,6 +1058,7 @@ function renderSnapshot(data) {
 
   if ((data.history || []).length > 1) renderTrendChart(data.history);
   renderLangChart(data.history || []);
+  renderClusters(data.clusters || null);
 
   const ts = new Date(data.generated_at);
   document.getElementById('footer-ts').textContent =

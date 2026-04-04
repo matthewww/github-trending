@@ -31,6 +31,14 @@ jobs:
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: python src/analyze_repos.py
 
+      - name: Cluster repos
+        env:
+          GH_MODELS_TOKEN: ${{ secrets.GH_MODELS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: python src/cluster_repos.py
+
       - name: Generate weekly digest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

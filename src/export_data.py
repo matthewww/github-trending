@@ -188,6 +188,56 @@ def get_stats(db: SupabaseClient) -> dict:
     }
 
 
+def get_latest_clusters(db: SupabaseClient) -> list[dict]:
+    """Most recent cluster run with repo assignments and 2D coords."""
+    clusters_resp = (
+        db.client.table("clusters")
+        .select("id, label, description, size, run_date")
+        .order("run_date", desc=True)
+        .limit(50)
+        .execute()
+    )
+    rows = clusters_resp.data or []
+    if not rows:
+        return []
+
+    latest_date = rows[0]["run_date"]
+    this_run = [r for r in rows if r["run_date"] == latest_date]
+    cluster_ids = [r["id"] for r in this_run]
+
+    map_resp = (
+        db.client.table("repo_cluster_map")
+        .select("repo_name, cluster_id, umap_x, umap_y")
+        .in_("cluster_id", cluster_ids)
+        .eq("run_date", latest_date)
+        .execute()
+    )
+    map_rows = map_resp.data or []
+
+    by_cluster: dict[int, list] = {r["id"]: [] for r in this_run}
+    scatter = []
+    for m in map_rows:
+        by_cluster[m["cluster_id"]].append(m["repo_name"])
+        scatter.append({
+            "repo_name": m["repo_name"],
+            "cluster_id": m["cluster_id"],
+            "x": m["umap_x"],
+            "y": m["umap_y"],
+        })
+
+    result = []
+    for c in sorted(this_run, key=lambda x: x["size"] or 0, reverse=True):
+        result.append({
+            "id": c["id"],
+            "label": c["label"],
+            "description": c["description"],
+            "size": c["size"],
+            "repos": by_cluster.get(c["id"], []),
+        })
+
+    return {"run_date": latest_date, "clusters": result, "scatter": scatter}
+
+
 def main():
     db = SupabaseClient()
 
@@ -202,6 +252,7 @@ def main():
     digest = get_latest_digest(db)
     history = get_history(db)
     stats = get_stats(db)
+    clusters = get_latest_clusters(db)
 
     snapshot = {
         "generated_at": datetime.utcnow().isoformat() + "Z",
@@ -210,6 +261,7 @@ def main():
         "digest": digest,
         "history": history,
         "stats": stats,
+        "clusters": clusters,
     }
 
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
@@ -235,6 +287,8 @@ def main():
     for period, repos in today.items():
         print(f"  {period}: {len(repos)} repos")
     print(f"  history: {len(history)} days")
+    n_clusters = len((clusters or {}).get("clusters", []))
+    print(f"  clusters: {n_clusters}")
     print(f"  stats: {stats}")
     return 0
 
