@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   analyze:
-    name: Analyze, embed & cluster
+    name: Analyze & embed
     runs-on: ubuntu-latest
     timeout-minutes: 60
 
@@ -41,14 +41,6 @@ jobs:
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: python src/analyze_repos.py
 
-      - name: Cluster repos
-        env:
-          GH_MODELS_TOKEN: ${{ secrets.GH_MODELS_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
-        run: python src/cluster_repos.py
-
       - name: Generate weekly digest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -57,9 +49,34 @@ jobs:
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: python src/generate_digest.py
 
+  cluster:
+    name: Cluster repos
+    needs: analyze
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Cluster repos
+        env:
+          GH_MODELS_TOKEN: ${{ secrets.GH_MODELS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: python src/cluster_repos.py
+
   publish:
     name: Export & deploy
-    needs: analyze
+    needs: cluster
     runs-on: ubuntu-latest
     environment:
       name: github-pages
