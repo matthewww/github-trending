@@ -145,45 +145,47 @@ For each repository:
 
 ### 6.3 Storage (Supabase)
 
-**Tables:**
+**Current schema (post-redesign, April 2026):**
 
-#### repositories
+#### `owners`
+- `owner_name` (PK) — GitHub username/org
+- `owner_type` — `individual` | `company` | `academic` | `unknown`
+- `description` — LLM-generated owner summary
 
-* id
-* name
-* description
-* metadata (JSONB)
+#### `repos`
+- `repo_name` (PK) — `owner/name`
+- `description`, `language`, `topics` (array), `readme_content` (text)
+- `owner_name` (FK → owners)
+- `total_stars`, `forks`
+- `first_seen_date`
 
-#### time_series_metrics
+#### `trending_snapshots`
+- `repo_name`, `collected_date`, `since_period` (daily/weekly/monthly) — composite PK
+- `stars_in_period`, `total_stars`, `forks`, `rank`
 
-* repo_id
-* date
-* stars
-* forks
-* contributors
-* commits
+#### `repo_insights`
+- `repo_name` (PK, FK → repos)
+- `purpose`, `category`, `key_themes` (array), `target_audience`
 
-#### embeddings
+#### `weekly_digest`
+- `week_start` (PK), `week_end`
+- `headline`, `digest` (prose), `top_categories`, `top_repos`, `emerging_themes`
 
-* repo_id
-* vector (pgvector)
+#### `embeddings`
+- `repo_name` (PK, FK → repos)
+- `embedding` — `vector(1536)` (pgvector, matches `text-embedding-3-small`)
+- `embedded_at`, `model_used`
 
-#### tags
+#### `clusters`
+- `cluster_id` (PK)
+- `label` — LLM-generated human-readable name
+- `centroid` — `vector(1536)`
+- `run_date`, `repo_count`, `description`
 
-* repo_id
-* tags (JSONB)
-
-#### clusters
-
-* cluster_id
-* centroid vector
-* label (optional)
-
-#### repo_cluster_map
-
-* repo_id
-* cluster_id
-* timestamp
+#### `repo_cluster_map`
+- `repo_name`, `run_date` — composite PK
+- `cluster_id` (FK → clusters)
+- `distance_to_centroid`
 
 ---
 
@@ -331,47 +333,89 @@ Categories become:
 ### Suggested Stack
 
 * **Backend:** Python (data pipeline)
-* **Database:** Supabase (Postgres + pgvector)
-* **Embeddings:** OpenAI or local models
-* **Clustering:** HDBSCAN + UMAP
+* **Database:** Supabase (Postgres + pgvector, `eu-west-1`)
+* **Embeddings:** OpenAI `text-embedding-3-small` (1536-dim, ~$0.02/1M tokens)
+  - New secret required: `OPENAI_API_KEY`
+  - GitHub Models API does not support embedding models (chat-only)
+  - Embedding source: concatenation of `description + topics + purpose + key_themes`
+  - Batch via `embed_repos.py` — run weekly after `analyze_repos.py`
+* **Clustering:** HDBSCAN (`hdbscan` Python package) + UMAP for 2D projection
+  - Frequency: **weekly** (Sundays, after analysis job) — daily is too noisy to observe evolution
+  - Minimum cluster size: 3 repos; discard clusters with `Unknown` label only
+  - Script: `cluster_repos.py` — reads `embeddings`, writes `clusters` + `repo_cluster_map`
 * **Frontend:**
-
-  * Short-term: Plotly / notebooks
-  * Long-term: React + D3 / ECharts
+  - Current: Static SPA on GitHub Pages (vanilla JS, Chart.js, reads `snapshot.json`)
+  - Phase 3: Add cluster map tab — UMAP coords pre-computed and embedded in `snapshot.json`
+  - Phase 4: Consider React + D3 if interactivity demands exceed static SPA
 
 ---
 
 ## 10. Phased Implementation Plan
 
-### Phase 1 – Foundation
+### Phase 1 – Foundation ✅ Complete
 
-* Ingest GitHub trending data
-* Store repo + time-series data
-* Basic visualisations (stars, growth)
+* ✅ Daily/weekly/monthly trending scraper (`collect.py`, `main.py`)
+* ✅ Supabase storage with owners + repos + trending_snapshots schema
+* ✅ LLM enrichment: purpose, category, key_themes per repo (`analyze_repos.py`)
+* ✅ Weekly prose digest generation (`generate_digest.py`)
+* ✅ Static dashboard on GitHub Pages — digest hero, period tabs, category trend chart, language comparison, owner spotlight, date archive (`dashboard/index.html`, `export_data.py`)
 
 ---
 
 ### Phase 2 – Semantic Layer
 
-* Add embeddings
-* Add LLM-generated tags
-* Basic clustering
+**Goal:** Give every repo a vector position so we can find similarity and clusters.
+
+**New secret needed:** `OPENAI_API_KEY`
+
+**New pip deps:** `openai`, `hdbscan`, `umap-learn`, `scikit-learn`
+
+#### Step 1 — `src/embed_repos.py`
+- Query `repos LEFT JOIN embeddings` where `embedded_at IS NULL`
+- For each repo, concatenate: `f"{description}. Topics: {topics}. Purpose: {purpose}. Themes: {key_themes}"`
+- Call `openai.embeddings.create(model="text-embedding-3-small", input=text)`
+- Upsert into `embeddings(repo_name, embedding, embedded_at, model_used)`
+- Batch 100 repos per run; sleep 0.5s between calls
+
+#### Step 2 — `src/cluster_repos.py`
+- Load all rows from `embeddings` as numpy array
+- Run `hdbscan.HDBSCAN(min_cluster_size=3).fit(vectors)`
+- For each cluster: compute centroid, call LLM to generate a label from the top-5 repo descriptions
+- Write to `clusters(cluster_id, label, centroid, run_date, repo_count, description)`
+- Write to `repo_cluster_map(repo_name, run_date, cluster_id, distance_to_centroid)`
+
+#### Step 3 — Add to `collect-daily.yml` (weekly step, Sundays)
+```yaml
+embed:
+  needs: analyze
+  if: github.event_name == 'schedule' && ...  # only on Sundays
+  run: python src/embed_repos.py && python src/cluster_repos.py
+```
+
+#### Step 4 — Cluster stability strategy
+- Each weekly run produces a new `run_date` partition in `repo_cluster_map`
+- Match new clusters to prior-week clusters by centroid cosine similarity (>0.85 = same cluster)
+- Store `prev_cluster_id` on `clusters` for continuity tracking
+- Clusters with no match = newly emerged; clusters with no repos this week = dissolved
 
 ---
 
 ### Phase 3 – Trend Intelligence
 
-* Track cluster growth
-* Build cluster-level dashboards
-* Add novelty detection
+* Track cluster growth (repo count, star velocity) over `run_date` partitions
+* Add novelty score: distance of new repo's embedding from its nearest existing cluster centroid
+  - Threshold: >0.4 cosine distance = "novel" (tune empirically)
+* Add UMAP 2D coordinates to `snapshot.json` for cluster map view in dashboard
+* Dashboard: cluster bubble chart (x=time, y=growth, size=engagement, color=cluster)
 
 ---
 
 ### Phase 4 – Advanced Insights
 
-* Cluster evolution (split/merge detection)
-* Tag graph analysis
-* Predictive trend signals
+* Cluster evolution: detect splits (one cluster → two) and merges using centroid trajectory
+* Tag graph: track co-occurrence of `key_themes` across repos over time
+* Predictive signals: flag clusters with accelerating star velocity as "breakout"
+* Alerting: GitHub issue or email digest when a new cluster passes the novelty + growth threshold
 
 ---
 
@@ -498,7 +542,7 @@ https://github.com/trending/{language}?since=...  # Filter by language
 
 Scraped via BeautifulSoup. Returns: repo name, description, language, stars in period, total stars, forks, rank (1–25).
 
-> Currently only `daily` is collected. Calling all three periods per run would triple signal density immediately with no extra auth or tooling.
+> ✅ Now collecting all three periods per run (`daily`, `weekly`, `monthly`) — tripled signal density.
 
 #### GitHub REST API (auth: `GITHUB_TOKEN`, 5,000 req/hr authenticated)
 
@@ -513,31 +557,39 @@ GET https://api.github.com/repos/{owner}/{repo}/readme  # README content (base64
 POST https://models.inference.ai.azure.com/chat/completions
 ```
 
-### Existing Dataset (reusable for bootstrapping)
+> Note: GitHub Models supports **chat only** — no embedding models. Embeddings require a separate `OPENAI_API_KEY`.
+
+### Current Dataset (April 2026, post-schema redesign)
 
 | Table | Rows | Content |
 |-------|------|---------|
-| `repositories` | 372 | Daily trending scrapes since ~Feb 17, 2026 — repo name, description, language, stars\_today, total\_stars, forks, rank, collected\_date |
-| `repo_insights` | 69 | LLM-generated per-repo: purpose, category, key\_themes, creator\_type, creator\_description, target\_audience |
+| `owners` | ~180 | GitHub usernames/orgs with `owner_type` and LLM description |
+| `repos` | ~192 | Unique repos with description, language, topics, first\_seen\_date |
+| `trending_snapshots` | ~1,400+ | Daily/weekly/monthly snapshots since Feb 17, 2026 |
+| `repo_insights` | ~120 | LLM-generated: purpose, category, key\_themes, target\_audience |
 | `weekly_digest` | 2 | Prose digests with headline, emerging\_themes, top\_categories |
+| `embeddings` | 0 | Phase 2 — not yet populated |
+| `clusters` | 0 | Phase 2 — not yet populated |
+| `repo_cluster_map` | 0 | Phase 2 — not yet populated |
 
-This dataset is immediately usable for bootstrapping embeddings and testing clustering in the new project.
-
-### What the Prior Project Already Built
+### What's Built (Current State)
 
 | Component | Status |
 |-----------|--------|
-| Daily trending scraper | ✅ Production |
-| Supabase storage + deduplication | ✅ Production |
-| LLM enrichment (purpose, category, key\_themes) | ✅ Production |
-| Creator connection tracking | ✅ Production |
+| Daily/weekly/monthly trending scraper | ✅ Production |
+| Supabase storage — owners, repos, trending\_snapshots | ✅ Production |
+| LLM enrichment — purpose, category, key\_themes | ✅ Production |
+| Owner type + description enrichment | ✅ Production |
 | Weekly prose digest generation | ✅ Production |
-| Static dashboard (charts + digest display) | ✅ Production |
-| Vector embeddings | ❌ Not started |
-| Clustering (HDBSCAN/UMAP) | ❌ Not started |
-| Cluster-level trend detection | ❌ Not started |
-| Novelty detection | ❌ Not started |
-| Cluster map visualisation | ❌ Not started |
+| Static dashboard (GitHub Pages) — digest, period tabs, charts, archive | ✅ Production |
+| Daily JSON snapshot export (`export_data.py`) | ✅ Production |
+| Date archive with dropdown | ✅ Production |
+| Vector embeddings (`embed_repos.py`) | ❌ Phase 2 |
+| Clustering — HDBSCAN + UMAP (`cluster_repos.py`) | ❌ Phase 2 |
+| Cluster stability tracking | ❌ Phase 2 |
+| Novelty detection | ❌ Phase 3 |
+| Cluster map visualisation | ❌ Phase 3 |
+| Cluster evolution (split/merge) | ❌ Phase 4 |
 
 ---
 
