@@ -5,25 +5,38 @@ import sys
 from collect import fetch_trending
 from supabase_client import SupabaseClient
 
+PERIODS = ["daily", "weekly", "monthly"]
+
 
 def main():
     print("Starting GitHub trending collection...")
 
     try:
-        repos = fetch_trending(since="daily")
-        print(f"Fetched {len(repos)} trending repos")
+        client = SupabaseClient()
     except Exception as e:
-        print(f"Failed to fetch trending: {e}")
+        print(f"Failed to initialise Supabase client: {e}")
         return 1
 
-    try:
-        client = SupabaseClient()
-        count = client.insert_repos(repos)
-        print(f"Successfully stored {count} repos in Supabase")
-        return 0
-    except Exception as e:
-        print(f"Failed to store in Supabase: {e}")
+    total = 0
+    failed = []
+
+    for period in PERIODS:
+        try:
+            repos = fetch_trending(since=period)
+            print(f"Fetched {len(repos)} trending repos ({period})")
+            count = client.insert_repos(repos, since_period=period)
+            total += count
+        except Exception as e:
+            print(f"Failed for period '{period}': {e}")
+            failed.append(period)
+
+    print(f"\nDone. {total} snapshots stored across {len(PERIODS) - len(failed)} period(s).")
+
+    if failed:
+        print(f"Failed periods: {', '.join(failed)}")
         return 1
+
+    return 0
 
 
 if __name__ == "__main__":

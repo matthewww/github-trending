@@ -25,64 +25,79 @@ def get_week_bounds(reference_date: date = None) -> tuple[date, date]:
 
 
 def fetch_week_repos(db: SupabaseClient, week_start: date, week_end: date) -> list[dict]:
-    """Repos that trended this week, joined with their insights where available."""
+    """Repos that trended this week (daily period), joined with their insights where available."""
     response = (
-        db.client.table("repositories")
-        .select("repo_name, language, stars_today, total_stars, collected_date")
+        db.client.table("trending_snapshots")
+        .select("repo_name, total_stars, stars_in_period, collected_date")
+        .eq("since_period", "daily")
         .gte("collected_date", week_start.isoformat())
         .lte("collected_date", week_end.isoformat())
         .execute()
     )
     rows = response.data or []
 
-    # Aggregate per repo: max stars_today, all days seen
+    # Aggregate per repo: max stars_in_period, days seen
     by_repo: dict[str, dict] = {}
     for r in rows:
         name = r["repo_name"]
         if name not in by_repo:
             by_repo[name] = {
                 "repo_name": name,
-                "language": r["language"],
-                "max_stars_today": r["stars_today"] or 0,
+                "max_stars_today": r["stars_in_period"] or 0,
                 "total_stars": r["total_stars"],
                 "days_seen": 1,
             }
         else:
             by_repo[name]["max_stars_today"] = max(
-                by_repo[name]["max_stars_today"], r["stars_today"] or 0
+                by_repo[name]["max_stars_today"], r["stars_in_period"] or 0
             )
             by_repo[name]["days_seen"] += 1
 
     repos = sorted(by_repo.values(), key=lambda x: x["max_stars_today"], reverse=True)
 
+    if not repos:
+        return repos
+
+    names = [r["repo_name"] for r in repos]
+
+    # Enrich with repo metadata (language, owner)
+    repos_resp = (
+        db.client.table("repos")
+        .select("repo_name, language, owner_name")
+        .in_("repo_name", names)
+        .execute()
+    )
+    repos_map = {r["repo_name"]: r for r in (repos_resp.data or [])}
+    for r in repos:
+        meta = repos_map.get(r["repo_name"], {})
+        r["language"] = meta.get("language")
+        r["owner_name"] = meta.get("owner_name", r["repo_name"].split("/")[0])
+
     # Enrich with insights
-    if repos:
-        names = [r["repo_name"] for r in repos]
-        insights_resp = (
-            db.client.table("repo_insights")
-            .select("repo_name, purpose, category, creator_type, key_themes, creator_prior_repos")
-            .in_("repo_name", names)
-            .execute()
-        )
-        insights_map = {i["repo_name"]: i for i in (insights_resp.data or [])}
-        for r in repos:
-            ins = insights_map.get(r["repo_name"], {})
-            r["purpose"] = ins.get("purpose", "")
-            r["category"] = ins.get("category", "Unknown")
-            r["creator_type"] = ins.get("creator_type", "")
-            r["key_themes"] = ins.get("key_themes", [])
-            r["creator_prior_repos"] = ins.get("creator_prior_repos", [])
+    insights_resp = (
+        db.client.table("repo_insights")
+        .select("repo_name, purpose, category, key_themes")
+        .in_("repo_name", names)
+        .execute()
+    )
+    insights_map = {i["repo_name"]: i for i in (insights_resp.data or [])}
+    for r in repos:
+        ins = insights_map.get(r["repo_name"], {})
+        r["purpose"] = ins.get("purpose", "")
+        r["category"] = ins.get("category", "Unknown")
+        r["key_themes"] = ins.get("key_themes", [])
 
     return repos
 
 
 def fetch_prev_week_repos(db: SupabaseClient, week_start: date) -> set[str]:
-    """Repo names that appeared the previous week."""
+    """Repo names that appeared the previous week (daily period)."""
     prev_end = week_start - timedelta(days=1)
     prev_start = prev_end - timedelta(days=6)
     resp = (
-        db.client.table("repositories")
+        db.client.table("trending_snapshots")
         .select("repo_name")
+        .eq("since_period", "daily")
         .gte("collected_date", prev_start.isoformat())
         .lte("collected_date", prev_end.isoformat())
         .execute()
@@ -97,8 +112,9 @@ def fetch_category_history(db: SupabaseClient, week_start: date, weeks: int = 4)
     end = week_start + timedelta(days=6)
 
     repos_resp = (
-        db.client.table("repositories")
+        db.client.table("trending_snapshots")
         .select("repo_name, collected_date")
+        .eq("since_period", "daily")
         .gte("collected_date", start.isoformat())
         .lte("collected_date", end.isoformat())
         .execute()
@@ -178,22 +194,18 @@ def build_context(
                 lines.append(f"- {cat}: {curr_n} ({arrow} from {prev_n})")
         lines.append("")
 
-    # Creator connections
-    multi_repo_owners = {}
+    # Creator connections — owners with multiple repos trending this week
+    from collections import defaultdict
+    repos_by_owner: dict[str, list[str]] = defaultdict(list)
     for r in this_week:
-        if r.get("creator_prior_repos"):
-            owner = r["repo_name"].split("/")[0]
-            if owner not in multi_repo_owners:
-                multi_repo_owners[owner] = []
-            multi_repo_owners[owner].append(r["repo_name"])
-            for prior in r["creator_prior_repos"]:
-                if prior not in multi_repo_owners[owner]:
-                    multi_repo_owners[owner].append(prior)
+        repos_by_owner[r["owner_name"]].append(r["repo_name"])
+
+    multi_repo_owners = {owner: repos for owner, repos in repos_by_owner.items() if len(repos) > 1}
 
     if multi_repo_owners:
         lines.append("## Creators with multiple trending repos")
-        for owner, repos in multi_repo_owners.items():
-            lines.append(f"- {owner}: {', '.join(repos)}")
+        for owner, owner_repos in multi_repo_owners.items():
+            lines.append(f"- {owner}: {', '.join(owner_repos)}")
         lines.append("")
 
     # Key themes this week (union of all key_themes)
