@@ -15,6 +15,10 @@ HISTORY_DAYS = 30
 OUTPUT_PATH = os.path.normpath(
     os.path.join(os.path.dirname(__file__), "..", "dashboard", "data", "snapshot.json")
 )
+ARCHIVE_DIR = os.path.normpath(
+    os.path.join(os.path.dirname(__file__), "..", "dashboard", "data", "archive")
+)
+ARCHIVE_INDEX_PATH = os.path.join(ARCHIVE_DIR, "index.json")
 
 
 def get_latest_date(db: SupabaseClient) -> str | None:
@@ -211,6 +215,21 @@ def main():
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(snapshot, f, indent=2, default=str)
+
+    # Write dated archive copy
+    os.makedirs(ARCHIVE_DIR, exist_ok=True)
+    archive_path = os.path.join(ARCHIVE_DIR, f"{as_of_date}.json")
+    with open(archive_path, "w", encoding="utf-8") as f:
+        json.dump(snapshot, f, indent=2, default=str)
+
+    # Update archive index (sorted newest-first, deduped)
+    existing = []
+    if os.path.exists(ARCHIVE_INDEX_PATH):
+        with open(ARCHIVE_INDEX_PATH, encoding="utf-8") as f:
+            existing = json.load(f)
+    dates = sorted(set(existing) | {as_of_date}, reverse=True)
+    with open(ARCHIVE_INDEX_PATH, "w", encoding="utf-8") as f:
+        json.dump(dates, f, indent=2)
 
     print(f"Written to {OUTPUT_PATH}")
     for period, repos in today.items():

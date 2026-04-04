@@ -84,6 +84,35 @@
     }
     .pill strong { color: var(--text); }
 
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+    .date-picker-wrap {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .date-picker-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .date-picker {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-size: 0.78rem;
+      padding: 4px 8px;
+      cursor: pointer;
+      outline: none;
+      min-width: 130px;
+    }
+    .date-picker:focus { border-color: var(--accent); }
+
     /* ── Main layout ── */
     main {
       max-width: 1200px;
@@ -405,7 +434,15 @@
         <div class="header-sub" id="header-date">Loading…</div>
       </div>
     </div>
-    <div class="stats-pills" id="stats-pills"></div>
+    <div class="header-right">
+      <div class="stats-pills" id="stats-pills"></div>
+      <div class="date-picker-wrap">
+        <label for="date-picker" class="date-picker-label">📅 Archive</label>
+        <select id="date-picker" class="date-picker">
+          <option value="">Loading…</option>
+        </select>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -748,21 +785,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 });
 
 // ── Main ─────────────────────────────────────────────────────
-async function init() {
-  let data;
-  try {
-    const res = await fetch('data/snapshot.json');
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    data = await res.json();
-  } catch (e) {
-    document.getElementById('digest-section').innerHTML =
-      '<div class="card-label">Weekly Signal</div>' +
-      '<p style="color:var(--text-muted);font-size:.85rem">Data not yet available — the pipeline runs daily at 10:00 UTC.</p>';
-    document.getElementById('repo-grid').innerHTML =
-      '<div class="no-data">No snapshot found. Check back after the first pipeline run.</div>';
-    return;
-  }
-
+function renderSnapshot(data) {
   currentData = data;
 
   // Header
@@ -778,25 +801,66 @@ async function init() {
       ? `<span class="pill"><strong>${data.today.daily.length}</strong> trending today</span>` : '',
   ].join('');
 
-  // Digest
   renderDigest(data.digest);
 
-  // Repos — default daily
+  // Reset to daily tab
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('.tab-btn[data-period="daily"]').classList.add('active');
   renderRepos(data.today || {}, 'daily');
 
-  // Owner spotlight
   renderOwners(data.today || {});
 
-  // Charts
-  if ((data.history || []).length > 1) {
-    renderTrendChart(data.history);
-  }
+  if ((data.history || []).length > 1) renderTrendChart(data.history);
   renderLangChart(data.history || []);
 
-  // Footer
   const ts = new Date(data.generated_at);
   document.getElementById('footer-ts').textContent =
     'Updated ' + ts.toLocaleString('en-GB', { dateStyle:'medium', timeStyle:'short', timeZone:'UTC' }) + ' UTC';
+}
+
+async function loadSnapshot(dateStr) {
+  const url = dateStr ? `data/archive/${dateStr}.json` : 'data/snapshot.json';
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json();
+}
+
+async function init() {
+  // Load archive index and populate dropdown
+  const picker = document.getElementById('date-picker');
+  try {
+    const idxRes = await fetch('data/archive/index.json');
+    if (idxRes.ok) {
+      const dates = await idxRes.json();
+      picker.innerHTML = dates.map((d, i) =>
+        `<option value="${d}">${i === 0 ? '★ ' : ''}${d}</option>`
+      ).join('');
+      picker.addEventListener('change', async function() {
+        try {
+          const data = await loadSnapshot(this.value);
+          renderSnapshot(data);
+        } catch (e) {
+          console.error('Failed to load archive:', e);
+        }
+      });
+    }
+  } catch (_) {
+    picker.innerHTML = '<option value="">—</option>';
+  }
+
+  // Load latest snapshot
+  try {
+    const data = await loadSnapshot('');
+    renderSnapshot(data);
+    // Sync picker to latest date (first option)
+    if (picker.options.length > 0) picker.selectedIndex = 0;
+  } catch (e) {
+    document.getElementById('digest-section').innerHTML =
+      '<div class="card-label">Weekly Signal</div>' +
+      '<p style="color:var(--text-muted);font-size:.85rem">Data not yet available — the pipeline runs daily at 10:00 UTC.</p>';
+    document.getElementById('repo-grid').innerHTML =
+      '<div class="no-data">No snapshot found. Check back after the first pipeline run.</div>';
+  }
 }
 
 init();
