@@ -34,7 +34,13 @@ def load_embeddings(db: SupabaseClient) -> tuple[list[str], np.ndarray]:
         return [], np.array([])
 
     names = [r["repo_name"] for r in rows]
-    vecs = np.array([r["embedding"] for r in rows], dtype=np.float32)
+    raw = [r["embedding"] for r in rows]
+    # Supabase returns pgvector as a string like "[0.1,0.2,...]"
+    parsed = [
+        json.loads(e) if isinstance(e, str) else e
+        for e in raw
+    ]
+    vecs = np.array(parsed, dtype=np.float32)
     return names, vecs
 
 
