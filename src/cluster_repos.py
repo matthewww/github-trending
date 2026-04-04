@@ -174,6 +174,14 @@ def main():
     prior_clusters = load_prior_clusters(db)
     run_date = date.today().isoformat()
 
+    # Remove any existing clusters for today to avoid duplicates on re-run
+    existing = db.client.table("clusters").select("id").eq("run_date", run_date).execute()
+    existing_ids = [r["id"] for r in (existing.data or [])]
+    if existing_ids:
+        db.client.table("repo_cluster_map").delete().in_("cluster_id", existing_ids).execute()
+        db.client.table("clusters").delete().eq("run_date", run_date).execute()
+        print(f"  Cleared {len(existing_ids)} existing clusters for {run_date}")
+
     # Build cluster → repo mapping
     cluster_repos: dict[int, list[int]] = {}
     for idx, label in enumerate(labels):
