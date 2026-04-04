@@ -126,7 +126,8 @@ def match_prior_cluster(centroid: np.ndarray, prior_clusters: list[dict]) -> int
     for pc in prior_clusters:
         if pc["centroid"] is None:
             continue
-        pc_vec = np.array(pc["centroid"], dtype=np.float32)
+        raw = pc["centroid"]
+        pc_vec = np.array(json.loads(raw) if isinstance(raw, str) else raw, dtype=np.float32)
         sim = cosine_similarity(centroid, pc_vec)
         if sim > best_sim:
             best_sim, best_id = sim, pc["id"]
