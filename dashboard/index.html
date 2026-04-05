@@ -491,6 +491,76 @@
       padding: 32px;
       text-align: center;
     }
+
+    /* ── Semantic Map info icon ── */
+    .info-icon-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+    .info-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 1px solid var(--text-muted);
+      color: var(--text-muted);
+      font-size: 0.65rem;
+      font-weight: 700;
+      font-style: normal;
+      cursor: default;
+      line-height: 1;
+      user-select: none;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .info-icon:hover,
+    .info-icon-wrap:hover .info-icon {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .info-popover {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 280px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      z-index: 100;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      pointer-events: none;
+    }
+    .info-popover::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      width: 8px;
+      height: 8px;
+      background: var(--surface-2);
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+    }
+    .info-popover strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 5px;
+      font-size: 0.82rem;
+    }
+    .info-popover p { margin-bottom: 6px; }
+    .info-popover p:last-child { margin-bottom: 0; }
+    .info-icon-wrap:hover .info-popover { display: block; }
     @media (max-width: 768px) {
       .cluster-layout { grid-template-columns: 1fr; }
       .cluster-list { max-height: none; }
@@ -569,7 +639,15 @@
     <div class="card-label">Semantic Clusters — this week</div>
     <div class="cluster-layout">
       <div>
-        <h2 style="margin-bottom:12px">Semantic Map</h2>
+        <h2 style="margin-bottom:12px">Semantic Map<span class="info-icon-wrap">
+          <span class="info-icon">i</span>
+          <div class="info-popover">
+            <strong>How this map works</strong>
+            <p>Each dot is a trending GitHub repo. Position is determined by <em>meaning</em>, not metadata — repos with similar purposes, themes, and audiences are placed close together.</p>
+            <p>The pipeline: an LLM reads each repo's README to extract purpose and themes, a local model converts those into a 384-dimensional vector, then UMAP reduces everything to 2D for this chart.</p>
+            <p>Colours represent clusters discovered automatically by HDBSCAN. Click any dot to open the repo.</p>
+          </div>
+        </span></h2>
         <div class="chart-wrap-scatter"><canvas id="cluster-chart"></canvas></div>
       </div>
       <div>
