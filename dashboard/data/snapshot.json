@@ -1,18 +1,32 @@
 {
-  "generated_at": "2026-04-05T11:34:52.214105Z",
+  "generated_at": "2026-04-05T19:55:12.214149Z",
   "as_of_date": "2026-04-05",
   "today": {
     "daily": [
+      {
+        "repo_name": "google-ai-edge/gallery",
+        "description": "A gallery that showcases on-device ML/GenAI use cases and allows people to try and use models locally.",
+        "language": "Kotlin",
+        "owner_name": "google-ai-edge",
+        "owner_type": null,
+        "stars_in_period": 495,
+        "total_stars": 16771,
+        "forks": 1533,
+        "rank": 1,
+        "purpose": null,
+        "category": "Unknown",
+        "key_themes": []
+      },
       {
         "repo_name": "Blaizzy/mlx-vlm",
         "description": "MLX-VLM is a package for inference and fine-tuning of Vision Language Models (VLMs) on your Mac using MLX.",
         "language": "Python",
         "owner_name": "Blaizzy",
         "owner_type": "individual",
-        "stars_in_period": 343,
-        "total_stars": 3749,
-        "forks": 410,
-        "rank": 1,
+        "stars_in_period": 408,
+        "total_stars": 3875,
+        "forks": 417,
+        "rank": 2,
         "purpose": "MLX-VLM is a package for inference and fine-tuning of Vision Language Models (VLMs) on your Mac using MLX.",
         "category": "AI/ML",
         "key_themes": [
@@ -21,26 +35,6 @@
           "inference",
           "Mac",
           "AI"
-        ]
-      },
-      {
-        "repo_name": "onyx-dot-app/onyx",
-        "description": "Open Source AI Platform - AI Chat with advanced features that works with every LLM",
-        "language": "Python",
-        "owner_name": "onyx-dot-app",
-        "owner_type": "open_source_org",
-        "stars_in_period": 1197,
-        "total_stars": 24573,
-        "forks": 3294,
-        "rank": 2,
-        "purpose": "Open Source AI Platform - AI Chat with advanced features that works with every LLM",
-        "category": "AI/ML",
-        "key_themes": [
-          "ai",
-          "ai-chat",
-          "llm",
-          "self-hosted",
-          "enterprise-search"
         ]
       },
       {
@@ -69,10 +63,10 @@
         "language": "TypeScript",
         "owner_name": "siddharthvaddem",
         "owner_type": "individual",
-        "stars_in_period": 1591,
-        "total_stars": 21273,
-        "forks": 1446,
-        "rank": 4,
+        "stars_in_period": 2692,
+        "total_stars": 22259,
+        "forks": 1493,
+        "rank": 3,
         "purpose": "OpenScreen is a free, open-source application for creating product demos and walkthroughs without subscriptions or watermarks.",
         "category": "Productivity",
         "key_themes": [
@@ -84,35 +78,15 @@
         ]
       },
       {
-        "repo_name": "telegramdesktop/tdesktop",
-        "description": "Telegram Desktop messaging app",
-        "language": "C++",
-        "owner_name": "telegramdesktop",
-        "owner_type": "open_source_org",
-        "stars_in_period": 249,
-        "total_stars": 30915,
-        "forks": 6527,
-        "rank": 5,
-        "purpose": "Telegram Desktop is the official messaging app for Telegram, providing a desktop client based on the Telegram API and MTProto secure protocol.",
-        "category": "Productivity",
-        "key_themes": [
-          "messenger",
-          "multi-platform",
-          "telegram",
-          "open_source",
-          "desktop_application"
-        ]
-      },
-      {
         "repo_name": "block/goose",
         "description": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM",
         "language": "Rust",
         "owner_name": "block",
         "owner_type": "open_source_org",
-        "stars_in_period": 935,
-        "total_stars": 35964,
-        "forks": 3384,
-        "rank": 6,
+        "stars_in_period": 866,
+        "total_stars": 36747,
+        "forks": 3495,
+        "rank": 4,
         "purpose": "An open source, extensible AI agent that automates engineering tasks, capable of building projects, executing code, and managing workflows autonomously.",
         "category": "Developer Tools",
         "key_themes": [
@@ -122,6 +96,40 @@
           "open source",
           "LLM integration"
         ]
+      },
+      {
+        "repo_name": "onyx-dot-app/onyx",
+        "description": "Open Source AI Platform - AI Chat with advanced features that works with every LLM",
+        "language": "Python",
+        "owner_name": "onyx-dot-app",
+        "owner_type": "open_source_org",
+        "stars_in_period": 960,
+        "total_stars": 24893,
+        "forks": 3327,
+        "rank": 5,
+        "purpose": "Open Source AI Platform - AI Chat with advanced features that works with every LLM",
+        "category": "AI/ML",
+        "key_themes": [
+          "ai",
+          "ai-chat",
+          "llm",
+          "self-hosted",
+          "enterprise-search"
+        ]
+      },
+      {
+        "repo_name": "badlogic/pi-mono",
+        "description": "AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods",
+        "language": "TypeScript",
+        "owner_name": "badlogic",
+        "owner_type": null,
+        "stars_in_period": 340,
+        "total_stars": 31829,
+        "forks": 3467,
+        "rank": 6,
+        "purpose": null,
+        "category": "Unknown",
+        "key_themes": []
       },
       {
         "repo_name": "microsoft/agent-framework",
@@ -145,6 +153,26 @@
         ]
       },
       {
+        "repo_name": "dmtrKovalenko/fff.nvim",
+        "description": "The fastest and the most accurate file search toolkit for AI agents, Neovim, Rust, C, and NodeJS",
+        "language": "Rust",
+        "owner_name": "dmtrKovalenko",
+        "owner_type": "individual",
+        "stars_in_period": 111,
+        "total_stars": 3640,
+        "forks": 148,
+        "rank": 7,
+        "purpose": "FFF is a fast file search toolkit designed for AI agents and Neovim users.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "file search",
+          "AI agents",
+          "Neovim",
+          "performance",
+          "fuzzy matching"
+        ]
+      },
+      {
         "repo_name": "sherlock-project/sherlock",
         "description": "Hunt down social media accounts by username across social networks",
         "language": "Python",
@@ -163,6 +191,60 @@
           "pentesting",
           "reconnaissance"
         ]
+      },
+      {
+        "repo_name": "google-ai-edge/LiteRT-LM",
+        "description": null,
+        "language": "C++",
+        "owner_name": "google-ai-edge",
+        "owner_type": null,
+        "stars_in_period": 193,
+        "total_stars": 1472,
+        "forks": 180,
+        "rank": 8,
+        "purpose": null,
+        "category": "Unknown",
+        "key_themes": []
+      },
+      {
+        "repo_name": "telegramdesktop/tdesktop",
+        "description": "Telegram Desktop messaging app",
+        "language": "C++",
+        "owner_name": "telegramdesktop",
+        "owner_type": "open_source_org",
+        "stars_in_period": 265,
+        "total_stars": 31034,
+        "forks": 6535,
+        "rank": 9,
+        "purpose": "Telegram Desktop is the official messaging app for Telegram, providing a desktop client based on the Telegram API and MTProto secure protocol.",
+        "category": "Productivity",
+        "key_themes": [
+          "messenger",
+          "multi-platform",
+          "telegram",
+          "open_source",
+          "desktop_application"
+        ]
+      },
+      {
+        "repo_name": "freeCodeCamp/freeCodeCamp",
+        "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+        "language": "TypeScript",
+        "owner_name": "freeCodeCamp",
+        "owner_type": "open_source_org",
+        "stars_in_period": 292,
+        "total_stars": 441415,
+        "forks": 44096,
+        "rank": 10,
+        "purpose": "freeCodeCamp.org provides an open-source codebase and curriculum for learning math, programming, and computer science for free.",
+        "category": "Education",
+        "key_themes": [
+          "education",
+          "programming",
+          "curriculum",
+          "community",
+          "nonprofits"
+        ]
       }
     ],
     "weekly": [
@@ -173,8 +255,8 @@
         "owner_name": "luongnv89",
         "owner_type": "individual",
         "stars_in_period": 14763,
-        "total_stars": 19646,
-        "forks": 2347,
+        "total_stars": 20211,
+        "forks": 2417,
         "rank": 1,
         "purpose": "A visual, example-driven guide to Claude Code \u2014 from basic concepts to advanced agents, with copy-paste templates that bring immediate value.",
         "category": "Education",
@@ -213,9 +295,9 @@
         "owner_name": "microsoft",
         "owner_type": "big_tech",
         "stars_in_period": 11141,
-        "total_stars": 36273,
-        "forks": 4146,
-        "rank": 3,
+        "total_stars": 36418,
+        "forks": 4177,
+        "rank": 2,
         "purpose": "VibeVoice is an open-source frontier voice AI project that provides advanced speech recognition and text-to-speech capabilities.",
         "category": "AI/ML",
         "key_themes": [
@@ -233,9 +315,9 @@
         "owner_name": "siddharthvaddem",
         "owner_type": "individual",
         "stars_in_period": 9913,
-        "total_stars": 21273,
-        "forks": 1446,
-        "rank": 4,
+        "total_stars": 22259,
+        "forks": 1493,
+        "rank": 3,
         "purpose": "OpenScreen is a free, open-source application for creating product demos and walkthroughs without subscriptions or watermarks.",
         "category": "Productivity",
         "key_themes": [
@@ -247,14 +329,34 @@
         ]
       },
       {
+        "repo_name": "google-research/timesfm",
+        "description": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
+        "language": "Python",
+        "owner_name": "google-research",
+        "owner_type": "big_tech",
+        "stars_in_period": 4315,
+        "total_stars": 14907,
+        "forks": 1301,
+        "rank": 4,
+        "purpose": "TimesFM is a pretrained time-series foundation model developed for time-series forecasting.",
+        "category": "AI/ML",
+        "key_themes": [
+          "time-series",
+          "forecasting",
+          "machine learning",
+          "foundation model",
+          "Google Research"
+        ]
+      },
+      {
         "repo_name": "Yeachan-Heo/oh-my-claudecode",
         "description": "Teams-first Multi-agent orchestration for Claude Code",
         "language": "TypeScript",
         "owner_name": "Yeachan-Heo",
         "owner_type": "individual",
         "stars_in_period": 9232,
-        "total_stars": 24116,
-        "forks": 2197,
+        "total_stars": 24404,
+        "forks": 2228,
         "rank": 5,
         "purpose": "Teams-first Multi-agent orchestration for Claude Code",
         "category": "Developer Tools",
@@ -267,35 +369,15 @@
         ]
       },
       {
-        "repo_name": "google-research/timesfm",
-        "description": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
-        "language": "Python",
-        "owner_name": "google-research",
-        "owner_type": "big_tech",
-        "stars_in_period": 4315,
-        "total_stars": 14806,
-        "forks": 1289,
-        "rank": 6,
-        "purpose": "TimesFM is a pretrained time-series foundation model developed for time-series forecasting.",
-        "category": "AI/ML",
-        "key_themes": [
-          "time-series",
-          "forecasting",
-          "machine learning",
-          "foundation model",
-          "Google Research"
-        ]
-      },
-      {
         "repo_name": "NousResearch/hermes-agent",
         "description": "The agent that grows with you",
         "language": "Python",
         "owner_name": "NousResearch",
         "owner_type": "startup",
         "stars_in_period": 9566,
-        "total_stars": 25475,
-        "forks": 3321,
-        "rank": 7,
+        "total_stars": 26065,
+        "forks": 3411,
+        "rank": 6,
         "purpose": "Hermes Agent is a self-improving AI agent that learns from experience and interacts across multiple platforms.",
         "category": "AI/ML",
         "key_themes": [
@@ -304,6 +386,26 @@
           "automation",
           "cross-platform",
           "learning loop"
+        ]
+      },
+      {
+        "repo_name": "onyx-dot-app/onyx",
+        "description": "Open Source AI Platform - AI Chat with advanced features that works with every LLM",
+        "language": "Python",
+        "owner_name": "onyx-dot-app",
+        "owner_type": "open_source_org",
+        "stars_in_period": 4306,
+        "total_stars": 24893,
+        "forks": 3327,
+        "rank": 7,
+        "purpose": "Open Source AI Platform - AI Chat with advanced features that works with every LLM",
+        "category": "AI/ML",
+        "key_themes": [
+          "ai",
+          "ai-chat",
+          "llm",
+          "self-hosted",
+          "enterprise-search"
         ]
       },
       {
@@ -328,23 +430,23 @@
         ]
       },
       {
-        "repo_name": "onyx-dot-app/onyx",
-        "description": "Open Source AI Platform - AI Chat with advanced features that works with every LLM",
+        "repo_name": "sherlock-project/sherlock",
+        "description": "Hunt down social media accounts by username across social networks",
         "language": "Python",
-        "owner_name": "onyx-dot-app",
+        "owner_name": "sherlock-project",
         "owner_type": "open_source_org",
-        "stars_in_period": 4306,
-        "total_stars": 24573,
-        "forks": 3294,
-        "rank": 9,
-        "purpose": "Open Source AI Platform - AI Chat with advanced features that works with every LLM",
-        "category": "AI/ML",
+        "stars_in_period": 4835,
+        "total_stars": 79825,
+        "forks": 9287,
+        "rank": 8,
+        "purpose": "Hunt down social media accounts by username across social networks.",
+        "category": "Security",
         "key_themes": [
-          "ai",
-          "ai-chat",
-          "llm",
-          "self-hosted",
-          "enterprise-search"
+          "cybersecurity",
+          "osint",
+          "information-gathering",
+          "pentesting",
+          "reconnaissance"
         ]
       },
       {
@@ -354,9 +456,9 @@
         "owner_name": "vas3k",
         "owner_type": "individual",
         "stars_in_period": 2054,
-        "total_stars": 4609,
-        "forks": 715,
-        "rank": 10,
+        "total_stars": 4669,
+        "forks": 723,
+        "rank": 9,
         "purpose": "TaxHacker is a self-hosted AI accounting app that automates expense and income tracking by analyzing receipts, invoices, and transactions.",
         "category": "Productivity",
         "key_themes": [
@@ -369,14 +471,34 @@
         ]
       },
       {
+        "repo_name": "asgeirtj/system_prompts_leaks",
+        "description": "Extracted system prompts from ChatGPT (GPT-5.4, GPT-5.3, Codex), Claude (Opus 4.6, Sonnet 4.6, Claude Code), Gemini (3.1 Pro, 3 Flash, CLI), Grok (4.2, 4), Perplexity, and more. Updated regularly.",
+        "language": null,
+        "owner_name": "asgeirtj",
+        "owner_type": "individual",
+        "stars_in_period": 2041,
+        "total_stars": 37424,
+        "forks": 6175,
+        "rank": 10,
+        "purpose": "This repository contains extracted system prompts from various AI chatbots and coding assistants, updated regularly.",
+        "category": "AI/ML",
+        "key_themes": [
+          "ai",
+          "prompt-engineering",
+          "system-prompts",
+          "generative-ai",
+          "large-language-models"
+        ]
+      },
+      {
         "repo_name": "SakanaAI/AI-Scientist-v2",
         "description": "The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search",
         "language": "Python",
         "owner_name": "SakanaAI",
         "owner_type": "open_source_org",
         "stars_in_period": 1658,
-        "total_stars": 4876,
-        "forks": 679,
+        "total_stars": 4921,
+        "forks": 684,
         "rank": 11,
         "purpose": "The AI Scientist-v2 is an automated system for scientific discovery that generates hypotheses, runs experiments, analyzes data, and writes scientific manuscripts.",
         "category": "AI/ML",
@@ -409,24 +531,18 @@
         ]
       },
       {
-        "repo_name": "asgeirtj/system_prompts_leaks",
-        "description": "Extracted system prompts from ChatGPT (GPT-5.4, GPT-5.3, Codex), Claude (Opus 4.6, Sonnet 4.6, Claude Code), Gemini (3.1 Pro, 3 Flash, CLI), Grok (4.2, 4), Perplexity, and more. Updated regularly.",
-        "language": null,
-        "owner_name": "asgeirtj",
-        "owner_type": "individual",
-        "stars_in_period": 2041,
-        "total_stars": 37329,
-        "forks": 6160,
-        "rank": 13,
-        "purpose": "This repository contains extracted system prompts from various AI chatbots and coding assistants, updated regularly.",
-        "category": "AI/ML",
-        "key_themes": [
-          "ai",
-          "prompt-engineering",
-          "system-prompts",
-          "generative-ai",
-          "large-language-models"
-        ]
+        "repo_name": "roboflow/supervision",
+        "description": "We write your reusable computer vision tools. \ud83d\udc9c",
+        "language": "Python",
+        "owner_name": "roboflow",
+        "owner_type": "open_source_org",
+        "stars_in_period": 862,
+        "total_stars": 37692,
+        "forks": 3300,
+        "rank": 12,
+        "purpose": null,
+        "category": "Unknown",
+        "key_themes": []
       },
       {
         "repo_name": "affaan-m/everything-claude-code",
@@ -447,26 +563,6 @@
           "security",
           "productivity"
         ]
-      },
-      {
-        "repo_name": "sherlock-project/sherlock",
-        "description": "Hunt down social media accounts by username across social networks",
-        "language": "Python",
-        "owner_name": "sherlock-project",
-        "owner_type": "open_source_org",
-        "stars_in_period": 4835,
-        "total_stars": 79697,
-        "forks": 9277,
-        "rank": 15,
-        "purpose": "Hunt down social media accounts by username across social networks.",
-        "category": "Security",
-        "key_themes": [
-          "cybersecurity",
-          "osint",
-          "information-gathering",
-          "pentesting",
-          "reconnaissance"
-        ]
       }
     ],
     "monthly": [
@@ -477,8 +573,8 @@
         "owner_name": "666ghj",
         "owner_type": "individual",
         "stars_in_period": 45023,
-        "total_stars": 49551,
-        "forks": 7256,
+        "total_stars": 49903,
+        "forks": 7327,
         "rank": 1,
         "purpose": "MiroFish is a simple and universal swarm intelligence engine that predicts various outcomes based on real-world data.",
         "category": "AI/ML",
@@ -497,8 +593,8 @@
         "owner_name": "msitarzewski",
         "owner_type": "individual",
         "stars_in_period": 66274,
-        "total_stars": 71504,
-        "forks": 11056,
+        "total_stars": 71923,
+        "forks": 11145,
         "rank": 2,
         "purpose": "A complete AI agency providing specialized AI agents for various tasks and workflows.",
         "category": "Productivity",
@@ -517,8 +613,8 @@
         "owner_name": "NousResearch",
         "owner_type": "startup",
         "stars_in_period": 22900,
-        "total_stars": 25475,
-        "forks": 3321,
+        "total_stars": 26065,
+        "forks": 3411,
         "rank": 3,
         "purpose": "Hermes Agent is a self-improving AI agent that learns from experience and interacts across multiple platforms.",
         "category": "AI/ML",
@@ -537,8 +633,8 @@
         "owner_name": "bytedance",
         "owner_type": "big_tech",
         "stars_in_period": 33651,
-        "total_stars": 58009,
-        "forks": 7225,
+        "total_stars": 58204,
+        "forks": 7266,
         "rank": 4,
         "purpose": "DeerFlow is an open-source super agent harness that orchestrates sub-agents, memory, and sandboxes to perform various tasks efficiently.",
         "category": "AI/ML",
@@ -558,8 +654,8 @@
         "owner_name": "mattpocock",
         "owner_type": "individual",
         "stars_in_period": 10972,
-        "total_stars": 12035,
-        "forks": 1011,
+        "total_stars": 12163,
+        "forks": 1023,
         "rank": 5,
         "purpose": "This repository is a personal directory of skills designed to enhance capabilities in planning, development, and tooling.",
         "category": "Developer Tools",
@@ -578,8 +674,8 @@
         "owner_name": "FujiwaraChoki",
         "owner_type": "individual",
         "stars_in_period": 14451,
-        "total_stars": 28359,
-        "forks": 3059,
+        "total_stars": 28437,
+        "forks": 3067,
         "rank": 6,
         "purpose": "Automate the process of making money online.",
         "category": "Productivity",
@@ -598,8 +694,8 @@
         "owner_name": "lightpanda-io",
         "owner_type": "open_source_org",
         "stars_in_period": 15218,
-        "total_stars": 27164,
-        "forks": 1113,
+        "total_stars": 27234,
+        "forks": 1117,
         "rank": 7,
         "purpose": "Lightpanda is a headless browser built from scratch for AI agents and automation.",
         "category": "Developer Tools",
@@ -619,8 +715,8 @@
         "owner_name": "affaan-m",
         "owner_type": "individual",
         "stars_in_period": 78062,
-        "total_stars": 138818,
-        "forks": 20738,
+        "total_stars": 140175,
+        "forks": 21057,
         "rank": 8,
         "purpose": "The agent harness performance optimization system for AI agents.",
         "category": "Developer Tools",
@@ -633,15 +729,35 @@
         ]
       },
       {
+        "repo_name": "jarrodwatts/claude-hud",
+        "description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
+        "language": "JavaScript",
+        "owner_name": "jarrodwatts",
+        "owner_type": "individual",
+        "stars_in_period": 12859,
+        "total_stars": 16891,
+        "forks": 718,
+        "rank": 9,
+        "purpose": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "claude",
+          "plugin",
+          "context usage",
+          "developer tools",
+          "typescript"
+        ]
+      },
+      {
         "repo_name": "shareAI-lab/learn-claude-code",
         "description": "Bash is all you need - A nano claude code\u2013like \u300cagent harness\u300d, built from 0 to 1",
         "language": "TypeScript",
         "owner_name": "shareAI-lab",
         "owner_type": "open_source_org",
         "stars_in_period": 27301,
-        "total_stars": 48418,
-        "forks": 7809,
-        "rank": 9,
+        "total_stars": 48586,
+        "forks": 7840,
+        "rank": 10,
         "purpose": "This repository provides a framework for developing AI agents, specifically focusing on harnessing Claude-like models from scratch.",
         "category": "Education",
         "key_themes": [
@@ -659,9 +775,9 @@
         "owner_name": "mvanhorn",
         "owner_type": "individual",
         "stars_in_period": 14994,
-        "total_stars": 18540,
-        "forks": 1491,
-        "rank": 10,
+        "total_stars": 18680,
+        "forks": 1502,
+        "rank": 11,
         "purpose": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary.",
         "category": "AI/ML",
         "key_themes": [
@@ -679,9 +795,9 @@
         "owner_name": "obra",
         "owner_type": "individual",
         "stars_in_period": 65377,
-        "total_stars": 135610,
-        "forks": 11358,
-        "rank": 11,
+        "total_stars": 136058,
+        "forks": 11428,
+        "rank": 12,
         "purpose": "Superpowers is a complete software development workflow for coding agents, utilizing a set of composable skills and instructions.",
         "category": "Developer Tools",
         "key_themes": [
@@ -693,34 +809,14 @@
         ]
       },
       {
-        "repo_name": "langchain-ai/open-swe",
-        "description": "An Open-Source Asynchronous Coding Agent",
-        "language": "Python",
-        "owner_name": "langchain-ai",
-        "owner_type": "open_source_org",
-        "stars_in_period": 3908,
-        "total_stars": 9167,
-        "forks": 1047,
-        "rank": 12,
-        "purpose": "Open SWE is an open-source framework for building internal coding agents for organizations.",
-        "category": "Developer Tools",
-        "key_themes": [
-          "agent",
-          "ai",
-          "open-source",
-          "coding",
-          "automation"
-        ]
-      },
-      {
         "repo_name": "TauricResearch/TradingAgents",
         "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
         "language": "Python",
         "owner_name": "TauricResearch",
         "owner_type": "open_source_org",
         "stars_in_period": 15924,
-        "total_stars": 47239,
-        "forks": 8577,
+        "total_stars": 47413,
+        "forks": 8615,
         "rank": 13,
         "purpose": "TradingAgents is a multi-agent LLM financial trading framework.",
         "category": "AI/ML",
@@ -733,15 +829,35 @@
         ]
       },
       {
+        "repo_name": "langchain-ai/open-swe",
+        "description": "An Open-Source Asynchronous Coding Agent",
+        "language": "Python",
+        "owner_name": "langchain-ai",
+        "owner_type": "open_source_org",
+        "stars_in_period": 3908,
+        "total_stars": 9192,
+        "forks": 1048,
+        "rank": 14,
+        "purpose": "Open SWE is an open-source framework for building internal coding agents for organizations.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "agent",
+          "ai",
+          "open-source",
+          "coding",
+          "automation"
+        ]
+      },
+      {
         "repo_name": "volcengine/OpenViking",
         "description": "OpenViking is an open-source context database designed specifically for AI Agents(such as openclaw). OpenViking unifies the management of context (memory, resources, and skills) that Agents need through a file system paradigm, enabling hierarchical context delivery and self-evolving.",
         "language": "Python",
         "owner_name": "volcengine",
         "owner_type": "startup",
         "stars_in_period": 16417,
-        "total_stars": 21049,
-        "forks": 1481,
-        "rank": 14,
+        "total_stars": 21141,
+        "forks": 1497,
+        "rank": 15,
         "purpose": "OpenViking is an open-source context database designed specifically for AI Agents, unifying the management of context through a file system paradigm.",
         "category": "AI/ML",
         "key_themes": [
@@ -759,9 +875,9 @@
         "owner_name": "alirezarezvani",
         "owner_type": "individual",
         "stars_in_period": 7028,
-        "total_stars": 9423,
-        "forks": 1163,
-        "rank": 15,
+        "total_stars": 9544,
+        "forks": 1178,
+        "rank": 16,
         "purpose": "This repository provides 220+ Claude Code skills and agent plugins for various AI coding tools, enhancing their capabilities with reusable expertise packages.",
         "category": "Developer Tools",
         "key_themes": [
@@ -773,23 +889,23 @@
         ]
       },
       {
-        "repo_name": "microsoft/BitNet",
-        "description": "Official inference framework for 1-bit LLMs",
-        "language": "Python",
-        "owner_name": "microsoft",
-        "owner_type": "big_tech",
-        "stars_in_period": 8657,
-        "total_stars": 37176,
-        "forks": 3269,
-        "rank": 16,
-        "purpose": "Official inference framework for 1-bit LLMs.",
-        "category": "AI/ML",
+        "repo_name": "siddharthvaddem/openscreen",
+        "description": "Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.",
+        "language": "TypeScript",
+        "owner_name": "siddharthvaddem",
+        "owner_type": "individual",
+        "stars_in_period": 11571,
+        "total_stars": 22259,
+        "forks": 1493,
+        "rank": 17,
+        "purpose": "OpenScreen is a free, open-source application for creating product demos and walkthroughs without subscriptions or watermarks.",
+        "category": "Productivity",
         "key_themes": [
-          "1-bit LLMs",
-          "inference framework",
-          "performance optimization",
-          "CPU and GPU support",
-          "energy efficiency"
+          "open-source",
+          "screen-capture",
+          "screen-recorder",
+          "electron",
+          "pixijs"
         ]
       },
       {
@@ -799,9 +915,9 @@
         "owner_name": "promptfoo",
         "owner_type": "startup",
         "stars_in_period": 8622,
-        "total_stars": 19444,
-        "forks": 1672,
-        "rank": 17,
+        "total_stars": 19487,
+        "forks": 1674,
+        "rank": 18,
         "purpose": "Promptfoo is a CLI and library for evaluating and red-teaming LLM applications.",
         "category": "Developer Tools",
         "key_themes": [
@@ -813,15 +929,35 @@
         ]
       },
       {
+        "repo_name": "microsoft/BitNet",
+        "description": "Official inference framework for 1-bit LLMs",
+        "language": "Python",
+        "owner_name": "microsoft",
+        "owner_type": "big_tech",
+        "stars_in_period": 8657,
+        "total_stars": 37197,
+        "forks": 3272,
+        "rank": 19,
+        "purpose": "Official inference framework for 1-bit LLMs.",
+        "category": "AI/ML",
+        "key_themes": [
+          "1-bit LLMs",
+          "inference framework",
+          "performance optimization",
+          "CPU and GPU support",
+          "energy efficiency"
+        ]
+      },
+      {
         "repo_name": "langchain-ai/deepagents",
         "description": "Agent harness built with LangChain and LangGraph. Equipped with a planning tool, a filesystem backend, and the ability to spawn subagents - well-equipped to handle complex agentic tasks.",
         "language": "Python",
         "owner_name": "langchain-ai",
         "owner_type": "open_source_org",
         "stars_in_period": 9288,
-        "total_stars": 19240,
-        "forks": 2683,
-        "rank": 18,
+        "total_stars": 19322,
+        "forks": 2693,
+        "rank": 20,
         "purpose": "Agent harness built with LangChain and LangGraph, equipped with a planning tool, a filesystem backend, and the ability to spawn subagents.",
         "category": "AI/ML",
         "key_themes": [
@@ -862,25 +998,28 @@
   "history": [
     {
       "date": "2026-04-05",
-      "repo_count": 8,
+      "repo_count": 13,
       "top_repos": [
-        "Yeachan-Heo/oh-my-codex",
         "siddharthvaddem/openscreen",
-        "onyx-dot-app/onyx",
+        "Yeachan-Heo/oh-my-codex",
         "sherlock-project/sherlock",
+        "onyx-dot-app/onyx",
         "block/goose"
       ],
       "category_counts": {
         "AI/ML": 3,
-        "Developer Tools": 2,
+        "Developer Tools": 3,
+        "Unknown": 3,
         "Productivity": 2,
-        "Security": 1
+        "Security": 1,
+        "Education": 1
       },
       "language_counts": {
         "Python": 4,
-        "TypeScript": 2,
-        "C++": 1,
-        "Rust": 1
+        "TypeScript": 4,
+        "Rust": 2,
+        "C++": 2,
+        "Kotlin": 1
       }
     },
     {
@@ -1519,7 +1658,7 @@
     }
   ],
   "stats": {
-    "total_repos": 192,
+    "total_repos": 196,
     "days_tracked": 38,
     "first_date": "2026-02-17",
     "latest_date": "2026-04-05"
