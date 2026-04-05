@@ -558,8 +558,11 @@
       margin-bottom: 5px;
       font-size: 0.82rem;
     }
-    .info-popover p { margin-bottom: 6px; }
-    .info-popover p:last-child { margin-bottom: 0; }
+    .info-popover-p {
+      display: block;
+      margin-bottom: 6px;
+    }
+    .info-popover-p:last-child { margin-bottom: 0; }
     .info-icon-wrap:hover .info-popover { display: block; }
     @media (max-width: 768px) {
       .cluster-layout { grid-template-columns: 1fr; }
@@ -639,15 +642,7 @@
     <div class="card-label">Semantic Clusters — this week</div>
     <div class="cluster-layout">
       <div>
-        <h2 style="margin-bottom:12px">Semantic Map<span class="info-icon-wrap">
-          <span class="info-icon">i</span>
-          <div class="info-popover">
-            <strong>How this map works</strong>
-            <p>Each dot is a trending GitHub repo. Position is determined by <em>meaning</em>, not metadata — repos with similar purposes, themes, and audiences are placed close together.</p>
-            <p>The pipeline: an LLM reads each repo's README to extract purpose and themes, a local model converts those into a 384-dimensional vector, then UMAP reduces everything to 2D for this chart.</p>
-            <p>Colours represent clusters discovered automatically by HDBSCAN. Click any dot to open the repo.</p>
-          </div>
-        </span></h2>
+        <h2 style="margin-bottom:12px;display:flex;align-items:center;gap:8px;">Semantic Map<span class="info-icon-wrap"><span class="info-icon">i</span><span class="info-popover"><strong>How this map works</strong><span class="info-popover-p">Each dot is a trending GitHub repo. Position is determined by <em>meaning</em>, not metadata — repos with similar purposes, themes, and audiences are placed close together.</span><span class="info-popover-p">The pipeline: an LLM reads each repo's README to extract purpose and themes, a local model converts those into a 384-dimensional vector, then UMAP reduces everything to 2D for this chart.</span><span class="info-popover-p">Colours represent clusters found by HDBSCAN. Click any dot to open the repo.</span></span></span></h2>
         <div class="chart-wrap-scatter"><canvas id="cluster-chart"></canvas></div>
       </div>
       <div>
