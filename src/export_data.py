@@ -66,7 +66,7 @@ def get_today_snapshots(db: SupabaseClient, as_of_date: str) -> dict:
 
     insights_resp = (
         db.client.table("repo_insights")
-        .select("repo_name, purpose, category, key_themes")
+        .select("repo_name, purpose, category, key_themes, notable_because")
         .in_("repo_name", repo_names)
         .execute()
     )
@@ -93,6 +93,7 @@ def get_today_snapshots(db: SupabaseClient, as_of_date: str) -> dict:
             "purpose": insight.get("purpose"),
             "category": insight.get("category", "Unknown"),
             "key_themes": insight.get("key_themes") or [],
+            "notable_because": insight.get("notable_because") or None,
         })
 
     for period in by_period:

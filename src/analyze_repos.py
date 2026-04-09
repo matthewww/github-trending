@@ -103,6 +103,18 @@ def fetch_repo_meta(owner: str, repo: str) -> dict:
     return {}
 
 
+def get_recent_insights_for_comparison(db: SupabaseClient, limit: int = 8) -> list[dict]:
+    """Fetch recently analyzed repos to use as comparison context in the prompt."""
+    resp = (
+        db.client.table("repo_insights")
+        .select("repo_name, purpose, category")
+        .order("analyzed_at", desc=True)
+        .limit(limit)
+        .execute()
+    )
+    return resp.data or []
+
+
 def analyze_with_llm(
     client: OpenAI,
     repo_name: str,
@@ -110,6 +122,7 @@ def analyze_with_llm(
     readme: str,
     topics: list,
     prior_repos: list[str],
+    comparison_repos: list[dict] | None = None,
 ) -> dict | None:
     prior_context = (
         f"This owner has previously appeared in GitHub trending with: {', '.join(prior_repos)}."
@@ -117,12 +130,20 @@ def analyze_with_llm(
         else "This is the first time this owner has appeared in our trending data."
     )
 
+    comparison_context = ""
+    if comparison_repos:
+        lines = [f"- {r['repo_name']} ({r.get('category','?')}): {r.get('purpose','')}" for r in comparison_repos]
+        comparison_context = (
+            "\n\nOther repos currently/recently trending for comparison:\n"
+            + "\n".join(lines)
+        )
+
     prompt = f"""Analyze this GitHub repository and return a JSON object with the fields below.
 
 Repository: {repo_name}
 Description: {description or "(none)"}
 Topics: {', '.join(topics) if topics else "(none)"}
-Creator context: {prior_context}
+Creator context: {prior_context}{comparison_context}
 
 README (truncated):
 ---
@@ -136,7 +157,8 @@ Return ONLY valid JSON with these exact fields:
   "owner_type": "one of: individual, startup, big_tech, academic, open_source_org",
   "owner_description": "1-2 sentences about the owner based on available signals",
   "target_audience": "who this repo is primarily for",
-  "key_themes": ["array", "of", "3-6", "keyword", "themes"]
+  "key_themes": ["array", "of", "3-6", "keyword", "themes"],
+  "notable_because": "1-2 sentences on what makes this repo stand out compared to other tools in the same space, based on the comparison repos provided. If nothing clearly distinguishes it, say so honestly."
 }}"""
 
     try:
@@ -166,6 +188,19 @@ def get_unanalyzed_repos(db: SupabaseClient) -> list[str]:
     """Fetch repo names that have no entry in repo_insights yet."""
     response = db.client.table("repos_needing_insights").select("repo_name").execute()
     return [r["repo_name"] for r in (response.data or [])]
+
+
+def get_repos_needing_notable_because(db: SupabaseClient, limit: int = 50) -> list[str]:
+    """Fetch repos that have insights but are missing notable_because (for backfill)."""
+    resp = (
+        db.client.table("repo_insights")
+        .select("repo_name")
+        .is_("notable_because", "null")
+        .order("analyzed_at", desc=True)
+        .limit(limit)
+        .execute()
+    )
+    return [r["repo_name"] for r in (resp.data or [])]
 
 
 def get_prior_repos_by_owner(db: SupabaseClient, owner: str) -> list[str]:
@@ -204,6 +239,7 @@ def upsert_insight(db: SupabaseClient, repo_name: str, insight: dict, model: str
         "category": insight.get("category"),
         "target_audience": insight.get("target_audience"),
         "key_themes": insight.get("key_themes", []),
+        "notable_because": insight.get("notable_because"),
         "model_used": model,
         "analyzed_at": datetime.utcnow().isoformat(),
     }
@@ -216,6 +252,8 @@ def main():
                         help="Fetch README/meta but skip LLM call and DB write")
     parser.add_argument("--limit", type=int, default=None,
                         help="Cap number of repos to process (useful for testing)")
+    parser.add_argument("--backfill-notable", action="store_true",
+                        help="Re-analyze repos that are missing the notable_because field")
     args = parser.parse_args()
 
     print("Starting weekly repo analysis...")
@@ -239,10 +277,15 @@ def main():
 
     db = SupabaseClient()
 
-    repos = get_unanalyzed_repos(db)
-    if args.limit:
-        repos = repos[:args.limit]
-    print(f"Found {len(repos)} repos to analyze")
+    if args.backfill_notable:
+        backfill_limit = args.limit or 20
+        repos = get_repos_needing_notable_because(db, limit=backfill_limit)
+        print(f"Backfill mode: {len(repos)} repos missing notable_because")
+    else:
+        repos = get_unanalyzed_repos(db)
+        if args.limit:
+            repos = repos[:args.limit]
+        print(f"Found {len(repos)} repos to analyze")
 
     if not repos:
         print("Nothing to do.")
@@ -262,6 +305,7 @@ def main():
         meta = fetch_repo_meta(owner, repo)
         readme = fetch_readme(owner, repo)
         prior_repos = [r for r in get_prior_repos_by_owner(db, owner) if r != repo_name]
+        comparison_repos = get_recent_insights_for_comparison(db, limit=8)
 
         if prior_repos:
             print(f"  Owner has {len(prior_repos)} other trending repo(s): {prior_repos}")
@@ -277,6 +321,7 @@ def main():
             readme,
             meta.get("topics", []),
             prior_repos,
+            comparison_repos,
         )
 
         if insight:

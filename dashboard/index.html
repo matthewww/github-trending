@@ -353,6 +353,21 @@
       border-top: 1px solid var(--border-subtle);
       padding-top: 8px;
     }
+    .repo-notable {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 8px;
+    }
+    .repo-notable-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: #58a6ff;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
     .no-data {
       color: var(--text-muted);
       font-size: 0.85rem;
@@ -822,7 +837,10 @@ function renderRepoCard(repo, period) {
         ${repo.language ? `<span class="lang-pill">${escHtml(repo.language)}</span>` : ''}
       </div>
       ${themes ? `<div class="repo-themes">${themes}</div>` : ''}
-      ${repo.purpose ? `<div class="repo-purpose">${escHtml(repo.purpose)}</div>` : ''}
+      ${repo.notable_because
+        ? `<div class="repo-notable"><div class="repo-notable-label">✦ Why notable</div>${escHtml(repo.notable_because)}</div>`
+        : repo.purpose ? `<div class="repo-purpose">${escHtml(repo.purpose)}</div>` : ''
+      }
     </div>
   `;
 }
