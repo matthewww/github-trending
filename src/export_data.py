@@ -104,7 +104,7 @@ def get_today_snapshots(db: SupabaseClient, as_of_date: str) -> dict:
 def get_latest_digest(db: SupabaseClient) -> dict | None:
     resp = (
         db.client.table("weekly_digest")
-        .select("week_start, week_end, headline, digest, top_categories, top_repos, emerging_themes")
+        .select("week_start, week_end, headline, digest, top_categories, top_repos, emerging_themes, data_quality_pct, confidence_label")
         .order("week_start", desc=True)
         .limit(1)
         .execute()
@@ -214,6 +214,18 @@ def get_latest_clusters(db: SupabaseClient) -> list[dict]:
     )
     map_rows = map_resp.data or []
 
+    # Enrich scatter points with total_stars for bubble chart support
+    scatter_repo_names = [m["repo_name"] for m in map_rows]
+    stars_map: dict[str, int] = {}
+    if scatter_repo_names:
+        stars_resp = (
+            db.client.table("repos")
+            .select("repo_name, total_stars")
+            .in_("repo_name", scatter_repo_names)
+            .execute()
+        )
+        stars_map = {r["repo_name"]: r.get("total_stars") or 0 for r in (stars_resp.data or [])}
+
     by_cluster: dict[int, list] = {r["id"]: [] for r in this_run}
     scatter = []
     for m in map_rows:
@@ -223,6 +235,7 @@ def get_latest_clusters(db: SupabaseClient) -> list[dict]:
             "cluster_id": m["cluster_id"],
             "x": m["umap_x"],
             "y": m["umap_y"],
+            "total_stars": stars_map.get(m["repo_name"], 0),
         })
 
     result = []
@@ -239,6 +252,12 @@ def get_latest_clusters(db: SupabaseClient) -> list[dict]:
 
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="Export Supabase data to a static JSON snapshot")
+    parser.add_argument("--no-archive", action="store_true",
+                        help="Skip writing the dated archive file (use for daily runs)")
+    args = parser.parse_args()
+
     db = SupabaseClient()
 
     as_of_date = get_latest_date(db)
@@ -268,20 +287,22 @@ def main():
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(snapshot, f, indent=2, default=str)
 
-    # Write dated archive copy
-    os.makedirs(ARCHIVE_DIR, exist_ok=True)
-    archive_path = os.path.join(ARCHIVE_DIR, f"{as_of_date}.json")
-    with open(archive_path, "w", encoding="utf-8") as f:
-        json.dump(snapshot, f, indent=2, default=str)
+    if not args.no_archive:
+        # Write dated archive copy (weekly runs only) — slim: no history or stats
+        os.makedirs(ARCHIVE_DIR, exist_ok=True)
+        archive_path = os.path.join(ARCHIVE_DIR, f"{as_of_date}.json")
+        archive_snapshot = {k: v for k, v in snapshot.items() if k not in ("history", "stats")}
+        with open(archive_path, "w", encoding="utf-8") as f:
+            json.dump(archive_snapshot, f, indent=2, default=str)
 
-    # Update archive index (sorted newest-first, deduped)
-    existing = []
-    if os.path.exists(ARCHIVE_INDEX_PATH):
-        with open(ARCHIVE_INDEX_PATH, encoding="utf-8") as f:
-            existing = json.load(f)
-    dates = sorted(set(existing) | {as_of_date}, reverse=True)
-    with open(ARCHIVE_INDEX_PATH, "w", encoding="utf-8") as f:
-        json.dump(dates, f, indent=2)
+        # Update archive index (sorted newest-first, deduped)
+        existing = []
+        if os.path.exists(ARCHIVE_INDEX_PATH):
+            with open(ARCHIVE_INDEX_PATH, encoding="utf-8") as f:
+                existing = json.load(f)
+        dates = sorted(set(existing) | {as_of_date}, reverse=True)
+        with open(ARCHIVE_INDEX_PATH, "w", encoding="utf-8") as f:
+            json.dump(dates, f, indent=2)
 
     print(f"Written to {OUTPUT_PATH}")
     for period, repos in today.items():

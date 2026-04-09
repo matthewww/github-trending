@@ -198,6 +198,19 @@
       font-size: 0.75rem;
       color: var(--text-muted);
       margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .digest-confidence {
+      background: rgba(227, 179, 65, 0.12);
+      border: 1px solid rgba(227, 179, 65, 0.35);
+      color: #e3b341;
+      border-radius: 20px;
+      padding: 2px 9px;
+      font-size: 0.72rem;
+      white-space: nowrap;
     }
 
     /* ── Period tabs ── */
@@ -418,6 +431,22 @@
       position: relative;
       height: 340px;
     }
+    .chart-mode-toggle {
+      display: flex;
+      gap: 4px;
+    }
+    .chart-mode-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 0.72rem;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .chart-mode-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .chart-mode-btn.active { background: var(--accent); border-color: var(--accent); color: #0d1117; font-weight: 600; }
     .cluster-list {
       display: flex;
       flex-direction: column;
@@ -622,8 +651,8 @@
     <div class="loading" style="color:var(--text-muted)">Loading digest…</div>
   </div>
 
-  <!-- Charts -->
-  <div class="intel-grid">
+  <!-- Charts (hidden for archive snapshots which omit history) -->
+  <div class="intel-grid" id="history-charts">
     <div class="card">
       <h2>Category Trend — 30 days</h2>
       <div class="chart-wrap"><canvas id="trend-chart"></canvas></div>
@@ -645,7 +674,13 @@
     <div class="card-label">Semantic Clusters — this week</div>
     <div class="cluster-layout">
       <div>
-        <h2 style="margin-bottom:12px;display:flex;align-items:center;gap:8px;">Semantic Map<span class="info-icon-wrap"><span class="info-icon">i</span><span class="info-popover"><strong>How this map works</strong><span class="info-popover-p">Each dot is a trending GitHub repo. Position is determined by <em>meaning</em>, not metadata — repos with similar purposes, themes, and audiences are placed close together.</span><span class="info-popover-p">The pipeline: an LLM reads each repo's README to extract purpose and themes, a local model converts those into a 384-dimensional vector, then UMAP reduces everything to 2D for this chart.</span><span class="info-popover-p">Colours represent clusters found by HDBSCAN. Click any dot to open the repo.</span></span></span></h2>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <h2 style="margin-bottom:0;display:flex;align-items:center;gap:8px;">Semantic Map<span class="info-icon-wrap"><span class="info-icon">i</span><span class="info-popover"><strong>How this map works</strong><span class="info-popover-p">Each dot is a trending GitHub repo. Position is determined by <em>meaning</em>, not metadata — repos with similar purposes, themes, and audiences are placed close together.</span><span class="info-popover-p">The pipeline: an LLM reads each repo's README to extract purpose and themes, a local model converts those into a 384-dimensional vector, then UMAP reduces everything to 2D for this chart.</span><span class="info-popover-p">Colours represent clusters found by HDBSCAN. Click any dot to open the repo.</span></span></span></h2>
+          <div class="chart-mode-toggle">
+            <button class="chart-mode-btn active" id="btn-scatter">Scatter</button>
+            <button class="chart-mode-btn" id="btn-bubble">Bubble</button>
+          </div>
+        </div>
         <div class="chart-wrap-scatter"><canvas id="cluster-chart"></canvas></div>
       </div>
       <div>
@@ -735,9 +770,14 @@ function renderDigest(digest) {
       new Date(digest.week_end).toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'})
     : '';
 
+  const confidenceLabel = digest.confidence_label;
+  const confidencePill = (confidenceLabel === 'low' || confidenceLabel === 'medium')
+    ? `<span class="digest-confidence">⚠ Limited data — early analysis</span>`
+    : '';
+
   el.innerHTML = `
     <div class="card-label">Weekly Signal</div>
-    <div class="digest-meta">Week of ${escHtml(week)}</div>
+    <div class="digest-meta"><span>Week of ${escHtml(week)}</span>${confidencePill}</div>
     <div class="digest-headline">${escHtml(digest.headline || '')}</div>
     <div class="digest-prose truncated" id="digest-prose">${escHtml(preview)}</div>
     ${hasMore ? `<button class="read-more-btn" id="read-more-btn">Read more ↓</button>` : ''}
@@ -1002,6 +1042,43 @@ const CLUSTER_PALETTE = [
 ];
 
 let clusterChart;
+let clusterChartMode = 'scatter'; // 'scatter' | 'bubble'
+let lastClusterData = null;
+
+function starsToRadius(stars, minR = 4, maxR = 20) {
+  if (!stars || stars <= 0) return minR;
+  const logVal = Math.log10(stars + 1);
+  const logMin = 0, logMax = Math.log10(200001);
+  return minR + ((logVal - logMin) / (logMax - logMin)) * (maxR - minR);
+}
+
+function buildDatasets(clusters, scatter, mode) {
+  return clusters.map(c => {
+    const points = scatter.filter(p => p.cluster_id === c.id);
+    if (mode === 'bubble') {
+      return {
+        label: c.label,
+        data: points.map(p => ({
+          x: p.x,
+          y: p.y,
+          r: starsToRadius(p.total_stars),
+          repo: p.repo_name,
+          total_stars: p.total_stars,
+        })),
+        backgroundColor: CLUSTER_PALETTE[clusters.indexOf(c) % CLUSTER_PALETTE.length] + 'aa',
+        borderColor:     CLUSTER_PALETTE[clusters.indexOf(c) % CLUSTER_PALETTE.length] + 'dd',
+        borderWidth: 1,
+      };
+    }
+    return {
+      label: c.label,
+      data: points.map(p => ({ x: p.x, y: p.y, repo: p.repo_name })),
+      backgroundColor: CLUSTER_PALETTE[clusters.indexOf(c) % CLUSTER_PALETTE.length] + 'cc',
+      pointRadius: 6,
+      pointHoverRadius: 9,
+    };
+  });
+}
 
 function renderClusters(clusterData) {
   const section = document.getElementById('cluster-section');
@@ -1012,64 +1089,15 @@ function renderClusters(clusterData) {
     return;
   }
   section.style.display = '';
+  lastClusterData = clusterData;
 
   const clusters = clusterData.clusters;
   const scatter = clusterData.scatter || [];
 
   const colorMap = {};
-  clusters.forEach((c, i) => {
-    colorMap[c.id] = CLUSTER_PALETTE[i % CLUSTER_PALETTE.length];
-  });
+  clusters.forEach((c, i) => { colorMap[c.id] = CLUSTER_PALETTE[i % CLUSTER_PALETTE.length]; });
 
-  const ctx = document.getElementById('cluster-chart').getContext('2d');
-  if (clusterChart) clusterChart.destroy();
-
-  const datasets = clusters.map(c => {
-    const points = scatter.filter(p => p.cluster_id === c.id);
-    return {
-      label: c.label,
-      data: points.map(p => ({ x: p.x, y: p.y, repo: p.repo_name })),
-      backgroundColor: colorMap[c.id] + 'cc',
-      pointRadius: 6,
-      pointHoverRadius: 9,
-    };
-  });
-
-  clusterChart = new Chart(ctx, {
-    type: 'scatter',
-    data: { datasets },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      animation: { duration: 600 },
-      plugins: {
-        legend: {
-          display: clusters.length <= 8,
-          position: 'bottom',
-          labels: { color: '#7d8590', font: { size: 10 }, boxWidth: 10, padding: 8 },
-        },
-        tooltip: {
-          callbacks: {
-            label(ctx) {
-              const pt = ctx.raw;
-              const name = (pt.repo || '').split('/')[1] || pt.repo;
-              return `${name} (${ctx.dataset.label})`;
-            },
-          },
-        },
-      },
-      scales: {
-        x: { ticks: { display: false }, grid: { color: '#21262d' } },
-        y: { ticks: { display: false }, grid: { color: '#21262d' } },
-      },
-      onClick(event, elements) {
-        if (!elements.length) return;
-        const el = elements[0];
-        const pt = datasets[el.datasetIndex].data[el.index];
-        if (pt.repo) window.open(`https://github.com/${pt.repo}`, '_blank');
-      },
-    },
-  });
+  renderClusterChart(clusters, scatter, clusterChartMode, colorMap);
 
   listEl.innerHTML = clusters.map(c => {
     const color = colorMap[c.id];
@@ -1094,6 +1122,76 @@ function renderClusters(clusterData) {
     `;
   }).join('');
 }
+
+function renderClusterChart(clusters, scatter, mode, colorMap) {
+  const ctx = document.getElementById('cluster-chart').getContext('2d');
+  if (clusterChart) clusterChart.destroy();
+
+  const datasets = buildDatasets(clusters, scatter, mode);
+
+  clusterChart = new Chart(ctx, {
+    type: mode === 'bubble' ? 'bubble' : 'scatter',
+    data: { datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: { duration: 600 },
+      plugins: {
+        legend: {
+          display: clusters.length <= 8,
+          position: 'bottom',
+          labels: { color: '#7d8590', font: { size: 10 }, boxWidth: 10, padding: 8 },
+        },
+        tooltip: {
+          callbacks: {
+            label(ctx) {
+              const pt = ctx.raw;
+              const name = (pt.repo || '').split('/')[1] || pt.repo;
+              const base = `${name} (${ctx.dataset.label})`;
+              if (mode === 'bubble' && pt.total_stars)
+                return `${base} — ★ ${pt.total_stars.toLocaleString()}`;
+              return base;
+            },
+          },
+        },
+      },
+      scales: {
+        x: { ticks: { display: false }, grid: { color: '#21262d' } },
+        y: { ticks: { display: false }, grid: { color: '#21262d' } },
+      },
+      onClick(event, elements) {
+        if (!elements.length) return;
+        const el = elements[0];
+        const pt = datasets[el.datasetIndex].data[el.index];
+        if (pt.repo) window.open(`https://github.com/${pt.repo}`, '_blank');
+      },
+    },
+  });
+}
+
+document.getElementById('btn-scatter').addEventListener('click', () => {
+  if (clusterChartMode === 'scatter' || !lastClusterData) return;
+  clusterChartMode = 'scatter';
+  document.getElementById('btn-scatter').classList.add('active');
+  document.getElementById('btn-bubble').classList.remove('active');
+  const clusters = lastClusterData.clusters;
+  const scatter = lastClusterData.scatter || [];
+  const colorMap = {};
+  clusters.forEach((c, i) => { colorMap[c.id] = CLUSTER_PALETTE[i % CLUSTER_PALETTE.length]; });
+  renderClusterChart(clusters, scatter, 'scatter', colorMap);
+});
+
+document.getElementById('btn-bubble').addEventListener('click', () => {
+  if (clusterChartMode === 'bubble' || !lastClusterData) return;
+  clusterChartMode = 'bubble';
+  document.getElementById('btn-bubble').classList.add('active');
+  document.getElementById('btn-scatter').classList.remove('active');
+  const clusters = lastClusterData.clusters;
+  const scatter = lastClusterData.scatter || [];
+  const colorMap = {};
+  clusters.forEach((c, i) => { colorMap[c.id] = CLUSTER_PALETTE[i % CLUSTER_PALETTE.length]; });
+  renderClusterChart(clusters, scatter, 'bubble', colorMap);
+});
 
 // ── Tab switching ────────────────────────────────────────────
 let currentData = null;
@@ -1132,8 +1230,15 @@ function renderSnapshot(data) {
 
   renderOwners(data.today || {});
 
-  if ((data.history || []).length > 1) renderTrendChart(data.history);
-  renderLangChart(data.history || []);
+  if ((data.history || []).length > 1) {
+    document.getElementById('history-charts').style.display = '';
+    renderTrendChart(data.history);
+    renderLangChart(data.history);
+  } else {
+    document.getElementById('history-charts').style.display = 'none';
+    if (trendChart) { trendChart.destroy(); trendChart = null; }
+    if (langChart)  { langChart.destroy();  langChart  = null; }
+  }
   renderClusters(data.clusters || null);
 
   const ts = new Date(data.generated_at);
