@@ -54,7 +54,7 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
-        run: python src/export_data.py
+        run: python src/export_data.py --no-archive
 
       - name: Commit and push snapshot
         run: |
