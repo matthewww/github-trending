@@ -651,7 +651,7 @@
     <div class="loading" style="color:var(--text-muted)">Loading digest…</div>
   </div>
 
-  <!-- Charts (hidden for archive snapshots which omit history) -->
+  <!-- Charts -->
   <div class="intel-grid" id="history-charts">
     <div class="card">
       <h2>Category Trend — 30 days</h2>
@@ -1230,15 +1230,8 @@ function renderSnapshot(data) {
 
   renderOwners(data.today || {});
 
-  if ((data.history || []).length > 1) {
-    document.getElementById('history-charts').style.display = '';
-    renderTrendChart(data.history);
-    renderLangChart(data.history);
-  } else {
-    document.getElementById('history-charts').style.display = 'none';
-    if (trendChart) { trendChart.destroy(); trendChart = null; }
-    if (langChart)  { langChart.destroy();  langChart  = null; }
-  }
+  if ((data.history || []).length > 1) renderTrendChart(data.history);
+  renderLangChart(data.history || []);
   renderClusters(data.clusters || null);
 
   const ts = new Date(data.generated_at);

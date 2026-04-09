@@ -291,7 +291,7 @@ def main():
         # Write dated archive copy (weekly runs only) — slim: no history or stats
         os.makedirs(ARCHIVE_DIR, exist_ok=True)
         archive_path = os.path.join(ARCHIVE_DIR, f"{as_of_date}.json")
-        archive_snapshot = {k: v for k, v in snapshot.items() if k not in ("history", "stats")}
+        archive_snapshot = {k: v for k, v in snapshot.items() if k != "stats"}
         with open(archive_path, "w", encoding="utf-8") as f:
             json.dump(archive_snapshot, f, indent=2, default=str)
 
