@@ -220,12 +220,16 @@ def get_latest_clusters(db: SupabaseClient) -> list[dict]:
     stars_map: dict[str, int] = {}
     if scatter_repo_names:
         stars_resp = (
-            db.client.table("repos")
+            db.client.table("trending_snapshots")
             .select("repo_name, total_stars")
             .in_("repo_name", scatter_repo_names)
+            .order("collected_date", desc=True)
             .execute()
         )
-        stars_map = {r["repo_name"]: r.get("total_stars") or 0 for r in (stars_resp.data or [])}
+        # Use most recent total_stars per repo (rows ordered newest first)
+        for r in (stars_resp.data or []):
+            if r["repo_name"] not in stars_map:
+                stars_map[r["repo_name"]] = r.get("total_stars") or 0
 
     by_cluster: dict[int, list] = {r["id"]: [] for r in this_run}
     scatter = []
