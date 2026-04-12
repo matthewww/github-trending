@@ -1,18 +1,39 @@
 {
-  "generated_at": "2026-04-11T10:28:31.306917Z",
-  "as_of_date": "2026-04-11",
+  "generated_at": "2026-04-12T10:33:18.262793Z",
+  "as_of_date": "2026-04-12",
   "today": {
     "daily": [
+      {
+        "repo_name": "NousResearch/hermes-agent",
+        "description": "The agent that grows with you",
+        "language": "Python",
+        "owner_name": "NousResearch",
+        "owner_type": "startup",
+        "stars_in_period": 6438,
+        "total_stars": 62327,
+        "forks": 8358,
+        "rank": 1,
+        "purpose": "Hermes Agent is a self-improving AI agent that learns from experience and interacts across multiple platforms.",
+        "category": "AI/ML",
+        "key_themes": [
+          "ai",
+          "self-improving",
+          "automation",
+          "cross-platform",
+          "learning loop"
+        ],
+        "notable_because": null
+      },
       {
         "repo_name": "microsoft/markitdown",
         "description": "Python tool for converting files and office documents to Markdown.",
         "language": "Python",
         "owner_name": "microsoft",
         "owner_type": "big_tech",
-        "stars_in_period": 2352,
-        "total_stars": 100807,
-        "forks": 6184,
-        "rank": 1,
+        "stars_in_period": 3086,
+        "total_stars": 103280,
+        "forks": 6409,
+        "rank": 2,
         "purpose": "MarkItDown is a Python tool for converting various files and office documents to Markdown format.",
         "category": "Developer Tools",
         "key_themes": [
@@ -30,10 +51,10 @@
         "language": "TypeScript",
         "owner_name": "coleam00",
         "owner_type": "individual",
-        "stars_in_period": 756,
-        "total_stars": 16094,
-        "forks": 2588,
-        "rank": 2,
+        "stars_in_period": 1346,
+        "total_stars": 16692,
+        "forks": 2672,
+        "rank": 3,
         "purpose": "The first open-source harness builder for AI coding, making AI coding deterministic and repeatable.",
         "category": "Developer Tools",
         "key_themes": [
@@ -46,46 +67,25 @@
         "notable_because": "Archon stands out by providing a structured and repeatable workflow for AI coding, addressing the unpredictability of AI behavior in coding tasks, unlike other tools that focus on specific aspects of AI or coding."
       },
       {
-        "repo_name": "NousResearch/hermes-agent",
-        "description": "The agent that grows with you",
-        "language": "Python",
-        "owner_name": "NousResearch",
-        "owner_type": "startup",
-        "stars_in_period": 7671,
-        "total_stars": 54994,
-        "forks": 7227,
-        "rank": 3,
-        "purpose": "Hermes Agent is a self-improving AI agent that learns from experience and interacts across multiple platforms.",
+        "repo_name": "forrestchang/andrej-karpathy-skills",
+        "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+        "language": null,
+        "owner_name": "forrestchang",
+        "owner_type": "individual",
+        "stars_in_period": 1066,
+        "total_stars": 14388,
+        "forks": 1004,
+        "rank": 4,
+        "purpose": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
         "category": "AI/ML",
         "key_themes": [
-          "ai",
-          "self-improving",
-          "automation",
-          "cross-platform",
-          "learning loop"
+          "LLM behavior",
+          "coding guidelines",
+          "simplicity",
+          "best practices",
+          "Andrej Karpathy"
         ],
-        "notable_because": null
-      },
-      {
-        "repo_name": "rowboatlabs/rowboat",
-        "description": "Open-source AI coworker, with memory",
-        "language": "TypeScript",
-        "owner_name": "rowboatlabs",
-        "owner_type": "startup",
-        "stars_in_period": 507,
-        "total_stars": 11951,
-        "forks": 1111,
-        "rank": 4,
-        "purpose": "Rowboat is an open-source AI coworker that builds a knowledge graph from your work context to enhance productivity.",
-        "category": "Productivity",
-        "key_themes": [
-          "AI",
-          "productivity",
-          "knowledge graph",
-          "automation",
-          "open-source"
-        ],
-        "notable_because": null
+        "notable_because": "This repository provides a focused set of principles aimed at improving LLM coding practices, which is a unique approach compared to other trending repositories that offer broader AI functionalities."
       },
       {
         "repo_name": "multica-ai/multica",
@@ -93,9 +93,9 @@
         "language": "TypeScript",
         "owner_name": "multica-ai",
         "owner_type": "open_source_org",
-        "stars_in_period": 1506,
-        "total_stars": 6910,
-        "forks": 868,
+        "stars_in_period": 1948,
+        "total_stars": 8582,
+        "forks": 1100,
         "rank": 5,
         "purpose": "The open-source managed agents platform that turns coding agents into real teammates for task assignment and progress tracking.",
         "category": "AI/ML",
@@ -109,25 +109,61 @@
         "notable_because": "Multica uniquely positions coding agents as teammates that autonomously manage tasks and compound skills over time, distinguishing it from other tools that focus solely on AI coding assistance."
       },
       {
-        "repo_name": "forrestchang/andrej-karpathy-skills",
-        "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
-        "language": null,
-        "owner_name": "forrestchang",
+        "repo_name": "shanraisshan/claude-code-best-practice",
+        "description": "practice made claude perfect",
+        "language": "HTML",
+        "owner_name": "shanraisshan",
         "owner_type": "individual",
-        "stars_in_period": 1450,
-        "total_stars": 12202,
-        "forks": 810,
+        "stars_in_period": 1475,
+        "total_stars": 37822,
+        "forks": 3559,
         "rank": 6,
-        "purpose": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+        "purpose": "This repository provides best practices and implementations for using Claude AI effectively.",
         "category": "AI/ML",
         "key_themes": [
-          "LLM behavior",
-          "coding guidelines",
-          "simplicity",
-          "best practices",
-          "Andrej Karpathy"
+          "agentic-engineering",
+          "best-practices",
+          "claude-ai",
+          "claude-code",
+          "vibe-coding"
         ],
-        "notable_because": "This repository provides a focused set of principles aimed at improving LLM coding practices, which is a unique approach compared to other trending repositories that offer broader AI functionalities."
+        "notable_because": null
+      },
+      {
+        "repo_name": "TapXWorld/ChinaTextbook",
+        "description": "\u6240\u6709\u5c0f\u521d\u9ad8\u3001\u5927\u5b66PDF\u6559\u6750\u3002",
+        "language": "Roff",
+        "owner_name": "TapXWorld",
+        "owner_type": null,
+        "stars_in_period": 361,
+        "total_stars": 68001,
+        "forks": 15179,
+        "rank": 7,
+        "purpose": null,
+        "category": "Unknown",
+        "key_themes": [],
+        "notable_because": null
+      },
+      {
+        "repo_name": "OpenBMB/VoxCPM",
+        "description": "VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning",
+        "language": "Python",
+        "owner_name": "OpenBMB",
+        "owner_type": "open_source_org",
+        "stars_in_period": 1084,
+        "total_stars": 10459,
+        "forks": 1233,
+        "rank": 8,
+        "purpose": "VoxCPM2 is a tokenizer-free Text-to-Speech system for multilingual speech generation, creative voice design, and true-to-life cloning.",
+        "category": "AI/ML",
+        "key_themes": [
+          "text-to-speech",
+          "voice-cloning",
+          "multilingual",
+          "deep-learning",
+          "speech-synthesis"
+        ],
+        "notable_because": "VoxCPM2 stands out due to its tokenizer-free approach, enabling direct speech generation in 30 languages without the need for language tags, and its ability to create new voices from natural language descriptions."
       },
       {
         "repo_name": "shiyu-coder/Kronos",
@@ -135,10 +171,10 @@
         "language": "Python",
         "owner_name": "shiyu-coder",
         "owner_type": "individual",
-        "stars_in_period": 601,
-        "total_stars": 12918,
-        "forks": 2576,
-        "rank": 7,
+        "stars_in_period": 595,
+        "total_stars": 14902,
+        "forks": 2907,
+        "rank": 9,
         "purpose": "Kronos is a foundation model specifically designed for the language of financial markets, focusing on K-line sequences.",
         "category": "AI/ML",
         "key_themes": [
@@ -151,36 +187,15 @@
         "notable_because": "Kronos is the first open-source foundation model tailored for financial candlesticks, trained on data from over 45 global exchanges, which sets it apart from other generic AI models."
       },
       {
-        "repo_name": "HKUDS/DeepTutor",
-        "description": "\"DeepTutor: Agent-Native Personalized Learning Assistant\"",
-        "language": "Python",
-        "owner_name": "HKUDS",
-        "owner_type": "academic",
-        "stars_in_period": 1424,
-        "total_stars": 16307,
-        "forks": 2144,
-        "rank": 8,
-        "purpose": "DeepTutor is an agent-native personalized learning assistant designed to enhance interactive learning experiences.",
-        "category": "Education",
-        "key_themes": [
-          "ai-agents",
-          "interactive-learning",
-          "large-language-models",
-          "personalized-learning",
-          "multi-agent-systems"
-        ],
-        "notable_because": "DeepTutor stands out for its unique agent-native architecture and the introduction of TutorBot, which enhances the tutoring experience compared to other AI/ML tools focused on education."
-      },
-      {
         "repo_name": "opendataloader-project/opendataloader-pdf",
         "description": "PDF Parser for AI-ready data. Automate PDF accessibility. Open-source.",
         "language": "Java",
         "owner_name": "opendataloader-project",
         "owner_type": "open_source_org",
-        "stars_in_period": 1306,
-        "total_stars": 15110,
-        "forks": 1277,
-        "rank": 9,
+        "stars_in_period": 775,
+        "total_stars": 15839,
+        "forks": 1350,
+        "rank": 10,
         "purpose": "PDF Parser for AI-ready data. Automate PDF accessibility.",
         "category": "Developer Tools",
         "key_themes": [
@@ -193,15 +208,36 @@
         "notable_because": null
       },
       {
+        "repo_name": "HKUDS/DeepTutor",
+        "description": "\"DeepTutor: Agent-Native Personalized Learning Assistant\"",
+        "language": "Python",
+        "owner_name": "HKUDS",
+        "owner_type": "academic",
+        "stars_in_period": 837,
+        "total_stars": 17041,
+        "forks": 2234,
+        "rank": 11,
+        "purpose": "DeepTutor is an agent-native personalized learning assistant designed to enhance interactive learning experiences.",
+        "category": "Education",
+        "key_themes": [
+          "ai-agents",
+          "interactive-learning",
+          "large-language-models",
+          "personalized-learning",
+          "multi-agent-systems"
+        ],
+        "notable_because": "DeepTutor stands out for its unique agent-native architecture and the introduction of TutorBot, which enhances the tutoring experience compared to other AI/ML tools focused on education."
+      },
+      {
         "repo_name": "obra/superpowers",
         "description": "An agentic skills framework & software development methodology that works.",
         "language": "Shell",
         "owner_name": "obra",
         "owner_type": "individual",
-        "stars_in_period": 2150,
-        "total_stars": 146368,
-        "forks": 12549,
-        "rank": 10,
+        "stars_in_period": 1591,
+        "total_stars": 147677,
+        "forks": 12691,
+        "rank": 12,
         "purpose": "Superpowers is a complete software development workflow for coding agents, utilizing a set of composable skills and instructions.",
         "category": "Developer Tools",
         "key_themes": [
@@ -214,80 +250,32 @@
         "notable_because": null
       },
       {
-        "repo_name": "jqlang/jq",
-        "description": "Command-line JSON processor",
-        "language": "C",
-        "owner_name": "jqlang",
-        "owner_type": "open_source_org",
-        "stars_in_period": 75,
-        "total_stars": 34386,
-        "forks": 1762,
-        "rank": 11,
-        "purpose": "Command-line JSON processor",
-        "category": "Developer Tools",
-        "key_themes": [
-          "JSON",
-          "command-line",
-          "data processing",
-          "flexibility",
-          "lightweight"
-        ],
-        "notable_because": "jq stands out as a lightweight and flexible tool for JSON processing, akin to traditional text processing tools like sed and awk, making it unique in its specific focus on JSON data manipulation."
-      },
-      {
-        "repo_name": "shanraisshan/claude-code-best-practice",
-        "description": "practice made claude perfect",
-        "language": "HTML",
-        "owner_name": "shanraisshan",
-        "owner_type": "individual",
-        "stars_in_period": 1251,
-        "total_stars": 36378,
-        "forks": 3424,
-        "rank": 12,
-        "purpose": "This repository provides best practices and implementations for using Claude AI effectively.",
-        "category": "AI/ML",
-        "key_themes": [
-          "agentic-engineering",
-          "best-practices",
-          "claude-ai",
-          "claude-code",
-          "vibe-coding"
-        ],
+        "repo_name": "alexpate/awesome-design-systems",
+        "description": "\ud83d\udc85\ud83c\udffb \u2692 A collection of awesome design systems",
+        "language": null,
+        "owner_name": "alexpate",
+        "owner_type": null,
+        "stars_in_period": 2050,
+        "total_stars": 22925,
+        "forks": 1434,
+        "rank": 13,
+        "purpose": null,
+        "category": "Unknown",
+        "key_themes": [],
         "notable_because": null
       }
     ],
     "weekly": [
-      {
-        "repo_name": "google-ai-edge/gallery",
-        "description": "A gallery that showcases on-device ML/GenAI use cases and allows people to try and use models locally.",
-        "language": "Kotlin",
-        "owner_name": "google-ai-edge",
-        "owner_type": "big_tech",
-        "stars_in_period": 4409,
-        "total_stars": 20329,
-        "forks": 1902,
-        "rank": 1,
-        "purpose": "A gallery that showcases on-device ML/GenAI use cases and allows people to try and use models locally.",
-        "category": "AI/ML",
-        "key_themes": [
-          "on-device AI",
-          "generative AI",
-          "machine learning",
-          "local models",
-          "user experience"
-        ],
-        "notable_because": "This repository allows users to run powerful open-source Large Language Models directly on their mobile devices, emphasizing privacy and performance, which sets it apart from other tools that may rely on cloud processing."
-      },
       {
         "repo_name": "HKUDS/DeepTutor",
         "description": "\"DeepTutor: Agent-Native Personalized Learning Assistant\"",
         "language": "Python",
         "owner_name": "HKUDS",
         "owner_type": "academic",
-        "stars_in_period": 4698,
-        "total_stars": 16307,
-        "forks": 2144,
-        "rank": 2,
+        "stars_in_period": 5560,
+        "total_stars": 17041,
+        "forks": 2234,
+        "rank": 1,
         "purpose": "DeepTutor is an agent-native personalized learning assistant designed to enhance interactive learning experiences.",
         "category": "Education",
         "key_themes": [
@@ -305,10 +293,10 @@
         "language": "Python",
         "owner_name": "NousResearch",
         "owner_type": "startup",
-        "stars_in_period": 26783,
-        "total_stars": 54995,
-        "forks": 7227,
-        "rank": 3,
+        "stars_in_period": 32572,
+        "total_stars": 62327,
+        "forks": 8358,
+        "rank": 2,
         "purpose": "Hermes Agent is a self-improving AI agent that learns from experience and interacts across multiple platforms.",
         "category": "AI/ML",
         "key_themes": [
@@ -321,25 +309,25 @@
         "notable_because": null
       },
       {
-        "repo_name": "google-ai-edge/LiteRT-LM",
-        "description": null,
-        "language": "C++",
+        "repo_name": "google-ai-edge/gallery",
+        "description": "A gallery that showcases on-device ML/GenAI use cases and allows people to try and use models locally.",
+        "language": "Kotlin",
         "owner_name": "google-ai-edge",
         "owner_type": "big_tech",
-        "stars_in_period": 2210,
-        "total_stars": 3364,
-        "forks": 317,
-        "rank": 4,
-        "purpose": "LiteRT-LM is an open-source inference framework for deploying Large Language Models on edge devices.",
+        "stars_in_period": 4369,
+        "total_stars": 20533,
+        "forks": 1933,
+        "rank": 3,
+        "purpose": "A gallery that showcases on-device ML/GenAI use cases and allows people to try and use models locally.",
         "category": "AI/ML",
         "key_themes": [
-          "edge computing",
-          "AI deployment",
-          "large language models",
-          "cross-platform",
-          "performance"
+          "on-device AI",
+          "generative AI",
+          "machine learning",
+          "local models",
+          "user experience"
         ],
-        "notable_because": "LiteRT-LM stands out for its production-ready capabilities and broad hardware support, including mobile and IoT devices, which is not as commonly found in other AI frameworks like those focused solely on desktop or server environments."
+        "notable_because": "This repository allows users to run powerful open-source Large Language Models directly on their mobile devices, emphasizing privacy and performance, which sets it apart from other tools that may rely on cloud processing."
       },
       {
         "repo_name": "multica-ai/multica",
@@ -347,10 +335,10 @@
         "language": "TypeScript",
         "owner_name": "multica-ai",
         "owner_type": "open_source_org",
-        "stars_in_period": 3512,
-        "total_stars": 6911,
-        "forks": 868,
-        "rank": 5,
+        "stars_in_period": 5362,
+        "total_stars": 8582,
+        "forks": 1100,
+        "rank": 4,
         "purpose": "The open-source managed agents platform that turns coding agents into real teammates for task assignment and progress tracking.",
         "category": "AI/ML",
         "key_themes": [
@@ -363,36 +351,15 @@
         "notable_because": "Multica uniquely positions coding agents as teammates that autonomously manage tasks and compound skills over time, distinguishing it from other tools that focus solely on AI coding assistance."
       },
       {
-        "repo_name": "siddharthvaddem/openscreen",
-        "description": "Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.",
-        "language": "TypeScript",
-        "owner_name": "siddharthvaddem",
-        "owner_type": "individual",
-        "stars_in_period": 10077,
-        "total_stars": 27824,
-        "forks": 1865,
-        "rank": 6,
-        "purpose": "OpenScreen is a free, open-source application for creating product demos and walkthroughs without subscriptions or watermarks.",
-        "category": "Productivity",
-        "key_themes": [
-          "open-source",
-          "screen-capture",
-          "screen-recorder",
-          "electron",
-          "pixijs"
-        ],
-        "notable_because": null
-      },
-      {
         "repo_name": "forrestchang/andrej-karpathy-skills",
         "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
         "language": null,
         "owner_name": "forrestchang",
         "owner_type": "individual",
-        "stars_in_period": 3741,
-        "total_stars": 12202,
-        "forks": 810,
-        "rank": 7,
+        "stars_in_period": 4969,
+        "total_stars": 14388,
+        "forks": 1004,
+        "rank": 5,
         "purpose": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
         "category": "AI/ML",
         "key_themes": [
@@ -405,25 +372,25 @@
         "notable_because": "This repository provides a focused set of principles aimed at improving LLM coding practices, which is a unique approach compared to other trending repositories that offer broader AI functionalities."
       },
       {
-        "repo_name": "Yeachan-Heo/oh-my-codex",
-        "description": "OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much more.",
-        "language": "TypeScript",
-        "owner_name": "Yeachan-Heo",
-        "owner_type": "individual",
-        "stars_in_period": 7276,
-        "total_stars": 20800,
-        "forks": 1851,
-        "rank": 8,
-        "purpose": "OMX is a workflow layer for OpenAI Codex that enhances the user experience by providing better prompts, workflows, and runtime help.",
-        "category": "Developer Tools",
+        "repo_name": "google-ai-edge/LiteRT-LM",
+        "description": null,
+        "language": "C++",
+        "owner_name": "google-ai-edge",
+        "owner_type": "big_tech",
+        "stars_in_period": 2196,
+        "total_stars": 3473,
+        "forks": 332,
+        "rank": 6,
+        "purpose": "LiteRT-LM is an open-source inference framework for deploying Large Language Models on edge devices.",
+        "category": "AI/ML",
         "key_themes": [
-          "workflow",
-          "OpenAI Codex",
-          "productivity",
-          "automation",
-          "developer tools"
+          "edge computing",
+          "AI deployment",
+          "large language models",
+          "cross-platform",
+          "performance"
         ],
-        "notable_because": null
+        "notable_because": "LiteRT-LM stands out for its production-ready capabilities and broad hardware support, including mobile and IoT devices, which is not as commonly found in other AI frameworks like those focused solely on desktop or server environments."
       },
       {
         "repo_name": "NVIDIA/personaplex",
@@ -431,10 +398,10 @@
         "language": "Python",
         "owner_name": "NVIDIA",
         "owner_type": "big_tech",
-        "stars_in_period": 2939,
-        "total_stars": 8959,
-        "forks": 1262,
-        "rank": 8,
+        "stars_in_period": 2905,
+        "total_stars": 9041,
+        "forks": 1278,
+        "rank": 7,
         "purpose": "PersonaPlex is a real-time, full-duplex speech-to-speech conversational model that enables persona control through text-based role prompts and audio-based voice conditioning.",
         "category": "AI/ML",
         "key_themes": [
@@ -447,67 +414,88 @@
         "notable_because": "PersonaPlex stands out due to its ability to produce natural, low-latency spoken interactions with a consistent persona, leveraging a unique architecture and training methodology."
       },
       {
-        "repo_name": "onyx-dot-app/onyx",
-        "description": "Open Source AI Platform - AI Chat with advanced features that works with every LLM",
+        "repo_name": "microsoft/markitdown",
+        "description": "Python tool for converting files and office documents to Markdown.",
         "language": "Python",
-        "owner_name": "onyx-dot-app",
-        "owner_type": "open_source_org",
-        "stars_in_period": 3804,
-        "total_stars": 26491,
-        "forks": 3520,
-        "rank": 9,
-        "purpose": "Open Source AI Platform - AI Chat with advanced features that works with every LLM",
-        "category": "AI/ML",
-        "key_themes": [
-          "ai",
-          "ai-chat",
-          "llm",
-          "self-hosted",
-          "enterprise-search"
-        ],
-        "notable_because": null
-      },
-      {
-        "repo_name": "google-research/timesfm",
-        "description": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
-        "language": "Python",
-        "owner_name": "google-research",
+        "owner_name": "microsoft",
         "owner_type": "big_tech",
-        "stars_in_period": 2481,
-        "total_stars": 16336,
-        "forks": 1519,
-        "rank": 10,
-        "purpose": "TimesFM is a pretrained time-series foundation model developed for time-series forecasting.",
-        "category": "AI/ML",
+        "stars_in_period": 8202,
+        "total_stars": 103280,
+        "forks": 6409,
+        "rank": 8,
+        "purpose": "MarkItDown is a Python tool for converting various files and office documents to Markdown format.",
+        "category": "Developer Tools",
         "key_themes": [
-          "time-series",
-          "forecasting",
-          "machine learning",
-          "foundation model",
-          "Google Research"
+          "markdown",
+          "file conversion",
+          "Python",
+          "LLM integration",
+          "open-source"
         ],
         "notable_because": null
       },
       {
-        "repo_name": "luongnv89/claude-howto",
-        "description": "A visual, example-driven guide to Claude Code \u2014 from basic concepts to advanced agents, with copy-paste templates that bring immediate value.",
-        "language": "Python",
-        "owner_name": "luongnv89",
+        "repo_name": "siddharthvaddem/openscreen",
+        "description": "Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.",
+        "language": "TypeScript",
+        "owner_name": "siddharthvaddem",
         "owner_type": "individual",
-        "stars_in_period": 7215,
-        "total_stars": 24950,
-        "forks": 2999,
-        "rank": 11,
-        "purpose": "A visual, example-driven guide to Claude Code \u2014 from basic concepts to advanced agents, with copy-paste templates that bring immediate value.",
-        "category": "Education",
+        "stars_in_period": 8964,
+        "total_stars": 28460,
+        "forks": 1929,
+        "rank": 9,
+        "purpose": "OpenScreen is a free, open-source application for creating product demos and walkthroughs without subscriptions or watermarks.",
+        "category": "Productivity",
         "key_themes": [
-          "claude-code",
-          "guide",
-          "tutorial",
-          "visual-learning",
-          "templates"
+          "open-source",
+          "screen-capture",
+          "screen-recorder",
+          "electron",
+          "pixijs"
         ],
         "notable_because": null
+      },
+      {
+        "repo_name": "TheCraigHewitt/seomachine",
+        "description": "A specialized Claude Code workspace for creating long-form, SEO-optimized blog content for any business. This system helps you research, write, analyze, and optimize content that ranks well and serves your target audience.",
+        "language": "Python",
+        "owner_name": "TheCraigHewitt",
+        "owner_type": "individual",
+        "stars_in_period": 2698,
+        "total_stars": 5724,
+        "forks": 810,
+        "rank": 10,
+        "purpose": "A specialized Claude Code workspace for creating long-form, SEO-optimized blog content for any business.",
+        "category": "Productivity",
+        "key_themes": [
+          "SEO",
+          "content optimization",
+          "blog writing",
+          "digital marketing",
+          "data integration"
+        ],
+        "notable_because": null
+      },
+      {
+        "repo_name": "aaif-goose/goose",
+        "description": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM",
+        "language": "Rust",
+        "owner_name": "aaif-goose",
+        "owner_type": "open_source_org",
+        "stars_in_period": 5832,
+        "total_stars": 41284,
+        "forks": 4112,
+        "rank": 11,
+        "purpose": "An open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM.",
+        "category": "AI/ML",
+        "key_themes": [
+          "AI agents",
+          "open source",
+          "cross-platform",
+          "automation",
+          "LLM integration"
+        ],
+        "notable_because": "Goose stands out by offering a native desktop app, CLI, and API for a wide range of tasks, and supports over 15 AI providers, making it highly versatile compared to other trending tools."
       }
     ],
     "monthly": [
@@ -517,9 +505,9 @@
         "language": "Python",
         "owner_name": "NousResearch",
         "owner_type": "startup",
-        "stars_in_period": 46639,
-        "total_stars": 54995,
-        "forks": 7227,
+        "stars_in_period": 52020,
+        "total_stars": 62326,
+        "forks": 8358,
         "rank": 1,
         "purpose": "Hermes Agent is a self-improving AI agent that learns from experience and interacts across multiple platforms.",
         "category": "AI/ML",
@@ -533,35 +521,14 @@
         "notable_because": null
       },
       {
-        "repo_name": "Yeachan-Heo/oh-my-codex",
-        "description": "OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much more.",
-        "language": "TypeScript",
-        "owner_name": "Yeachan-Heo",
-        "owner_type": "individual",
-        "stars_in_period": 18775,
-        "total_stars": 20800,
-        "forks": 1851,
-        "rank": 2,
-        "purpose": "OMX is a workflow layer for OpenAI Codex that enhances the user experience by providing better prompts, workflows, and runtime help.",
-        "category": "Developer Tools",
-        "key_themes": [
-          "workflow",
-          "OpenAI Codex",
-          "productivity",
-          "automation",
-          "developer tools"
-        ],
-        "notable_because": null
-      },
-      {
         "repo_name": "mattpocock/skills",
         "description": "My personal directory of skills, straight from my .claude directory.",
         "language": "Shell",
         "owner_name": "mattpocock",
         "owner_type": "individual",
-        "stars_in_period": 12774,
-        "total_stars": 13962,
-        "forks": 1146,
+        "stars_in_period": 13058,
+        "total_stars": 14193,
+        "forks": 1167,
         "rank": 2,
         "purpose": "This repository is a personal directory of skills designed to enhance capabilities in planning, development, and tooling.",
         "category": "Developer Tools",
@@ -580,9 +547,9 @@
         "language": "Python",
         "owner_name": "FujiwaraChoki",
         "owner_type": "individual",
-        "stars_in_period": 14315,
-        "total_stars": 29136,
-        "forks": 3143,
+        "stars_in_period": 14394,
+        "total_stars": 29231,
+        "forks": 3152,
         "rank": 3,
         "purpose": "Automate the process of making money online.",
         "category": "Productivity",
@@ -601,9 +568,9 @@
         "language": "Python",
         "owner_name": "bytedance",
         "owner_type": "big_tech",
-        "stars_in_period": 32590,
-        "total_stars": 60354,
-        "forks": 7689,
+        "stars_in_period": 31738,
+        "total_stars": 60590,
+        "forks": 7737,
         "rank": 4,
         "purpose": "DeerFlow is an open-source super agent harness that orchestrates sub-agents, memory, and sandboxes to perform various tasks efficiently.",
         "category": "AI/ML",
@@ -618,36 +585,15 @@
         "notable_because": null
       },
       {
-        "repo_name": "666ghj/MiroFish",
-        "description": "A Simple and Universal Swarm Intelligence Engine, Predicting Anything. \u7b80\u6d01\u901a\u7528\u7684\u7fa4\u4f53\u667a\u80fd\u5f15\u64ce\uff0c\u9884\u6d4b\u4e07\u7269",
-        "language": "Python",
-        "owner_name": "666ghj",
-        "owner_type": "individual",
-        "stars_in_period": 40273,
-        "total_stars": 53419,
-        "forks": 8002,
-        "rank": 5,
-        "purpose": "MiroFish is a simple and universal swarm intelligence engine that predicts various outcomes based on real-world data.",
-        "category": "AI/ML",
-        "key_themes": [
-          "swarm intelligence",
-          "financial forecasting",
-          "future prediction",
-          "multi-agent simulation",
-          "social prediction"
-        ],
-        "notable_because": null
-      },
-      {
         "repo_name": "siddharthvaddem/openscreen",
         "description": "Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.",
         "language": "TypeScript",
         "owner_name": "siddharthvaddem",
         "owner_type": "individual",
-        "stars_in_period": 19712,
-        "total_stars": 27824,
-        "forks": 1865,
-        "rank": 6,
+        "stars_in_period": 20242,
+        "total_stars": 28460,
+        "forks": 1929,
+        "rank": 5,
         "purpose": "OpenScreen is a free, open-source application for creating product demos and walkthroughs without subscriptions or watermarks.",
         "category": "Productivity",
         "key_themes": [
@@ -660,23 +606,23 @@
         "notable_because": null
       },
       {
-        "repo_name": "affaan-m/everything-claude-code",
-        "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-        "language": "JavaScript",
-        "owner_name": "affaan-m",
+        "repo_name": "666ghj/MiroFish",
+        "description": "A Simple and Universal Swarm Intelligence Engine, Predicting Anything. \u7b80\u6d01\u901a\u7528\u7684\u7fa4\u4f53\u667a\u80fd\u5f15\u64ce\uff0c\u9884\u6d4b\u4e07\u7269",
+        "language": "Python",
+        "owner_name": "666ghj",
         "owner_type": "individual",
-        "stars_in_period": 80939,
-        "total_stars": 150670,
-        "forks": 23322,
-        "rank": 7,
-        "purpose": "The agent harness performance optimization system for AI agents.",
-        "category": "Developer Tools",
+        "stars_in_period": 37910,
+        "total_stars": 53912,
+        "forks": 8105,
+        "rank": 6,
+        "purpose": "MiroFish is a simple and universal swarm intelligence engine that predicts various outcomes based on real-world data.",
+        "category": "AI/ML",
         "key_themes": [
-          "ai-agents",
-          "performance optimization",
-          "continuous learning",
-          "security",
-          "productivity"
+          "swarm intelligence",
+          "financial forecasting",
+          "future prediction",
+          "multi-agent simulation",
+          "social prediction"
         ],
         "notable_because": null
       },
@@ -686,10 +632,10 @@
         "language": "JavaScript",
         "owner_name": "jarrodwatts",
         "owner_type": "individual",
-        "stars_in_period": 13975,
-        "total_stars": 18305,
-        "forks": 798,
-        "rank": 8,
+        "stars_in_period": 14133,
+        "total_stars": 18488,
+        "forks": 813,
+        "rank": 7,
         "purpose": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress.",
         "category": "Developer Tools",
         "key_themes": [
@@ -702,24 +648,23 @@
         "notable_because": null
       },
       {
-        "repo_name": "lightpanda-io/browser",
-        "description": "Lightpanda: the headless browser designed for AI and automation",
-        "language": "Zig",
-        "owner_name": "lightpanda-io",
-        "owner_type": "open_source_org",
-        "stars_in_period": 16279,
-        "total_stars": 28353,
-        "forks": 1197,
-        "rank": 9,
-        "purpose": "Lightpanda is a headless browser built from scratch for AI agents and automation.",
+        "repo_name": "affaan-m/everything-claude-code",
+        "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+        "language": "JavaScript",
+        "owner_name": "affaan-m",
+        "owner_type": "individual",
+        "stars_in_period": 80675,
+        "total_stars": 151858,
+        "forks": 23553,
+        "rank": 8,
+        "purpose": "The agent harness performance optimization system for AI agents.",
         "category": "Developer Tools",
         "key_themes": [
-          "headless browser",
-          "automation",
-          "AI",
-          "Zig",
-          "web scraping",
-          "performance"
+          "ai-agents",
+          "performance optimization",
+          "continuous learning",
+          "security",
+          "productivity"
         ],
         "notable_because": null
       },
@@ -729,10 +674,10 @@
         "language": "Python",
         "owner_name": "mvanhorn",
         "owner_type": "individual",
-        "stars_in_period": 16503,
-        "total_stars": 20530,
-        "forks": 1682,
-        "rank": 10,
+        "stars_in_period": 16729,
+        "total_stars": 20775,
+        "forks": 1701,
+        "rank": 9,
         "purpose": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary.",
         "category": "AI/ML",
         "key_themes": [
@@ -745,36 +690,15 @@
         "notable_because": null
       },
       {
-        "repo_name": "shareAI-lab/learn-claude-code",
-        "description": "Bash is all you need - A nano claude code\u2013like \u300cagent harness\u300d, built from 0 to 1",
-        "language": "TypeScript",
-        "owner_name": "shareAI-lab",
-        "owner_type": "open_source_org",
-        "stars_in_period": 26930,
-        "total_stars": 51543,
-        "forks": 8416,
-        "rank": 11,
-        "purpose": "This repository provides a framework for developing AI agents, specifically focusing on harnessing Claude-like models from scratch.",
-        "category": "Education",
-        "key_themes": [
-          "agent",
-          "ai-agent",
-          "educational",
-          "python",
-          "tutorial"
-        ],
-        "notable_because": null
-      },
-      {
         "repo_name": "TauricResearch/TradingAgents",
         "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
         "language": "Python",
         "owner_name": "TauricResearch",
         "owner_type": "open_source_org",
-        "stars_in_period": 17751,
-        "total_stars": 49415,
-        "forks": 8944,
-        "rank": 12,
+        "stars_in_period": 17986,
+        "total_stars": 49705,
+        "forks": 9004,
+        "rank": 10,
         "purpose": "TradingAgents is a multi-agent LLM financial trading framework.",
         "category": "AI/ML",
         "key_themes": [
@@ -792,10 +716,10 @@
         "language": "Shell",
         "owner_name": "obra",
         "owner_type": "individual",
-        "stars_in_period": 70214,
-        "total_stars": 146368,
-        "forks": 12549,
-        "rank": 13,
+        "stars_in_period": 70276,
+        "total_stars": 147677,
+        "forks": 12691,
+        "rank": 11,
         "purpose": "Superpowers is a complete software development workflow for coding agents, utilizing a set of composable skills and instructions.",
         "category": "Developer Tools",
         "key_themes": [
@@ -808,23 +732,23 @@
         "notable_because": null
       },
       {
-        "repo_name": "msitarzewski/agency-agents",
-        "description": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
-        "language": "Shell",
-        "owner_name": "msitarzewski",
-        "owner_type": "individual",
-        "stars_in_period": 56117,
-        "total_stars": 78082,
-        "forks": 12379,
-        "rank": 14,
-        "purpose": "A complete AI agency providing specialized AI agents for various tasks and workflows.",
-        "category": "Productivity",
+        "repo_name": "shareAI-lab/learn-claude-code",
+        "description": "Bash is all you need - A nano claude code\u2013like \u300cagent harness\u300d, built from 0 to 1",
+        "language": "TypeScript",
+        "owner_name": "shareAI-lab",
+        "owner_type": "open_source_org",
+        "stars_in_period": 26934,
+        "total_stars": 51910,
+        "forks": 8483,
+        "rank": 12,
+        "purpose": "This repository provides a framework for developing AI agents, specifically focusing on harnessing Claude-like models from scratch.",
+        "category": "Education",
         "key_themes": [
-          "AI agents",
-          "specialization",
-          "productivity",
-          "workflow transformation",
-          "integration"
+          "agent",
+          "ai-agent",
+          "educational",
+          "python",
+          "tutorial"
         ],
         "notable_because": null
       },
@@ -834,10 +758,10 @@
         "language": "Kotlin",
         "owner_name": "google-ai-edge",
         "owner_type": "big_tech",
-        "stars_in_period": 4846,
-        "total_stars": 20329,
-        "forks": 1902,
-        "rank": 15,
+        "stars_in_period": 5115,
+        "total_stars": 20533,
+        "forks": 1933,
+        "rank": 13,
         "purpose": "A gallery that showcases on-device ML/GenAI use cases and allows people to try and use models locally.",
         "category": "AI/ML",
         "key_themes": [
@@ -855,10 +779,10 @@
         "language": "Python",
         "owner_name": "langchain-ai",
         "owner_type": "open_source_org",
-        "stars_in_period": 4187,
-        "total_stars": 9435,
+        "stars_in_period": 4225,
+        "total_stars": 9482,
         "forks": 1063,
-        "rank": 16,
+        "rank": 14,
         "purpose": "Open SWE is an open-source framework for building internal coding agents for organizations.",
         "category": "Developer Tools",
         "key_themes": [
@@ -871,15 +795,37 @@
         "notable_because": null
       },
       {
+        "repo_name": "lightpanda-io/browser",
+        "description": "Lightpanda: the headless browser designed for AI and automation",
+        "language": "Zig",
+        "owner_name": "lightpanda-io",
+        "owner_type": "open_source_org",
+        "stars_in_period": 16450,
+        "total_stars": 28510,
+        "forks": 1204,
+        "rank": 15,
+        "purpose": "Lightpanda is a headless browser built from scratch for AI agents and automation.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "headless browser",
+          "automation",
+          "AI",
+          "Zig",
+          "web scraping",
+          "performance"
+        ],
+        "notable_because": null
+      },
+      {
         "repo_name": "onyx-dot-app/onyx",
         "description": "Open Source AI Platform - AI Chat with advanced features that works with every LLM",
         "language": "Python",
         "owner_name": "onyx-dot-app",
         "owner_type": "open_source_org",
-        "stars_in_period": 8661,
-        "total_stars": 26491,
-        "forks": 3520,
-        "rank": 17,
+        "stars_in_period": 8840,
+        "total_stars": 26662,
+        "forks": 3544,
+        "rank": 16,
         "purpose": "Open Source AI Platform - AI Chat with advanced features that works with every LLM",
         "category": "AI/ML",
         "key_themes": [
@@ -921,6 +867,31 @@
     "confidence_label": "high"
   },
   "history": [
+    {
+      "date": "2026-04-12",
+      "repo_count": 13,
+      "top_repos": [
+        "NousResearch/hermes-agent",
+        "microsoft/markitdown",
+        "alexpate/awesome-design-systems",
+        "multica-ai/multica",
+        "obra/superpowers"
+      ],
+      "category_counts": {
+        "AI/ML": 6,
+        "Developer Tools": 4,
+        "Unknown": 2,
+        "Education": 1
+      },
+      "language_counts": {
+        "Python": 5,
+        "TypeScript": 2,
+        "HTML": 1,
+        "Roff": 1,
+        "Java": 1,
+        "Shell": 1
+      }
+    },
     {
       "date": "2026-04-11",
       "repo_count": 12,
@@ -1585,35 +1556,13 @@
         "Shell": 1,
         "Rust": 1
       }
-    },
-    {
-      "date": "2026-03-12",
-      "repo_count": 9,
-      "top_repos": [
-        "msitarzewski/agency-agents",
-        "666ghj/MiroFish",
-        "obra/superpowers",
-        "NousResearch/hermes-agent",
-        "alibaba/page-agent"
-      ],
-      "category_counts": {
-        "AI/ML": 4,
-        "Developer Tools": 3,
-        "Productivity": 1,
-        "Education": 1
-      },
-      "language_counts": {
-        "Python": 5,
-        "Shell": 2,
-        "TypeScript": 2
-      }
     }
   ],
   "stats": {
-    "total_repos": 214,
-    "days_tracked": 44,
+    "total_repos": 216,
+    "days_tracked": 45,
     "first_date": "2026-02-17",
-    "latest_date": "2026-04-11"
+    "latest_date": "2026-04-12"
   },
   "clusters": {
     "run_date": "2026-04-10",
@@ -1829,7 +1778,7 @@
         "cluster_id": 31,
         "x": 10.8724384307861,
         "y": 4.05711460113525,
-        "total_stars": 12918
+        "total_stars": 14902
       },
       {
         "repo_name": "seerr-team/seerr",
@@ -1878,7 +1827,7 @@
         "cluster_id": 32,
         "x": 12.1532020568848,
         "y": 4.12348937988281,
-        "total_stars": 27824
+        "total_stars": 28460
       },
       {
         "repo_name": "immich-app/immich",
@@ -2102,7 +2051,7 @@
         "cluster_id": 33,
         "x": 9.74485683441162,
         "y": 2.32527780532837,
-        "total_stars": 38597
+        "total_stars": 41284
       },
       {
         "repo_name": "goharbor/harbor",
@@ -2116,14 +2065,14 @@
         "cluster_id": 33,
         "x": 10.0322313308716,
         "y": 2.11194491386414,
-        "total_stars": 16307
+        "total_stars": 17041
       },
       {
         "repo_name": "multica-ai/multica",
         "cluster_id": 33,
         "x": 10.0072298049927,
         "y": 2.53645086288452,
-        "total_stars": 6910
+        "total_stars": 8582
       },
       {
         "repo_name": "alibaba/zvec",
@@ -2221,7 +2170,7 @@
         "cluster_id": 35,
         "x": 9.10142517089844,
         "y": 5.4397988319397,
-        "total_stars": 100807
+        "total_stars": 103280
       },
       {
         "repo_name": "servo/servo",
@@ -2312,7 +2261,7 @@
         "cluster_id": 36,
         "x": 11.0968599319458,
         "y": 2.30040073394775,
-        "total_stars": 20329
+        "total_stars": 20533
       },
       {
         "repo_name": "ollama/ollama",
@@ -2375,7 +2324,7 @@
         "cluster_id": 37,
         "x": 11.0111770629883,
         "y": 1.37920475006104,
-        "total_stars": 3364
+        "total_stars": 3473
       },
       {
         "repo_name": "ggml-org/llama.cpp",
@@ -2389,14 +2338,14 @@
         "cluster_id": 37,
         "x": 11.4229049682617,
         "y": 1.9910329580307,
-        "total_stars": 8959
+        "total_stars": 9041
       },
       {
         "repo_name": "OpenBMB/VoxCPM",
         "cluster_id": 37,
         "x": 11.2838716506958,
         "y": 1.67042529582977,
-        "total_stars": 7262
+        "total_stars": 10459
       },
       {
         "repo_name": "steipete/gogcli",
@@ -2452,7 +2401,7 @@
         "cluster_id": 39,
         "x": 7.87077474594116,
         "y": 4.46782302856445,
-        "total_stars": 4905
+        "total_stars": 5724
       },
       {
         "repo_name": "lingfengQAQ/webnovel-writer",
@@ -2480,7 +2429,7 @@
         "cluster_id": 39,
         "x": 7.75764560699463,
         "y": 4.22753620147705,
-        "total_stars": 12202
+        "total_stars": 14388
       },
       {
         "repo_name": "anthropics/anthropic-sdk-python",
