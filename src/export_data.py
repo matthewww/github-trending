@@ -105,7 +105,7 @@ def get_today_snapshots(db: SupabaseClient, as_of_date: str) -> dict:
 def get_latest_digest(db: SupabaseClient) -> dict | None:
     resp = (
         db.client.table("weekly_digest")
-        .select("week_start, week_end, headline, digest, top_categories, top_repos, emerging_themes, data_quality_pct, confidence_label")
+        .select("week_start, week_end, headline, digest, top_categories, top_repos, data_quality_pct, confidence_label")
         .order("week_start", desc=True)
         .limit(1)
         .execute()

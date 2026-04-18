@@ -181,27 +181,6 @@
       display: block;
     }
     .read-more-btn:hover { text-decoration: underline; }
-    .digest-footer {
-      display: flex;
-      gap: 20px;
-      margin-top: 18px;
-      flex-wrap: wrap;
-      align-items: flex-start;
-    }
-    .digest-themes, .digest-cats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      flex: 1;
-    }
-    .theme-pill {
-      background: rgba(88, 166, 255, 0.1);
-      border: 1px solid rgba(88, 166, 255, 0.3);
-      color: var(--accent);
-      border-radius: 20px;
-      padding: 3px 10px;
-      font-size: 0.75rem;
-    }
     .digest-meta {
       font-size: 0.75rem;
       color: var(--text-muted);
@@ -674,24 +653,6 @@
     <div class="loading" style="color:var(--text-muted)">Loading digest…</div>
   </div>
 
-  <!-- Charts -->
-  <div class="intel-grid" id="history-charts">
-    <div class="card">
-      <h2>Category Trend — 30 days</h2>
-      <div class="chart-wrap"><canvas id="trend-chart"></canvas></div>
-    </div>
-    <div class="card">
-      <h2>Languages — this week vs last week</h2>
-      <div class="chart-wrap chart-wrap-lang"><canvas id="lang-chart"></canvas></div>
-    </div>
-  </div>
-
-  <!-- Owner spotlight -->
-  <div class="card" id="owner-section">
-    <div class="card-label">Owner Spotlight</div>
-    <div class="owner-grid" id="owner-grid"></div>
-  </div>
-
   <!-- Semantic Clusters -->
   <div class="card" id="cluster-section" style="display:none">
     <div class="card-label">Semantic Clusters — this week</div>
@@ -713,6 +674,18 @@
     </div>
   </div>
 
+  <!-- Charts -->
+  <div class="intel-grid" id="history-charts">
+    <div class="card">
+      <h2>Category Trend — 30 days</h2>
+      <div class="chart-wrap"><canvas id="trend-chart"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>Languages — this week vs last week</h2>
+      <div class="chart-wrap chart-wrap-lang"><canvas id="lang-chart"></canvas></div>
+    </div>
+  </div>
+
   <!-- Trending repos -->
   <div>
     <div class="tabs-header">
@@ -728,6 +701,11 @@
     </div>
   </div>
 
+  <!-- Owner spotlight -->
+  <div class="card" id="owner-section">
+    <div class="card-label">Owner Spotlight</div>
+    <div class="owner-grid" id="owner-grid"></div>
+  </div>
 </main>
 
 <footer>
@@ -839,10 +817,6 @@ function renderDigest(digest) {
   const renderedPreview = linkifyRepoMentions(preview, explicitRepos);
   const renderedProse = linkifyRepoMentions(prose, explicitRepos);
 
-  const themes = (digest.emerging_themes || []).map(t =>
-    `<span class="theme-pill">${escHtml(t)}</span>`
-  ).join('');
-
   const week = digest.week_start
     ? new Date(digest.week_start).toLocaleDateString('en-GB', {day:'numeric',month:'short'}) + ' – ' +
       new Date(digest.week_end).toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'})
@@ -859,9 +833,6 @@ function renderDigest(digest) {
     <div class="digest-headline">${escHtml(digest.headline || '')}</div>
     <div class="digest-prose truncated" id="digest-prose">${renderedPreview}</div>
     ${hasMore ? `<button class="read-more-btn" id="read-more-btn">Read more ↓</button>` : ''}
-    <div class="digest-footer">
-      <div class="digest-themes">${themes}</div>
-    </div>
   `;
 
   if (hasMore) {

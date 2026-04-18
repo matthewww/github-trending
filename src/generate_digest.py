@@ -408,7 +408,6 @@ Return ONLY valid JSON with these exact fields:
   "headline": "One specific sentence naming a repo, an owner, or a concrete pattern — NOT a generic trend statement",
   "digest": "350-450 word prose in 3-4 paragraphs separated by \\n\\n. Each paragraph must contain at least one named repo with a specific reason for its prominence. No paragraph may consist only of category-level observations.",
   "top_categories": ["ordered list of top 4 categories this week by repo count"],
-  "emerging_themes": ["3-5 themes that are specifically concentrated or newly appearing this week — name the repos that exemplify each"],
   "confidence_notes": "One sentence: what limited your analysis this week (low coverage, many repos without insights, etc.), or 'Good data coverage' if the analysis %, star data, and purposes are solid"
 }}"""
 
@@ -451,7 +450,6 @@ def upsert_digest(
         "digest": result.get("digest"),
         "top_categories": result.get("top_categories", []),
         "top_repos": result.get("top_repos", []),
-        "emerging_themes": result.get("emerging_themes", []),
         "model_used": MODEL,
         "generated_at": datetime.utcnow().isoformat(),
         "data_quality_pct": data_quality_pct,
