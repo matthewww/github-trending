@@ -157,6 +157,14 @@
       line-height: 1.7;
       white-space: pre-line;
     }
+    .digest-prose a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .digest-prose a:hover {
+      color: #79c0ff;
+    }
     .digest-prose.truncated {
       display: -webkit-box;
       -webkit-line-clamp: 4;
@@ -690,10 +698,10 @@
     <div class="cluster-layout">
       <div>
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-          <h2 style="margin-bottom:0;display:flex;align-items:center;gap:8px;">Semantic Map<span class="info-icon-wrap"><span class="info-icon">i</span><span class="info-popover"><strong>How this map works</strong><span class="info-popover-p">Each dot is a trending GitHub repo. Position is determined by <em>meaning</em>, not metadata — repos with similar purposes, themes, and audiences are placed close together.</span><span class="info-popover-p">The pipeline: an LLM reads each repo's README to extract purpose and themes, a local model converts those into a 384-dimensional vector, then UMAP reduces everything to 2D for this chart.</span><span class="info-popover-p">Colours represent clusters found by HDBSCAN. Click any dot to open the repo.</span></span></span></h2>
+          <h2 id="cluster-chart-title" style="margin-bottom:0;display:flex;align-items:center;gap:8px;">Semantic Map<span class="info-icon-wrap"><span class="info-icon">i</span><span class="info-popover"><strong>How this view works</strong><span class="info-popover-p">The <em>Semantic Map</em> places trending repos by meaning, not metadata — repos with similar purposes, themes, and audiences sit close together.</span><span class="info-popover-p">The <em>Cluster Share</em> view shows how this week's repos are distributed across clusters, making the biggest themes easier to scan.</span><span class="info-popover-p">The pipeline: an LLM reads each repo's README to extract purpose and themes, a local model converts those into a 384-dimensional vector, then UMAP reduces everything to 2D for the map.</span></span></span></h2>
           <div class="chart-mode-toggle">
             <button class="chart-mode-btn active" id="btn-scatter">Scatter</button>
-            <button class="chart-mode-btn" id="btn-bubble">Bubble</button>
+            <button class="chart-mode-btn" id="btn-pie">Pie</button>
           </div>
         </div>
         <div class="chart-wrap-scatter"><canvas id="cluster-chart"></canvas></div>
@@ -763,6 +771,58 @@ function escHtml(s) {
   return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
+const REPO_MENTION_RE = /(^|[^A-Za-z0-9-])([A-Za-z0-9](?:[A-Za-z0-9-]{0,38})\/[A-Za-z0-9_.-]+)(?=$|[^A-Za-z0-9_.-])/gm;
+
+function repoUrl(repoName) {
+  const [owner, repo] = String(repoName || '').split('/');
+  if (!owner || !repo) return '#';
+  return `https://github.com/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}`;
+}
+
+function isLikelyRepoName(repoName, allowedRepos = new Set()) {
+  if (!repoName) return false;
+  if (allowedRepos.has(repoName)) return true;
+  return /[a-z0-9_.-]/.test(repoName);
+}
+
+function extractRepoMentions(text, allowedRepos = new Set()) {
+  if (!text) return [];
+
+  const repos = new Set();
+  for (const match of text.matchAll(REPO_MENTION_RE)) {
+    const repoName = match[2];
+    if (isLikelyRepoName(repoName, allowedRepos)) {
+      repos.add(repoName);
+    }
+  }
+
+  return Array.from(repos);
+}
+
+function linkifyRepoMentions(text, allowedRepos = new Set()) {
+  if (!text) return '';
+
+  let html = '';
+  let lastIndex = 0;
+
+  for (const match of text.matchAll(REPO_MENTION_RE)) {
+    const prefix = match[1];
+    const repoName = match[2];
+    const repoStart = match.index + prefix.length;
+
+    html += escHtml(text.slice(lastIndex, repoStart));
+    if (isLikelyRepoName(repoName, allowedRepos)) {
+      html += `<a href="${repoUrl(repoName)}" target="_blank" rel="noopener">${escHtml(repoName)}</a>`;
+    } else {
+      html += escHtml(repoName);
+    }
+    lastIndex = repoStart + repoName.length;
+  }
+
+  html += escHtml(text.slice(lastIndex));
+  return html;
+}
+
 // ── Digest ──────────────────────────────────────────────────
 function renderDigest(digest) {
   const el = document.getElementById('digest-section');
@@ -775,6 +835,9 @@ function renderDigest(digest) {
   const paras = prose.split(/\n\n+/).filter(Boolean);
   const preview = paras.slice(0, 2).join('\n\n');
   const hasMore = paras.length > 2;
+  const explicitRepos = new Set((digest.top_repos || []).filter(Boolean));
+  const renderedPreview = linkifyRepoMentions(preview, explicitRepos);
+  const renderedProse = linkifyRepoMentions(prose, explicitRepos);
 
   const themes = (digest.emerging_themes || []).map(t =>
     `<span class="theme-pill">${escHtml(t)}</span>`
@@ -794,7 +857,7 @@ function renderDigest(digest) {
     <div class="card-label">Weekly Signal</div>
     <div class="digest-meta"><span>Week of ${escHtml(week)}</span>${confidencePill}</div>
     <div class="digest-headline">${escHtml(digest.headline || '')}</div>
-    <div class="digest-prose truncated" id="digest-prose">${escHtml(preview)}</div>
+    <div class="digest-prose truncated" id="digest-prose">${renderedPreview}</div>
     ${hasMore ? `<button class="read-more-btn" id="read-more-btn">Read more ↓</button>` : ''}
     <div class="digest-footer">
       <div class="digest-themes">${themes}</div>
@@ -804,7 +867,7 @@ function renderDigest(digest) {
   if (hasMore) {
     document.getElementById('read-more-btn').onclick = function() {
       document.getElementById('digest-prose').classList.remove('truncated');
-      document.getElementById('digest-prose').textContent = prose;
+      document.getElementById('digest-prose').innerHTML = renderedProse;
       this.remove();
     };
   }
@@ -1060,34 +1123,12 @@ const CLUSTER_PALETTE = [
 ];
 
 let clusterChart;
-let clusterChartMode = 'scatter'; // 'scatter' | 'bubble'
+let clusterChartMode = 'scatter'; // 'scatter' | 'pie'
 let lastClusterData = null;
 
-function starsToRadius(stars, minR = 4, maxR = 20) {
-  if (!stars || stars <= 0) return minR;
-  const logVal = Math.log10(stars + 1);
-  const logMin = 0, logMax = Math.log10(200001);
-  return minR + ((logVal - logMin) / (logMax - logMin)) * (maxR - minR);
-}
-
-function buildDatasets(clusters, scatter, mode) {
+function buildScatterDatasets(clusters, scatter) {
   return clusters.map(c => {
     const points = scatter.filter(p => p.cluster_id === c.id);
-    if (mode === 'bubble') {
-      return {
-        label: c.label,
-        data: points.map(p => ({
-          x: p.x,
-          y: p.y,
-          r: starsToRadius(p.total_stars),
-          repo: p.repo_name,
-          total_stars: p.total_stars,
-        })),
-        backgroundColor: CLUSTER_PALETTE[clusters.indexOf(c) % CLUSTER_PALETTE.length] + 'aa',
-        borderColor:     CLUSTER_PALETTE[clusters.indexOf(c) % CLUSTER_PALETTE.length] + 'dd',
-        borderWidth: 1,
-      };
-    }
     return {
       label: c.label,
       data: points.map(p => ({ x: p.x, y: p.y, repo: p.repo_name })),
@@ -1096,6 +1137,19 @@ function buildDatasets(clusters, scatter, mode) {
       pointHoverRadius: 9,
     };
   });
+}
+
+function buildPieDataset(clusters, colorMap) {
+  return {
+    labels: clusters.map(c => c.label),
+    datasets: [{
+      data: clusters.map(c => c.size || (c.repos || []).length || 0),
+      backgroundColor: clusters.map(c => colorMap[c.id] + 'cc'),
+      borderColor: clusters.map(c => colorMap[c.id]),
+      borderWidth: 1,
+      hoverOffset: 8,
+    }],
+  };
 }
 
 function renderClusters(clusterData) {
@@ -1143,41 +1197,51 @@ function renderClusters(clusterData) {
 
 function renderClusterChart(clusters, scatter, mode, colorMap) {
   const ctx = document.getElementById('cluster-chart').getContext('2d');
+  const titleEl = document.getElementById('cluster-chart-title');
   if (clusterChart) clusterChart.destroy();
 
-  const datasets = buildDatasets(clusters, scatter, mode);
+  if (titleEl) {
+    titleEl.firstChild.textContent = mode === 'pie' ? 'Cluster Share' : 'Semantic Map';
+  }
+
+  const datasets = buildScatterDatasets(clusters, scatter);
+  const pieData = buildPieDataset(clusters, colorMap);
 
   clusterChart = new Chart(ctx, {
-    type: mode === 'bubble' ? 'bubble' : 'scatter',
-    data: { datasets },
+    type: mode === 'pie' ? 'pie' : 'scatter',
+    data: mode === 'pie' ? pieData : { datasets },
     options: {
       responsive: true,
       maintainAspectRatio: false,
       animation: { duration: 600 },
       plugins: {
         legend: {
-          display: clusters.length <= 8,
+          display: mode === 'pie' || clusters.length <= 8,
           position: 'bottom',
           labels: { color: '#7d8590', font: { size: 10 }, boxWidth: 10, padding: 8 },
         },
         tooltip: {
           callbacks: {
             label(ctx) {
+              if (mode === 'pie') {
+                const count = ctx.raw || 0;
+                const total = pieData.datasets[0].data.reduce((sum, value) => sum + value, 0);
+                const pct = total ? Math.round((count / total) * 100) : 0;
+                return `${ctx.label}: ${count} repos (${pct}%)`;
+              }
               const pt = ctx.raw;
               const name = (pt.repo || '').split('/')[1] || pt.repo;
-              const base = `${name} (${ctx.dataset.label})`;
-              if (mode === 'bubble' && pt.total_stars)
-                return `${base} — ★ ${pt.total_stars.toLocaleString()}`;
-              return base;
+              return `${name} (${ctx.dataset.label})`;
             },
           },
         },
       },
-      scales: {
+      scales: mode === 'pie' ? {} : {
         x: { ticks: { display: false }, grid: { color: '#21262d' } },
         y: { ticks: { display: false }, grid: { color: '#21262d' } },
       },
       onClick(event, elements) {
+        if (mode === 'pie') return;
         if (!elements.length) return;
         const el = elements[0];
         const pt = datasets[el.datasetIndex].data[el.index];
@@ -1191,7 +1255,7 @@ document.getElementById('btn-scatter').addEventListener('click', () => {
   if (clusterChartMode === 'scatter' || !lastClusterData) return;
   clusterChartMode = 'scatter';
   document.getElementById('btn-scatter').classList.add('active');
-  document.getElementById('btn-bubble').classList.remove('active');
+  document.getElementById('btn-pie').classList.remove('active');
   const clusters = lastClusterData.clusters;
   const scatter = lastClusterData.scatter || [];
   const colorMap = {};
@@ -1199,16 +1263,16 @@ document.getElementById('btn-scatter').addEventListener('click', () => {
   renderClusterChart(clusters, scatter, 'scatter', colorMap);
 });
 
-document.getElementById('btn-bubble').addEventListener('click', () => {
-  if (clusterChartMode === 'bubble' || !lastClusterData) return;
-  clusterChartMode = 'bubble';
-  document.getElementById('btn-bubble').classList.add('active');
+document.getElementById('btn-pie').addEventListener('click', () => {
+  if (clusterChartMode === 'pie' || !lastClusterData) return;
+  clusterChartMode = 'pie';
+  document.getElementById('btn-pie').classList.add('active');
   document.getElementById('btn-scatter').classList.remove('active');
   const clusters = lastClusterData.clusters;
   const scatter = lastClusterData.scatter || [];
   const colorMap = {};
   clusters.forEach((c, i) => { colorMap[c.id] = CLUSTER_PALETTE[i % CLUSTER_PALETTE.length]; });
-  renderClusterChart(clusters, scatter, 'bubble', colorMap);
+  renderClusterChart(clusters, scatter, 'pie', colorMap);
 });
 
 // ── Tab switching ────────────────────────────────────────────
