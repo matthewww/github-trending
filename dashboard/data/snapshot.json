@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-25T10:38:48.666421Z",
-  "as_of_date": "2026-04-25",
+  "generated_at": "2026-04-26T10:40:11.432106Z",
+  "as_of_date": "2026-04-26",
   "today": {
     "daily": [
       {
@@ -9,9 +9,9 @@
         "language": "Python",
         "owner_name": "Alishahryar1",
         "owner_type": null,
-        "stars_in_period": 2638,
-        "total_stars": 10460,
-        "forks": 1522,
+        "stars_in_period": 4007,
+        "total_stars": 12117,
+        "forks": 1810,
         "rank": 1,
         "purpose": null,
         "category": "Unknown",
@@ -19,33 +19,24 @@
         "notable_because": null
       },
       {
-        "repo_name": "huggingface/ml-intern",
-        "description": "\ud83e\udd17 ml-intern: an open-source ML engineer that reads papers, trains models, and ships ML models",
-        "language": "Python",
-        "owner_name": "huggingface",
-        "owner_type": "open_source_org",
-        "stars_in_period": 2985,
-        "total_stars": 5829,
-        "forks": 515,
+        "repo_name": "mattpocock/skills",
+        "description": "My personal directory of skills, straight from my .claude directory.",
+        "language": "Shell",
+        "owner_name": "mattpocock",
+        "owner_type": "individual",
+        "stars_in_period": 1139,
+        "total_stars": 21060,
+        "forks": 1745,
         "rank": 2,
-        "purpose": null,
-        "category": "Unknown",
-        "key_themes": [],
-        "notable_because": null
-      },
-      {
-        "repo_name": "google/osv-scanner",
-        "description": "Vulnerability scanner written in Go which uses the data provided byhttps://osv.dev",
-        "language": "Go",
-        "owner_name": "google",
-        "owner_type": "big_tech",
-        "stars_in_period": 141,
-        "total_stars": 9688,
-        "forks": 631,
-        "rank": 3,
-        "purpose": null,
-        "category": "Unknown",
-        "key_themes": [],
+        "purpose": "This repository is a personal directory of skills designed to enhance capabilities in planning, development, and tooling.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "skills",
+          "development",
+          "planning",
+          "tooling",
+          "productivity"
+        ],
         "notable_because": null
       },
       {
@@ -54,40 +45,10 @@
         "language": "Python",
         "owner_name": "Z4nzu",
         "owner_type": null,
-        "stars_in_period": 1378,
-        "total_stars": 62837,
-        "forks": 7053,
-        "rank": 4,
-        "purpose": null,
-        "category": "Unknown",
-        "key_themes": [],
-        "notable_because": null
-      },
-      {
-        "repo_name": "zilliztech/claude-context",
-        "description": "Code search MCP for Claude Code. Make entire codebase the context for any coding agent.",
-        "language": "TypeScript",
-        "owner_name": "zilliztech",
-        "owner_type": null,
-        "stars_in_period": 706,
-        "total_stars": 9210,
-        "forks": 707,
-        "rank": 5,
-        "purpose": null,
-        "category": "Unknown",
-        "key_themes": [],
-        "notable_because": null
-      },
-      {
-        "repo_name": "open-metadata/OpenMetadata",
-        "description": "OpenMetadata is a unified metadata platform for data discovery, data observability, and data governance powered by a central metadata repository, in-depth column level lineage, and seamless team collaboration.",
-        "language": "TypeScript",
-        "owner_name": "open-metadata",
-        "owner_type": null,
-        "stars_in_period": 530,
-        "total_stars": 13500,
-        "forks": 2042,
-        "rank": 6,
+        "stars_in_period": 1200,
+        "total_stars": 64518,
+        "forks": 7230,
+        "rank": 3,
         "purpose": null,
         "category": "Unknown",
         "key_themes": [],
@@ -99,10 +60,10 @@
         "language": "Python",
         "owner_name": "PostHog",
         "owner_type": "open_source_org",
-        "stars_in_period": 85,
-        "total_stars": 33284,
-        "forks": 2589,
-        "rank": 7,
+        "stars_in_period": 471,
+        "total_stars": 33634,
+        "forks": 2619,
+        "rank": 4,
         "purpose": "PostHog is an all-in-one developer platform for building successful products, offering various tools for product analytics, web analytics, session replay, error tracking, feature flags, experimentation, surveys, and more.",
         "category": "Developer Tools",
         "key_themes": [
@@ -116,14 +77,72 @@
         "notable_because": null
       },
       {
-        "repo_name": "dani-garcia/vaultwarden",
-        "description": "Unofficial Bitwarden compatible server written in Rust, formerly known as bitwarden_rs",
-        "language": "Rust",
-        "owner_name": "dani-garcia",
+        "repo_name": "davila7/claude-code-templates",
+        "description": "CLI tool for configuring and monitoring Claude Code",
+        "language": "Python",
+        "owner_name": "davila7",
+        "owner_type": "individual",
+        "stars_in_period": 87,
+        "total_stars": 25482,
+        "forks": 2541,
+        "rank": 5,
+        "purpose": "CLI tool for configuring and monitoring Claude Code.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "anthropic",
+          "claude",
+          "configuration",
+          "monitoring",
+          "CLI",
+          "development"
+        ],
+        "notable_because": null
+      },
+      {
+        "repo_name": "deepseek-ai/DeepEP",
+        "description": "DeepEP: an efficient expert-parallel communication library",
+        "language": "Cuda",
+        "owner_name": "deepseek-ai",
+        "owner_type": "open_source_org",
+        "stars_in_period": 189,
+        "total_stars": 9550,
+        "forks": 1201,
+        "rank": 6,
+        "purpose": null,
+        "category": "Unknown",
+        "key_themes": [],
+        "notable_because": null
+      },
+      {
+        "repo_name": "PowerShell/PowerShell",
+        "description": "PowerShell for every system!",
+        "language": "C#",
+        "owner_name": "PowerShell",
+        "owner_type": "open_source_org",
+        "stars_in_period": 48,
+        "total_stars": 53153,
+        "forks": 8299,
+        "rank": 7,
+        "purpose": "PowerShell is a cross-platform automation and configuration tool/framework optimized for dealing with structured data and REST APIs.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "automation",
+          "cross-platform",
+          "scripting",
+          "configuration",
+          "command-line"
+        ],
+        "notable_because": null
+      },
+      {
+        "repo_name": "RooCodeInc/Roo-Code",
+        "description": "Roo Code gives you a whole dev team of AI agents in your code editor.",
+        "language": "TypeScript",
+        "owner_name": "RooCodeInc",
         "owner_type": null,
-        "stars_in_period": 268,
-        "total_stars": 59242,
-        "forks": 2730,
+        "stars_in_period": 57,
+        "total_stars": 23621,
+        "forks": 3133,
         "rank": 8,
         "purpose": null,
         "category": "Unknown",
@@ -131,14 +150,14 @@
         "notable_because": null
       },
       {
-        "repo_name": "Anil-matcha/Open-Generative-AI",
-        "description": "Uncensored, open-source alternative to Higgsfield AI, Freepik AI, Krea AI, Openart AI \u2014 Free, unrestricted AI image & video generation studio with 200+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed.",
-        "language": "JavaScript",
-        "owner_name": "Anil-matcha",
-        "owner_type": null,
-        "stars_in_period": 842,
-        "total_stars": 7958,
-        "forks": 1451,
+        "repo_name": "huggingface/ml-intern",
+        "description": "\ud83e\udd17 ml-intern: an open-source ML engineer that reads papers, trains models, and ships ML models",
+        "language": "Python",
+        "owner_name": "huggingface",
+        "owner_type": "open_source_org",
+        "stars_in_period": 1240,
+        "total_stars": 6521,
+        "forks": 590,
         "rank": 9,
         "purpose": null,
         "category": "Unknown",
@@ -151,9 +170,9 @@
         "language": "Markdown",
         "owner_name": "codecrafters-io",
         "owner_type": "open_source_org",
-        "stars_in_period": 991,
-        "total_stars": 495341,
-        "forks": 46927,
+        "stars_in_period": 1432,
+        "total_stars": 496356,
+        "forks": 47042,
         "rank": 10,
         "purpose": "This repository is a compilation of well-written, step-by-step guides for re-creating our favorite technologies from scratch.",
         "category": "Education",
@@ -167,14 +186,14 @@
         "notable_because": null
       },
       {
-        "repo_name": "deepseek-ai/DeepEP",
-        "description": "DeepEP: an efficient expert-parallel communication library",
-        "language": "Cuda",
-        "owner_name": "deepseek-ai",
-        "owner_type": "open_source_org",
-        "stars_in_period": 52,
-        "total_stars": 9404,
-        "forks": 1189,
+        "repo_name": "CJackHwang/ds2api",
+        "description": "Deepseek to API: A lightweight, high-performance full-stack middleware converting client protocols to universal APIs. Supports multi-account rotation, compiled binaries, Vercel Serverless, and Docker. Compatible with Google, Claude, and OpenAI API formats.",
+        "language": "Go",
+        "owner_name": "CJackHwang",
+        "owner_type": null,
+        "stars_in_period": 44,
+        "total_stars": 1556,
+        "forks": 491,
         "rank": 11,
         "purpose": null,
         "category": "Unknown",
@@ -182,15 +201,30 @@
         "notable_because": null
       },
       {
-        "repo_name": "microsoft/typescript-go",
-        "description": "Staging repo for development of native port of TypeScript",
-        "language": "Go",
-        "owner_name": "microsoft",
-        "owner_type": "big_tech",
-        "stars_in_period": 38,
-        "total_stars": 25081,
-        "forks": 911,
+        "repo_name": "Universal-Commerce-Protocol/ucp",
+        "description": "Specification and documentation for the Universal Commerce Protocol (UCP)",
+        "language": "Python",
+        "owner_name": "Universal-Commerce-Protocol",
+        "owner_type": null,
+        "stars_in_period": 26,
+        "total_stars": 2868,
+        "forks": 353,
         "rank": 12,
+        "purpose": null,
+        "category": "Unknown",
+        "key_themes": [],
+        "notable_because": null
+      },
+      {
+        "repo_name": "ComposioHQ/awesome-codex-skills",
+        "description": "A curated list of practical Codex skills for automating workflows across the Codex CLI and API.",
+        "language": "Python",
+        "owner_name": "ComposioHQ",
+        "owner_type": "startup",
+        "stars_in_period": 188,
+        "total_stars": 1704,
+        "forks": 145,
+        "rank": 13,
         "purpose": null,
         "category": "Unknown",
         "key_themes": [],
@@ -199,15 +233,30 @@
     ],
     "weekly": [
       {
+        "repo_name": "Alishahryar1/free-claude-code",
+        "description": "Use claude-code for free in the terminal, VSCode extension or via discord like openclaw",
+        "language": "Python",
+        "owner_name": "Alishahryar1",
+        "owner_type": null,
+        "stars_in_period": 8668,
+        "total_stars": 12117,
+        "forks": 1810,
+        "rank": 1,
+        "purpose": null,
+        "category": "Unknown",
+        "key_themes": [],
+        "notable_because": null
+      },
+      {
         "repo_name": "forrestchang/andrej-karpathy-skills",
         "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
         "language": null,
         "owner_name": "forrestchang",
         "owner_type": "individual",
-        "stars_in_period": 29435,
-        "total_stars": 85486,
-        "forks": 8170,
-        "rank": 1,
+        "stars_in_period": 29917,
+        "total_stars": 89001,
+        "forks": 8483,
+        "rank": 2,
         "purpose": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
         "category": "AI/ML",
         "key_themes": [
@@ -220,40 +269,25 @@
         "notable_because": "This repository provides a focused set of principles aimed at improving LLM coding practices, which is a unique approach compared to other trending repositories that offer broader AI functionalities."
       },
       {
-        "repo_name": "SimoneAvogadro/android-reverse-engineering-skill",
-        "description": "Claude Code skill to support Android app's reverse engineering",
-        "language": "Shell",
-        "owner_name": "SimoneAvogadro",
-        "owner_type": "individual",
-        "stars_in_period": 2258,
-        "total_stars": 4890,
-        "forks": 567,
-        "rank": 2,
-        "purpose": "A Claude Code skill that decompiles Android APK/XAPK/JAR/AAR files and extracts the HTTP APIs used by the app.",
-        "category": "Developer Tools",
-        "key_themes": [
-          "reverse engineering",
-          "Android",
-          "API extraction",
-          "decompilation",
-          "developer tools"
-        ],
-        "notable_because": "This repository provides a comprehensive solution for extracting APIs from Android applications, which is a niche yet critical need in the developer community, especially for those working with obfuscated code."
-      },
-      {
-        "repo_name": "Alishahryar1/free-claude-code",
-        "description": "Use claude-code for free in the terminal, VSCode extension or via discord like openclaw",
-        "language": "Python",
-        "owner_name": "Alishahryar1",
-        "owner_type": null,
-        "stars_in_period": 5160,
-        "total_stars": 10460,
-        "forks": 1522,
+        "repo_name": "thunderbird/thunderbolt",
+        "description": "AI You Control: Choose your models. Own your data. Eliminate vendor lock-in.",
+        "language": "TypeScript",
+        "owner_name": "thunderbird",
+        "owner_type": "open_source_org",
+        "stars_in_period": 2799,
+        "total_stars": 4100,
+        "forks": 259,
         "rank": 3,
-        "purpose": null,
-        "category": "Unknown",
-        "key_themes": [],
-        "notable_because": null
+        "purpose": "Thunderbolt is an open-source AI client that allows users to choose their models, own their data, and eliminate vendor lock-in.",
+        "category": "AI/ML",
+        "key_themes": [
+          "AI",
+          "on-device AI",
+          "vendor lock-in",
+          "self-hosting",
+          "enterprise"
+        ],
+        "notable_because": "Thunderbolt distinguishes itself by offering a fully open-source solution that can be self-hosted and is designed for enterprise use, unlike many other tools that rely on cloud services or proprietary models."
       },
       {
         "repo_name": "zilliztech/claude-context",
@@ -261,9 +295,9 @@
         "language": "TypeScript",
         "owner_name": "zilliztech",
         "owner_type": null,
-        "stars_in_period": 2878,
-        "total_stars": 9210,
-        "forks": 707,
+        "stars_in_period": 3301,
+        "total_stars": 9483,
+        "forks": 726,
         "rank": 4,
         "purpose": null,
         "category": "Unknown",
@@ -276,9 +310,9 @@
         "language": "Python",
         "owner_name": "lsdefine",
         "owner_type": "individual",
-        "stars_in_period": 3483,
-        "total_stars": 6992,
-        "forks": 788,
+        "stars_in_period": 3006,
+        "total_stars": 7262,
+        "forks": 818,
         "rank": 5,
         "purpose": "GenericAgent is a self-evolving autonomous agent framework that grows a skill tree from a minimal codebase, enabling system-level control with high efficiency.",
         "category": "AI/ML",
@@ -292,47 +326,46 @@
         "notable_because": "GenericAgent stands out due to its minimal architecture and self-evolving capabilities, allowing users to build a personalized skill tree without preloading skills, which is a unique approach compared to other trending repositories."
       },
       {
-        "repo_name": "EvoMap/evolver",
-        "description": "The GEP-powered self-evolving engine for AI agents. Auditable evolution with Genes, Capsules, and Events. | evomap.ai",
-        "language": "JavaScript",
-        "owner_name": "EvoMap",
-        "owner_type": "open_source_org",
-        "stars_in_period": 3099,
-        "total_stars": 6857,
-        "forks": 682,
+        "repo_name": "SimoneAvogadro/android-reverse-engineering-skill",
+        "description": "Claude Code skill to support Android app's reverse engineering",
+        "language": "Shell",
+        "owner_name": "SimoneAvogadro",
+        "owner_type": "individual",
+        "stars_in_period": 1981,
+        "total_stars": 5046,
+        "forks": 582,
         "rank": 6,
-        "purpose": "Evolver is a GEP-powered self-evolution engine for AI agents that transforms ad hoc prompt tweaks into auditable, reusable evolution assets.",
-        "category": "AI/ML",
+        "purpose": "A Claude Code skill that decompiles Android APK/XAPK/JAR/AAR files and extracts the HTTP APIs used by the app.",
+        "category": "Developer Tools",
         "key_themes": [
-          "self-evolution",
-          "AI agents",
-          "GEP",
-          "collaboration",
-          "auditable assets"
+          "reverse engineering",
+          "Android",
+          "API extraction",
+          "decompilation",
+          "developer tools"
         ],
-        "notable_because": "Evolver stands out due to its focus on turning isolated prompt tweaks into shared, auditable intelligence, and its commitment to evolving from fully open source to source-available while maintaining user access to existing versions."
+        "notable_because": "This repository provides a comprehensive solution for extracting APIs from Android applications, which is a niche yet critical need in the developer community, especially for those working with obfuscated code."
       },
       {
-        "repo_name": "openai/openai-agents-python",
-        "description": "A lightweight, powerful framework for multi-agent workflows",
-        "language": "Python",
-        "owner_name": "openai",
+        "repo_name": "tractorjuice/arc-kit",
+        "description": "Enterprise Architecture Governance & Vendor Procurement Toolkit",
+        "language": "HTML",
+        "owner_name": "tractorjuice",
         "owner_type": "open_source_org",
-        "stars_in_period": 3372,
-        "total_stars": 25051,
-        "forks": 3822,
+        "stars_in_period": 1004,
+        "total_stars": 1646,
+        "forks": 192,
         "rank": 7,
-        "purpose": "A lightweight, powerful framework for building multi-agent workflows.",
-        "category": "AI/ML",
+        "purpose": "ArcKit is a toolkit for enterprise architects that transforms architecture governance into a systematic, AI-assisted workflow.",
+        "category": "Developer Tools",
         "key_themes": [
-          "agents",
-          "AI",
-          "framework",
-          "multi-agent workflows",
-          "OpenAI",
-          "Python"
+          "enterprise architecture",
+          "governance",
+          "vendor procurement",
+          "AI-assisted workflows",
+          "risk management"
         ],
-        "notable_because": "This repository stands out due to its provider-agnostic approach, supporting over 100 LLMs, and its comprehensive features for managing agent interactions, which are not commonly found in other tools."
+        "notable_because": "ArcKit stands out by integrating AI-assisted workflows into enterprise architecture governance, which is less common among the trending developer tools that primarily focus on coding and software development."
       },
       {
         "repo_name": "Tracer-Cloud/opensre",
@@ -340,9 +373,9 @@
         "language": "Python",
         "owner_name": "Tracer-Cloud",
         "owner_type": "startup",
-        "stars_in_period": 1623,
-        "total_stars": 2998,
-        "forks": 336,
+        "stars_in_period": 1385,
+        "total_stars": 3230,
+        "forks": 358,
         "rank": 8,
         "purpose": "OpenSRE is an open-source framework for building AI SRE agents that resolve production incidents on your own infrastructure.",
         "category": "Developer Tools",
@@ -356,82 +389,26 @@
         "notable_because": "OpenSRE stands out by providing a customizable framework for AI SRE agents that can run on existing infrastructure, along with synthetic incident simulations for realistic testing, which is less common among other tools in the space."
       },
       {
-        "repo_name": "multica-ai/multica",
-        "description": "The open-source managed agents platform. Turn coding agents into real teammates \u2014 assign tasks, track progress, compound skills.",
-        "language": "TypeScript",
-        "owner_name": "multica-ai",
-        "owner_type": "open_source_org",
-        "stars_in_period": 5421,
-        "total_stars": 20840,
-        "forks": 2534,
-        "rank": 9,
-        "purpose": "The open-source managed agents platform that turns coding agents into real teammates for task assignment and progress tracking.",
-        "category": "AI/ML",
-        "key_themes": [
-          "managed agents",
-          "task assignment",
-          "autonomous execution",
-          "collaboration",
-          "skill reuse"
-        ],
-        "notable_because": "Multica uniquely positions coding agents as teammates that autonomously manage tasks and compound skills over time, distinguishing it from other tools that focus solely on AI coding assistance."
-      },
-      {
-        "repo_name": "NousResearch/hermes-agent",
-        "description": "The agent that grows with you",
+        "repo_name": "openai/openai-agents-python",
+        "description": "A lightweight, powerful framework for multi-agent workflows",
         "language": "Python",
-        "owner_name": "NousResearch",
-        "owner_type": "startup",
-        "stars_in_period": 19019,
-        "total_stars": 115872,
-        "forks": 17054,
-        "rank": 10,
-        "purpose": "Hermes Agent is a self-improving AI agent that learns from experience and interacts across multiple platforms.",
+        "owner_name": "openai",
+        "owner_type": "open_source_org",
+        "stars_in_period": 3061,
+        "total_stars": 25239,
+        "forks": 3854,
+        "rank": 9,
+        "purpose": "A lightweight, powerful framework for building multi-agent workflows.",
         "category": "AI/ML",
         "key_themes": [
-          "ai",
-          "self-improving",
-          "automation",
-          "cross-platform",
-          "learning loop"
+          "agents",
+          "AI",
+          "framework",
+          "multi-agent workflows",
+          "OpenAI",
+          "Python"
         ],
-        "notable_because": null
-      },
-      {
-        "repo_name": "thedotmack/claude-mem",
-        "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
-        "language": "TypeScript",
-        "owner_name": "thedotmack",
-        "owner_type": "individual",
-        "stars_in_period": 5961,
-        "total_stars": 67206,
-        "forks": 5717,
-        "rank": 11,
-        "purpose": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI, and injects relevant context back into future sessions.",
-        "category": "Developer Tools",
-        "key_themes": [
-          "ai",
-          "memory",
-          "coding",
-          "automation",
-          "contextualization"
-        ],
-        "notable_because": null
-      },
-      {
-        "repo_name": "mksglu/context-mode",
-        "description": "Context window optimization for AI coding agents. Sandboxes tool output, 98% reduction. 12 platforms",
-        "language": "TypeScript",
-        "owner_name": "mksglu",
-        "owner_type": null,
-        "stars_in_period": 2315,
-        "total_stars": 9935,
-        "forks": 683,
-        "rank": 12,
-        "purpose": null,
-        "category": "Unknown",
-        "key_themes": [],
-        "notable_because": null
+        "notable_because": "This repository stands out due to its provider-agnostic approach, supporting over 100 LLMs, and its comprehensive features for managing agent interactions, which are not commonly found in other tools."
       },
       {
         "repo_name": "deepseek-ai/DeepGEMM",
@@ -439,10 +416,10 @@
         "language": "Cuda",
         "owner_name": "deepseek-ai",
         "owner_type": "open_source_org",
-        "stars_in_period": 605,
-        "total_stars": 7012,
-        "forks": 930,
-        "rank": 13,
+        "stars_in_period": 614,
+        "total_stars": 7052,
+        "forks": 931,
+        "rank": 10,
         "purpose": "DeepGEMM is a unified, high-performance tensor core kernel library for efficient FP8 GEMM operations.",
         "category": "AI/ML",
         "key_themes": [
@@ -455,46 +432,76 @@
         "notable_because": "DeepGEMM stands out due to its clean and efficient design, achieving performance that matches or exceeds expert-tuned libraries while being accessible for learning GPU kernel optimization techniques."
       },
       {
-        "repo_name": "jamiepine/voicebox",
-        "description": "The open-source AI voice studio. Clone, dictate, create.",
+        "repo_name": "multica-ai/multica",
+        "description": "The open-source managed agents platform. Turn coding agents into real teammates \u2014 assign tasks, track progress, compound skills.",
         "language": "TypeScript",
-        "owner_name": "jamiepine",
-        "owner_type": "individual",
-        "stars_in_period": 3540,
-        "total_stars": 23237,
-        "forks": 2736,
-        "rank": 14,
-        "purpose": "Voicebox is an open-source voice synthesis studio that allows users to clone voices, generate speech, and apply effects locally on their machines.",
+        "owner_name": "multica-ai",
+        "owner_type": "open_source_org",
+        "stars_in_period": 5118,
+        "total_stars": 21238,
+        "forks": 2583,
+        "rank": 11,
+        "purpose": "The open-source managed agents platform that turns coding agents into real teammates for task assignment and progress tracking.",
         "category": "AI/ML",
         "key_themes": [
-          "voice synthesis",
-          "voice cloning",
-          "local-first",
-          "open-source",
-          "AI"
+          "managed agents",
+          "task assignment",
+          "autonomous execution",
+          "collaboration",
+          "skill reuse"
         ],
-        "notable_because": "Voicebox stands out as a local-first alternative to commercial solutions like ElevenLabs, emphasizing complete privacy and a wide range of features including multiple TTS engines and expressive speech capabilities."
+        "notable_because": "Multica uniquely positions coding agents as teammates that autonomously manage tasks and compound skills over time, distinguishing it from other tools that focus solely on AI coding assistance."
       },
       {
-        "repo_name": "Lordog/dive-into-llms",
-        "description": "\u300a\u52a8\u624b\u5b66\u5927\u6a21\u578bDive into LLMs\u300b\u7cfb\u5217\u7f16\u7a0b\u5b9e\u8df5\u6559\u7a0b",
-        "language": "Jupyter Notebook",
-        "owner_name": "Lordog",
-        "owner_type": "academic",
-        "stars_in_period": 2886,
-        "total_stars": 34333,
-        "forks": 4213,
-        "rank": 15,
-        "purpose": "This repository provides a series of programming practice tutorials focused on large language models.",
-        "category": "Education",
+        "repo_name": "Z4nzu/hackingtool",
+        "description": "ALL IN ONE Hacking Tool For Hackers",
+        "language": "Python",
+        "owner_name": "Z4nzu",
+        "owner_type": null,
+        "stars_in_period": 4799,
+        "total_stars": 64518,
+        "forks": 7230,
+        "rank": 12,
+        "purpose": null,
+        "category": "Unknown",
+        "key_themes": [],
+        "notable_because": null
+      },
+      {
+        "repo_name": "NousResearch/hermes-agent",
+        "description": "The agent that grows with you",
+        "language": "Python",
+        "owner_name": "NousResearch",
+        "owner_type": "startup",
+        "stars_in_period": 18223,
+        "total_stars": 117445,
+        "forks": 17374,
+        "rank": 13,
+        "purpose": "Hermes Agent is a self-improving AI agent that learns from experience and interacts across multiple platforms.",
+        "category": "AI/ML",
         "key_themes": [
-          "large language models",
-          "programming tutorials",
-          "AI education",
-          "open source",
-          "free resources"
+          "ai",
+          "self-improving",
+          "automation",
+          "cross-platform",
+          "learning loop"
         ],
-        "notable_because": "This repository is unique in its focus on practical programming tutorials for large models, specifically designed for educational purposes, making it a valuable resource for students and educators in the AI field."
+        "notable_because": null
+      },
+      {
+        "repo_name": "Anil-matcha/Open-Generative-AI",
+        "description": "Uncensored, open-source alternative to Higgsfield AI, Freepik AI, Krea AI, Openart AI \u2014 Free, unrestricted AI image & video generation studio with 200+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed.",
+        "language": "JavaScript",
+        "owner_name": "Anil-matcha",
+        "owner_type": null,
+        "stars_in_period": 2917,
+        "total_stars": 8551,
+        "forks": 1562,
+        "rank": 14,
+        "purpose": null,
+        "category": "Unknown",
+        "key_themes": [],
+        "notable_because": null
       }
     ],
     "monthly": [
@@ -504,9 +511,9 @@
         "language": "Python",
         "owner_name": "NousResearch",
         "owner_type": "startup",
-        "stars_in_period": 103029,
-        "total_stars": 115872,
-        "forks": 17054,
+        "stars_in_period": 103696,
+        "total_stars": 117445,
+        "forks": 17374,
         "rank": 1,
         "purpose": "Hermes Agent is a self-improving AI agent that learns from experience and interacts across multiple platforms.",
         "category": "AI/ML",
@@ -525,9 +532,9 @@
         "language": null,
         "owner_name": "forrestchang",
         "owner_type": "individual",
-        "stars_in_period": 75285,
-        "total_stars": 85486,
-        "forks": 8170,
+        "stars_in_period": 78581,
+        "total_stars": 89001,
+        "forks": 8483,
         "rank": 2,
         "purpose": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
         "category": "AI/ML",
@@ -546,9 +553,9 @@
         "language": "Python",
         "owner_name": "luongnv89",
         "owner_type": "individual",
-        "stars_in_period": 27573,
-        "total_stars": 28769,
-        "forks": 3526,
+        "stars_in_period": 27798,
+        "total_stars": 29027,
+        "forks": 3551,
         "rank": 3,
         "purpose": "A visual, example-driven guide to Claude Code \u2014 from basic concepts to advanced agents, with copy-paste templates that bring immediate value.",
         "category": "Education",
@@ -562,36 +569,15 @@
         "notable_because": null
       },
       {
-        "repo_name": "Yeachan-Heo/oh-my-codex",
-        "description": "OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much more.",
-        "language": "TypeScript",
-        "owner_name": "Yeachan-Heo",
-        "owner_type": "individual",
-        "stars_in_period": 23184,
-        "total_stars": 25703,
-        "forks": 2133,
-        "rank": 4,
-        "purpose": "OMX is a workflow layer for OpenAI Codex that enhances the user experience by providing better prompts, workflows, and runtime help.",
-        "category": "Developer Tools",
-        "key_themes": [
-          "workflow",
-          "OpenAI Codex",
-          "productivity",
-          "automation",
-          "developer tools"
-        ],
-        "notable_because": null
-      },
-      {
         "repo_name": "siddharthvaddem/openscreen",
         "description": "Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.",
         "language": "TypeScript",
         "owner_name": "siddharthvaddem",
         "owner_type": "individual",
-        "stars_in_period": 23942,
-        "total_stars": 32658,
-        "forks": 2202,
-        "rank": 5,
+        "stars_in_period": 24060,
+        "total_stars": 32836,
+        "forks": 2212,
+        "rank": 4,
         "purpose": "OpenScreen is a free, open-source application for creating product demos and walkthroughs without subscriptions or watermarks.",
         "category": "Productivity",
         "key_themes": [
@@ -609,10 +595,10 @@
         "language": "Python",
         "owner_name": "shiyu-coder",
         "owner_type": "individual",
-        "stars_in_period": 9929,
-        "total_stars": 21372,
-        "forks": 3787,
-        "rank": 6,
+        "stars_in_period": 10218,
+        "total_stars": 21536,
+        "forks": 3810,
+        "rank": 5,
         "purpose": "Kronos is a foundation model specifically designed for the language of financial markets, focusing on K-line sequences.",
         "category": "AI/ML",
         "key_themes": [
@@ -625,14 +611,29 @@
         "notable_because": "Kronos is the first open-source foundation model tailored for financial candlesticks, trained on data from over 45 global exchanges, which sets it apart from other generic AI models."
       },
       {
+        "repo_name": "Fincept-Corporation/FinceptTerminal",
+        "description": "FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
+        "language": "Python",
+        "owner_name": "Fincept-Corporation",
+        "owner_type": null,
+        "stars_in_period": 11821,
+        "total_stars": 15138,
+        "forks": 2060,
+        "rank": 6,
+        "purpose": null,
+        "category": "Unknown",
+        "key_themes": [],
+        "notable_because": null
+      },
+      {
         "repo_name": "HKUDS/DeepTutor",
         "description": "\"DeepTutor: Agent-Native Personalized Learning Assistant\"",
         "language": "Python",
         "owner_name": "HKUDS",
         "owner_type": "academic",
-        "stars_in_period": 10610,
-        "total_stars": 21565,
-        "forks": 2894,
+        "stars_in_period": 10894,
+        "total_stars": 21904,
+        "forks": 2928,
         "rank": 7,
         "purpose": "DeepTutor is an agent-native personalized learning assistant designed to enhance interactive learning experiences.",
         "category": "Education",
@@ -646,19 +647,25 @@
         "notable_because": "DeepTutor stands out for its unique agent-native architecture and the introduction of TutorBot, which enhances the tutoring experience compared to other AI/ML tools focused on education."
       },
       {
-        "repo_name": "Fincept-Corporation/FinceptTerminal",
-        "description": "FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
-        "language": "Python",
-        "owner_name": "Fincept-Corporation",
-        "owner_type": null,
-        "stars_in_period": 11430,
-        "total_stars": 14561,
-        "forks": 1967,
+        "repo_name": "coleam00/Archon",
+        "description": "The first open-source harness builder for AI coding. Make AI coding deterministic and repeatable.",
+        "language": "TypeScript",
+        "owner_name": "coleam00",
+        "owner_type": "individual",
+        "stars_in_period": 5998,
+        "total_stars": 19761,
+        "forks": 3051,
         "rank": 8,
-        "purpose": null,
-        "category": "Unknown",
-        "key_themes": [],
-        "notable_because": null
+        "purpose": "The first open-source harness builder for AI coding, making AI coding deterministic and repeatable.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "ai",
+          "automation",
+          "workflow-engine",
+          "typescript",
+          "developer-tools"
+        ],
+        "notable_because": "Archon stands out by providing a structured and repeatable workflow for AI coding, addressing the unpredictability of AI behavior in coding tasks, unlike other tools that focus on specific aspects of AI or coding."
       },
       {
         "repo_name": "google-ai-edge/gallery",
@@ -666,9 +673,9 @@
         "language": "Kotlin",
         "owner_name": "google-ai-edge",
         "owner_type": "big_tech",
-        "stars_in_period": 6587,
-        "total_stars": 22002,
-        "forks": 2130,
+        "stars_in_period": 6648,
+        "total_stars": 22065,
+        "forks": 2142,
         "rank": 9,
         "purpose": "A gallery that showcases on-device ML/GenAI use cases and allows people to try and use models locally.",
         "category": "AI/ML",
@@ -682,36 +689,15 @@
         "notable_because": "This repository allows users to run powerful open-source Large Language Models directly on their mobile devices, emphasizing privacy and performance, which sets it apart from other tools that may rely on cloud processing."
       },
       {
-        "repo_name": "coleam00/Archon",
-        "description": "The first open-source harness builder for AI coding. Make AI coding deterministic and repeatable.",
-        "language": "TypeScript",
-        "owner_name": "coleam00",
-        "owner_type": "individual",
-        "stars_in_period": 5903,
-        "total_stars": 19640,
-        "forks": 3036,
-        "rank": 10,
-        "purpose": "The first open-source harness builder for AI coding, making AI coding deterministic and repeatable.",
-        "category": "Developer Tools",
-        "key_themes": [
-          "ai",
-          "automation",
-          "workflow-engine",
-          "typescript",
-          "developer-tools"
-        ],
-        "notable_because": "Archon stands out by providing a structured and repeatable workflow for AI coding, addressing the unpredictability of AI behavior in coding tasks, unlike other tools that focus on specific aspects of AI or coding."
-      },
-      {
         "repo_name": "microsoft/VibeVoice",
         "description": "Open-Source Frontier Voice AI",
         "language": "Python",
         "owner_name": "microsoft",
         "owner_type": "big_tech",
-        "stars_in_period": 17233,
-        "total_stars": 41015,
-        "forks": 4731,
-        "rank": 11,
+        "stars_in_period": 17315,
+        "total_stars": 41473,
+        "forks": 4774,
+        "rank": 10,
         "purpose": "VibeVoice is an open-source frontier voice AI project that provides advanced speech recognition and text-to-speech capabilities.",
         "category": "AI/ML",
         "key_themes": [
@@ -729,10 +715,10 @@
         "language": "Python",
         "owner_name": "microsoft",
         "owner_type": "big_tech",
-        "stars_in_period": 24833,
-        "total_stars": 116740,
-        "forks": 7649,
-        "rank": 12,
+        "stars_in_period": 25114,
+        "total_stars": 117180,
+        "forks": 7681,
+        "rank": 11,
         "purpose": "MarkItDown is a Python tool for converting various files and office documents to Markdown format.",
         "category": "Developer Tools",
         "key_themes": [
@@ -750,10 +736,10 @@
         "language": "C++",
         "owner_name": "google-ai-edge",
         "owner_type": "big_tech",
-        "stars_in_period": 3301,
-        "total_stars": 4295,
-        "forks": 426,
-        "rank": 13,
+        "stars_in_period": 3337,
+        "total_stars": 4341,
+        "forks": 429,
+        "rank": 12,
         "purpose": "LiteRT-LM is an open-source inference framework for deploying Large Language Models on edge devices.",
         "category": "AI/ML",
         "key_themes": [
@@ -766,15 +752,51 @@
         "notable_because": "LiteRT-LM stands out for its production-ready capabilities and broad hardware support, including mobile and IoT devices, which is not as commonly found in other AI frameworks like those focused solely on desktop or server environments."
       },
       {
+        "repo_name": "lsdefine/GenericAgent",
+        "description": "Self-evolving agent: grows skill tree from 3.3K-line seed, achieving full system control with 6x less token consumption",
+        "language": "Python",
+        "owner_name": "lsdefine",
+        "owner_type": "individual",
+        "stars_in_period": 6306,
+        "total_stars": 7263,
+        "forks": 818,
+        "rank": 13,
+        "purpose": "GenericAgent is a self-evolving autonomous agent framework that grows a skill tree from a minimal codebase, enabling system-level control with high efficiency.",
+        "category": "AI/ML",
+        "key_themes": [
+          "self-evolving",
+          "automation",
+          "AI-agent",
+          "skill-tree",
+          "token-efficient"
+        ],
+        "notable_because": "GenericAgent stands out due to its minimal architecture and self-evolving capabilities, allowing users to build a personalized skill tree without preloading skills, which is a unique approach compared to other trending repositories."
+      },
+      {
+        "repo_name": "Alishahryar1/free-claude-code",
+        "description": "Use claude-code for free in the terminal, VSCode extension or via discord like openclaw",
+        "language": "Python",
+        "owner_name": "Alishahryar1",
+        "owner_type": null,
+        "stars_in_period": 9506,
+        "total_stars": 12117,
+        "forks": 1810,
+        "rank": 14,
+        "purpose": null,
+        "category": "Unknown",
+        "key_themes": [],
+        "notable_because": null
+      },
+      {
         "repo_name": "google-research/timesfm",
         "description": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
         "language": "Python",
         "owner_name": "google-research",
         "owner_type": "big_tech",
-        "stars_in_period": 8432,
-        "total_stars": 18516,
-        "forks": 1811,
-        "rank": 14,
+        "stars_in_period": 8492,
+        "total_stars": 18598,
+        "forks": 1815,
+        "rank": 15,
         "purpose": "TimesFM is a pretrained time-series foundation model developed for time-series forecasting.",
         "category": "AI/ML",
         "key_themes": [
@@ -792,10 +814,10 @@
         "language": "Rust",
         "owner_name": "rtk-ai",
         "owner_type": null,
-        "stars_in_period": 21519,
-        "total_stars": 35030,
-        "forks": 2129,
-        "rank": 15,
+        "stars_in_period": 22183,
+        "total_stars": 35779,
+        "forks": 2167,
+        "rank": 16,
         "purpose": null,
         "category": "Unknown",
         "key_themes": [],
@@ -807,76 +829,33 @@
         "language": "Python",
         "owner_name": "hugohe3",
         "owner_type": null,
-        "stars_in_period": 5021,
-        "total_stars": 7915,
-        "forks": 890,
-        "rank": 16,
+        "stars_in_period": 5105,
+        "total_stars": 8209,
+        "forks": 915,
+        "rank": 17,
         "purpose": null,
         "category": "Unknown",
         "key_themes": [],
         "notable_because": null
       },
       {
-        "repo_name": "onyx-dot-app/onyx",
-        "description": "Open Source AI Platform - AI Chat with advanced features that works with every LLM",
-        "language": "Python",
-        "owner_name": "onyx-dot-app",
-        "owner_type": "open_source_org",
-        "stars_in_period": 10498,
-        "total_stars": 28447,
-        "forks": 3785,
-        "rank": 17,
-        "purpose": "Open Source AI Platform - AI Chat with advanced features that works with every LLM",
-        "category": "AI/ML",
+        "repo_name": "thedotmack/claude-mem",
+        "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
+        "language": "TypeScript",
+        "owner_name": "thedotmack",
+        "owner_type": "individual",
+        "stars_in_period": 27348,
+        "total_stars": 67691,
+        "forks": 5763,
+        "rank": 18,
+        "purpose": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI, and injects relevant context back into future sessions.",
+        "category": "Developer Tools",
         "key_themes": [
           "ai",
-          "ai-chat",
-          "llm",
-          "self-hosted",
-          "enterprise-search"
-        ],
-        "notable_because": null
-      },
-      {
-        "repo_name": "lsdefine/GenericAgent",
-        "description": "Self-evolving agent: grows skill tree from 3.3K-line seed, achieving full system control with 6x less token consumption",
-        "language": "Python",
-        "owner_name": "lsdefine",
-        "owner_type": "individual",
-        "stars_in_period": 6027,
-        "total_stars": 6992,
-        "forks": 788,
-        "rank": 18,
-        "purpose": "GenericAgent is a self-evolving autonomous agent framework that grows a skill tree from a minimal codebase, enabling system-level control with high efficiency.",
-        "category": "AI/ML",
-        "key_themes": [
-          "self-evolving",
+          "memory",
+          "coding",
           "automation",
-          "AI-agent",
-          "skill-tree",
-          "token-efficient"
-        ],
-        "notable_because": "GenericAgent stands out due to its minimal architecture and self-evolving capabilities, allowing users to build a personalized skill tree without preloading skills, which is a unique approach compared to other trending repositories."
-      },
-      {
-        "repo_name": "hacksider/Deep-Live-Cam",
-        "description": "real time face swap and one-click video deepfake with only a single image",
-        "language": "Python",
-        "owner_name": "hacksider",
-        "owner_type": "individual",
-        "stars_in_period": 12308,
-        "total_stars": 92266,
-        "forks": 13402,
-        "rank": 19,
-        "purpose": "Real-time face swap and video deepfake with a single click and only a single image.",
-        "category": "AI/ML",
-        "key_themes": [
-          "deepfake",
-          "face swap",
-          "real-time",
-          "AI",
-          "artificial-intelligence",
-          "video"
+          "contextualization"
         ],
         "notable_because": null
       }
@@ -904,6 +883,31 @@
     "confidence_label": "high"
   },
   "history": [
+    {
+      "date": "2026-04-26",
+      "repo_count": 13,
+      "top_repos": [
+        "Alishahryar1/free-claude-code",
+        "codecrafters-io/build-your-own-x",
+        "huggingface/ml-intern",
+        "Z4nzu/hackingtool",
+        "mattpocock/skills"
+      ],
+      "category_counts": {
+        "Unknown": 8,
+        "Developer Tools": 4,
+        "Education": 1
+      },
+      "language_counts": {
+        "Python": 7,
+        "Shell": 1,
+        "Cuda": 1,
+        "C#": 1,
+        "TypeScript": 1,
+        "Markdown": 1,
+        "Go": 1
+      }
+    },
     {
       "date": "2026-04-25",
       "repo_count": 12,
@@ -1630,35 +1634,13 @@
         "Jupyter Notebook": 1,
         "JavaScript": 1
       }
-    },
-    {
-      "date": "2026-03-26",
-      "repo_count": 9,
-      "top_repos": [
-        "bytedance/deer-flow",
-        "Vaibhavs10/insanely-fast-whisper",
-        "mvanhorn/last30days-skill",
-        "ruvnet/RuView",
-        "Yeachan-Heo/oh-my-claudecode"
-      ],
-      "category_counts": {
-        "AI/ML": 7,
-        "Developer Tools": 1,
-        "Productivity": 1
-      },
-      "language_counts": {
-        "Python": 4,
-        "TypeScript": 3,
-        "Rust": 1,
-        "Jupyter Notebook": 1
-      }
     }
   ],
   "stats": {
-    "total_repos": 277,
-    "days_tracked": 58,
+    "total_repos": 281,
+    "days_tracked": 59,
     "first_date": "2026-02-17",
-    "latest_date": "2026-04-25"
+    "latest_date": "2026-04-26"
   },
   "clusters": {
     "run_date": "2026-04-19",
@@ -1944,7 +1926,7 @@
         "cluster_id": 67,
         "x": 0.65086817741394,
         "y": 14.14098072052,
-        "total_stars": 32658
+        "total_stars": 32836
       },
       {
         "repo_name": "immich-app/immich",
@@ -1979,7 +1961,7 @@
         "cluster_id": 68,
         "x": 2.0388879776001,
         "y": 12.8477869033813,
-        "total_stars": 18516
+        "total_stars": 18598
       },
       {
         "repo_name": "ruvnet/ruvector",
@@ -2007,7 +1989,7 @@
         "cluster_id": 68,
         "x": 2.18543004989624,
         "y": 12.8671560287476,
-        "total_stars": 21372
+        "total_stars": 21536
       },
       {
         "repo_name": "ggml-org/ggml",
@@ -2056,7 +2038,7 @@
         "cluster_id": 69,
         "x": 3.17760348320007,
         "y": 11.3296194076538,
-        "total_stars": 4295
+        "total_stars": 4341
       },
       {
         "repo_name": "ggml-org/llama.cpp",
@@ -2084,7 +2066,7 @@
         "cluster_id": 69,
         "x": 2.75516986846924,
         "y": 11.7202425003052,
-        "total_stars": 7012
+        "total_stars": 7052
       },
       {
         "repo_name": "moonshine-ai/moonshine",
@@ -2217,7 +2199,7 @@
         "cluster_id": 71,
         "x": 3.19953393936157,
         "y": 12.5407333374023,
-        "total_stars": 22002
+        "total_stars": 22065
       },
       {
         "repo_name": "snarktank/ralph",
@@ -2322,7 +2304,7 @@
         "cluster_id": 72,
         "x": 2.20880031585693,
         "y": 14.7132186889648,
-        "total_stars": 2998
+        "total_stars": 3230
       },
       {
         "repo_name": "cloudflare/agents",
@@ -2413,21 +2395,21 @@
         "cluster_id": 73,
         "x": 3.23994541168213,
         "y": 13.5194292068481,
-        "total_stars": 21565
+        "total_stars": 21904
       },
       {
         "repo_name": "multica-ai/multica",
         "cluster_id": 73,
         "x": 3.10308909416199,
         "y": 14.0692186355591,
-        "total_stars": 20840
+        "total_stars": 21238
       },
       {
         "repo_name": "lsdefine/GenericAgent",
         "cluster_id": 73,
         "x": 3.52895092964172,
         "y": 13.8045530319214,
-        "total_stars": 6992
+        "total_stars": 7262
       },
       {
         "repo_name": "EvoMap/evolver",
@@ -2441,7 +2423,7 @@
         "cluster_id": 73,
         "x": 3.038245677948,
         "y": 14.3165311813354,
-        "total_stars": 25051
+        "total_stars": 25239
       },
       {
         "repo_name": "addyosmani/agent-skills",
@@ -2497,14 +2479,14 @@
         "cluster_id": 75,
         "x": -0.519513309001923,
         "y": 13.4712171554565,
-        "total_stars": 33284
+        "total_stars": 33634
       },
       {
         "repo_name": "PowerShell/PowerShell",
         "cluster_id": 75,
         "x": -0.640867650508881,
         "y": 13.0064353942871,
-        "total_stars": 52642
+        "total_stars": 53153
       },
       {
         "repo_name": "aidenybai/react-grab",
@@ -2721,7 +2703,7 @@
         "cluster_id": 79,
         "x": 0.0217965710908175,
         "y": 11.4763517379761,
-        "total_stars": 28769
+        "total_stars": 29027
       },
       {
         "repo_name": "anthropics/claude-cookbooks",
