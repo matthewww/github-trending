@@ -7,7 +7,7 @@ import json
 import numpy as np
 from datetime import date
 from dotenv import load_dotenv
-from openai import OpenAI
+from openai import OpenAI, AuthenticationError
 from supabase_client import SupabaseClient
 
 load_dotenv()
@@ -98,6 +98,8 @@ def label_cluster(client: OpenAI, repo_names: list[str], db: SupabaseClient) -> 
         )
         data = json.loads(resp.choices[0].message.content.strip())
         return data.get("label", "Unnamed"), data.get("description", "")
+    except AuthenticationError:
+        raise  # Let the caller handle auth failures
     except Exception as e:
         print(f"  Cluster label failed: {e}")
         return "Unnamed Cluster", ""
@@ -200,7 +202,14 @@ def main():
         centroid_norm = centroid / (np.linalg.norm(centroid) + 1e-10)
 
         print(f"  Cluster {hdb_label}: {len(idxs)} repos — labelling...")
-        label_text, description = label_cluster(llm_client, repo_names_in_cluster, db)
+        try:
+            label_text, description = label_cluster(llm_client, repo_names_in_cluster, db)
+        except AuthenticationError as e:
+            print(f"\nError: LLM authentication failed (HTTP 401).")
+            print(f"  Check that GH_MODELS_TOKEN is set and valid in your repository secrets.")
+            print(f"  Note: the automatic GITHUB_TOKEN does not have permission to call GitHub Models.")
+            print(f"  Details: {e}")
+            return 1
 
         prev_id = match_prior_cluster(centroid_norm, prior_clusters)
 
