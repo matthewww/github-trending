@@ -7,7 +7,7 @@ import json
 import argparse
 from datetime import date, timedelta
 from dotenv import load_dotenv
-from openai import OpenAI
+from openai import OpenAI, AuthenticationError
 from supabase_client import SupabaseClient
 
 load_dotenv()
@@ -429,6 +429,8 @@ Return ONLY valid JSON with these exact fields:
     except json.JSONDecodeError as e:
         print(f"JSON parse error: {e}\nRaw: {raw[:200]}")
         return None
+    except AuthenticationError:
+        raise  # Let the caller handle auth failures
     except Exception as e:
         print(f"LLM call failed: {e}")
         return None
@@ -515,7 +517,14 @@ def main():
     llm_client = OpenAI(base_url=MODELS_ENDPOINT, api_key=github_token)
 
     print("Calling LLM...")
-    result = generate_digest(llm_client, context, week_start)
+    try:
+        result = generate_digest(llm_client, context, week_start)
+    except AuthenticationError as e:
+        print(f"\nError: LLM authentication failed (HTTP 401).")
+        print(f"  Check that GH_MODELS_TOKEN is set and valid in your repository secrets.")
+        print(f"  Note: the automatic GITHUB_TOKEN does not have permission to call GitHub Models.")
+        print(f"  Details: {e}")
+        return 1
 
     if not result:
         print("Failed to generate digest")

@@ -9,7 +9,7 @@ import base64
 import argparse
 import requests
 from dotenv import load_dotenv
-from openai import OpenAI
+from openai import OpenAI, AuthenticationError
 from supabase_client import SupabaseClient
 
 load_dotenv()
@@ -179,6 +179,8 @@ Return ONLY valid JSON with these exact fields:
     except json.JSONDecodeError as e:
         print(f"  JSON parse error for {repo_name}: {e}")
         return None
+    except AuthenticationError:
+        raise  # Let the caller handle auth failures — no point retrying remaining repos
     except Exception as e:
         print(f"  LLM call failed for {repo_name}: {e}")
         return None
@@ -314,15 +316,22 @@ def main():
             print(f"  readme: {len(readme or '')} chars, topics: {meta.get('topics', [])}, prior: {prior_repos}")
             continue
 
-        insight = analyze_with_llm(
-            llm_client,
-            repo_name,
-            meta.get("description", ""),
-            readme,
-            meta.get("topics", []),
-            prior_repos,
-            comparison_repos,
-        )
+        try:
+            insight = analyze_with_llm(
+                llm_client,
+                repo_name,
+                meta.get("description", ""),
+                readme,
+                meta.get("topics", []),
+                prior_repos,
+                comparison_repos,
+            )
+        except AuthenticationError as e:
+            print(f"\nError: LLM authentication failed (HTTP 401).")
+            print(f"  Check that GH_MODELS_TOKEN is set and valid in your repository secrets.")
+            print(f"  Note: the automatic GITHUB_TOKEN does not have permission to call GitHub Models.")
+            print(f"  Details: {e}")
+            return 1
 
         if insight:
             upsert_insight(db, repo_name, insight, MODEL)
