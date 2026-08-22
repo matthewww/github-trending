@@ -18,7 +18,7 @@ To show connections, trends, correlations and key contributors in digestible and
 
 - **Pipeline:** Python 3.11, GitHub Actions
 - **Database:** Supabase (Postgres 17 + pgvector)
-- **LLM:** GitHub Models API (`gpt-4o-mini`) — chat; OpenAI `text-embedding-3-small` — embeddings
+- **LLM:** Groq API (`openai/gpt-oss-120b`) — chat; `sentence-transformers/all-MiniLM-L6-v2` (local) — embeddings
 - **Dashboard:** Vanilla JS SPA, Chart.js, GitHub Pages — no build step
 
 ----

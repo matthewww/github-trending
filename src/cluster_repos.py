@@ -12,8 +12,8 @@ from supabase_client import SupabaseClient
 
 load_dotenv()
 
-MODELS_ENDPOINT = "https://models.inference.ai.azure.com"
-MODEL = "gpt-4o-mini"
+MODELS_ENDPOINT = "https://api.groq.com/openai/v1"
+MODEL = "openai/gpt-oss-120b"
 MIN_CLUSTER_SIZE = 3
 CENTROID_MATCH_THRESHOLD = 0.85  # cosine similarity to match prior-week cluster
 
@@ -94,7 +94,8 @@ def label_cluster(client: OpenAI, repo_names: list[str], db: SupabaseClient) -> 
                 {"role": "user", "content": prompt},
             ],
             temperature=0.2,
-            max_tokens=100,
+            max_tokens=512,
+            extra_body={"reasoning_effort": "low"},
         )
         data = json.loads(resp.choices[0].message.content.strip())
         return data.get("label", "Unnamed"), data.get("description", "")
@@ -168,8 +169,7 @@ def main():
         print("No clusters found. Try collecting more data.")
         return 0
 
-    llm_token = os.environ.get("GH_MODELS_TOKEN") or os.environ.get("GITHUB_TOKEN")
-    llm_client = OpenAI(base_url=MODELS_ENDPOINT, api_key=llm_token or "no-key")
+    llm_client = OpenAI(base_url=MODELS_ENDPOINT, api_key=os.environ.get("GROQ_API_KEY") or "no-key")
 
     prior_clusters = load_prior_clusters(db)
     run_date = date.today().isoformat()

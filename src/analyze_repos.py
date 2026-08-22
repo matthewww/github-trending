@@ -15,8 +15,8 @@ from supabase_client import SupabaseClient
 load_dotenv()
 
 GITHUB_API = "https://api.github.com"
-MODELS_ENDPOINT = "https://models.inference.ai.azure.com"
-MODEL = "gpt-4o-mini"
+MODELS_ENDPOINT = "https://api.groq.com/openai/v1"
+MODEL = "openai/gpt-oss-120b"
 EMBED_MODEL = "all-MiniLM-L6-v2"
 README_MAX_CHARS = 3000
 REQUEST_DELAY = 5  # seconds between LLM calls to stay within free tier
@@ -172,7 +172,8 @@ Return ONLY valid JSON with these exact fields:
                 {"role": "user", "content": prompt},
             ],
             temperature=0.2,
-            max_tokens=500,
+            max_tokens=2000,
+            extra_body={"reasoning_effort": "low"},
         )
         raw = response.choices[0].message.content.strip()
         return json.loads(raw)
@@ -264,11 +265,9 @@ def main():
     if not github_token:
         print("Warning: GITHUB_TOKEN not set — GitHub API rate limit is 60 req/hr")
 
-    llm_token = os.environ.get("GH_MODELS_TOKEN") or github_token
+    llm_token = os.environ.get("GROQ_API_KEY")
     if not llm_token:
-        print("Error: Neither GH_MODELS_TOKEN nor GITHUB_TOKEN is set — LLM calls will fail")
-    elif not os.environ.get("GH_MODELS_TOKEN"):
-        print("Warning: GH_MODELS_TOKEN not set — falling back to GITHUB_TOKEN (requires models permission)")
+        print("Error: GROQ_API_KEY is not set — LLM calls will fail")
 
     llm_client = OpenAI(
         base_url=MODELS_ENDPOINT,

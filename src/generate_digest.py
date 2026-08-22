@@ -12,8 +12,8 @@ from supabase_client import SupabaseClient
 
 load_dotenv()
 
-MODELS_ENDPOINT = "https://models.inference.ai.azure.com"
-MODEL = "gpt-4o-mini"
+MODELS_ENDPOINT = "https://api.groq.com/openai/v1"
+MODEL = "openai/gpt-oss-120b"
 
 
 def get_week_bounds(reference_date: date = None) -> tuple[date, date]:
@@ -422,7 +422,8 @@ Return ONLY valid JSON with these exact fields:
                 {"role": "user", "content": prompt},
             ],
             temperature=0.5,
-            max_tokens=1100,
+            max_tokens=4000,
+            extra_body={"reasoning_effort": "low"},
         )
         raw = response.choices[0].message.content.strip()
         return json.loads(raw)
@@ -473,9 +474,9 @@ def main():
     if args.dry_run:
         print("DRY RUN — LLM call and DB write skipped")
 
-    github_token = os.environ.get("GH_MODELS_TOKEN") or os.environ.get("GITHUB_TOKEN")
-    if not github_token and not args.dry_run:
-        print("Error: GH_MODELS_TOKEN (or GITHUB_TOKEN) required for LLM calls")
+    groq_api_key = os.environ.get("GROQ_API_KEY")
+    if not groq_api_key and not args.dry_run:
+        print("Error: GROQ_API_KEY required for LLM calls")
         return 1
 
     db = SupabaseClient()
@@ -512,7 +513,7 @@ def main():
     if args.dry_run:
         return 0
 
-    llm_client = OpenAI(base_url=MODELS_ENDPOINT, api_key=github_token)
+    llm_client = OpenAI(base_url=MODELS_ENDPOINT, api_key=groq_api_key)
 
     print("Calling LLM...")
     result = generate_digest(llm_client, context, week_start)
