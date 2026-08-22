@@ -13,7 +13,7 @@ from supabase_client import SupabaseClient
 load_dotenv()
 
 MODELS_ENDPOINT = "https://api.groq.com/openai/v1"
-MODEL = "openai/gpt-oss-120b"
+MODEL = os.environ.get("DIGEST_MODEL") or "openai/gpt-oss-120b"
 
 
 def get_week_bounds(reference_date: date = None) -> tuple[date, date]:
@@ -465,6 +465,8 @@ def main():
                         help="Build context and print it, but skip LLM call and DB write")
     parser.add_argument("--week", type=str, default=None,
                         help="Override week as YYYY-MM-DD (any date within the desired week)")
+    parser.add_argument("--out", type=str, default=None,
+                        help="Backfill: write digest JSON to file instead of upserting to Supabase")
     args = parser.parse_args()
 
     ref_date = date.fromisoformat(args.week) if args.week else date.today()
@@ -525,8 +527,23 @@ def main():
     # Store top repos from our data (not LLM-generated — more reliable)
     result["top_repos"] = [r["repo_name"] for r in this_week[:5]]
 
-    upsert_digest(db, week_start, week_end, result, data_quality_pct, confidence_label)
-    print(f"\n✓ Digest saved for week of {week_start}")
+    if args.out:
+        record = {
+            "week_start": week_start.isoformat(),
+            "week_end": week_end.isoformat(),
+            "headline": result.get("headline"),
+            "digest": result.get("digest"),
+            "top_categories": result.get("top_categories", []),
+            "top_repos": result["top_repos"],
+            "data_quality_pct": data_quality_pct,
+            "confidence_label": confidence_label,
+        }
+        with open(args.out, "w", encoding="utf-8") as f:
+            json.dump(record, f, indent=2)
+        print(f"\n✓ Digest written to {args.out}")
+    else:
+        upsert_digest(db, week_start, week_end, result, data_quality_pct, confidence_label)
+        print(f"\n✓ Digest saved for week of {week_start}")
     print(f"\nHeadline: {result.get('headline')}")
     print(f"Confidence notes: {result.get('confidence_notes', '')}")
     print(f"\n{result.get('digest', '')[:300]}...")

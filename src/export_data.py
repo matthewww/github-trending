@@ -102,7 +102,20 @@ def get_today_snapshots(db: SupabaseClient, as_of_date: str) -> dict:
     return dict(by_period)
 
 
-def get_latest_digest(db: SupabaseClient) -> dict | None:
+def get_latest_digest(db: SupabaseClient, target_date: date | None = None) -> dict | None:
+    """Digest for the week containing target_date, falling back to the latest available."""
+    if target_date:
+        iso = target_date.isoformat()
+        resp = (
+            db.client.table("weekly_digest")
+            .select("week_start, week_end, headline, digest, top_categories, top_repos, data_quality_pct, confidence_label")
+            .lte("week_start", iso)
+            .gte("week_end", iso)
+            .limit(1)
+            .execute()
+        )
+        if resp.data:
+            return resp.data[0]
     resp = (
         db.client.table("weekly_digest")
         .select("week_start, week_end, headline, digest, top_categories, top_repos, data_quality_pct, confidence_label")
@@ -261,11 +274,16 @@ def main():
     parser = argparse.ArgumentParser(description="Export Supabase data to a static JSON snapshot")
     parser.add_argument("--no-archive", action="store_true",
                         help="Skip writing the dated archive file (use for daily runs)")
+    parser.add_argument("--date", type=str, default=None,
+                        help="Backfill: export as-of YYYY-MM-DD instead of the latest collected date")
+    parser.add_argument("--digest-file", type=str, default=None,
+                        help="Backfill: use digest JSON from file instead of the database")
     args = parser.parse_args()
 
     db = SupabaseClient()
 
-    as_of_date = get_latest_date(db)
+    backfill_date = date.fromisoformat(args.date) if args.date else None
+    as_of_date = backfill_date.isoformat() if backfill_date else get_latest_date(db)
     if not as_of_date:
         print("No data found in trending_snapshots")
         return 1
@@ -273,7 +291,14 @@ def main():
     print(f"Exporting snapshot as of {as_of_date}...")
 
     today = get_today_snapshots(db, as_of_date)
-    digest = get_latest_digest(db)
+    if not today and backfill_date:
+        print(f"No trending snapshots found for {as_of_date} — nothing to archive")
+        return 1
+    if args.digest_file:
+        with open(args.digest_file, encoding="utf-8") as f:
+            digest = json.load(f)
+    else:
+        digest = get_latest_digest(db, backfill_date)
     history = get_history(db)
     stats = get_stats(db)
     clusters = get_latest_clusters(db)
