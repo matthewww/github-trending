@@ -365,6 +365,7 @@ function renderClusterTimeline(timeline) {
   }
   card.style.display = '';
 
+  const latestWeek = weeks[weeks.length - 1];
   const entries = Object.entries(series)
     .map(([key, s]) => ({
       key,
@@ -372,7 +373,7 @@ function renderClusterTimeline(timeline) {
       byWeek: Object.fromEntries((s.points || []).map(p => [p.week, p.size])),
       total: (s.points || []).reduce((sum, p) => sum + p.size, 0),
     }))
-    .sort((a, b) => b.total - a.total);
+    .sort((a, b) => (b.byWeek[latestWeek] || 0) - (a.byWeek[latestWeek] || 0) || b.total - a.total);
 
   const top = entries.slice(0, 15);
   const datasets = top.map((e, i) => ({
@@ -391,11 +392,11 @@ function renderClusterTimeline(timeline) {
     for (const e of entries.slice(top.length)) {
       for (const w of weeks) otherByWeek[w] = (otherByWeek[w] || 0) + (e.byWeek[w] || 0);
     }
-    datasets.push({
+    datasets.unshift({
       label: `Other themes (${entries.length - top.length})`,
       data: weeks.map(w => otherByWeek[w] || 0),
-      backgroundColor: 'rgba(139, 148, 158, 0.35)',
-      borderColor: '#8b949e',
+      backgroundColor: 'rgba(139, 148, 158, 0.15)',
+      borderColor: 'rgba(139, 148, 158, 0.4)',
       borderWidth: 1,
       fill: true,
       pointRadius: 0,

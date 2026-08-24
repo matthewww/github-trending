@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T10:31:20.487632Z",
+  "generated_at": "2026-08-24T19:43:20.342439Z",
   "as_of_date": "2026-08-24",
   "today": {
     "daily": [
@@ -22,7 +22,10 @@
           "developer tools",
           "local application"
         ],
-        "notable_because": null
+        "notable_because": null,
+        "first_seen": "2026-04-01",
+        "days_trended": 4,
+        "weeks_trended": 3
       },
       {
         "repo_name": "freestylefly/awesome-gpt-image-2",
@@ -37,7 +40,10 @@
         "purpose": null,
         "category": "Unknown",
         "key_themes": [],
-        "notable_because": null
+        "notable_because": null,
+        "first_seen": "2026-08-24",
+        "days_trended": 1,
+        "weeks_trended": 1
       },
       {
         "repo_name": "mattpocock/skills",
@@ -58,7 +64,10 @@
           "tooling",
           "productivity"
         ],
-        "notable_because": null
+        "notable_because": null,
+        "first_seen": "2026-04-26",
+        "days_trended": 32,
+        "weeks_trended": 12
       },
       {
         "repo_name": "basecamp/omarchy",
@@ -79,7 +88,10 @@
           "opinionated",
           "open_source"
         ],
-        "notable_because": null
+        "notable_because": null,
+        "first_seen": "2026-03-02",
+        "days_trended": 4,
+        "weeks_trended": 3
       },
       {
         "repo_name": "AprilNEA/OpenLogi",
@@ -100,7 +112,10 @@
           "device\u2011remapping",
           "local\u2011first"
         ],
-        "notable_because": "Unlike Logitech Options+ and many other configuration tools, OpenLogi is written in Rust, runs on all major OSes (including first\u2011class Linux support), uses a plain\u2011text TOML config for easy syncing, and offers both GUI and CLI without telemetry or cloud dependencies."
+        "notable_because": "Unlike Logitech Options+ and many other configuration tools, OpenLogi is written in Rust, runs on all major OSes (including first\u2011class Linux support), uses a plain\u2011text TOML config for easy syncing, and offers both GUI and CLI without telemetry or cloud dependencies.",
+        "first_seen": "2026-08-21",
+        "days_trended": 4,
+        "weeks_trended": 2
       },
       {
         "repo_name": "block/buzz",
@@ -121,7 +136,10 @@
           "event log",
           "self-hostable"
         ],
-        "notable_because": "Buzz stands out by allowing AI agents to perform tasks typically reserved for human teammates, such as code reviews and workflow management, all while maintaining a clear audit trail."
+        "notable_because": "Buzz stands out by allowing AI agents to perform tasks typically reserved for human teammates, such as code reviews and workflow management, all while maintaining a clear audit trail.",
+        "first_seen": "2026-07-24",
+        "days_trended": 4,
+        "weeks_trended": 2
       },
       {
         "repo_name": "apache/maka",
@@ -142,7 +160,10 @@
           "sandboxed tool execution",
           "typescript"
         ],
-        "notable_because": "Unlike general AI agent frameworks, Maka combines a desktop Electron UI with an append\u2011only log of all interactions, enabling deterministic replay and recovery of agent work on the user's machine, a niche not emphasized by the comparison repos."
+        "notable_because": "Unlike general AI agent frameworks, Maka combines a desktop Electron UI with an append\u2011only log of all interactions, enabling deterministic replay and recovery of agent work on the user's machine, a niche not emphasized by the comparison repos.",
+        "first_seen": "2026-08-22",
+        "days_trended": 2,
+        "weeks_trended": 2
       },
       {
         "repo_name": "Alishahryar1/free-claude-code",
@@ -163,7 +184,10 @@
           "Developer Tools",
           "Open Source"
         ],
-        "notable_because": "This repository offers a unique solution for accessing Claude Code functionalities without the need for an Anthropic API key, distinguishing it from other tools that typically require such access."
+        "notable_because": "This repository offers a unique solution for accessing Claude Code functionalities without the need for an Anthropic API key, distinguishing it from other tools that typically require such access.",
+        "first_seen": "2026-04-23",
+        "days_trended": 10,
+        "weeks_trended": 5
       },
       {
         "repo_name": "tinyhumansai/openhuman",
@@ -184,7 +208,10 @@
           "privacy",
           "simplicity"
         ],
-        "notable_because": "OpenHuman emphasizes privacy and simplicity in its design, aiming to provide a powerful AI experience tailored for personal use, which may differentiate it from other more complex AI tools."
+        "notable_because": "OpenHuman emphasizes privacy and simplicity in its design, aiming to provide a powerful AI experience tailored for personal use, which may differentiate it from other more complex AI tools.",
+        "first_seen": "2026-05-11",
+        "days_trended": 11,
+        "weeks_trended": 3
       },
       {
         "repo_name": "affaan-m/ECC",
@@ -205,7 +232,10 @@
           "continuous learning",
           "security"
         ],
-        "notable_because": "This repository stands out due to its comprehensive system that integrates skills, memory optimization, and security scanning, built from extensive real-world usage, unlike other tools that may focus on singular aspects of development."
+        "notable_because": "This repository stands out due to its comprehensive system that integrates skills, memory optimization, and security scanning, built from extensive real-world usage, unlike other tools that may focus on singular aspects of development.",
+        "first_seen": "2026-05-25",
+        "days_trended": 20,
+        "weeks_trended": 8
       },
       {
         "repo_name": "ruvnet/ruflo",
@@ -226,7 +256,10 @@
           "Claude integration",
           "self-learning agents"
         ],
-        "notable_because": null
+        "notable_because": null,
+        "first_seen": "2026-03-01",
+        "days_trended": 10,
+        "weeks_trended": 7
       },
       {
         "repo_name": "VoltAgent/awesome-agent-skills",
@@ -247,7 +280,10 @@
           "community-driven",
           "real-world-applications"
         ],
-        "notable_because": "This repository stands out for its focus on hand-picked, real-world agent skills created by actual engineering teams, contrasting with many bulk-generated skill repositories."
+        "notable_because": "This repository stands out for its focus on hand-picked, real-world agent skills created by actual engineering teams, contrasting with many bulk-generated skill repositories.",
+        "first_seen": "2026-04-23",
+        "days_trended": 2,
+        "weeks_trended": 2
       },
       {
         "repo_name": "virgiliojr94/book-to-skill",
@@ -268,7 +304,10 @@
           "RAG",
           "PDF to markdown"
         ],
-        "notable_because": "Unlike generic RAG or document ingestion tools, this project provides a ready-to-use Claude Code skill that dramatically reduces token usage (24\u201151\u00d7 fewer tokens) and supports multiple file formats, targeting seamless integration with Claude and Copilot workflows."
+        "notable_because": "Unlike generic RAG or document ingestion tools, this project provides a ready-to-use Claude Code skill that dramatically reduces token usage (24\u201151\u00d7 fewer tokens) and supports multiple file formats, targeting seamless integration with Claude and Copilot workflows.",
+        "first_seen": "2026-07-28",
+        "days_trended": 4,
+        "weeks_trended": 2
       },
       {
         "repo_name": "dani-garcia/vaultwarden",
@@ -289,7 +328,10 @@
           "docker",
           "vaultwarden"
         ],
-        "notable_because": "Vaultwarden stands out as a lightweight alternative to the official Bitwarden server, making it ideal for users who need a less resource-intensive solution for password management."
+        "notable_because": "Vaultwarden stands out as a lightweight alternative to the official Bitwarden server, making it ideal for users who need a less resource-intensive solution for password management.",
+        "first_seen": "2026-04-24",
+        "days_trended": 3,
+        "weeks_trended": 2
       },
       {
         "repo_name": "anthropics/claude-plugins-community",
@@ -304,7 +346,10 @@
         "purpose": null,
         "category": "Unknown",
         "key_themes": [],
-        "notable_because": null
+        "notable_because": null,
+        "first_seen": "2026-08-24",
+        "days_trended": 1,
+        "weeks_trended": 1
       },
       {
         "repo_name": "ripienaar/free-for-dev",
@@ -326,7 +371,10 @@
           "DevOps",
           "infrastructure"
         ],
-        "notable_because": "This repository aggregates over 1600 contributions, providing a comprehensive and curated list of free developer tools, which is particularly focused on infrastructure-related services, distinguishing it from other trending repositories that cover broader or different domains."
+        "notable_because": "This repository aggregates over 1600 contributions, providing a comprehensive and curated list of free developer tools, which is particularly focused on infrastructure-related services, distinguishing it from other trending repositories that cover broader or different domains.",
+        "first_seen": "2026-06-27",
+        "days_trended": 6,
+        "weeks_trended": 4
       },
       {
         "repo_name": "Comfy-Org/ComfyUI",
@@ -347,7 +395,10 @@
           "API integration",
           "cross\u2011platform"
         ],
-        "notable_because": "Unlike the comparison repos, ComfyUI offers a highly visual, node\u2011based workflow that lets users compose complex stable\u2011diffusion pipelines without coding, combined with a robust API for automation, making it uniquely suited for creative professionals seeking both interactivity and scriptability."
+        "notable_because": "Unlike the comparison repos, ComfyUI offers a highly visual, node\u2011based workflow that lets users compose complex stable\u2011diffusion pipelines without coding, combined with a robust API for automation, making it uniquely suited for creative professionals seeking both interactivity and scriptability.",
+        "first_seen": "2026-08-10",
+        "days_trended": 3,
+        "weeks_trended": 2
       },
       {
         "repo_name": "NousResearch/hermes-agent",
@@ -368,7 +419,10 @@
           "cross-platform",
           "learning loop"
         ],
-        "notable_because": null
+        "notable_because": null,
+        "first_seen": "2026-03-01",
+        "days_trended": 22,
+        "weeks_trended": 10
       }
     ],
     "weekly": [
@@ -391,7 +445,10 @@
           "accelerator libraries",
           "open-source"
         ],
-        "notable_because": "Unlike the comparison repos, this repository combines a novel AI-focused programming language (Mojo) with a full-stack inference framework (MAX), offering both compiler tooling and production-ready model serving under permissive licenses, positioning it as a unique end\u2011to\u2011end AI platform."
+        "notable_because": "Unlike the comparison repos, this repository combines a novel AI-focused programming language (Mojo) with a full-stack inference framework (MAX), offering both compiler tooling and production-ready model serving under permissive licenses, positioning it as a unique end\u2011to\u2011end AI platform.",
+        "first_seen": "2026-08-21",
+        "days_trended": 3,
+        "weeks_trended": 1
       },
       {
         "repo_name": "harry0703/MoneyPrinterTurbo",
@@ -413,7 +470,10 @@
           "moviepy",
           "python"
         ],
-        "notable_because": null
+        "notable_because": null,
+        "first_seen": "2026-03-22",
+        "days_trended": 14,
+        "weeks_trended": 6
       },
       {
         "repo_name": "basecamp/omarchy",
@@ -434,7 +494,10 @@
           "opinionated",
           "open_source"
         ],
-        "notable_because": null
+        "notable_because": null,
+        "first_seen": "2026-03-02",
+        "days_trended": 4,
+        "weeks_trended": 3
       },
       {
         "repo_name": "AprilNEA/OpenLogi",
@@ -455,7 +518,10 @@
           "device\u2011remapping",
           "local\u2011first"
         ],
-        "notable_because": "Unlike Logitech Options+ and many other configuration tools, OpenLogi is written in Rust, runs on all major OSes (including first\u2011class Linux support), uses a plain\u2011text TOML config for easy syncing, and offers both GUI and CLI without telemetry or cloud dependencies."
+        "notable_because": "Unlike Logitech Options+ and many other configuration tools, OpenLogi is written in Rust, runs on all major OSes (including first\u2011class Linux support), uses a plain\u2011text TOML config for easy syncing, and offers both GUI and CLI without telemetry or cloud dependencies.",
+        "first_seen": "2026-08-21",
+        "days_trended": 4,
+        "weeks_trended": 2
       },
       {
         "repo_name": "cordiverse/cordis",
@@ -476,7 +542,10 @@
           "nodejs",
           "plugin"
         ],
-        "notable_because": "Unlike the comparison repos, Cordis targets a niche paradigm of spatiotemporal composability rather than general low\u2011code, AI, or security tooling, offering a research\u2011backed meta\u2011framework that is currently unique in the Node.js ecosystem."
+        "notable_because": "Unlike the comparison repos, Cordis targets a niche paradigm of spatiotemporal composability rather than general low\u2011code, AI, or security tooling, offering a research\u2011backed meta\u2011framework that is currently unique in the Node.js ecosystem.",
+        "first_seen": "2026-08-16",
+        "days_trended": 3,
+        "weeks_trended": 2
       },
       {
         "repo_name": "volcengine/OpenViking",
@@ -497,7 +566,10 @@
           "file system",
           "open-source"
         ],
-        "notable_because": null
+        "notable_because": null,
+        "first_seen": "2026-03-16",
+        "days_trended": 5,
+        "weeks_trended": 2
       },
       {
         "repo_name": "public-apis/public-apis",
@@ -518,7 +590,10 @@
           "resources",
           "development"
         ],
-        "notable_because": "This repository stands out as a comprehensive and community-curated resource for free APIs, unlike the other trending repositories which focus on specific technologies or applications."
+        "notable_because": "This repository stands out as a comprehensive and community-curated resource for free APIs, unlike the other trending repositories which focus on specific technologies or applications.",
+        "first_seen": "2026-04-15",
+        "days_trended": 6,
+        "weeks_trended": 4
       },
       {
         "repo_name": "jundot/omlx",
@@ -540,7 +615,10 @@
           "mlx",
           "openai-api"
         ],
-        "notable_because": "oMLX offers a unique combination of convenience and control, allowing users to manage LLMs directly from the menu bar while maintaining persistent caching across different contexts, which is not commonly found in other LLM tools."
+        "notable_because": "oMLX offers a unique combination of convenience and control, allowing users to manage LLMs directly from the menu bar while maintaining persistent caching across different contexts, which is not commonly found in other LLM tools.",
+        "first_seen": "2026-05-10",
+        "days_trended": 4,
+        "weeks_trended": 2
       },
       {
         "repo_name": "anthropics/claude-plugins-community",
@@ -555,7 +633,10 @@
         "purpose": null,
         "category": "Unknown",
         "key_themes": [],
-        "notable_because": null
+        "notable_because": null,
+        "first_seen": "2026-08-24",
+        "days_trended": 1,
+        "weeks_trended": 1
       },
       {
         "repo_name": "cursor/plugins",
@@ -576,7 +657,10 @@
           "collaboration",
           "open source"
         ],
-        "notable_because": "Cursor's repository offers a comprehensive suite of plugins specifically designed for enhancing developer productivity, which sets it apart from other trending repositories that focus on singular functionalities or specific tools."
+        "notable_because": "Cursor's repository offers a comprehensive suite of plugins specifically designed for enhancing developer productivity, which sets it apart from other trending repositories that focus on singular functionalities or specific tools.",
+        "first_seen": "2026-05-29",
+        "days_trended": 8,
+        "weeks_trended": 3
       },
       {
         "repo_name": "apache/maka",
@@ -597,7 +681,10 @@
           "sandboxed tool execution",
           "typescript"
         ],
-        "notable_because": "Unlike general AI agent frameworks, Maka combines a desktop Electron UI with an append\u2011only log of all interactions, enabling deterministic replay and recovery of agent work on the user's machine, a niche not emphasized by the comparison repos."
+        "notable_because": "Unlike general AI agent frameworks, Maka combines a desktop Electron UI with an append\u2011only log of all interactions, enabling deterministic replay and recovery of agent work on the user's machine, a niche not emphasized by the comparison repos.",
+        "first_seen": "2026-08-22",
+        "days_trended": 2,
+        "weeks_trended": 2
       }
     ],
     "monthly": [
@@ -620,7 +707,10 @@
           "event log",
           "self-hostable"
         ],
-        "notable_because": "Buzz stands out by allowing AI agents to perform tasks typically reserved for human teammates, such as code reviews and workflow management, all while maintaining a clear audit trail."
+        "notable_because": "Buzz stands out by allowing AI agents to perform tasks typically reserved for human teammates, such as code reviews and workflow management, all while maintaining a clear audit trail.",
+        "first_seen": "2026-07-24",
+        "days_trended": 4,
+        "weeks_trended": 2
       },
       {
         "repo_name": "TencentCloud/TencentDB-Agent-Memory",
@@ -642,7 +732,10 @@
           "embedding",
           "vector-search"
         ],
-        "notable_because": "This repository stands out due to its unique approach of combining symbolic short-term memory with layered long-term memory, significantly reducing token usage and improving task success rates compared to traditional methods."
+        "notable_because": "This repository stands out due to its unique approach of combining symbolic short-term memory with layered long-term memory, significantly reducing token usage and improving task success rates compared to traditional methods.",
+        "first_seen": "2026-07-10",
+        "days_trended": 8,
+        "weeks_trended": 3
       },
       {
         "repo_name": "ayghri/i-have-adhd",
@@ -663,7 +756,10 @@
           "coding-assistant",
           "output-style"
         ],
-        "notable_because": "This repository focuses specifically on ADHD-friendly outputs, which is a unique approach compared to other developer tools that do not cater to this specific audience."
+        "notable_because": "This repository focuses specifically on ADHD-friendly outputs, which is a unique approach compared to other developer tools that do not cater to this specific audience.",
+        "first_seen": "2026-07-22",
+        "days_trended": 2,
+        "weeks_trended": 1
       },
       {
         "repo_name": "zhaoxuya520/reverse-skill",
@@ -684,7 +780,10 @@
           "knowledge base evolution",
           "multi\u2011client support"
         ],
-        "notable_because": "Unlike the comparison projects, this repo uniquely combines AI client integration with a self\u2011evolving knowledge base to automatically select and bootstrap the right security toolchain for a given target, offering a higher level of automation for AI\u2011assisted security work."
+        "notable_because": "Unlike the comparison projects, this repo uniquely combines AI client integration with a self\u2011evolving knowledge base to automatically select and bootstrap the right security toolchain for a given target, offering a higher level of automation for AI\u2011assisted security work.",
+        "first_seen": "2026-08-01",
+        "days_trended": 5,
+        "weeks_trended": 2
       },
       {
         "repo_name": "basecamp/omarchy",
@@ -705,7 +804,10 @@
           "opinionated",
           "open_source"
         ],
-        "notable_because": null
+        "notable_because": null,
+        "first_seen": "2026-03-02",
+        "days_trended": 4,
+        "weeks_trended": 3
       },
       {
         "repo_name": "microsoft/AI-For-Beginners",
@@ -726,7 +828,10 @@
           "computer-vision",
           "nlp"
         ],
-        "notable_because": "This repository stands out due to its structured curriculum that combines practical lessons, quizzes, and labs, making it accessible for beginners, unlike many other AI tools that may cater to more advanced users."
+        "notable_because": "This repository stands out due to its structured curriculum that combines practical lessons, quizzes, and labs, making it accessible for beginners, unlike many other AI tools that may cater to more advanced users.",
+        "first_seen": "2026-06-30",
+        "days_trended": 8,
+        "weeks_trended": 3
       },
       {
         "repo_name": "diegosouzapw/OmniRoute",
@@ -747,7 +852,10 @@
           "auto-fallback",
           "free providers"
         ],
-        "notable_because": "OmniRoute stands out by offering a vast number of AI providers, including over 90 free options, and advanced features like RTK+Caveman compression that significantly reduce token usage, making it a cost-effective solution compared to other tools."
+        "notable_because": "OmniRoute stands out by offering a vast number of AI providers, including over 90 free options, and advanced features like RTK+Caveman compression that significantly reduce token usage, making it a cost-effective solution compared to other tools.",
+        "first_seen": "2026-06-30",
+        "days_trended": 8,
+        "weeks_trended": 2
       },
       {
         "repo_name": "virgiliojr94/book-to-skill",
@@ -768,7 +876,10 @@
           "RAG",
           "PDF to markdown"
         ],
-        "notable_because": "Unlike generic RAG or document ingestion tools, this project provides a ready-to-use Claude Code skill that dramatically reduces token usage (24\u201151\u00d7 fewer tokens) and supports multiple file formats, targeting seamless integration with Claude and Copilot workflows."
+        "notable_because": "Unlike generic RAG or document ingestion tools, this project provides a ready-to-use Claude Code skill that dramatically reduces token usage (24\u201151\u00d7 fewer tokens) and supports multiple file formats, targeting seamless integration with Claude and Copilot workflows.",
+        "first_seen": "2026-07-28",
+        "days_trended": 4,
+        "weeks_trended": 2
       },
       {
         "repo_name": "pingdotgg/t3code",
@@ -789,7 +900,10 @@
           "minimalist design",
           "early development"
         ],
-        "notable_because": "T3 Code is unique in its focus on providing a minimalistic web interface for coding agents, which is less common among existing tools that often prioritize extensive features."
+        "notable_because": "T3 Code is unique in its focus on providing a minimalistic web interface for coding agents, which is less common among existing tools that often prioritize extensive features.",
+        "first_seen": "2026-04-17",
+        "days_trended": 4,
+        "weeks_trended": 2
       },
       {
         "repo_name": "citrolabs/ego-lite",
@@ -810,7 +924,10 @@
           "productivity",
           "collaboration"
         ],
-        "notable_because": "Ego Lite uniquely allows both users and AI agents to share the same browser environment without conflicts, unlike traditional automation frameworks that require separate browsers."
+        "notable_because": "Ego Lite uniquely allows both users and AI agents to share the same browser environment without conflicts, unlike traditional automation frameworks that require separate browsers.",
+        "first_seen": "2026-07-24",
+        "days_trended": 5,
+        "weeks_trended": 2
       },
       {
         "repo_name": "bojieli/ai-agent-book",
@@ -831,7 +948,10 @@
           "open-source",
           "multimodal"
         ],
-        "notable_because": "This repository uniquely combines theoretical insights with practical experiments in AI agents, offering a comprehensive resource that includes 92 accompanying projects, which is more extensive than many other trending repositories."
+        "notable_because": "This repository uniquely combines theoretical insights with practical experiments in AI agents, offering a comprehensive resource that includes 92 accompanying projects, which is more extensive than many other trending repositories.",
+        "first_seen": "2026-07-21",
+        "days_trended": 2,
+        "weeks_trended": 1
       },
       {
         "repo_name": "cactus-compute/needle",
@@ -852,7 +972,10 @@
           "quantization",
           "low\u2011memory runtime"
         ],
-        "notable_because": "Unlike the comparison repos, Needle delivers a full 45M\u2011parameter model packed into a single 14\u202fMB binary that runs entirely offline with a bounded 28\u202fMB RAM footprint, offering built\u2011in tool retrieval, confidence gating, and a byte\u2011level grammar for structured JSON output, which is uniquely suited for edge deployments."
+        "notable_because": "Unlike the comparison repos, Needle delivers a full 45M\u2011parameter model packed into a single 14\u202fMB binary that runs entirely offline with a bounded 28\u202fMB RAM footprint, offering built\u2011in tool retrieval, confidence gating, and a byte\u2011level grammar for structured JSON output, which is uniquely suited for edge deployments.",
+        "first_seen": "2026-08-12",
+        "days_trended": 6,
+        "weeks_trended": 2
       },
       {
         "repo_name": "volcengine/OpenViking",
@@ -873,7 +996,10 @@
           "file system",
           "open-source"
         ],
-        "notable_because": null
+        "notable_because": null,
+        "first_seen": "2026-03-16",
+        "days_trended": 5,
+        "weeks_trended": 2
       },
       {
         "repo_name": "mattpocock/skills",
@@ -894,7 +1020,10 @@
           "tooling",
           "productivity"
         ],
-        "notable_because": null
+        "notable_because": null,
+        "first_seen": "2026-04-26",
+        "days_trended": 32,
+        "weeks_trended": 12
       },
       {
         "repo_name": "1jehuang/jcode",
@@ -915,7 +1044,10 @@
           "customizability",
           "terminal"
         ],
-        "notable_because": "jcode emphasizes performance and resource efficiency, particularly for multi-session workflows, which may set it apart from other tools that do not focus as heavily on these aspects."
+        "notable_because": "jcode emphasizes performance and resource efficiency, particularly for multi-session workflows, which may set it apart from other tools that do not focus as heavily on these aspects.",
+        "first_seen": "2026-04-29",
+        "days_trended": 12,
+        "weeks_trended": 4
       },
       {
         "repo_name": "earendil-works/pi",
@@ -936,7 +1068,10 @@
           "interactive CLI",
           "open source"
         ],
-        "notable_because": "This repository offers a comprehensive toolkit that integrates multiple LLM providers and focuses on interactive coding capabilities, distinguishing it from other trending tools that may focus on specific functionalities."
+        "notable_because": "This repository offers a comprehensive toolkit that integrates multiple LLM providers and focuses on interactive coding capabilities, distinguishing it from other trending tools that may focus on specific functionalities.",
+        "first_seen": null,
+        "days_trended": null,
+        "weeks_trended": null
       },
       {
         "repo_name": "megadose/holehe",
@@ -957,7 +1092,10 @@
           "password reset exploitation",
           "CLI tool"
         ],
-        "notable_because": "Unlike the comparison repos which focus on AI/ML or productivity, Holehe provides a specialized, lightweight OSINT capability for email\u2011to\u2011account discovery without alerting the target, and it offers both CLI and Python library interfaces plus a Docker image for easy deployment."
+        "notable_because": "Unlike the comparison repos which focus on AI/ML or productivity, Holehe provides a specialized, lightweight OSINT capability for email\u2011to\u2011account discovery without alerting the target, and it offers both CLI and Python library interfaces plus a Docker image for easy deployment.",
+        "first_seen": "2026-08-14",
+        "days_trended": 3,
+        "weeks_trended": 1
       },
       {
         "repo_name": "modular/modular",
@@ -978,7 +1116,10 @@
           "accelerator libraries",
           "open-source"
         ],
-        "notable_because": "Unlike the comparison repos, this repository combines a novel AI-focused programming language (Mojo) with a full-stack inference framework (MAX), offering both compiler tooling and production-ready model serving under permissive licenses, positioning it as a unique end\u2011to\u2011end AI platform."
+        "notable_because": "Unlike the comparison repos, this repository combines a novel AI-focused programming language (Mojo) with a full-stack inference framework (MAX), offering both compiler tooling and production-ready model serving under permissive licenses, positioning it as a unique end\u2011to\u2011end AI platform.",
+        "first_seen": "2026-08-21",
+        "days_trended": 3,
+        "weeks_trended": 1
       },
       {
         "repo_name": "lyogavin/airllm",
@@ -999,7 +1140,10 @@
           "llm",
           "inference-optimization"
         ],
-        "notable_because": "AirLLM stands out by enabling the use of large language models on limited hardware, specifically allowing 70B models to run on a single 4GB GPU, which is a significant achievement compared to other tools that may require more resources."
+        "notable_because": "AirLLM stands out by enabling the use of large language models on limited hardware, specifically allowing 70B models to run on a single 4GB GPU, which is a significant achievement compared to other tools that may require more resources.",
+        "first_seen": "2026-06-04",
+        "days_trended": 6,
+        "weeks_trended": 4
       }
     ]
   },
@@ -1892,9 +2036,9 @@
   ],
   "stats": {
     "total_repos": 753,
-    "days_tracked": 82,
+    "days_tracked": 178,
     "first_date": "2026-02-17",
-    "latest_date": "2026-05-19"
+    "latest_date": "2026-08-24"
   },
   "clusters": {
     "run_date": "2026-08-23",
@@ -2758,7 +2902,7 @@
         "cluster_id": 575,
         "x": 12.4458131790161,
         "y": 21.4075927734375,
-        "total_stars": 0
+        "total_stars": 16866
       },
       {
         "repo_name": "nautechsystems/nautilus_trader",
@@ -2772,14 +2916,14 @@
         "cluster_id": 575,
         "x": 12.5603799819946,
         "y": 21.3260669708252,
-        "total_stars": 0
+        "total_stars": 25619
       },
       {
         "repo_name": "virattt/ai-hedge-fund",
         "cluster_id": 575,
         "x": 12.4526853561401,
         "y": 21.4657821655273,
-        "total_stars": 0
+        "total_stars": 62081
       },
       {
         "repo_name": "shiyu-coder/Kronos",
@@ -2793,42 +2937,42 @@
         "cluster_id": 575,
         "x": 12.4385395050049,
         "y": 21.4483032226562,
-        "total_stars": 0
+        "total_stars": 23624
       },
       {
         "repo_name": "warproxxx/poly_data",
         "cluster_id": 575,
         "x": 12.4383020401001,
         "y": 21.4630966186523,
-        "total_stars": 0
+        "total_stars": 1394
       },
       {
         "repo_name": "ZhuLinsen/daily_stock_analysis",
         "cluster_id": 575,
         "x": 12.4652166366577,
         "y": 21.4117240905762,
-        "total_stars": 0
+        "total_stars": 56086
       },
       {
         "repo_name": "anthropics/financial-services",
         "cluster_id": 575,
         "x": 12.3446283340454,
         "y": 21.3986644744873,
-        "total_stars": 0
+        "total_stars": 30642
       },
       {
         "repo_name": "HKUDS/AI-Trader",
         "cluster_id": 575,
         "x": 12.4369163513184,
         "y": 21.4588794708252,
-        "total_stars": 0
+        "total_stars": 19313
       },
       {
         "repo_name": "stefan-jansen/machine-learning-for-trading",
         "cluster_id": 575,
         "x": 12.4312982559204,
         "y": 21.4771022796631,
-        "total_stars": 0
+        "total_stars": 18832
       },
       {
         "repo_name": "HKUDS/Vibe-Trading",
@@ -2863,42 +3007,42 @@
         "cluster_id": 576,
         "x": 9.84919357299805,
         "y": 19.7151508331299,
-        "total_stars": 0
+        "total_stars": 3759
       },
       {
         "repo_name": "datagouv/datagouv-mcp",
         "cluster_id": 576,
         "x": 10.7880802154541,
         "y": 19.1030941009521,
-        "total_stars": 0
+        "total_stars": 699
       },
       {
         "repo_name": "Universal-Commerce-Protocol/ucp",
         "cluster_id": 576,
         "x": 10.7244138717651,
         "y": 19.1240406036377,
-        "total_stars": 0
+        "total_stars": 2868
       },
       {
         "repo_name": "byJoey/cfnew",
         "cluster_id": 576,
         "x": 9.19823837280273,
         "y": 18.4878635406494,
-        "total_stars": 0
+        "total_stars": 13387
       },
       {
         "repo_name": "golang/go",
         "cluster_id": 576,
         "x": 9.86635875701904,
         "y": 19.2854976654053,
-        "total_stars": 0
+        "total_stars": 134572
       },
       {
         "repo_name": "grpc/grpc",
         "cluster_id": 576,
         "x": 9.71362686157227,
         "y": 18.7044410705566,
-        "total_stars": 0
+        "total_stars": 45193
       },
       {
         "repo_name": "protocolbuffers/protobuf",
@@ -2919,42 +3063,42 @@
         "cluster_id": 577,
         "x": 10.4308996200562,
         "y": 18.4831714630127,
-        "total_stars": 0
+        "total_stars": 1250
       },
       {
         "repo_name": "OpenBMB/ChatDev",
         "cluster_id": 577,
         "x": 10.5936250686646,
         "y": 18.3269271850586,
-        "total_stars": 0
+        "total_stars": 32270
       },
       {
         "repo_name": "telegramdesktop/tdesktop",
         "cluster_id": 577,
         "x": 10.3912448883057,
         "y": 18.3262157440186,
-        "total_stars": 0
+        "total_stars": 31034
       },
       {
         "repo_name": "TelegramMessenger/Telegram-iOS",
         "cluster_id": 577,
         "x": 10.3589057922363,
         "y": 18.3699378967285,
-        "total_stars": 0
+        "total_stars": 8393
       },
       {
         "repo_name": "steipete/wacli",
         "cluster_id": 577,
         "x": 7.96505212783813,
         "y": 18.0517501831055,
-        "total_stars": 0
+        "total_stars": 2026
       },
       {
         "repo_name": "rmyndharis/OpenWA",
         "cluster_id": 577,
         "x": 8.02656555175781,
         "y": 18.0017318725586,
-        "total_stars": 0
+        "total_stars": 9520
       },
       {
         "repo_name": "chatwoot/chatwoot",
@@ -2968,21 +3112,21 @@
         "cluster_id": 577,
         "x": 10.5656423568726,
         "y": 18.2892646789551,
-        "total_stars": 0
+        "total_stars": 45665
       },
       {
         "repo_name": "Kong/insomnia",
         "cluster_id": 577,
         "x": 10.4268503189087,
         "y": 18.4466094970703,
-        "total_stars": 0
+        "total_stars": 39803
       },
       {
         "repo_name": "elder-plinius/G0DM0D3",
         "cluster_id": 577,
         "x": 11.3203477859497,
         "y": 17.9333648681641,
-        "total_stars": 0
+        "total_stars": 9621
       },
       {
         "repo_name": "OtterMind/Chat2DB",
@@ -2996,7 +3140,7 @@
         "cluster_id": 578,
         "x": 9.76270294189453,
         "y": 17.2448387145996,
-        "total_stars": 0
+        "total_stars": 27947
       },
       {
         "repo_name": "dani-garcia/vaultwarden",
@@ -3010,28 +3154,28 @@
         "cluster_id": 578,
         "x": 9.89374732971191,
         "y": 17.0442371368408,
-        "total_stars": 0
+        "total_stars": 28792
       },
       {
         "repo_name": "keycloak/keycloak",
         "cluster_id": 578,
         "x": 9.7944917678833,
         "y": 17.108922958374,
-        "total_stars": 0
+        "total_stars": 35392
       },
       {
         "repo_name": "logto-io/logto",
         "cluster_id": 578,
         "x": 9.85608959197998,
         "y": 17.1715297698975,
-        "total_stars": 0
+        "total_stars": 13772
       },
       {
         "repo_name": "veracrypt/VeraCrypt",
         "cluster_id": 578,
         "x": 9.8689079284668,
         "y": 17.0582160949707,
-        "total_stars": 0
+        "total_stars": 10318
       },
       {
         "repo_name": "goauthentik/authentik",
@@ -3045,49 +3189,49 @@
         "cluster_id": 579,
         "x": 10.0504150390625,
         "y": 16.5342407226562,
-        "total_stars": 0
+        "total_stars": 12786
       },
       {
         "repo_name": "sepinf-inc/IPED",
         "cluster_id": 579,
         "x": 10.3153009414673,
         "y": 16.4923210144043,
-        "total_stars": 0
+        "total_stars": 2298
       },
       {
         "repo_name": "sherlock-project/sherlock",
         "cluster_id": 579,
         "x": 10.0564298629761,
         "y": 16.5351657867432,
-        "total_stars": 0
+        "total_stars": 80442
       },
       {
         "repo_name": "Z4nzu/hackingtool",
         "cluster_id": 579,
         "x": 10.2296762466431,
         "y": 16.7470035552979,
-        "total_stars": 0
+        "total_stars": 76385
       },
       {
         "repo_name": "soxoj/maigret",
         "cluster_id": 579,
         "x": 10.1458196640015,
         "y": 16.5218124389648,
-        "total_stars": 0
+        "total_stars": 34095
       },
       {
         "repo_name": "BigBodyCobain/Shadowbroker",
         "cluster_id": 579,
         "x": 10.026273727417,
         "y": 16.4815368652344,
-        "total_stars": 0
+        "total_stars": 8022
       },
       {
         "repo_name": "reconurge/flowsint",
         "cluster_id": 579,
         "x": 10.2898063659668,
         "y": 16.5160789489746,
-        "total_stars": 0
+        "total_stars": 5473
       },
       {
         "repo_name": "smicallef/spiderfoot",
@@ -3101,7 +3245,7 @@
         "cluster_id": 579,
         "x": 9.92542839050293,
         "y": 16.7754573822021,
-        "total_stars": 0
+        "total_stars": 6188
       },
       {
         "repo_name": "K2SOsint/Legendary_OSINT",
@@ -3122,21 +3266,21 @@
         "cluster_id": 580,
         "x": 10.629563331604,
         "y": 16.5540676116943,
-        "total_stars": 0
+        "total_stars": 2385
       },
       {
         "repo_name": "KeygraphHQ/shannon",
         "cluster_id": 580,
         "x": 10.5319404602051,
         "y": 16.4737644195557,
-        "total_stars": 0
+        "total_stars": 39212
       },
       {
         "repo_name": "google/osv-scanner",
         "cluster_id": 580,
         "x": 10.5333652496338,
         "y": 16.5921039581299,
-        "total_stars": 0
+        "total_stars": 9688
       },
       {
         "repo_name": "mukul975/Anthropic-Cybersecurity-Skills",
@@ -3150,14 +3294,14 @@
         "cluster_id": 580,
         "x": 10.6437721252441,
         "y": 16.5662460327148,
-        "total_stars": 0
+        "total_stars": 12942
       },
       {
         "repo_name": "Unclecheng-li/VulnClaw",
         "cluster_id": 580,
         "x": 10.6368846893311,
         "y": 16.5613975524902,
-        "total_stars": 0
+        "total_stars": 1483
       },
       {
         "repo_name": "Tencent/AI-Infra-Guard",
@@ -3185,77 +3329,77 @@
         "cluster_id": 581,
         "x": 8.80067348480225,
         "y": 19.3811225891113,
-        "total_stars": 0
+        "total_stars": 14923
       },
       {
         "repo_name": "steipete/summarize",
         "cluster_id": 581,
         "x": 8.74514389038086,
         "y": 20.2813758850098,
-        "total_stars": 0
+        "total_stars": 3305
       },
       {
         "repo_name": "ruvnet/ruvector",
         "cluster_id": 581,
         "x": 8.86213970184326,
         "y": 19.4077529907227,
-        "total_stars": 0
+        "total_stars": 1685
       },
       {
         "repo_name": "VectifyAI/PageIndex",
         "cluster_id": 581,
         "x": 8.68603992462158,
         "y": 19.8612651824951,
-        "total_stars": 0
+        "total_stars": 31016
       },
       {
         "repo_name": "PaddlePaddle/PaddleOCR",
         "cluster_id": 581,
         "x": 8.72347927093506,
         "y": 19.9949607849121,
-        "total_stars": 0
+        "total_stars": 81147
       },
       {
         "repo_name": "dmtrKovalenko/fff.nvim",
         "cluster_id": 581,
         "x": 8.81757831573486,
         "y": 19.4472579956055,
-        "total_stars": 0
+        "total_stars": 3640
       },
       {
         "repo_name": "google/magika",
         "cluster_id": 581,
         "x": 8.76221466064453,
         "y": 19.8539123535156,
-        "total_stars": 0
+        "total_stars": 15691
       },
       {
         "repo_name": "joeseesun/qiaomu-anything-to-notebooklm",
         "cluster_id": 581,
         "x": 8.7865743637085,
         "y": 20.3223133087158,
-        "total_stars": 0
+        "total_stars": 2392
       },
       {
         "repo_name": "run-llama/liteparse",
         "cluster_id": 581,
         "x": 8.67069053649902,
         "y": 19.9317951202393,
-        "total_stars": 0
+        "total_stars": 11123
       },
       {
         "repo_name": "dmtrKovalenko/fff",
         "cluster_id": 581,
         "x": 8.7978343963623,
         "y": 19.6024627685547,
-        "total_stars": 0
+        "total_stars": 7378
       },
       {
         "repo_name": "lfnovo/open-notebook",
         "cluster_id": 581,
         "x": 8.73760509490967,
         "y": 20.3136291503906,
-        "total_stars": 0
+        "total_stars": 34872
       },
       {
         "repo_name": "RyanCodrai/turbovec",
@@ -3269,35 +3413,35 @@
         "cluster_id": 581,
         "x": 8.64857959747314,
         "y": 20.0077381134033,
-        "total_stars": 0
+        "total_stars": 85094
       },
       {
         "repo_name": "opendatalab/MinerU",
         "cluster_id": 581,
         "x": 8.72019386291504,
         "y": 19.9389057159424,
-        "total_stars": 0
+        "total_stars": 70804
       },
       {
         "repo_name": "allenai/olmocr",
         "cluster_id": 581,
         "x": 8.66683483123779,
         "y": 20.0373706817627,
-        "total_stars": 0
+        "total_stars": 18981
       },
       {
         "repo_name": "karakeep-app/karakeep",
         "cluster_id": 581,
         "x": 8.68959903717041,
         "y": 20.2615966796875,
-        "total_stars": 0
+        "total_stars": 27099
       },
       {
         "repo_name": "malisper/pgrust",
         "cluster_id": 581,
         "x": 8.7362813949585,
         "y": 19.2292652130127,
-        "total_stars": 0
+        "total_stars": 2231
       },
       {
         "repo_name": "dottxt-ai/outlines",
@@ -3318,49 +3462,49 @@
         "cluster_id": 582,
         "x": 8.53482246398926,
         "y": 19.8864898681641,
-        "total_stars": 0
+        "total_stars": 13571
       },
       {
         "repo_name": "refactoringhq/tolaria",
         "cluster_id": 582,
         "x": 8.58671951293945,
         "y": 19.7435283660889,
-        "total_stars": 0
+        "total_stars": 17894
       },
       {
         "repo_name": "zakirullin/files.md",
         "cluster_id": 582,
         "x": 8.70389938354492,
         "y": 19.498254776001,
-        "total_stars": 0
+        "total_stars": 1943
       },
       {
         "repo_name": "fastfetch-cli/fastfetch",
         "cluster_id": 583,
         "x": 8.50910568237305,
         "y": 18.4036903381348,
-        "total_stars": 0
+        "total_stars": 21278
       },
       {
         "repo_name": "janestreet/magic-trace",
         "cluster_id": 583,
         "x": 8.48683738708496,
         "y": 18.2992706298828,
-        "total_stars": 0
+        "total_stars": 6004
       },
       {
         "repo_name": "abseil/abseil-cpp",
         "cluster_id": 583,
         "x": 8.55946063995361,
         "y": 18.1185970306396,
-        "total_stars": 0
+        "total_stars": 17984
       },
       {
         "repo_name": "jbeder/yaml-cpp",
         "cluster_id": 583,
         "x": 8.55608940124512,
         "y": 18.091854095459,
-        "total_stars": 0
+        "total_stars": 6114
       },
       {
         "repo_name": "catchorg/Catch2",
@@ -3374,7 +3518,7 @@
         "cluster_id": 583,
         "x": 8.65252113342285,
         "y": 18.0779724121094,
-        "total_stars": 0
+        "total_stars": 6100
       },
       {
         "repo_name": "gabime/spdlog",
@@ -3395,7 +3539,7 @@
         "cluster_id": 584,
         "x": 9.36737060546875,
         "y": 17.7706184387207,
-        "total_stars": 0
+        "total_stars": 10056
       },
       {
         "repo_name": "usekaneo/kaneo",
@@ -3409,35 +3553,35 @@
         "cluster_id": 585,
         "x": 9.9470043182373,
         "y": 21.1375160217285,
-        "total_stars": 0
+        "total_stars": 5000
       },
       {
         "repo_name": "anthropics/claude-quickstarts",
         "cluster_id": 585,
         "x": 9.92123603820801,
         "y": 21.1547698974609,
-        "total_stars": 0
+        "total_stars": 14347
       },
       {
         "repo_name": "Wei-Shaw/claude-relay-service",
         "cluster_id": 585,
         "x": 10.1872043609619,
         "y": 21.1552276611328,
-        "total_stars": 0
+        "total_stars": 8726
       },
       {
         "repo_name": "teng-lin/notebooklm-py",
         "cluster_id": 585,
         "x": 9.91880130767822,
         "y": 20.9643459320068,
-        "total_stars": 0
+        "total_stars": 14188
       },
       {
         "repo_name": "aaddrick/claude-desktop-debian",
         "cluster_id": 585,
         "x": 9.91911697387695,
         "y": 21.2677230834961,
-        "total_stars": 0
+        "total_stars": 3535
       },
       {
         "repo_name": "anthropics/claude-code",
@@ -3451,35 +3595,35 @@
         "cluster_id": 586,
         "x": 10.2340173721313,
         "y": 21.4074993133545,
-        "total_stars": 0
+        "total_stars": 6097
       },
       {
         "repo_name": "lingfengQAQ/webnovel-writer",
         "cluster_id": 586,
         "x": 10.3936376571655,
         "y": 21.4426765441895,
-        "total_stars": 0
+        "total_stars": 868
       },
       {
         "repo_name": "alirezarezvani/claude-skills",
         "cluster_id": 586,
         "x": 10.4273872375488,
         "y": 21.2059230804443,
-        "total_stars": 0
+        "total_stars": 22268
       },
       {
         "repo_name": "luongnv89/claude-howto",
         "cluster_id": 586,
         "x": 10.2494344711304,
         "y": 21.3901958465576,
-        "total_stars": 0
+        "total_stars": 38769
       },
       {
         "repo_name": "forrestchang/andrej-karpathy-skills",
         "cluster_id": 586,
         "x": 10.5333700180054,
         "y": 21.4943733215332,
-        "total_stars": 0
+        "total_stars": 126336
       },
       {
         "repo_name": "anthropics/claude-cookbooks",
@@ -3493,7 +3637,7 @@
         "cluster_id": 586,
         "x": 10.4217967987061,
         "y": 21.3081722259521,
-        "total_stars": 0
+        "total_stars": 15626
       },
       {
         "repo_name": "multica-ai/andrej-karpathy-skills",
@@ -3507,7 +3651,7 @@
         "cluster_id": 586,
         "x": 10.501633644104,
         "y": 21.4069385528564,
-        "total_stars": 0
+        "total_stars": 11360
       },
       {
         "repo_name": "Alishahryar1/free-claude-code",
@@ -3521,21 +3665,21 @@
         "cluster_id": 586,
         "x": 10.5921564102173,
         "y": 21.4782180786133,
-        "total_stars": 0
+        "total_stars": 32862
       },
       {
         "repo_name": "colbymchenry/codegraph",
         "cluster_id": 586,
         "x": 10.4878950119019,
         "y": 21.3836727142334,
-        "total_stars": 0
+        "total_stars": 55498
       },
       {
         "repo_name": "Chachamaru127/claude-code-harness",
         "cluster_id": 586,
         "x": 10.0608263015747,
         "y": 21.380880355835,
-        "total_stars": 0
+        "total_stars": 2578
       },
       {
         "repo_name": "JuliusBrussee/caveman",
@@ -3570,56 +3714,56 @@
         "cluster_id": 587,
         "x": 9.0686674118042,
         "y": 18.9547309875488,
-        "total_stars": 0
+        "total_stars": 21043
       },
       {
         "repo_name": "frappe/erpnext",
         "cluster_id": 587,
         "x": 10.118800163269,
         "y": 18.8154792785645,
-        "total_stars": 0
+        "total_stars": 34026
       },
       {
         "repo_name": "tursodatabase/turso",
         "cluster_id": 587,
         "x": 9.0571870803833,
         "y": 18.9037857055664,
-        "total_stars": 0
+        "total_stars": 21081
       },
       {
         "repo_name": "dbt-labs/dbt-core",
         "cluster_id": 587,
         "x": 9.04039478302002,
         "y": 18.9626083374023,
-        "total_stars": 0
+        "total_stars": 13288
       },
       {
         "repo_name": "t8y2/dbx",
         "cluster_id": 587,
         "x": 8.99817085266113,
         "y": 18.8831062316895,
-        "total_stars": 0
+        "total_stars": 9393
       },
       {
         "repo_name": "elastic/elasticsearch",
         "cluster_id": 587,
         "x": 9.14368915557861,
         "y": 18.2514152526855,
-        "total_stars": 0
+        "total_stars": 77419
       },
       {
         "repo_name": "supabase/supabase",
         "cluster_id": 587,
         "x": 9.00266933441162,
         "y": 18.8005084991455,
-        "total_stars": 0
+        "total_stars": 105647
       },
       {
         "repo_name": "prisma/prisma",
         "cluster_id": 587,
         "x": 8.40262508392334,
         "y": 18.9027614593506,
-        "total_stars": 0
+        "total_stars": 47322
       },
       {
         "repo_name": "apache/cassandra",
@@ -3640,14 +3784,14 @@
         "cluster_id": 588,
         "x": 8.67272758483887,
         "y": 18.7874889373779,
-        "total_stars": 0
+        "total_stars": 108836
       },
       {
         "repo_name": "vercel-labs/native",
         "cluster_id": 588,
         "x": 8.77005481719971,
         "y": 18.5870361328125,
-        "total_stars": 0
+        "total_stars": 6560
       },
       {
         "repo_name": "tokio-rs/topcoat",
@@ -3682,49 +3826,49 @@
         "cluster_id": 589,
         "x": 11.4637937545776,
         "y": 18.3968353271484,
-        "total_stars": 0
+        "total_stars": 301614
       },
       {
         "repo_name": "OpenBB-finance/OpenBB",
         "cluster_id": 589,
         "x": 11.3893041610718,
         "y": 18.2428512573242,
-        "total_stars": 0
+        "total_stars": 64249
       },
       {
         "repo_name": "openemr/openemr",
         "cluster_id": 589,
         "x": 11.3413791656494,
         "y": 18.2333564758301,
-        "total_stars": 0
+        "total_stars": 4914
       },
       {
         "repo_name": "Yeachan-Heo/oh-my-codex",
         "cluster_id": 589,
         "x": 11.0708503723145,
         "y": 18.3328533172607,
-        "total_stars": 0
+        "total_stars": 26534
       },
       {
         "repo_name": "vercel-labs/open-agents",
         "cluster_id": 589,
         "x": 11.1802768707275,
         "y": 18.4691143035889,
-        "total_stars": 0
+        "total_stars": 4881
       },
       {
         "repo_name": "Tracer-Cloud/opensre",
         "cluster_id": 589,
         "x": 10.9403886795044,
         "y": 18.7712726593018,
-        "total_stars": 0
+        "total_stars": 5286
       },
       {
         "repo_name": "open-metadata/OpenMetadata",
         "cluster_id": 589,
         "x": 11.002311706543,
         "y": 18.1126136779785,
-        "total_stars": 0
+        "total_stars": 13500
       },
       {
         "repo_name": "tinyhumansai/openhuman",
@@ -3738,42 +3882,42 @@
         "cluster_id": 589,
         "x": 11.0599222183228,
         "y": 18.2202053070068,
-        "total_stars": 0
+        "total_stars": 52129
       },
       {
         "repo_name": "openclaw/openclaw-windows-node",
         "cluster_id": 589,
         "x": 11.268440246582,
         "y": 18.6024627685547,
-        "total_stars": 0
+        "total_stars": 1662
       },
       {
         "repo_name": "maziyarpanahi/openmed",
         "cluster_id": 589,
         "x": 11.4300928115845,
         "y": 18.2199516296387,
-        "total_stars": 0
+        "total_stars": 3315
       },
       {
         "repo_name": "commaai/openpilot",
         "cluster_id": 589,
         "x": 11.3032569885254,
         "y": 18.1958179473877,
-        "total_stars": 0
+        "total_stars": 62649
       },
       {
         "repo_name": "NVIDIA/personaplex",
         "cluster_id": 590,
         "x": 12.9704780578613,
         "y": 17.4500923156738,
-        "total_stars": 0
+        "total_stars": 9261
       },
       {
         "repo_name": "Open-LLM-VTuber/Open-LLM-VTuber",
         "cluster_id": 590,
         "x": 12.9199810028076,
         "y": 17.5210285186768,
-        "total_stars": 0
+        "total_stars": 12092
       },
       {
         "repo_name": "livekit/agents",
@@ -3787,21 +3931,21 @@
         "cluster_id": 591,
         "x": 12.9882850646973,
         "y": 17.4089622497559,
-        "total_stars": 0
+        "total_stars": 10159
       },
       {
         "repo_name": "fishaudio/fish-speech",
         "cluster_id": 591,
         "x": 13.0918798446655,
         "y": 17.3002948760986,
-        "total_stars": 0
+        "total_stars": 25964
       },
       {
         "repo_name": "OpenBMB/VoxCPM",
         "cluster_id": 591,
         "x": 13.0795650482178,
         "y": 17.317361831665,
-        "total_stars": 0
+        "total_stars": 29914
       },
       {
         "repo_name": "jamiepine/voicebox",
@@ -3815,35 +3959,35 @@
         "cluster_id": 591,
         "x": 13.1032905578613,
         "y": 17.3051872253418,
-        "total_stars": 0
+        "total_stars": 11986
       },
       {
         "repo_name": "dograh-hq/dograh",
         "cluster_id": 591,
         "x": 12.9451313018799,
         "y": 17.4336280822754,
-        "total_stars": 0
+        "total_stars": 3915
       },
       {
         "repo_name": "OpenMOSS/MOSS-TTS",
         "cluster_id": 591,
         "x": 13.1702661514282,
         "y": 17.2252902984619,
-        "total_stars": 0
+        "total_stars": 3122
       },
       {
         "repo_name": "modelscope/FunASR",
         "cluster_id": 591,
         "x": 12.9961156845093,
         "y": 17.4145202636719,
-        "total_stars": 0
+        "total_stars": 17014
       },
       {
         "repo_name": "openai/whisper",
         "cluster_id": 591,
         "x": 13.0055503845215,
         "y": 17.3762073516846,
-        "total_stars": 0
+        "total_stars": 101989
       },
       {
         "repo_name": "altic-dev/FluidVoice",
@@ -3857,7 +4001,7 @@
         "cluster_id": 591,
         "x": 12.9696474075317,
         "y": 17.3253135681152,
-        "total_stars": 0
+        "total_stars": 1920
       },
       {
         "repo_name": "huggingface/speech-to-speech",
@@ -3871,7 +4015,7 @@
         "cluster_id": 591,
         "x": 13.1527376174927,
         "y": 17.2487754821777,
-        "total_stars": 0
+        "total_stars": 6698
       },
       {
         "repo_name": "abus-aikorea/voice-pro",
@@ -3885,21 +4029,21 @@
         "cluster_id": 592,
         "x": 7.96240043640137,
         "y": 19.6175346374512,
-        "total_stars": 0
+        "total_stars": 61769
       },
       {
         "repo_name": "wechat-article/wechat-article-exporter",
         "cluster_id": 592,
         "x": 8.15127372741699,
         "y": 19.9778156280518,
-        "total_stars": 0
+        "total_stars": 10790
       },
       {
         "repo_name": "unclecode/crawl4ai",
         "cluster_id": 592,
         "x": 8.03515815734863,
         "y": 19.7563076019287,
-        "total_stars": 0
+        "total_stars": 71587
       },
       {
         "repo_name": "firecrawl/firecrawl",
@@ -3941,7 +4085,7 @@
         "cluster_id": 593,
         "x": 7.86534547805786,
         "y": 19.4112300872803,
-        "total_stars": 0
+        "total_stars": 2137
       },
       {
         "repo_name": "pingdotgg/t3code",
@@ -3962,35 +4106,35 @@
         "cluster_id": 593,
         "x": 7.85013914108276,
         "y": 19.3579864501953,
-        "total_stars": 0
+        "total_stars": 3032
       },
       {
         "repo_name": "CloakHQ/CloakBrowser",
         "cluster_id": 593,
         "x": 7.76085710525513,
         "y": 19.4720592498779,
-        "total_stars": 0
+        "total_stars": 26155
       },
       {
         "repo_name": "nesquena/hermes-webui",
         "cluster_id": 593,
         "x": 7.91619682312012,
         "y": 19.2836971282959,
-        "total_stars": 0
+        "total_stars": 13734
       },
       {
         "repo_name": "puppeteer/puppeteer",
         "cluster_id": 593,
         "x": 7.82659578323364,
         "y": 19.2266426086426,
-        "total_stars": 0
+        "total_stars": 95142
       },
       {
         "repo_name": "microsoft/Webwright",
         "cluster_id": 593,
         "x": 7.87503385543823,
         "y": 19.3463344573975,
-        "total_stars": 0
+        "total_stars": 5551
       },
       {
         "repo_name": "agegr/pi-web",
@@ -4011,7 +4155,7 @@
         "cluster_id": 594,
         "x": 9.9920482635498,
         "y": 19.0391445159912,
-        "total_stars": 0
+        "total_stars": 52099
       },
       {
         "repo_name": "microsoft/PowerToys",
@@ -4025,42 +4169,42 @@
         "cluster_id": 594,
         "x": 9.94742393493652,
         "y": 18.9579524993896,
-        "total_stars": 0
+        "total_stars": 741
       },
       {
         "repo_name": "itsfatduck/optimizerDuck",
         "cluster_id": 594,
         "x": 9.94100952148438,
         "y": 18.9668941497803,
-        "total_stars": 0
+        "total_stars": 3488
       },
       {
         "repo_name": "huxingyi/autoremesher",
         "cluster_id": 594,
         "x": 9.73715686798096,
         "y": 18.8276748657227,
-        "total_stars": 0
+        "total_stars": 2183
       },
       {
         "repo_name": "zeux/meshoptimizer",
         "cluster_id": 594,
         "x": 9.6478385925293,
         "y": 18.8795108795166,
-        "total_stars": 0
+        "total_stars": 8173
       },
       {
         "repo_name": "YimMenu/YimMenuV2",
         "cluster_id": 594,
         "x": 10.0088424682617,
         "y": 18.2190608978271,
-        "total_stars": 0
+        "total_stars": 1540
       },
       {
         "repo_name": "is-a-dev/register",
         "cluster_id": 595,
         "x": 9.16142654418945,
         "y": 17.4085674285889,
-        "total_stars": 0
+        "total_stars": 9865
       },
       {
         "repo_name": "immich-app/immich",
@@ -4081,35 +4225,35 @@
         "cluster_id": 595,
         "x": 9.11676406860352,
         "y": 17.3030185699463,
-        "total_stars": 0
+        "total_stars": 172187
       },
       {
         "repo_name": "restic/restic",
         "cluster_id": 595,
         "x": 9.17865943908691,
         "y": 17.9531345367432,
-        "total_stars": 0
+        "total_stars": 34592
       },
       {
         "repo_name": "teslamate-org/teslamate",
         "cluster_id": 595,
         "x": 9.35402584075928,
         "y": 17.0494174957275,
-        "total_stars": 0
+        "total_stars": 8556
       },
       {
         "repo_name": "mikeroyal/Self-Hosting-Guide",
         "cluster_id": 595,
         "x": 9.3242712020874,
         "y": 17.4591255187988,
-        "total_stars": 0
+        "total_stars": 20576
       },
       {
         "repo_name": "IceWhaleTech/CasaOS",
         "cluster_id": 595,
         "x": 9.39590358734131,
         "y": 17.611177444458,
-        "total_stars": 0
+        "total_stars": 35944
       },
       {
         "repo_name": "CoreBunch/Instatic",
@@ -4158,7 +4302,7 @@
         "cluster_id": 596,
         "x": 10.9836826324463,
         "y": 17.4323768615723,
-        "total_stars": 0
+        "total_stars": 5639
       },
       {
         "repo_name": "basecamp/omarchy",
@@ -4172,28 +4316,28 @@
         "cluster_id": 596,
         "x": 10.5105199813843,
         "y": 17.4999160766602,
-        "total_stars": 0
+        "total_stars": 34179
       },
       {
         "repo_name": "elebumm/RedditVideoMakerBot",
         "cluster_id": 596,
         "x": 11.4155559539795,
         "y": 17.5180053710938,
-        "total_stars": 0
+        "total_stars": 10251
       },
       {
         "repo_name": "SimoneAvogadro/android-reverse-engineering-skill",
         "cluster_id": 596,
         "x": 10.1652307510376,
         "y": 17.6126594543457,
-        "total_stars": 0
+        "total_stars": 5458
       },
       {
         "repo_name": "dayanch96/YTLite",
         "cluster_id": 596,
         "x": 10.79296875,
         "y": 17.3708992004395,
-        "total_stars": 0
+        "total_stars": 4683
       },
       {
         "repo_name": "iv-org/invidious",
@@ -4207,42 +4351,42 @@
         "cluster_id": 596,
         "x": 9.86433029174805,
         "y": 17.7408905029297,
-        "total_stars": 0
+        "total_stars": 26489
       },
       {
         "repo_name": "Augani/openreel-video",
         "cluster_id": 596,
         "x": 11.2928915023804,
         "y": 17.4725456237793,
-        "total_stars": 0
+        "total_stars": 1900
       },
       {
         "repo_name": "anonfaded/FadCam",
         "cluster_id": 596,
         "x": 10.3980360031128,
         "y": 17.4594764709473,
-        "total_stars": 0
+        "total_stars": 2052
       },
       {
         "repo_name": "Genymobile/scrcpy",
         "cluster_id": 596,
         "x": 10.252142906189,
         "y": 17.5535888671875,
-        "total_stars": 0
+        "total_stars": 140997
       },
       {
         "repo_name": "Axorax/awesome-free-apps",
         "cluster_id": 596,
         "x": 9.82660007476807,
         "y": 17.9809989929199,
-        "total_stars": 0
+        "total_stars": 5593
       },
       {
         "repo_name": "Universal-Debloater-Alliance/universal-android-debloater-next-generation",
         "cluster_id": 596,
         "x": 10.1322202682495,
         "y": 17.5888290405273,
-        "total_stars": 0
+        "total_stars": 8036
       },
       {
         "repo_name": "OpenCut-app/OpenCut",
@@ -4256,14 +4400,14 @@
         "cluster_id": 596,
         "x": 9.89082050323486,
         "y": 18.0057601928711,
-        "total_stars": 0
+        "total_stars": 177091
       },
       {
         "repo_name": "andreknieriem/headunit-revived",
         "cluster_id": 596,
         "x": 10.2445306777954,
         "y": 17.5589866638184,
-        "total_stars": 0
+        "total_stars": 1346
       },
       {
         "repo_name": "browser-use/video-use",
@@ -4277,14 +4421,14 @@
         "cluster_id": 596,
         "x": 9.76682567596436,
         "y": 17.8363475799561,
-        "total_stars": 0
+        "total_stars": 10342
       },
       {
         "repo_name": "AIEraDev/Clypra",
         "cluster_id": 596,
         "x": 11.4092035293579,
         "y": 17.5046291351318,
-        "total_stars": 0
+        "total_stars": 2809
       },
       {
         "repo_name": "opa334/Dopamine",
@@ -4305,35 +4449,35 @@
         "cluster_id": 597,
         "x": 7.93486499786377,
         "y": 18.4094390869141,
-        "total_stars": 0
+        "total_stars": 27086
       },
       {
         "repo_name": "microsoft/typescript-go",
         "cluster_id": 597,
         "x": 7.85543775558472,
         "y": 18.5478172302246,
-        "total_stars": 0
+        "total_stars": 25081
       },
       {
         "repo_name": "oven-sh/bun",
         "cluster_id": 597,
         "x": 7.97729158401489,
         "y": 18.5125942230225,
-        "total_stars": 0
+        "total_stars": 94820
       },
       {
         "repo_name": "sveltejs/svelte",
         "cluster_id": 597,
         "x": 7.87323093414307,
         "y": 18.6796417236328,
-        "total_stars": 0
+        "total_stars": 87211
       },
       {
         "repo_name": "ryanmcdermott/clean-code-javascript",
         "cluster_id": 597,
         "x": 7.89304351806641,
         "y": 18.5555801391602,
-        "total_stars": 0
+        "total_stars": 94453
       },
       {
         "repo_name": "microsoft/TypeScript",
@@ -4354,49 +4498,49 @@
         "cluster_id": 598,
         "x": 8.0177640914917,
         "y": 18.5443172454834,
-        "total_stars": 0
+        "total_stars": 391
       },
       {
         "repo_name": "blackboardsh/electrobun",
         "cluster_id": 598,
         "x": 8.03991222381592,
         "y": 18.5453300476074,
-        "total_stars": 0
+        "total_stars": 6236
       },
       {
         "repo_name": "withastro/flue",
         "cluster_id": 598,
         "x": 8.07361507415771,
         "y": 18.3666133880615,
-        "total_stars": 0
+        "total_stars": 6766
       },
       {
         "repo_name": "swc-project/swc",
         "cluster_id": 598,
         "x": 7.93820667266846,
         "y": 18.5121421813965,
-        "total_stars": 0
+        "total_stars": 34093
       },
       {
         "repo_name": "hiddify/hiddify-app",
         "cluster_id": 599,
         "x": 8.97286510467529,
         "y": 16.7777881622314,
-        "total_stars": 0
+        "total_stars": 26196
       },
       {
         "repo_name": "chen08209/FlClash",
         "cluster_id": 599,
         "x": 8.94879055023193,
         "y": 16.7972965240479,
-        "total_stars": 0
+        "total_stars": 40483
       },
       {
         "repo_name": "tailscale/tailscale",
         "cluster_id": 599,
         "x": 8.92388820648193,
         "y": 16.8365631103516,
-        "total_stars": 0
+        "total_stars": 33798
       },
       {
         "repo_name": "amnezia-vpn/amnezia-client",
@@ -4410,35 +4554,35 @@
         "cluster_id": 600,
         "x": 8.87011814117432,
         "y": 16.7142963409424,
-        "total_stars": 0
+        "total_stars": 56759
       },
       {
         "repo_name": "gorhill/uBlock",
         "cluster_id": 600,
         "x": 8.82760238647461,
         "y": 16.7039012908936,
-        "total_stars": 0
+        "total_stars": 63869
       },
       {
         "repo_name": "Flowseal/zapret-discord-youtube",
         "cluster_id": 600,
         "x": 8.91592121124268,
         "y": 16.7466526031494,
-        "total_stars": 0
+        "total_stars": 29960
       },
       {
         "repo_name": "masterking32/MasterDnsVPN",
         "cluster_id": 600,
         "x": 8.87741279602051,
         "y": 16.7583713531494,
-        "total_stars": 0
+        "total_stars": 6149
       },
       {
         "repo_name": "apernet/hysteria",
         "cluster_id": 600,
         "x": 8.8792085647583,
         "y": 16.7033348083496,
-        "total_stars": 0
+        "total_stars": 21303
       },
       {
         "repo_name": "bannedbook/fanqiang",
@@ -4452,7 +4596,7 @@
         "cluster_id": 601,
         "x": 10.1867227554321,
         "y": 19.2095699310303,
-        "total_stars": 0
+        "total_stars": 53153
       },
       {
         "repo_name": "github/copilot-sdk",
@@ -4466,7 +4610,7 @@
         "cluster_id": 601,
         "x": 10.3594264984131,
         "y": 19.0004978179932,
-        "total_stars": 0
+        "total_stars": 34944
       },
       {
         "repo_name": "jenkinsci/jenkins",
@@ -4480,7 +4624,7 @@
         "cluster_id": 601,
         "x": 10.1626310348511,
         "y": 19.2941665649414,
-        "total_stars": 0
+        "total_stars": 5277
       },
       {
         "repo_name": "ansible/ansible",
@@ -4494,21 +4638,21 @@
         "cluster_id": 601,
         "x": 10.2298803329468,
         "y": 18.7619380950928,
-        "total_stars": 0
+        "total_stars": 1378
       },
       {
         "repo_name": "microsoft/hve-core",
         "cluster_id": 602,
         "x": 10.2177314758301,
         "y": 19.4743556976318,
-        "total_stars": 0
+        "total_stars": 603
       },
       {
         "repo_name": "Dimillian/Skills",
         "cluster_id": 602,
         "x": 10.0236072540283,
         "y": 20.2270927429199,
-        "total_stars": 0
+        "total_stars": 2641
       },
       {
         "repo_name": "kunchenguid/no-mistakes",
@@ -4522,7 +4666,7 @@
         "cluster_id": 602,
         "x": 9.70784187316895,
         "y": 20.243070602417,
-        "total_stars": 0
+        "total_stars": 8492
       },
       {
         "repo_name": "github/gh-stack",
@@ -4536,21 +4680,21 @@
         "cluster_id": 603,
         "x": 9.49574947357178,
         "y": 19.061918258667,
-        "total_stars": 0
+        "total_stars": 18273
       },
       {
         "repo_name": "bwya77/vscode-dark-islands",
         "cluster_id": 603,
         "x": 9.51077842712402,
         "y": 19.1913185119629,
-        "total_stars": 0
+        "total_stars": 8401
       },
       {
         "repo_name": "Diolinux/PhotoGIMP",
         "cluster_id": 603,
         "x": 9.49638652801514,
         "y": 19.1541042327881,
-        "total_stars": 0
+        "total_stars": 10344
       },
       {
         "repo_name": "tt-a1i/archify",
@@ -4578,14 +4722,14 @@
         "cluster_id": 604,
         "x": 13.235125541687,
         "y": 20.5574989318848,
-        "total_stars": 0
+        "total_stars": 32682
       },
       {
         "repo_name": "alexpate/awesome-design-systems",
         "cluster_id": 604,
         "x": 9.60546493530273,
         "y": 18.7699546813965,
-        "total_stars": 0
+        "total_stars": 22925
       },
       {
         "repo_name": "donnemartin/system-design-primer",
@@ -4599,7 +4743,7 @@
         "cluster_id": 604,
         "x": 9.65528869628906,
         "y": 18.3006362915039,
-        "total_stars": 0
+        "total_stars": 224085
       },
       {
         "repo_name": "ripienaar/free-for-dev",
@@ -4613,14 +4757,14 @@
         "cluster_id": 604,
         "x": 9.65509986877441,
         "y": 18.5183143615723,
-        "total_stars": 0
+        "total_stars": 482650
       },
       {
         "repo_name": "VoltAgent/awesome-design-md",
         "cluster_id": 604,
         "x": 9.47994327545166,
         "y": 19.3089599609375,
-        "total_stars": 0
+        "total_stars": 98940
       },
       {
         "repo_name": "Nutlope/hallmark",
@@ -4634,7 +4778,7 @@
         "cluster_id": 604,
         "x": 9.69455242156982,
         "y": 18.2955837249756,
-        "total_stars": 0
+        "total_stars": 55614
       },
       {
         "repo_name": "litu54/DevOps-Interview-Guide",
@@ -4648,21 +4792,21 @@
         "cluster_id": 605,
         "x": 11.1989030838013,
         "y": 18.8995189666748,
-        "total_stars": 0
+        "total_stars": 5571
       },
       {
         "repo_name": "microsoft/mxc",
         "cluster_id": 605,
         "x": 11.0945291519165,
         "y": 18.8232574462891,
-        "total_stars": 0
+        "total_stars": 664
       },
       {
         "repo_name": "TencentCloud/CubeSandbox",
         "cluster_id": 605,
         "x": 11.1913433074951,
         "y": 18.9435138702393,
-        "total_stars": 0
+        "total_stars": 10348
       },
       {
         "repo_name": "agent-substrate/substrate",
@@ -4683,21 +4827,21 @@
         "cluster_id": 606,
         "x": 10.7332630157471,
         "y": 19.4053592681885,
-        "total_stars": 0
+        "total_stars": 3444
       },
       {
         "repo_name": "Hmbown/DeepSeek-TUI",
         "cluster_id": 606,
         "x": 10.610315322876,
         "y": 19.5340042114258,
-        "total_stars": 0
+        "total_stars": 30885
       },
       {
         "repo_name": "Hmbown/CodeWhale",
         "cluster_id": 606,
         "x": 10.5754098892212,
         "y": 19.5582504272461,
-        "total_stars": 0
+        "total_stars": 37392
       },
       {
         "repo_name": "esengine/DeepSeek-Reasonix",
@@ -4725,21 +4869,21 @@
         "cluster_id": 607,
         "x": 11.8626203536987,
         "y": 17.8779258728027,
-        "total_stars": 0
+        "total_stars": 8214
       },
       {
         "repo_name": "ArthurBrussee/brush",
         "cluster_id": 607,
         "x": 12.0119066238403,
         "y": 17.9410991668701,
-        "total_stars": 0
+        "total_stars": 4240
       },
       {
         "repo_name": "jrouwe/JoltPhysics",
         "cluster_id": 607,
         "x": 12.2430725097656,
         "y": 18.0912246704102,
-        "total_stars": 0
+        "total_stars": 10960
       },
       {
         "repo_name": "erincatto/box3d",
@@ -4753,98 +4897,98 @@
         "cluster_id": 608,
         "x": 12.4170789718628,
         "y": 18.3914470672607,
-        "total_stars": 0
+        "total_stars": 2780
       },
       {
         "repo_name": "Blaizzy/mlx-vlm",
         "cluster_id": 608,
         "x": 12.5447092056274,
         "y": 18.4945735931396,
-        "total_stars": 0
+        "total_stars": 3875
       },
       {
         "repo_name": "roboflow/supervision",
         "cluster_id": 608,
         "x": 12.5171871185303,
         "y": 18.3763446807861,
-        "total_stars": 0
+        "total_stars": 47073
       },
       {
         "repo_name": "AIDC-AI/Pixelle-Video",
         "cluster_id": 608,
         "x": 12.0052947998047,
         "y": 17.8423538208008,
-        "total_stars": 0
+        "total_stars": 21190
       },
       {
         "repo_name": "Anil-matcha/Open-Generative-AI",
         "cluster_id": 608,
         "x": 12.2449493408203,
         "y": 18.0046825408936,
-        "total_stars": 0
+        "total_stars": 21566
       },
       {
         "repo_name": "huggingface/ml-intern",
         "cluster_id": 608,
         "x": 12.6320247650146,
         "y": 18.7918338775635,
-        "total_stars": 0
+        "total_stars": 9694
       },
       {
         "repo_name": "NVIDIA-AI-Blueprints/video-search-and-summarization",
         "cluster_id": 608,
         "x": 12.3474464416504,
         "y": 18.1653957366943,
-        "total_stars": 0
+        "total_stars": 992
       },
       {
         "repo_name": "heygen-com/hyperframes",
         "cluster_id": 608,
         "x": 12.2047634124756,
         "y": 17.9044151306152,
-        "total_stars": 0
+        "total_stars": 29639
       },
       {
         "repo_name": "NVlabs/Sana",
         "cluster_id": 608,
         "x": 12.352557182312,
         "y": 18.0219230651855,
-        "total_stars": 0
+        "total_stars": 6285
       },
       {
         "repo_name": "HKUDS/ViMax",
         "cluster_id": 608,
         "x": 11.9675884246826,
         "y": 17.7639064788818,
-        "total_stars": 0
+        "total_stars": 10393
       },
       {
         "repo_name": "NVlabs/LongLive",
         "cluster_id": 608,
         "x": 12.2978096008301,
         "y": 17.9466667175293,
-        "total_stars": 0
+        "total_stars": 1931
       },
       {
         "repo_name": "NVIDIA/cosmos",
         "cluster_id": 608,
         "x": 12.4874954223633,
         "y": 18.331127166748,
-        "total_stars": 0
+        "total_stars": 10776
       },
       {
         "repo_name": "opencv/opencv",
         "cluster_id": 608,
         "x": 12.4235095977783,
         "y": 18.2744045257568,
-        "total_stars": 0
+        "total_stars": 89095
       },
       {
         "repo_name": "ml-explore/mlx",
         "cluster_id": 608,
         "x": 12.6399049758911,
         "y": 18.702917098999,
-        "total_stars": 0
+        "total_stars": 27042
       },
       {
         "repo_name": "Lightricks/LTX-2",
@@ -4865,7 +5009,7 @@
         "cluster_id": 608,
         "x": 12.6754856109619,
         "y": 18.468822479248,
-        "total_stars": 0
+        "total_stars": 2836
       },
       {
         "repo_name": "Robbyant/lingbot-map",
@@ -4893,21 +5037,21 @@
         "cluster_id": 609,
         "x": 10.5253419876099,
         "y": 19.9214363098145,
-        "total_stars": 0
+        "total_stars": 591
       },
       {
         "repo_name": "coleam00/Archon",
         "cluster_id": 609,
         "x": 10.6679563522339,
         "y": 20.0500259399414,
-        "total_stars": 0
+        "total_stars": 21044
       },
       {
         "repo_name": "mksglu/context-mode",
         "cluster_id": 609,
         "x": 10.7229137420654,
         "y": 20.1560134887695,
-        "total_stars": 0
+        "total_stars": 12678
       },
       {
         "repo_name": "affaan-m/ECC",
@@ -4921,14 +5065,14 @@
         "cluster_id": 609,
         "x": 10.5561008453369,
         "y": 20.1337909698486,
-        "total_stars": 0
+        "total_stars": 34290
       },
       {
         "repo_name": "anomalyco/opencode",
         "cluster_id": 609,
         "x": 10.8081893920898,
         "y": 19.9413223266602,
-        "total_stars": 0
+        "total_stars": 180032
       },
       {
         "repo_name": "CodebuffAI/freebuff",
@@ -4949,21 +5093,21 @@
         "cluster_id": 610,
         "x": 10.0495138168335,
         "y": 19.7043190002441,
-        "total_stars": 0
+        "total_stars": 60306
       },
       {
         "repo_name": "can1357/oh-my-pi",
         "cluster_id": 610,
         "x": 10.2500047683716,
         "y": 19.854455947876,
-        "total_stars": 0
+        "total_stars": 15264
       },
       {
         "repo_name": "manaflow-ai/cmux",
         "cluster_id": 610,
         "x": 10.1179857254028,
         "y": 19.6507778167725,
-        "total_stars": 0
+        "total_stars": 19278
       },
       {
         "repo_name": "ogulcancelik/herdr",
@@ -4977,7 +5121,7 @@
         "cluster_id": 610,
         "x": 10.1700420379639,
         "y": 19.7580871582031,
-        "total_stars": 0
+        "total_stars": 8159
       },
       {
         "repo_name": "eneskirca/nodeterm",
@@ -4991,28 +5135,28 @@
         "cluster_id": 611,
         "x": 9.34020709991455,
         "y": 19.8566780090332,
-        "total_stars": 0
+        "total_stars": 97733
       },
       {
         "repo_name": "nvim-treesitter/nvim-treesitter",
         "cluster_id": 611,
         "x": 9.29943466186523,
         "y": 19.8123035430908,
-        "total_stars": 0
+        "total_stars": 13577
       },
       {
         "repo_name": "vitejs/vite",
         "cluster_id": 611,
         "x": 9.2529764175415,
         "y": 19.8219738006592,
-        "total_stars": 0
+        "total_stars": 81265
       },
       {
         "repo_name": "biomejs/biome",
         "cluster_id": 611,
         "x": 9.35210227966309,
         "y": 19.8790531158447,
-        "total_stars": 0
+        "total_stars": 25148
       },
       {
         "repo_name": "agavra/tuicr",
@@ -5026,14 +5170,14 @@
         "cluster_id": 612,
         "x": 9.57548809051514,
         "y": 20.5715885162354,
-        "total_stars": 0
+        "total_stars": 15161
       },
       {
         "repo_name": "cline/cline",
         "cluster_id": 612,
         "x": 9.56535243988037,
         "y": 20.5923309326172,
-        "total_stars": 0
+        "total_stars": 60648
       },
       {
         "repo_name": "HKUDS/CLI-Anything",
@@ -5047,7 +5191,7 @@
         "cluster_id": 612,
         "x": 9.59685897827148,
         "y": 20.5847702026367,
-        "total_stars": 0
+        "total_stars": 3765
       },
       {
         "repo_name": "MoonshotAI/kimi-cli",
@@ -5075,56 +5219,56 @@
         "cluster_id": 613,
         "x": 13.1649017333984,
         "y": 18.7234287261963,
-        "total_stars": 0
+        "total_stars": 14004
       },
       {
         "repo_name": "NVIDIA/Megatron-LM",
         "cluster_id": 613,
         "x": 13.1994590759277,
         "y": 18.658088684082,
-        "total_stars": 0
+        "total_stars": 15391
       },
       {
         "repo_name": "z-lab/dflash",
         "cluster_id": 613,
         "x": 13.1342582702637,
         "y": 18.7809391021729,
-        "total_stars": 0
+        "total_stars": 4443
       },
       {
         "repo_name": "deepseek-ai/DeepGEMM",
         "cluster_id": 613,
         "x": 13.2907648086548,
         "y": 18.6637668609619,
-        "total_stars": 0
+        "total_stars": 7052
       },
       {
         "repo_name": "deepseek-ai/DeepEP",
         "cluster_id": 613,
         "x": 13.2171726226807,
         "y": 18.6798439025879,
-        "total_stars": 0
+        "total_stars": 9550
       },
       {
         "repo_name": "Biohub/esm",
         "cluster_id": 613,
         "x": 13.1036224365234,
         "y": 18.933910369873,
-        "total_stars": 0
+        "total_stars": 2593
       },
       {
         "repo_name": "cupy/cupy",
         "cluster_id": 613,
         "x": 12.9820375442505,
         "y": 18.574089050293,
-        "total_stars": 0
+        "total_stars": 11678
       },
       {
         "repo_name": "pytorch/pytorch",
         "cluster_id": 613,
         "x": 13.1625604629517,
         "y": 18.5738735198975,
-        "total_stars": 0
+        "total_stars": 101483
       },
       {
         "repo_name": "MoonshotAI/FlashKDA",
@@ -5145,28 +5289,28 @@
         "cluster_id": 614,
         "x": 13.8640909194946,
         "y": 18.6138229370117,
-        "total_stars": 0
+        "total_stars": 9587
       },
       {
         "repo_name": "microsoft/BitNet",
         "cluster_id": 614,
         "x": 13.8780183792114,
         "y": 18.6879806518555,
-        "total_stars": 0
+        "total_stars": 37762
       },
       {
         "repo_name": "google-ai-edge/LiteRT-LM",
         "cluster_id": 614,
         "x": 13.6690759658813,
         "y": 18.741382598877,
-        "total_stars": 0
+        "total_stars": 4689
       },
       {
         "repo_name": "cheahjs/free-llm-api-resources",
         "cluster_id": 614,
         "x": 13.7848644256592,
         "y": 18.6509323120117,
-        "total_stars": 0
+        "total_stars": 20205
       },
       {
         "repo_name": "jundot/omlx",
@@ -5180,21 +5324,21 @@
         "cluster_id": 614,
         "x": 13.6427345275879,
         "y": 18.7180709838867,
-        "total_stars": 0
+        "total_stars": 94182
       },
       {
         "repo_name": "FareedKhan-dev/train-llm-from-scratch",
         "cluster_id": 614,
         "x": 13.7121715545654,
         "y": 18.7990074157715,
-        "total_stars": 0
+        "total_stars": 4943
       },
       {
         "repo_name": "Andyyyy64/whichllm",
         "cluster_id": 614,
         "x": 13.8668022155762,
         "y": 18.5705699920654,
-        "total_stars": 0
+        "total_stars": 3761
       },
       {
         "repo_name": "AlexsJones/llmfit",
@@ -5222,14 +5366,14 @@
         "cluster_id": 615,
         "x": 13.6793918609619,
         "y": 18.9076080322266,
-        "total_stars": 0
+        "total_stars": 111583
       },
       {
         "repo_name": "openai/parameter-golf",
         "cluster_id": 615,
         "x": 13.6211948394775,
         "y": 18.989896774292,
-        "total_stars": 0
+        "total_stars": 4812
       },
       {
         "repo_name": "lyogavin/airllm",
@@ -5243,7 +5387,7 @@
         "cluster_id": 615,
         "x": 13.6212854385376,
         "y": 18.9967384338379,
-        "total_stars": 0
+        "total_stars": 4996
       },
       {
         "repo_name": "kvcache-ai/ktransformers",
@@ -5264,28 +5408,28 @@
         "cluster_id": 616,
         "x": 12.4251489639282,
         "y": 19.7319717407227,
-        "total_stars": 0
+        "total_stars": 140633
       },
       {
         "repo_name": "inclusionAI/AReaL",
         "cluster_id": 616,
         "x": 12.4892883300781,
         "y": 19.8291072845459,
-        "total_stars": 0
+        "total_stars": 4461
       },
       {
         "repo_name": "GoogleCloudPlatform/generative-ai",
         "cluster_id": 616,
         "x": 12.800518989563,
         "y": 19.5203456878662,
-        "total_stars": 0
+        "total_stars": 15898
       },
       {
         "repo_name": "f/prompts.chat",
         "cluster_id": 616,
         "x": 12.8726501464844,
         "y": 19.5671215057373,
-        "total_stars": 0
+        "total_stars": 157365
       },
       {
         "repo_name": "asgeirtj/system_prompts_leaks",
@@ -5299,7 +5443,7 @@
         "cluster_id": 616,
         "x": 12.281231880188,
         "y": 19.7969055175781,
-        "total_stars": 0
+        "total_stars": 1534
       },
       {
         "repo_name": "andrewyng/aisuite",
@@ -5313,14 +5457,14 @@
         "cluster_id": 616,
         "x": 12.6959190368652,
         "y": 19.889799118042,
-        "total_stars": 0
+        "total_stars": 2245
       },
       {
         "repo_name": "aishwaryanr/awesome-generative-ai-guide",
         "cluster_id": 616,
         "x": 12.8570871353149,
         "y": 19.564172744751,
-        "total_stars": 0
+        "total_stars": 27762
       },
       {
         "repo_name": "bojieli/ai-agent-book",
@@ -5348,14 +5492,14 @@
         "cluster_id": 617,
         "x": 11.8820743560791,
         "y": 19.4283027648926,
-        "total_stars": 0
+        "total_stars": 11487
       },
       {
         "repo_name": "BuilderIO/agent-native",
         "cluster_id": 617,
         "x": 11.7177705764771,
         "y": 19.440559387207,
-        "total_stars": 0
+        "total_stars": 3779
       },
       {
         "repo_name": "Significant-Gravitas/AutoGPT",
@@ -5369,14 +5513,14 @@
         "cluster_id": 618,
         "x": 11.4071378707886,
         "y": 19.2783489227295,
-        "total_stars": 0
+        "total_stars": 3820
       },
       {
         "repo_name": "ruvnet/claude-flow",
         "cluster_id": 618,
         "x": 11.3962278366089,
         "y": 19.8447551727295,
-        "total_stars": 0
+        "total_stars": 15096
       },
       {
         "repo_name": "msitarzewski/agency-agents",
@@ -5390,98 +5534,98 @@
         "cluster_id": 618,
         "x": 11.4158554077148,
         "y": 19.6774978637695,
-        "total_stars": 0
+        "total_stars": 8839
       },
       {
         "repo_name": "openai/openai-agents-python",
         "cluster_id": 618,
         "x": 11.4338712692261,
         "y": 19.7625770568848,
-        "total_stars": 0
+        "total_stars": 25239
       },
       {
         "repo_name": "simstudioai/sim",
         "cluster_id": 618,
         "x": 11.4597749710083,
         "y": 19.8828563690186,
-        "total_stars": 0
+        "total_stars": 28272
       },
       {
         "repo_name": "lobehub/lobehub",
         "cluster_id": 618,
         "x": 11.3604164123535,
         "y": 19.6815299987793,
-        "total_stars": 0
+        "total_stars": 80383
       },
       {
         "repo_name": "openai/symphony",
         "cluster_id": 618,
         "x": 11.3358697891235,
         "y": 19.9162731170654,
-        "total_stars": 0
+        "total_stars": 23034
       },
       {
         "repo_name": "awslabs/aidlc-workflows",
         "cluster_id": 618,
         "x": 11.2551002502441,
         "y": 19.8028030395508,
-        "total_stars": 0
+        "total_stars": 1603
       },
       {
         "repo_name": "Q00/ouroboros",
         "cluster_id": 618,
         "x": 11.2930793762207,
         "y": 19.8775253295898,
-        "total_stars": 0
+        "total_stars": 3765
       },
       {
         "repo_name": "danielmiessler/Personal_AI_Infrastructure",
         "cluster_id": 618,
         "x": 11.464919090271,
         "y": 20.5456218719482,
-        "total_stars": 0
+        "total_stars": 15635
       },
       {
         "repo_name": "mattpocock/sandcastle",
         "cluster_id": 618,
         "x": 11.139835357666,
         "y": 19.2933197021484,
-        "total_stars": 0
+        "total_stars": 5194
       },
       {
         "repo_name": "phodal/routa",
         "cluster_id": 618,
         "x": 11.2872762680054,
         "y": 19.6738662719727,
-        "total_stars": 0
+        "total_stars": 1359
       },
       {
         "repo_name": "aws/agent-toolkit-for-aws",
         "cluster_id": 618,
         "x": 11.2592315673828,
         "y": 19.4177169799805,
-        "total_stars": 0
+        "total_stars": 1704
       },
       {
         "repo_name": "craft-ai-agents/craft-agents-oss",
         "cluster_id": 618,
         "x": 11.4278440475464,
         "y": 19.819242477417,
-        "total_stars": 0
+        "total_stars": 6718
       },
       {
         "repo_name": "langflow-ai/langflow",
         "cluster_id": 618,
         "x": 11.4561958312988,
         "y": 19.7492237091064,
-        "total_stars": 0
+        "total_stars": 150370
       },
       {
         "repo_name": "gastownhall/gastown",
         "cluster_id": 618,
         "x": 11.5547161102295,
         "y": 19.9509410858154,
-        "total_stars": 0
+        "total_stars": 16835
       },
       {
         "repo_name": "HKUDS/nanobot",
@@ -5551,14 +5695,14 @@
         "cluster_id": 619,
         "x": 13.3252964019775,
         "y": 20.5154590606689,
-        "total_stars": 0
+        "total_stars": 450160
       },
       {
         "repo_name": "jwasham/coding-interview-university",
         "cluster_id": 619,
         "x": 13.2775402069092,
         "y": 20.5402317047119,
-        "total_stars": 0
+        "total_stars": 352052
       },
       {
         "repo_name": "TapXWorld/ChinaTextbook",
@@ -5572,42 +5716,42 @@
         "cluster_id": 619,
         "x": 13.3209066390991,
         "y": 20.4774551391602,
-        "total_stars": 0
+        "total_stars": 386932
       },
       {
         "repo_name": "ForrestKnight/open-source-cs",
         "cluster_id": 619,
         "x": 13.3638458251953,
         "y": 20.4519119262695,
-        "total_stars": 0
+        "total_stars": 22206
       },
       {
         "repo_name": "byoungd/English-level-up-tips",
         "cluster_id": 619,
         "x": 13.155933380127,
         "y": 20.2608890533447,
-        "total_stars": 0
+        "total_stars": 54382
       },
       {
         "repo_name": "DataTalksClub/data-engineering-zoomcamp",
         "cluster_id": 619,
         "x": 13.4115476608276,
         "y": 20.446174621582,
-        "total_stars": 0
+        "total_stars": 41848
       },
       {
         "repo_name": "alchaincyf/zhangxuefeng-skill",
         "cluster_id": 619,
         "x": 13.2514991760254,
         "y": 20.3817100524902,
-        "total_stars": 0
+        "total_stars": 9389
       },
       {
         "repo_name": "ossu/computer-science",
         "cluster_id": 619,
         "x": 13.3934383392334,
         "y": 20.4267196655273,
-        "total_stars": 0
+        "total_stars": 206794
       },
       {
         "repo_name": "DataExpert-io/data-engineer-handbook",
@@ -5621,7 +5765,7 @@
         "cluster_id": 620,
         "x": 13.2616367340088,
         "y": 20.0797386169434,
-        "total_stars": 0
+        "total_stars": 63862
       },
       {
         "repo_name": "rohitg00/ai-engineering-from-scratch",
@@ -5635,21 +5779,21 @@
         "cluster_id": 620,
         "x": 13.2787618637085,
         "y": 20.0758228302002,
-        "total_stars": 0
+        "total_stars": 22577
       },
       {
         "repo_name": "Introduction-to-Autonomous-Robots/Introduction-to-Autonomous-Robots",
         "cluster_id": 620,
         "x": 13.3026666641235,
         "y": 20.1075096130371,
-        "total_stars": 0
+        "total_stars": 2944
       },
       {
         "repo_name": "owainlewis/awesome-artificial-intelligence",
         "cluster_id": 620,
         "x": 13.2809238433838,
         "y": 20.0918388366699,
-        "total_stars": 0
+        "total_stars": 14574
       },
       {
         "repo_name": "microsoft/AI-For-Beginners",
@@ -5663,28 +5807,28 @@
         "cluster_id": 620,
         "x": 13.3101139068604,
         "y": 20.0891265869141,
-        "total_stars": 0
+        "total_stars": 27166
       },
       {
         "repo_name": "HenryNdubuaku/maths-cs-ai-compendium",
         "cluster_id": 620,
         "x": 13.3028287887573,
         "y": 20.0966644287109,
-        "total_stars": 0
+        "total_stars": 6829
       },
       {
         "repo_name": "CodebuffAI/codebuff",
         "cluster_id": 621,
         "x": 10.2020597457886,
         "y": 19.9473342895508,
-        "total_stars": 0
+        "total_stars": 3362
       },
       {
         "repo_name": "aidenybai/react-grab",
         "cluster_id": 621,
         "x": 10.4486713409424,
         "y": 20.2727661132812,
-        "total_stars": 0
+        "total_stars": 6095
       },
       {
         "repo_name": "vitali87/code-graph-rag",
@@ -5698,7 +5842,7 @@
         "cluster_id": 621,
         "x": 10.1461019515991,
         "y": 20.339334487915,
-        "total_stars": 0
+        "total_stars": 68793
       },
       {
         "repo_name": "DeusData/codebase-memory-mcp",
@@ -5712,7 +5856,7 @@
         "cluster_id": 621,
         "x": 9.75275611877441,
         "y": 19.9069385528564,
-        "total_stars": 0
+        "total_stars": 57329
       },
       {
         "repo_name": "tirth8205/code-review-graph",
@@ -5726,7 +5870,7 @@
         "cluster_id": 622,
         "x": 10.6422643661499,
         "y": 20.3928737640381,
-        "total_stars": 0
+        "total_stars": 4567
       },
       {
         "repo_name": "ayghri/i-have-adhd",
@@ -5747,21 +5891,21 @@
         "cluster_id": 623,
         "x": 11.2739419937134,
         "y": 20.5646667480469,
-        "total_stars": 0
+        "total_stars": 11922
       },
       {
         "repo_name": "K-Dense-AI/claude-scientific-skills",
         "cluster_id": 623,
         "x": 11.5719995498657,
         "y": 20.8003845214844,
-        "total_stars": 0
+        "total_stars": 12203
       },
       {
         "repo_name": "openai/skills",
         "cluster_id": 623,
         "x": 10.9159717559814,
         "y": 20.9353847503662,
-        "total_stars": 0
+        "total_stars": 13407
       },
       {
         "repo_name": "addyosmani/agent-skills",
@@ -5775,7 +5919,7 @@
         "cluster_id": 623,
         "x": 11.4166383743286,
         "y": 20.9135837554932,
-        "total_stars": 0
+        "total_stars": 40071
       },
       {
         "repo_name": "VoltAgent/awesome-agent-skills",
@@ -5789,14 +5933,14 @@
         "cluster_id": 623,
         "x": 10.6079902648926,
         "y": 20.5867347717285,
-        "total_stars": 0
+        "total_stars": 1483
       },
       {
         "repo_name": "K-Dense-AI/scientific-agent-skills",
         "cluster_id": 623,
         "x": 11.4990797042847,
         "y": 20.9239940643311,
-        "total_stars": 0
+        "total_stars": 25492
       },
       {
         "repo_name": "anthropics/skills",
@@ -5810,21 +5954,21 @@
         "cluster_id": 623,
         "x": 11.2107515335083,
         "y": 20.9952354431152,
-        "total_stars": 0
+        "total_stars": 3788
       },
       {
         "repo_name": "Leonxlnx/taste-skill",
         "cluster_id": 623,
         "x": 10.8889808654785,
         "y": 20.590311050415,
-        "total_stars": 0
+        "total_stars": 59716
       },
       {
         "repo_name": "hardikpandya/stop-slop",
         "cluster_id": 623,
         "x": 11.0214319229126,
         "y": 21.1327514648438,
-        "total_stars": 0
+        "total_stars": 12641
       },
       {
         "repo_name": "santifer/career-ops",
@@ -5838,7 +5982,7 @@
         "cluster_id": 623,
         "x": 11.2852163314819,
         "y": 20.8735790252686,
-        "total_stars": 0
+        "total_stars": 23129
       },
       {
         "repo_name": "interviewstreet/hiring-agent",
@@ -5852,14 +5996,14 @@
         "cluster_id": 623,
         "x": 11.1935195922852,
         "y": 20.9612789154053,
-        "total_stars": 0
+        "total_stars": 22446
       },
       {
         "repo_name": "safishamsi/graphify",
         "cluster_id": 623,
         "x": 11.1282196044922,
         "y": 20.9738750457764,
-        "total_stars": 0
+        "total_stars": 76528
       },
       {
         "repo_name": "MadsLorentzen/ai-job-search",
@@ -5887,14 +6031,14 @@
         "cluster_id": 624,
         "x": 11.7386445999146,
         "y": 19.3183441162109,
-        "total_stars": 0
+        "total_stars": 14764
       },
       {
         "repo_name": "antoinezambelli/forge",
         "cluster_id": 624,
         "x": 11.6353511810303,
         "y": 19.4132308959961,
-        "total_stars": 0
+        "total_stars": 1302
       },
       {
         "repo_name": "earendil-works/pi",
