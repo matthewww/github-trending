@@ -581,7 +581,15 @@ async function init() {
   try {
     const idxRes = await fetch('data/archive/index.json');
     if (idxRes.ok) {
-      const dates = await idxRes.json();
+      const body = await idxRes.text();
+      let dates;
+      try {
+        dates = JSON.parse(body);
+      } catch (_) {
+        // Tolerate a plain newline-separated date list
+        dates = body.split('\n').map(s => s.trim()).filter(Boolean);
+      }
+      if (!Array.isArray(dates) || dates.length === 0) throw new Error('empty archive index');
       picker.innerHTML = dates.map((date, index) =>
         `<option value="${date}">${index === 0 ? '★ ' : ''}${date}</option>`
       ).join('');
