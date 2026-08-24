@@ -284,7 +284,10 @@ function renderSparks(series, meta) {
     .map(([name, pts]) => {
       const first = pts[0]?.[1] || 0;
       const last = pts[pts.length - 1]?.[1] || 0;
-      return { name, pts, first, last, growth: first ? (last - first) / first : 0 };
+      const span = pts.length > 1
+        ? Math.round((new Date(pts[pts.length - 1][0]) - new Date(pts[0][0])) / 86400000) + 1
+        : 1;
+      return { name, pts, first, last, span, growth: first ? (last - first) / first : 0 };
     })
     .sort((a, b) => b.last - a.last)
     .slice(0, 12);
@@ -294,11 +297,17 @@ function renderSparks(series, meta) {
     return;
   }
 
-  grid.innerHTML = entries.map((e, i) => `
+  grid.innerHTML = entries.map((e, i) => {
+    const windowClass = e.span >= 45 ? ' long' : e.span <= 7 ? ' short' : '';
+    const growthLabel = e.span <= 1
+      ? '<span class="spark-growth new">new</span>'
+      : `<span class="spark-growth">▲ ${(e.growth * 100).toFixed(0)}%</span>`;
+    return `
     <div class="spark-card">
       <div class="spark-head">
         <span class="spark-name"><a href="${repoUrl(e.name)}" target="_blank" rel="noopener">${escHtml(e.name)}</a></span>
-        <span class="spark-growth">▲ ${(e.growth * 100).toFixed(0)}%</span>
+        ${growthLabel}
+        <span class="spark-window${windowClass}">${e.span}d</span>
       </div>
       <div class="spark-canvas-wrap"><canvas id="spark-${i}"></canvas></div>
       <div class="spark-foot">
@@ -306,15 +315,19 @@ function renderSparks(series, meta) {
         <span>★ ${fmt(e.last)}</span>
       </div>
     </div>
-  `).join('');
+  `;
+  }).join('');
 
   entries.forEach((e, i) => {
+    const chartPts = e.pts.length === 1
+      ? [e.pts[0], [addDays(e.pts[0][0], 1), e.pts[0][1]]]
+      : e.pts;
     new Chart(document.getElementById(`spark-${i}`), {
       type: 'line',
       data: {
-        labels: e.pts.map(p => p[0]),
+        labels: chartPts.map(p => p[0]),
         datasets: [{
-          data: e.pts.map(p => p[1]),
+          data: chartPts.map(p => p[1]),
           borderColor: '#3fb950',
           backgroundColor: '#3fb95022',
           borderWidth: 1.5,
@@ -353,7 +366,7 @@ async function init() {
   const repos = Object.keys(data.meta || {}).length;
 
   document.getElementById('header-sub').textContent =
-    `Long-horizon view · ${days} days · ${weeks} weeks · since ${shortDate(data.first_date)}`;
+    `All-time view · ${days} days · ${weeks} weeks · since ${shortDate(data.first_date)}`;
 
   document.getElementById('stats-pills').innerHTML = [
     `<span class="pill"><strong>${repos}</strong> repos tracked</span>`,

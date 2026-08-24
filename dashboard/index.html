@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GitHub Trend Intelligence</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.2.0/dist/chartjs-plugin-zoom.min.js"></script>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -37,8 +39,8 @@
       <a class="view-tab" href="./trends.html">
         <span class="view-icon">📈</span>
         <span class="view-copy">
-          <span class="view-name">The Expansion</span>
-          <span class="view-desc">long-horizon records · growth curves</span>
+          <span class="view-name">All Time</span>
+          <span class="view-desc">all-time records · growth curves</span>
         </span>
       </a>
     </nav>
@@ -62,11 +64,16 @@
     <div class="card-label">Semantic Clusters — this week</div>
     <div class="cluster-layout">
       <div>
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-          <h2 id="cluster-chart-title" style="margin-bottom:0;display:flex;align-items:center;gap:8px;">Semantic Map<span class="info-icon-wrap"><span class="info-icon">i</span><span class="info-popover"><strong>How this view works</strong><span class="info-popover-p">The <em>Semantic Map</em> places trending repos by meaning, not metadata — repos with similar purposes, themes, and audiences sit close together.</span><span class="info-popover-p">The <em>Cluster Share</em> view shows how this week's repos are distributed across clusters, making the biggest themes easier to scan.</span><span class="info-popover-p">The pipeline: an LLM reads each repo's README to extract purpose and themes, a local model converts those into a 384-dimensional vector, then UMAP reduces everything to 2D for the map.</span></span></span></h2>
-          <div class="chart-mode-toggle">
-            <button class="chart-mode-btn active" id="btn-scatter">Scatter</button>
-            <button class="chart-mode-btn" id="btn-pie">Pie</button>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px;">
+          <h2 id="cluster-chart-title" style="margin-bottom:0;display:flex;align-items:center;gap:8px;">Semantic Map<span class="info-icon-wrap"><span class="info-icon">i</span><span class="info-popover"><strong>How this view works</strong><span class="info-popover-p">The <em>Semantic Map</em> places trending repos by meaning, not metadata — repos with similar purposes, themes, and audiences sit close together. Dot size reflects GitHub stars.</span><span class="info-popover-p">Scroll to zoom, drag to pan. Click a dot or a cluster card to isolate that cluster; click again to release. Hovering a dot highlights its card in the breakdown.</span><span class="info-popover-p">Use the search box to find a repo — matches stay lit while everything else fades.</span><span class="info-popover-p">The pipeline: an LLM reads each repo's README to extract purpose and themes, a local model converts those into a 384-dimensional vector, then UMAP reduces everything to 2D for the map.</span></span></span></h2>
+          <div class="map-controls">
+            <input id="map-search" class="map-search" type="text" placeholder="Find a repo…" autocomplete="off" spellcheck="false" />
+            <span class="map-match-count" id="map-match-count"></span>
+            <button class="map-btn" id="btn-map-reset" title="Clear focus, search and zoom">Reset</button>
+            <div class="chart-mode-toggle">
+              <button class="chart-mode-btn active" id="btn-scatter">Scatter</button>
+              <button class="chart-mode-btn" id="btn-pie">Pie</button>
+            </div>
           </div>
         </div>
         <div class="chart-wrap-scatter"><canvas id="cluster-chart"></canvas></div>

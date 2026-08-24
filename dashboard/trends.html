@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Expansion — GitHub Trend Intelligence</title>
+  <title>All Time — GitHub Trend Intelligence</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <link rel="stylesheet" href="./styles.css" />
   <link rel="stylesheet" href="./trends.css" />
@@ -16,7 +16,7 @@
       <span class="brand-badge">📈</span>
       <span class="brand-text">
         <span class="wordmark">GitHub Trend Intelligence</span>
-        <span class="tagline" id="header-sub">Long-horizon view · loading…</span>
+        <span class="tagline" id="header-sub">All-time view · loading…</span>
       </span>
     </div>
 
@@ -31,8 +31,8 @@
       <a class="view-tab active" href="./trends.html" aria-current="page">
         <span class="view-icon">📈</span>
         <span class="view-copy">
-          <span class="view-name">The Expansion</span>
-          <span class="view-desc">long-horizon records · growth curves</span>
+          <span class="view-name">All Time</span>
+          <span class="view-desc">all-time records · growth curves</span>
         </span>
       </a>
     </nav>
@@ -51,13 +51,6 @@
     <div class="records-grid" id="records-grid">
       <div class="no-data">Loading…</div>
     </div>
-  </div>
-
-  <!-- Expansion chart -->
-  <div class="card">
-    <h2>Unique repos trending per week</h2>
-    <p class="chart-note">How much of GitHub's trending surface we capture each week — the core expansion signal.</p>
-    <div class="chart-wrap chart-tall"><canvas id="expansion-chart"></canvas></div>
   </div>
 
   <!-- Category + language charts -->
@@ -90,6 +83,13 @@
   <div class="card">
     <div class="card-label">Growth curves — total stars over time (current trending repos)</div>
     <div class="spark-grid" id="spark-grid"></div>
+  </div>
+
+  <!-- Expansion chart -->
+  <div class="card">
+    <h2>Unique repos trending per week</h2>
+    <p class="chart-note">How much of GitHub's trending surface we capture each week — the core expansion signal.</p>
+    <div class="chart-wrap chart-tall"><canvas id="expansion-chart"></canvas></div>
   </div>
 
 </main>

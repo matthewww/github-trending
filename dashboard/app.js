@@ -218,16 +218,73 @@ const CLUSTER_PALETTE = [
 let clusterChart;
 let clusterChartMode = 'scatter';
 let lastClusterData = null;
+let clusterColorMap = {};
+const mapState = { focus: null, hover: null, query: '' };
+
+function clusterColor(index) {
+  const hue = (index * 137.508) % 360;
+  return `hsl(${hue.toFixed(1)}, 68%, 62%)`;
+}
+
+function withAlpha(color, alpha) {
+  return color.replace('hsl(', 'hsla(').replace(')', `, ${alpha})`);
+}
+
+function buildColorMap(clusters) {
+  const map = {};
+  clusters.forEach((cluster, index) => {
+    map[cluster.id] = clusterColor(index);
+  });
+  return map;
+}
+
+function clusterRepoCount(cluster) {
+  return cluster.size || (cluster.repos || []).length || 0;
+}
+
+function starRadius(stars) {
+  if (!stars || stars <= 0) return 3;
+  return Math.min(12, 3 + Math.log10(stars) * 1.8);
+}
+
+function fmtStars(n) {
+  if (!n) return '0';
+  if (n >= 1000) return (n / 1000).toFixed(n >= 10000 ? 0 : 1) + 'k';
+  return String(n);
+}
+
+function pointMatches(point) {
+  const q = mapState.query.trim().toLowerCase();
+  return !q || (point.repo || '').toLowerCase().includes(q);
+}
+
+function activeFocus() {
+  return mapState.hover !== null ? mapState.hover : mapState.focus;
+}
 
 function buildScatterDatasets(clusters, scatter) {
+  const focus = activeFocus();
+  const searching = mapState.query.trim() !== '';
   return clusters.map(cluster => {
-    const points = scatter.filter(point => point.cluster_id === cluster.id);
+    const points = scatter
+      .filter(point => point.cluster_id === cluster.id)
+      .map(point => ({ x: point.x, y: point.y, repo: point.repo_name, stars: point.total_stars || 0, cid: cluster.id }));
+    const dimmed = focus !== null && focus !== cluster.id;
     return {
       label: cluster.label,
-      data: points.map(point => ({ x: point.x, y: point.y, repo: point.repo_name })),
-      backgroundColor: CLUSTER_PALETTE[clusters.indexOf(cluster) % CLUSTER_PALETTE.length] + 'cc',
-      pointRadius: 6,
-      pointHoverRadius: 9,
+      cid: cluster.id,
+      data: points,
+      pointRadius: points.map(p => (searching && pointMatches(p) ? starRadius(p.stars) + 2.5 : starRadius(p.stars))),
+      pointHoverRadius: points.map(p => starRadius(p.stars) + 4),
+      pointBackgroundColor: points.map(p => {
+        if (dimmed) return 'rgba(139, 148, 158, 0.10)';
+        if (searching) return pointMatches(p) ? clusterColorMap[cluster.id] : 'rgba(139, 148, 158, 0.14)';
+        return clusterColorMap[cluster.id];
+      }),
+      pointBorderColor: points.map(p => (searching && pointMatches(p) && !dimmed ? '#f0f6fc' : 'transparent')),
+      pointBorderWidth: 1.5,
+      pointHoverBorderColor: '#f0f6fc',
+      pointHoverBorderWidth: 1.5,
     };
   });
 }
@@ -236,13 +293,80 @@ function buildPieDataset(clusters, colorMap) {
   return {
     labels: clusters.map(cluster => cluster.label),
     datasets: [{
-      data: clusters.map(cluster => cluster.size || (cluster.repos || []).length || 0),
-      backgroundColor: clusters.map(cluster => colorMap[cluster.id] + 'cc'),
+      data: clusters.map(cluster => clusterRepoCount(cluster)),
+      backgroundColor: clusters.map(cluster => withAlpha(clusterColorMap[cluster.id], 0.8)),
       borderColor: clusters.map(cluster => colorMap[cluster.id]),
       borderWidth: 1,
       hoverOffset: 8,
     }],
   };
+}
+
+const clusterLabelsPlugin = {
+  id: 'clusterLabels',
+  afterDatasetsDraw(chart) {
+    const opts = chart.options.plugins.clusterLabels;
+    if (!opts || chart.config.type !== 'scatter') return;
+    const { ctx, chartArea } = chart;
+    ctx.save();
+    ctx.font = '600 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'bottom';
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = 'rgba(13, 17, 23, 0.85)';
+    const priority = cluster => {
+      if (mapState.hover === cluster.id) return 0;
+      if (mapState.focus === cluster.id) return 1;
+      if (meta[cluster.id] && meta[cluster.id].hasMatch) return 2;
+      return 3;
+    };
+    const meta = opts.meta;
+    const drawn = [];
+    const visible = opts.clusters
+      .filter(c => meta[c.id] && meta[c.id].show)
+      .sort((a, b) => priority(a) - priority(b) || clusterRepoCount(b) - clusterRepoCount(a));
+    for (const cluster of visible) {
+      const m = meta[cluster.id];
+      const px = chart.scales.x.getPixelForValue(m.cx);
+      const py = chart.scales.y.getPixelForValue(m.cy);
+      if (px < chartArea.left + 30 || px > chartArea.right - 30 || py < chartArea.top + 14 || py > chartArea.bottom) continue;
+      const w = ctx.measureText(cluster.label).width;
+      const box = { x1: px - w / 2 - 3, x2: px + w / 2 + 3, y1: py - 22, y2: py - 7 };
+      if (drawn.some(b => !(box.x2 < b.x1 || box.x1 > b.x2 || box.y2 < b.y1 || box.y1 > b.y2))) continue;
+      drawn.push(box);
+      ctx.strokeText(cluster.label, px, py - 9);
+      ctx.fillStyle = opts.colors[cluster.id];
+      ctx.fillText(cluster.label, px, py - 9);
+    }
+    ctx.restore();
+  },
+};
+
+function computeLabelMeta(clusters, scatter) {
+  const byCluster = {};
+  scatter.forEach(point => {
+    (byCluster[point.cluster_id] = byCluster[point.cluster_id] || []).push(point);
+  });
+  const topN = new Set(
+    [...clusters].sort((a, b) => clusterRepoCount(b) - clusterRepoCount(a)).slice(0, 14).map(c => c.id)
+  );
+  const meta = {};
+  clusters.forEach(cluster => {
+    const points = byCluster[cluster.id] || [];
+    if (!points.length) {
+      meta[cluster.id] = { show: false };
+      return;
+    }
+    const cx = points.reduce((sum, p) => sum + p.x, 0) / points.length;
+    const cy = points.reduce((sum, p) => sum + p.y, 0) / points.length;
+    const hasMatch = mapState.query.trim() !== '' && points.some(p => pointMatches({ repo: p.repo_name }));
+    meta[cluster.id] = {
+      cx,
+      cy,
+      show: topN.has(cluster.id) || mapState.focus === cluster.id || mapState.hover === cluster.id || hasMatch,
+    };
+  });
+  return meta;
 }
 
 function renderClusters(clusterData) {
@@ -256,19 +380,15 @@ function renderClusters(clusterData) {
 
   section.style.display = '';
   lastClusterData = clusterData;
+  clusterColorMap = buildColorMap(clusterData.clusters);
 
   const clusters = clusterData.clusters;
   const scatter = clusterData.scatter || [];
 
-  const colorMap = {};
-  clusters.forEach((cluster, index) => {
-    colorMap[cluster.id] = CLUSTER_PALETTE[index % CLUSTER_PALETTE.length];
-  });
-
-  renderClusterChart(clusters, scatter, clusterChartMode, colorMap);
+  renderClusterChart(clusters, scatter, clusterChartMode);
 
   listEl.innerHTML = clusters.map(cluster => {
-    const color = colorMap[cluster.id];
+    const color = clusterColorMap[cluster.id];
     const repoLinks = (cluster.repos || []).slice(0, 6).map(repo => {
       const name = repo.split('/')[1] || repo;
       return `<a class="cluster-repo-pill" href="https://github.com/${escHtml(repo)}" target="_blank" rel="noopener">${escHtml(name)}</a>`;
@@ -278,7 +398,7 @@ function renderClusters(clusterData) {
       ? `<span class="cluster-repo-pill" style="color:var(--text-muted)">+${moreCount} more</span>`
       : '';
     return `
-      <div class="cluster-item" style="--cl-color:${color}">
+      <div class="cluster-item" style="--cl-color:${color}" data-cid="${cluster.id}">
         <div class="cluster-item-header">
           <span class="cluster-dot"></span>
           <span class="cluster-label">${escHtml(cluster.label)}</span>
@@ -289,9 +409,10 @@ function renderClusters(clusterData) {
       </div>
     `;
   }).join('');
+  updateListHighlight();
 }
 
-function renderClusterChart(clusters, scatter, mode, colorMap) {
+function renderClusterChart(clusters, scatter, mode) {
   const ctx = document.getElementById('cluster-chart').getContext('2d');
   const titleEl = document.getElementById('cluster-chart-title');
   if (clusterChart) clusterChart.destroy();
@@ -301,15 +422,16 @@ function renderClusterChart(clusters, scatter, mode, colorMap) {
   }
 
   const datasets = buildScatterDatasets(clusters, scatter);
-  const pieData = buildPieDataset(clusters, colorMap);
+  const pieData = buildPieDataset(clusters, clusterColorMap);
 
   clusterChart = new Chart(ctx, {
     type: mode === 'pie' ? 'pie' : 'scatter',
     data: mode === 'pie' ? pieData : { datasets },
+    plugins: mode === 'pie' ? [] : [clusterLabelsPlugin],
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      animation: { duration: 600 },
+      animation: { duration: 400 },
       plugins: {
         legend: {
           display: mode === 'pie' || clusters.length <= 8,
@@ -327,9 +449,30 @@ function renderClusterChart(clusters, scatter, mode, colorMap) {
               }
               const pt = ctx.raw;
               const name = (pt.repo || '').split('/')[1] || pt.repo;
-              return `${name} (${ctx.dataset.label})`;
+              return ` ${name} · ★ ${fmtStars(pt.stars)}`;
+            },
+            afterLabel(ctx) {
+              if (mode === 'pie') return '';
+              return ctx.dataset.label;
             },
           },
+        },
+        zoom: {
+          pan: { enabled: true, mode: 'xy' },
+          zoom: {
+            wheel: { enabled: true, speed: 0.7 },
+            pinch: { enabled: true },
+            mode: 'xy',
+          },
+          limits: {
+            x: { min: 'original', max: 'original' },
+            y: { min: 'original', max: 'original' },
+          },
+        },
+        clusterLabels: {
+          clusters,
+          meta: computeLabelMeta(clusters, scatter),
+          colors: clusterColorMap,
         },
       },
       scales: mode === 'pie' ? {} : {
@@ -337,14 +480,66 @@ function renderClusterChart(clusters, scatter, mode, colorMap) {
         y: { ticks: { display: false }, grid: { color: '#21262d' } },
       },
       onClick(event, elements) {
-        if (mode === 'pie') return;
-        if (!elements.length) return;
-        const element = elements[0];
-        const point = datasets[element.datasetIndex].data[element.index];
-        if (point.repo) window.open(`https://github.com/${point.repo}`, '_blank');
+        if (mode === 'pie' || !elements.length) return;
+        const cid = datasets[elements[0].datasetIndex].cid;
+        setClusterFocus(mapState.focus === cid ? null : cid);
+      },
+      onHover(event, elements) {
+        if (mode !== 'scatter') return;
+        const cid = elements.length ? datasets[elements[0].datasetIndex].cid : null;
+        setHotCard(cid);
       },
     },
   });
+}
+
+function refreshMap() {
+  if (!clusterChart || clusterChartMode !== 'scatter' || !lastClusterData) return;
+  const clusters = lastClusterData.clusters;
+  const scatter = lastClusterData.scatter || [];
+  clusterChart.data.datasets = buildScatterDatasets(clusters, scatter);
+  clusterChart.options.plugins.clusterLabels.meta = computeLabelMeta(clusters, scatter);
+  clusterChart.update();
+  updateListHighlight();
+}
+
+function setClusterFocus(cid) {
+  mapState.focus = cid;
+  refreshMap();
+}
+
+let hotCid = null;
+function setHotCard(cid) {
+  if (hotCid === cid) return;
+  hotCid = cid;
+  const listEl = document.getElementById('cluster-list');
+  listEl.querySelectorAll('.cluster-item').forEach(item => {
+    item.classList.toggle('hot', Number(item.dataset.cid) === cid);
+  });
+  if (cid === null) return;
+  const card = listEl.querySelector(`.cluster-item[data-cid="${cid}"]`);
+  if (card) card.scrollIntoView({ block: 'nearest' });
+}
+
+function updateListHighlight() {
+  const listEl = document.getElementById('cluster-list');
+  listEl.querySelectorAll('.cluster-item').forEach(item => {
+    const cid = Number(item.dataset.cid);
+    item.classList.toggle('focused', mapState.focus === cid);
+    item.classList.toggle('dimmed', mapState.focus !== null && mapState.focus !== cid);
+  });
+}
+
+function updateMatchCount() {
+  const el = document.getElementById('map-match-count');
+  if (!el) return;
+  const q = mapState.query.trim().toLowerCase();
+  if (!q || !lastClusterData) {
+    el.textContent = '';
+    return;
+  }
+  const n = (lastClusterData.scatter || []).filter(p => (p.repo_name || '').toLowerCase().includes(q)).length;
+  el.textContent = n === 1 ? '1 match' : `${n} matches`;
 }
 
 document.getElementById('btn-scatter').addEventListener('click', () => {
@@ -352,13 +547,7 @@ document.getElementById('btn-scatter').addEventListener('click', () => {
   clusterChartMode = 'scatter';
   document.getElementById('btn-scatter').classList.add('active');
   document.getElementById('btn-pie').classList.remove('active');
-  const clusters = lastClusterData.clusters;
-  const scatter = lastClusterData.scatter || [];
-  const colorMap = {};
-  clusters.forEach((cluster, index) => {
-    colorMap[cluster.id] = CLUSTER_PALETTE[index % CLUSTER_PALETTE.length];
-  });
-  renderClusterChart(clusters, scatter, 'scatter', colorMap);
+  renderClusterChart(lastClusterData.clusters, lastClusterData.scatter || [], 'scatter');
 });
 
 document.getElementById('btn-pie').addEventListener('click', () => {
@@ -366,14 +555,47 @@ document.getElementById('btn-pie').addEventListener('click', () => {
   clusterChartMode = 'pie';
   document.getElementById('btn-pie').classList.add('active');
   document.getElementById('btn-scatter').classList.remove('active');
-  const clusters = lastClusterData.clusters;
-  const scatter = lastClusterData.scatter || [];
-  const colorMap = {};
-  clusters.forEach((cluster, index) => {
-    colorMap[cluster.id] = CLUSTER_PALETTE[index % CLUSTER_PALETTE.length];
-  });
-  renderClusterChart(clusters, scatter, 'pie', colorMap);
+  renderClusterChart(lastClusterData.clusters, lastClusterData.scatter || [], 'pie');
 });
+
+const clusterListEl = document.getElementById('cluster-list');
+clusterListEl.addEventListener('click', event => {
+  const item = event.target.closest('.cluster-item');
+  if (!item || event.target.closest('a')) return;
+  const cid = Number(item.dataset.cid);
+  setClusterFocus(mapState.focus === cid ? null : cid);
+});
+clusterListEl.addEventListener('mouseover', event => {
+  const item = event.target.closest('.cluster-item');
+  if (!item) return;
+  mapState.hover = Number(item.dataset.cid);
+  refreshMap();
+});
+clusterListEl.addEventListener('mouseleave', () => {
+  mapState.hover = null;
+  refreshMap();
+});
+
+const mapSearchEl = document.getElementById('map-search');
+if (mapSearchEl) {
+  mapSearchEl.addEventListener('input', () => {
+    mapState.query = mapSearchEl.value;
+    updateMatchCount();
+    refreshMap();
+  });
+}
+
+const mapResetBtn = document.getElementById('btn-map-reset');
+if (mapResetBtn) {
+  mapResetBtn.addEventListener('click', () => {
+    mapState.focus = null;
+    mapState.query = '';
+    if (mapSearchEl) mapSearchEl.value = '';
+    updateMatchCount();
+    refreshMap();
+    if (clusterChart && clusterChartMode === 'scatter') clusterChart.resetZoom();
+  });
+}
 
 let currentData = null;
 
