@@ -2,6 +2,7 @@
 """Generate a weekly prose digest summarising GitHub trending activity."""
 
 import os
+import re
 import sys
 import json
 import argparse
@@ -14,6 +15,10 @@ load_dotenv()
 
 MODELS_ENDPOINT = "https://api.groq.com/openai/v1"
 MODEL = os.environ.get("DIGEST_MODEL") or "openai/gpt-oss-120b"
+
+REPO_MENTION_RE = re.compile(
+    r"(?<![A-Za-z0-9-])([A-Za-z0-9](?:[A-Za-z0-9-]{0,38})/[A-Za-z0-9_.-]+)"
+)
 
 
 def get_week_bounds(reference_date: date = None) -> tuple[date, date]:
@@ -120,15 +125,13 @@ def fetch_longitudinal_context(db: SupabaseClient, week_start: date, weeks: int 
     start = week_start - timedelta(weeks=weeks - 1)
     end = week_start + timedelta(days=6)
 
-    resp = (
+    rows = db.fetch_all(
         db.client.table("trending_snapshots")
         .select("repo_name, collected_date, stars_in_period")
         .eq("since_period", "daily")
         .gte("collected_date", start.isoformat())
         .lte("collected_date", end.isoformat())
-        .execute()
     )
-    rows = resp.data or []
 
     # Group by week_start → repo → list of (date, stars)
     week_repo_days: dict[str, dict[str, list]] = defaultdict(lambda: defaultdict(list))
@@ -198,21 +201,120 @@ def fetch_longitudinal_context(db: SupabaseClient, week_start: date, weeks: int 
     }
 
 
+def fetch_all_time_signals(db: SupabaseClient, week_start: date, week_end: date) -> dict:
+    """Long-horizon signals computed from the full daily snapshot history.
+
+    Returns:
+      {
+        "top_streaks": [{"repo_name", "longest_run", "active_in_week"}, ...],  # top 5 longest consecutive-day runs
+        "most_days": [{"repo_name", "days_trended"}, ...],                     # top 5 cumulative trending days
+        "velocity_risers": [{"repo_name", "this_week_max", "prior_max"}],      # >=3x vs trailing 4-week max
+        "records": [{"repo_name", "value"}],                                   # all-time-high stars/day set this week
+        "debut_count": int,                                                    # repos trending for the first time ever this week
+        "debut_top": [{"repo_name", "max_stars_today"}],                       # biggest all-time debuts this week
+        "history_span_days": int,
+      }
+    """
+    from collections import defaultdict
+    rows = db.fetch_all(
+        db.client.table("trending_snapshots")
+        .select("repo_name, collected_date, stars_in_period")
+        .eq("since_period", "daily")
+        .order("collected_date")
+    )
+    if not rows:
+        return {}
+
+    by_repo: dict[str, list[tuple[date, int]]] = defaultdict(list)
+    for r in rows:
+        by_repo[r["repo_name"]].append(
+            (date.fromisoformat(r["collected_date"]), r.get("stars_in_period") or 0)
+        )
+
+    all_dates = [d for points in by_repo.values() for d, _ in points]
+    history_span_days = (max(all_dates) - min(all_dates)).days + 1
+
+    def longest_run(dates: list[date]) -> int:
+        dates = sorted(set(dates))
+        best = run = 1
+        for i in range(1, len(dates)):
+            run = run + 1 if (dates[i] - dates[i - 1]).days == 1 else 1
+            best = max(best, run)
+        return best
+
+    week_s, week_e = week_start, week_end
+    streaks, most_days, risers, records, debuts = [], [], [], [], []
+    debut_count = 0
+
+    for name, points in by_repo.items():
+        dates = [d for d, _ in points]
+        first, last = min(dates), max(dates)
+        week_points = [(d, s) for d, s in points if week_s <= d <= week_e]
+        prior_points = [(d, s) for d, s in points if d < week_s]
+
+        most_days.append({"repo_name": name, "days_trended": len(points)})
+
+        run = longest_run(dates)
+        if run >= 4:
+            streaks.append({
+                "repo_name": name,
+                "longest_run": run,
+                "active_in_week": any(week_s <= d <= week_e for d in dates),
+            })
+
+        if week_points:
+            week_max = max(s for _, s in week_points)
+            prior_max = max((s for _, s in prior_points), default=0)
+            if not prior_points:
+                debut_count += 1
+                debuts.append({"repo_name": name, "max_stars_today": week_max})
+            elif prior_max > 0 and week_max >= 3 * prior_max and week_max >= 200:
+                risers.append({"repo_name": name, "this_week_max": week_max, "prior_max": prior_max})
+            if prior_points and week_max > prior_max:
+                records.append({"repo_name": name, "value": week_max})
+
+    def enrich(items: list[dict], keys: list[str]) -> list[dict]:
+        names = [i["repo_name"] for i in items]
+        if not names:
+            return items
+        resp = (
+            db.client.table("repo_insights")
+            .select("repo_name, purpose")
+            .in_("repo_name", names)
+            .execute()
+        )
+        pmap = {i["repo_name"]: i.get("purpose", "") for i in (resp.data or [])}
+        for i in items:
+            i["purpose"] = pmap.get(i["repo_name"], "")
+        return items
+
+    return {
+        "top_streaks": enrich(sorted(streaks, key=lambda x: x["longest_run"], reverse=True)[:5], ["longest_run"]),
+        "most_days": enrich(sorted(most_days, key=lambda x: x["days_trended"], reverse=True)[:5], ["days_trended"]),
+        "velocity_risers": enrich(
+            sorted(risers, key=lambda x: x["this_week_max"] / max(x["prior_max"], 1), reverse=True)[:6],
+            ["this_week_max", "prior_max"],
+        ),
+        "records": enrich(sorted(records, key=lambda x: x["value"], reverse=True)[:6], ["value"]),
+        "debut_count": debut_count,
+        "debut_top": enrich(sorted(debuts, key=lambda x: x["max_stars_today"], reverse=True)[:5], ["max_stars_today"]),
+        "history_span_days": history_span_days,
+    }
+
+
 def fetch_category_history(db: SupabaseClient, week_start: date, weeks: int = 4) -> list[dict]:
     """Category counts per week for the last N weeks (including current)."""
     from collections import defaultdict
     start = week_start - timedelta(weeks=weeks - 1)
     end = week_start + timedelta(days=6)
 
-    repos_resp = (
+    rows = db.fetch_all(
         db.client.table("trending_snapshots")
         .select("repo_name, collected_date")
         .eq("since_period", "daily")
         .gte("collected_date", start.isoformat())
         .lte("collected_date", end.isoformat())
-        .execute()
     )
-    rows = repos_resp.data or []
 
     names = list({r["repo_name"] for r in rows})
     if not names:
@@ -252,6 +354,7 @@ def build_context(
     category_history: list[dict],
     data_quality_pct: int = 100,
     longitudinal: dict | None = None,
+    all_time: dict | None = None,
 ) -> str:
     """Build a compact structured context string for the LLM prompt."""
     from collections import Counter, defaultdict
@@ -381,10 +484,65 @@ def build_context(
             lines.append(f"## Repos that trended last week but disappeared this week: {', '.join(drops)}")
             lines.append("")
 
+    # All-time signals (full history since first collection)
+    if all_time:
+        span = all_time.get("history_span_days")
+        lines.append(f"## All-time context (full tracking history, ~{span} days)")
+        streaks = all_time.get("top_streaks", [])
+        if streaks:
+            lines.append("Longest consecutive-day trending runs ever:")
+            for s in streaks:
+                active = "still trending this week" if s.get("active_in_week") else "not trending this week"
+                purpose = f" — {s['purpose'][:60]}" if s.get("purpose") else ""
+                lines.append(f"- {s['repo_name']}: {s['longest_run']} consecutive days ({active}){purpose}")
+        most_days = all_time.get("most_days", [])
+        if most_days:
+            lines.append("Most cumulative days in trending (all time):")
+            lines.append(", ".join(f"{m['repo_name']} ({m['days_trended']}d)" for m in most_days))
+        risers = all_time.get("velocity_risers", [])
+        if risers:
+            lines.append("Velocity jumps this week (vs trailing 4-week peak):")
+            for r in risers:
+                mult = r["this_week_max"] / max(r["prior_max"], 1)
+                purpose = f" — {r['purpose'][:60]}" if r.get("purpose") else ""
+                lines.append(
+                    f"- {r['repo_name']}: {r['this_week_max']:,} stars/day vs prior peak {r['prior_max']:,} ({mult:.1f}x){purpose}"
+                )
+        records = all_time.get("records", [])
+        if records:
+            lines.append("All-time-high stars/day set THIS week:")
+            for r in records:
+                purpose = f" — {r['purpose'][:60]}" if r.get("purpose") else ""
+                lines.append(f"- {r['repo_name']}: {r['value']:,} stars/day{purpose}")
+        debut_count = all_time.get("debut_count", 0)
+        debut_top = all_time.get("debut_top", [])
+        if debut_count:
+            top_str = ", ".join(
+                f"{d['repo_name']} ({d['max_stars_today']:,}/day)" for d in debut_top
+            )
+            lines.append(f"All-time debuts this week: {debut_count} repos trended for the first time ever; biggest: {top_str}")
+        lines.append("")
+
     return "\n".join(lines)
 
 
-def generate_digest(llm_client: OpenAI, context: str, week_start: date) -> dict | None:
+def extract_repo_mentions(text: str) -> set[str]:
+    """All owner/repo mentions in a text (headline + digest prose)."""
+    return set(REPO_MENTION_RE.findall(text or ""))
+
+
+def validate_digest(result: dict, valid_names: set[str]) -> list[str]:
+    """Return repo mentions in the digest that are NOT in the valid name set."""
+    text = f"{result.get('headline', '')}\n{result.get('digest', '')}"
+    return sorted(m for m in extract_repo_mentions(text) if m not in valid_names)
+
+
+def generate_digest(
+    llm_client: OpenAI,
+    context: str,
+    week_start: date,
+    valid_names: set[str] | None = None,
+) -> dict | None:
     prompt = f"""You are writing a weekly briefing on GitHub trending for a senior software developer who reads GitHub trending every day.
 
 They can already see the category chart, the top repos by stars, and the languages. Do NOT describe those.
@@ -400,6 +558,8 @@ STRICT RULES — violating any of these makes the digest worthless:
 7. Use "sustained presence" signals from the context: repos with 3+ days in trending or multi-week runs are stronger signals than one-day spikes
 8. Use "drop-offs" from the context: if a repo trended last week but is gone this week, that's worth noting if it was significant
 9. If your confidence is limited by data gaps (low analysis %), say what you CAN observe and flag uncertainty in confidence_notes
+10. Use the "All-time context" section: records ("highest stars/day since tracking began"), longest streaks, velocity jumps, and all-time debuts are claims the reader cannot see in any chart — prefer them
+11. Distinguish carefully: "first time trending" (all-time debut), "returned after absence", and "another week in a row" are different claims — never conflate them
 
 {context}
 
@@ -411,28 +571,56 @@ Return ONLY valid JSON with these exact fields:
   "confidence_notes": "One sentence: what limited your analysis this week (low coverage, many repos without insights, etc.), or 'Good data coverage' if the analysis %, star data, and purposes are solid"
 }}"""
 
-    try:
-        response = llm_client.chat.completions.create(
-            model=MODEL,
-            messages=[
-                {
-                    "role": "system",
-                    "content": "You are a sharp technology analyst. Always respond with valid JSON only, no markdown fences.",
-                },
-                {"role": "user", "content": prompt},
-            ],
-            temperature=0.5,
-            max_tokens=4000,
-            extra_body={"reasoning_effort": "low"},
-        )
-        raw = response.choices[0].message.content.strip()
-        return json.loads(raw)
-    except json.JSONDecodeError as e:
-        print(f"JSON parse error: {e}\nRaw: {raw[:200]}")
-        return None
-    except Exception as e:
-        print(f"LLM call failed: {e}")
-        return None
+    base_system = "You are a sharp technology analyst. Always respond with valid JSON only, no markdown fences."
+    max_attempts = 2 if valid_names else 1
+
+    for attempt in range(1, max_attempts + 1):
+        user_prompt = prompt
+        if attempt > 1:
+            user_prompt += (
+                f"\n\nIMPORTANT — your previous response mentioned repositories that do not exist in this "
+                f"week's data: {', '.join(invalid)}. "
+                f"Rewrite those sentences using only repos from the context above, or remove the claims."
+            )
+
+        try:
+            response = llm_client.chat.completions.create(
+                model=MODEL,
+                messages=[
+                    {"role": "system", "content": base_system},
+                    {"role": "user", "content": user_prompt},
+                ],
+                temperature=0.5,
+                max_tokens=4000,
+                extra_body={"reasoning_effort": "low"},
+            )
+            raw = response.choices[0].message.content.strip()
+            result = json.loads(raw)
+        except json.JSONDecodeError as e:
+            print(f"JSON parse error (attempt {attempt}): {e}\nRaw: {raw[:200]}")
+            continue
+        except Exception as e:
+            print(f"LLM call failed: {e}")
+            return None
+
+        if valid_names is None:
+            return result
+
+        invalid = validate_digest(result, valid_names)
+        if not invalid:
+            return result
+
+        print(f"  Hallucination guard: {len(invalid)} unverified repo mention(s) (attempt {attempt}): {invalid}")
+        if attempt == max_attempts:
+            print("  Keeping digest despite unverified mentions — flagged in confidence_notes")
+            notes = result.get("confidence_notes") or ""
+            result["confidence_notes"] = (
+                f"{notes} ".strip()
+                + f"[unverified repo mentions: {', '.join(invalid)}]"
+            ).strip()
+            return result
+
+    return None
 
 
 def upsert_digest(
@@ -501,13 +689,25 @@ def main():
     print(f"  Confidence label: {confidence_label}")
 
     prev_week_names = fetch_prev_week_repos(db, week_start)
-    category_history = fetch_category_history(db, week_start)
+    category_history = fetch_category_history(db, week_start, weeks=12)
     longitudinal = fetch_longitudinal_context(db, week_start)
+    all_time = fetch_all_time_signals(db, week_start, week_end)
     print(f"  Streaks (3+ days): {len(longitudinal['streaks_this_week'])} repos")
     print(f"  Multi-week runs: {len(longitudinal['multi_week_runs'])} repos")
     print(f"  Drop-offs from last week: {len(longitudinal['drop_offs'])} repos")
+    print(f"  All-time: span {all_time.get('history_span_days')}d, records {len(all_time.get('records', []))}, "
+          f"risers {len(all_time.get('velocity_risers', []))}, debuts {all_time.get('debut_count', 0)}")
 
-    context = build_context(week_start, week_end, this_week, prev_week_names, category_history, data_quality_pct, longitudinal)
+    context = build_context(week_start, week_end, this_week, prev_week_names, category_history, data_quality_pct, longitudinal, all_time)
+
+    # Names the digest may legitimately reference: this week, previous week,
+    # and longitudinal signals (drop-offs, multi-week runs, prior top-5s)
+    valid_names = {r["repo_name"] for r in this_week} | prev_week_names
+    valid_names.update(longitudinal.get("streaks_this_week", []))
+    valid_names.update(longitudinal.get("multi_week_runs", []))
+    valid_names.update(longitudinal.get("drop_offs", []))
+    for week_entry in longitudinal.get("weekly_top5", []):
+        valid_names.update(r["repo_name"] for r in week_entry["repos"])
 
     sys.stdout.buffer.write(f"\n--- Context ({len(context)} chars) ---\n{context}\n---\n".encode('utf-8', 'replace'))
     sys.stdout.buffer.flush()
@@ -518,7 +718,7 @@ def main():
     llm_client = OpenAI(base_url=MODELS_ENDPOINT, api_key=groq_api_key)
 
     print("Calling LLM...")
-    result = generate_digest(llm_client, context, week_start)
+    result = generate_digest(llm_client, context, week_start, valid_names=valid_names)
 
     if not result:
         print("Failed to generate digest")
