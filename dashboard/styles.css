@@ -95,11 +95,20 @@ header::before {
   white-space: nowrap;
 }
 
+.tagline-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 7px;
+}
+
+.brand-text > .tagline { margin-top: 7px; }
+
 .tagline {
   display: block;
   font-size: 0.78rem;
   color: var(--text-muted);
-  margin-top: 3px;
 }
 
 /* View switcher */
@@ -166,15 +175,13 @@ header::before {
 .header-meta {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
   width: 100%;
   padding-top: 14px;
   border-top: 1px solid var(--border-subtle);
 }
-
-.header-meta > :only-child { margin-inline: auto; }
 
 .stats-pills {
   display: flex;
@@ -199,12 +206,6 @@ header::before {
   display: flex;
   align-items: center;
   gap: 7px;
-}
-
-.date-picker-label {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  white-space: nowrap;
 }
 
 .date-picker {
@@ -530,10 +531,6 @@ main {
 .chart-wrap {
   position: relative;
   height: 220px;
-}
-
-.chart-wrap-lang {
-  height: 300px;
 }
 
 /* Owner spotlight */

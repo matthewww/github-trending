@@ -15,7 +15,14 @@
       <span class="brand-badge">📡</span>
       <span class="brand-text">
         <span class="wordmark">GitHub Trend Intelligence</span>
-        <span class="tagline" id="header-date">Loading…</span>
+        <span class="tagline-row">
+          <span class="tagline" id="header-date">Loading…</span>
+          <span class="date-picker-wrap">
+            <select id="date-picker" class="date-picker" aria-label="Archive">
+              <option value="">Loading…</option>
+            </select>
+          </span>
+        </span>
       </span>
     </div>
 
@@ -38,12 +45,6 @@
 
     <div class="header-meta">
       <div class="stats-pills" id="stats-pills"></div>
-      <div class="date-picker-wrap">
-        <label for="date-picker" class="date-picker-label">📅 Archive</label>
-        <select id="date-picker" class="date-picker">
-          <option value="">Loading…</option>
-        </select>
-      </div>
     </div>
   </div>
 </header>
@@ -89,18 +90,6 @@
     </div>
     <div class="repo-grid" id="repo-grid">
       <div class="no-data">Loading…</div>
-    </div>
-  </div>
-  
-  <!-- Charts -->
-  <div class="intel-grid" id="history-charts">
-    <div class="card">
-      <h2>Category Trend — 30 days</h2>
-      <div class="chart-wrap"><canvas id="trend-chart"></canvas></div>
-    </div>
-    <div class="card">
-      <h2>Languages — this week vs last week</h2>
-      <div class="chart-wrap chart-wrap-lang"><canvas id="lang-chart"></canvas></div>
     </div>
   </div>
 
