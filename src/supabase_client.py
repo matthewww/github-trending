@@ -6,6 +6,8 @@ from datetime import date
 from typing import List, Dict
 from supabase import create_client, Client
 
+PAGE_SIZE = 1000  # PostgREST default row cap — larger queries must paginate
+
 
 class SupabaseClient:
     def __init__(self, url: str = None, key: str = None):
@@ -16,6 +18,22 @@ class SupabaseClient:
             raise ValueError("SUPABASE_URL and SUPABASE_KEY must be set")
 
         self.client: Client = create_client(url, key)
+
+    def fetch_all(self, query) -> List[Dict]:
+        """Execute a supabase query, paging through the PostgREST row cap.
+
+        Pass a partially-built query (select/filter/order applied); ordering
+        should be deterministic when the table may change between pages.
+        """
+        rows: List[Dict] = []
+        offset = 0
+        while True:
+            resp = query.range(offset, offset + PAGE_SIZE - 1).execute()
+            data = resp.data or []
+            rows.extend(data)
+            if len(data) < PAGE_SIZE:
+                return rows
+            offset += PAGE_SIZE
 
     def insert_repos(self, repos: List[Dict], since_period: str = "daily") -> int:
         """Upsert owners, repos, and trending snapshots for one collection period."""
