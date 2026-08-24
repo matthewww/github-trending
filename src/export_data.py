@@ -12,8 +12,12 @@ from supabase_client import SupabaseClient
 load_dotenv()
 
 HISTORY_DAYS = 30
+SERIES_DAYS = 90
 OUTPUT_PATH = os.path.normpath(
     os.path.join(os.path.dirname(__file__), "..", "dashboard", "data", "snapshot.json")
+)
+HISTORY_OUTPUT_PATH = os.path.normpath(
+    os.path.join(os.path.dirname(__file__), "..", "dashboard", "data", "history.json")
 )
 ARCHIVE_DIR = os.path.normpath(
     os.path.join(os.path.dirname(__file__), "..", "dashboard", "data", "archive")
@@ -33,7 +37,163 @@ def get_latest_date(db: SupabaseClient) -> str | None:
     return resp.data[0]["collected_date"] if resp.data else None
 
 
-def get_today_snapshots(db: SupabaseClient, as_of_date: str) -> dict:
+def get_repo_meta_all(db: SupabaseClient) -> dict[str, dict]:
+    """All-time per-repo stats computed from the full daily snapshot history.
+
+    Returns {repo_name: {first_seen, last_seen, days_trended, weeks_trended,
+    best_day_stars, latest_total_stars}}.
+    """
+    rows = db.fetch_all(
+        db.client.table("trending_snapshots")
+        .select("repo_name, collected_date, stars_in_period, total_stars")
+        .eq("since_period", "daily")
+        .order("collected_date")
+    )
+
+    agg: dict[str, dict] = {}
+    for r in rows:
+        name = r["repo_name"]
+        d = r["collected_date"]
+        stars = r.get("stars_in_period") or 0
+        a = agg.get(name)
+        if a is None:
+            agg[name] = {
+                "first_seen": d,
+                "last_seen": d,
+                "days_trended": 1,
+                "dates": [d],
+                "weeks": {_week_start(d)},
+                "best_day_stars": stars,
+                "latest_total_stars": r.get("total_stars") or 0,
+            }
+            continue
+        a["last_seen"] = max(a["last_seen"], d)
+        a["days_trended"] += 1
+        a["dates"].append(d)
+        a["weeks"].add(_week_start(d))
+        a["best_day_stars"] = max(a["best_day_stars"], stars)
+        a["latest_total_stars"] = r.get("total_stars") or a["latest_total_stars"]
+
+    meta = {}
+    for name, a in agg.items():
+        dates = sorted(set(a["dates"]))
+        best_run = run = 1
+        for i in range(1, len(dates)):
+            run = run + 1 if (date.fromisoformat(dates[i]) - date.fromisoformat(dates[i - 1])).days == 1 else 1
+            best_run = max(best_run, run)
+        meta[name] = {
+            "first_seen": a["first_seen"],
+            "last_seen": a["last_seen"],
+            "days_trended": a["days_trended"],
+            "weeks_trended": len(a["weeks"]),
+            "longest_streak": best_run,
+            "best_day_stars": a["best_day_stars"],
+            "latest_total_stars": a["latest_total_stars"],
+        }
+    return meta
+
+
+def _week_start(iso_date: str) -> str:
+    from datetime import datetime
+    d = datetime.strptime(iso_date, "%Y-%m-%d").date()
+    return (d - timedelta(days=d.weekday())).isoformat()
+
+
+def get_full_daily_history(db: SupabaseClient, category_map: dict[str, str], lang_map: dict[str, str]) -> tuple[list[dict], list[dict]]:
+    """Every collected day + ISO-week buckets, aggregated, for long-horizon charts.
+
+    Returns (daily, weekly):
+      daily  = [{date, repo_count, top_repos, category_counts, language_counts}]
+      weekly = [{week, repo_count, category_counts, language_counts, top_repos}]
+    """
+    rows = db.fetch_all(
+        db.client.table("trending_snapshots")
+        .select("repo_name, collected_date, stars_in_period")
+        .eq("since_period", "daily")
+        .order("collected_date")
+    )
+
+    by_date: dict[str, list] = defaultdict(list)
+    for r in rows:
+        by_date[r["collected_date"]].append(r)
+
+    daily = []
+    weekly_agg: dict[str, dict] = {}
+    for d, day_rows in sorted(by_date.items()):
+        top_repos = sorted(day_rows, key=lambda x: x.get("stars_in_period") or 0, reverse=True)[:5]
+        cat_counts = Counter(category_map.get(r["repo_name"], "Unknown") for r in day_rows)
+        lang_counts = Counter(
+            lang_map.get(r["repo_name"])
+            for r in day_rows
+            if lang_map.get(r["repo_name"])
+        )
+        daily.append({
+            "date": d,
+            "repo_count": len(day_rows),
+            "top_repos": [r["repo_name"] for r in top_repos],
+            "category_counts": dict(cat_counts.most_common(10)),
+            "language_counts": dict(lang_counts.most_common(10)),
+        })
+
+        w = _week_start(d)
+        wk = weekly_agg.setdefault(w, {
+            "repos": set(),
+            "top_repos": {},
+            "category_counts": Counter(),
+            "language_counts": Counter(),
+        })
+        wk["repos"].update(r["repo_name"] for r in day_rows)
+        for r in top_repos:
+            stars = r.get("stars_in_period") or 0
+            if wk["top_repos"].get(r["repo_name"], 0) < stars:
+                wk["top_repos"][r["repo_name"]] = stars
+        wk["category_counts"].update(cat_counts)
+        wk["language_counts"].update(lang_counts)
+
+    weekly = []
+    for w, wk in sorted(weekly_agg.items()):
+        top = sorted(wk["top_repos"].items(), key=lambda x: x[1], reverse=True)[:5]
+        weekly.append({
+            "week": w,
+            "repo_count": len(wk["repos"]),
+            "top_repos": [{"repo_name": n, "max_stars_today": s} for n, s in top],
+            "category_counts": dict(wk["category_counts"].most_common(10)),
+            "language_counts": dict(wk["language_counts"].most_common(10)),
+        })
+
+    return daily, weekly
+
+
+def get_trending_series(db: SupabaseClient, repo_names: list[str], days: int = SERIES_DAYS) -> dict[str, list]:
+    """Sparse (date, total_stars) series per repo for growth sparklines."""
+    if not repo_names:
+        return {}
+    cutoff = (date.today() - timedelta(days=days)).isoformat()
+    rows = db.fetch_all(
+        db.client.table("trending_snapshots")
+        .select("repo_name, collected_date, total_stars")
+        .in_("repo_name", repo_names)
+        .eq("since_period", "daily")
+        .gte("collected_date", cutoff)
+        .order("collected_date")
+    )
+    series: dict[str, list] = defaultdict(list)
+    for r in rows:
+        total = r.get("total_stars")
+        if total is not None:
+            series[r["repo_name"]].append([r["collected_date"], total])
+    return dict(series)
+
+
+def get_category_language_maps(db: SupabaseClient) -> tuple[dict[str, str], dict[str, str]]:
+    insights_resp = db.client.table("repo_insights").select("repo_name, category").execute()
+    category_map = {i["repo_name"]: i.get("category", "Unknown") for i in (insights_resp.data or [])}
+    repos_rows = db.fetch_all(db.client.table("repos").select("repo_name, language"))
+    lang_map = {r["repo_name"]: r.get("language") for r in repos_rows}
+    return category_map, lang_map
+
+
+def get_today_snapshots(db: SupabaseClient, as_of_date: str, repo_meta: dict[str, dict] | None = None) -> dict:
     """Trending snapshots for the given date (all periods), enriched with repo/owner/insight data."""
     snap_resp = (
         db.client.table("trending_snapshots")
@@ -94,6 +254,9 @@ def get_today_snapshots(db: SupabaseClient, as_of_date: str) -> dict:
             "category": insight.get("category", "Unknown"),
             "key_themes": insight.get("key_themes") or [],
             "notable_because": insight.get("notable_because") or None,
+            "first_seen": (repo_meta or {}).get(name, {}).get("first_seen"),
+            "days_trended": (repo_meta or {}).get(name, {}).get("days_trended"),
+            "weeks_trended": (repo_meta or {}).get(name, {}).get("weeks_trended"),
         })
 
     for period in by_period:
@@ -130,15 +293,13 @@ def get_history(db: SupabaseClient) -> list[dict]:
     """Last HISTORY_DAYS days of daily snapshots, aggregated by date."""
     cutoff = (date.today() - timedelta(days=HISTORY_DAYS)).isoformat()
 
-    snap_resp = (
+    rows = db.fetch_all(
         db.client.table("trending_snapshots")
         .select("repo_name, collected_date, stars_in_period")
         .eq("since_period", "daily")
         .gte("collected_date", cutoff)
         .order("collected_date", desc=True)
-        .execute()
     )
-    rows = snap_resp.data or []
     if not rows:
         return []
 
@@ -186,13 +347,12 @@ def get_history(db: SupabaseClient) -> list[dict]:
 
 def get_stats(db: SupabaseClient) -> dict:
     repos_resp = db.client.table("repos").select("repo_name").execute()
-    dates_resp = (
+    dates_rows = db.fetch_all(
         db.client.table("trending_snapshots")
         .select("collected_date")
         .eq("since_period", "daily")
-        .execute()
     )
-    dates = sorted({r["collected_date"] for r in (dates_resp.data or [])})
+    dates = sorted({r["collected_date"] for r in dates_rows})
 
     return {
         "total_repos": len(repos_resp.data or []),
@@ -219,28 +379,25 @@ def get_latest_clusters(db: SupabaseClient) -> list[dict]:
     this_run = [r for r in rows if r["run_date"] == latest_date]
     cluster_ids = [r["id"] for r in this_run]
 
-    map_resp = (
+    map_rows = db.fetch_all(
         db.client.table("repo_cluster_map")
         .select("repo_name, cluster_id, umap_x, umap_y")
         .in_("cluster_id", cluster_ids)
         .eq("run_date", latest_date)
-        .execute()
     )
-    map_rows = map_resp.data or []
 
     # Enrich scatter points with total_stars for bubble chart support
     scatter_repo_names = [m["repo_name"] for m in map_rows]
     stars_map: dict[str, int] = {}
     if scatter_repo_names:
-        stars_resp = (
+        stars_rows = db.fetch_all(
             db.client.table("trending_snapshots")
             .select("repo_name, total_stars")
             .in_("repo_name", scatter_repo_names)
             .order("collected_date", desc=True)
-            .execute()
         )
         # Use most recent total_stars per repo (rows ordered newest first)
-        for r in (stars_resp.data or []):
+        for r in stars_rows:
             if r["repo_name"] not in stars_map:
                 stars_map[r["repo_name"]] = r.get("total_stars") or 0
 
@@ -290,7 +447,10 @@ def main():
 
     print(f"Exporting snapshot as of {as_of_date}...")
 
-    today = get_today_snapshots(db, as_of_date)
+    repo_meta = get_repo_meta_all(db)
+    print(f"  repo meta computed for {len(repo_meta)} repos")
+
+    today = get_today_snapshots(db, as_of_date, repo_meta)
     if not today and backfill_date:
         print(f"No trending snapshots found for {as_of_date} — nothing to archive")
         return 1
@@ -302,6 +462,27 @@ def main():
     history = get_history(db)
     stats = get_stats(db)
     clusters = get_latest_clusters(db)
+
+    # Long-horizon export for the trends page
+    category_map, lang_map = get_category_language_maps(db)
+    daily_all, weekly_all = get_full_daily_history(db, category_map, lang_map)
+    current_repos = sorted({r["repo_name"] for repos in today.values() for r in repos})
+    series = get_trending_series(db, current_repos)
+    history_export = {
+        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "as_of_date": as_of_date,
+        "first_date": stats.get("first_date"),
+        "weeks": weekly_all,
+        "daily": daily_all,
+        "series": series,
+        "meta": repo_meta,
+        "categories": category_map,
+        "languages": lang_map,
+    }
+    os.makedirs(os.path.dirname(HISTORY_OUTPUT_PATH), exist_ok=True)
+    with open(HISTORY_OUTPUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(history_export, f, default=str)
+    print(f"  history: {len(daily_all)} days, {len(weekly_all)} weeks, {len(series)} series, {len(repo_meta)} repo metas")
 
     snapshot = {
         "generated_at": datetime.utcnow().isoformat() + "Z",

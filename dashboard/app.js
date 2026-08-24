@@ -118,6 +118,9 @@ function renderRepoCard(repo, period) {
     `<span class="kw-pill">${escHtml(t)}</span>`
   ).join('');
   const starLabel = STAR_LABELS[period] || 'stars';
+  const historyBadge = repo.first_seen
+    ? `<span class="repo-history" title="First seen in trending ${escHtml(repo.first_seen)}">first seen ${fmtDate(repo.first_seen)} · ${repo.days_trended}d in trending</span>`
+    : '';
 
   return `
     <div class="repo-card" style="--cat-color:${color}">
@@ -135,6 +138,7 @@ function renderRepoCard(repo, period) {
         ${repo.forks ? `<span class="repo-forks">⑂ ${fmt(repo.forks)}</span>` : ''}
         ${repo.language ? `<span class="lang-pill">${escHtml(repo.language)}</span>` : ''}
       </div>
+      ${historyBadge}
       ${themes ? `<div class="repo-themes">${themes}</div>` : ''}
       ${repo.notable_because
         ? `<div class="repo-notable"><div class="repo-notable-label">✦ Why notable</div>${escHtml(repo.notable_because)}</div>`
@@ -142,6 +146,11 @@ function renderRepoCard(repo, period) {
       }
     </div>
   `;
+}
+
+function fmtDate(iso) {
+  if (!iso) return '';
+  return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
 }
 
 function renderRepos(todayData, period) {
