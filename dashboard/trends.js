@@ -347,6 +347,93 @@ function renderSparks(series, meta) {
   });
 }
 
+function clusterColor(index) {
+  const hue = (index * 137.508) % 360;
+  return `hsl(${hue.toFixed(1)}, 68%, 62%)`;
+}
+
+function renderClusterTimeline(timeline) {
+  const card = document.getElementById('cluster-timeline-card');
+  const canvas = document.getElementById('cluster-timeline-chart');
+  if (!card || !canvas) return;
+
+  const weeks = (timeline && timeline.weeks) || [];
+  const series = (timeline && timeline.series) || {};
+  if (!weeks.length || !Object.keys(series).length) {
+    card.style.display = 'none';
+    return;
+  }
+  card.style.display = '';
+
+  const entries = Object.entries(series)
+    .map(([key, s]) => ({
+      key,
+      label: s.label || key,
+      byWeek: Object.fromEntries((s.points || []).map(p => [p.week, p.size])),
+      total: (s.points || []).reduce((sum, p) => sum + p.size, 0),
+    }))
+    .sort((a, b) => b.total - a.total);
+
+  const top = entries.slice(0, 15);
+  const datasets = top.map((e, i) => ({
+    label: e.label,
+    data: weeks.map(w => e.byWeek[w] || 0),
+    backgroundColor: clusterColor(i) + '88',
+    borderColor: clusterColor(i),
+    borderWidth: 1,
+    fill: true,
+    pointRadius: 0,
+    tension: 0.25,
+  }));
+
+  if (entries.length > top.length) {
+    const otherByWeek = {};
+    for (const e of entries.slice(top.length)) {
+      for (const w of weeks) otherByWeek[w] = (otherByWeek[w] || 0) + (e.byWeek[w] || 0);
+    }
+    datasets.push({
+      label: `Other themes (${entries.length - top.length})`,
+      data: weeks.map(w => otherByWeek[w] || 0),
+      backgroundColor: 'rgba(139, 148, 158, 0.35)',
+      borderColor: '#8b949e',
+      borderWidth: 1,
+      fill: true,
+      pointRadius: 0,
+      tension: 0.25,
+    });
+  }
+
+  new Chart(canvas, {
+    type: 'line',
+    data: { labels: weeks.map(w => shortDate(w)), datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: { duration: 600 },
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { color: TICK, font: { size: 9 }, boxWidth: 10, padding: 6 },
+        },
+        tooltip: {
+          mode: 'index',
+          intersect: false,
+          callbacks: {
+            label(ctx) {
+              return ` ${ctx.dataset.label}: ${ctx.raw} repos`;
+            },
+          },
+        },
+      },
+      scales: {
+        x: { stacked: true, ticks: { color: TICK, font: { size: 10 }, maxTicksLimit: 10 }, grid: { color: GRID } },
+        y: { stacked: true, ticks: { color: TICK, font: { size: 10 } }, grid: { color: GRID }, beginAtZero: true },
+      },
+    },
+  });
+}
+
 // ---------- init ----------
 
 async function init() {
@@ -378,6 +465,7 @@ async function init() {
   renderExpansionChart(data.weeks || []);
   renderCategoryChart(data.weeks || []);
   renderLanguageChart(data.daily || []);
+  renderClusterTimeline(data.cluster_timeline || null);
   renderRepoBoard(data.meta || {}, data.categories || {});
   renderOwnerBoard(data.meta || {});
   renderSparks(data.series || {}, data.meta || {});

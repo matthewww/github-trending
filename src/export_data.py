@@ -426,6 +426,41 @@ def get_latest_clusters(db: SupabaseClient) -> list[dict]:
     return {"run_date": latest_date, "clusters": result, "scatter": scatter}
 
 
+def get_cluster_timeline(db: SupabaseClient) -> dict:
+    """Weekly size history per stable cluster, for the trend streamgraph."""
+    weeks_resp = db.fetch_all(
+        db.client.table("cluster_weeks")
+        .select("cluster_key, week, size")
+        .order("week")
+    )
+    reg_resp = db.fetch_all(
+        db.client.table("cluster_registry")
+        .select("cluster_key, label, first_seen, last_seen, status")
+        .eq("status", "active")
+    )
+    labels = {r["cluster_key"]: r["label"] for r in reg_resp}
+    first_seen = {r["cluster_key"]: r["first_seen"] for r in reg_resp}
+
+    by_key: dict[str, list] = {}
+    all_weeks: set[str] = set()
+    for row in weeks_resp:
+        by_key.setdefault(row["cluster_key"], []).append({"week": row["week"], "size": row["size"]})
+        all_weeks.add(row["week"])
+
+    series = {
+        key: {
+            "label": labels.get(key, key),
+            "first_seen": first_seen.get(key),
+            "points": sorted(points, key=lambda p: p["week"]),
+        }
+        for key, points in by_key.items()
+    }
+    return {
+        "weeks": sorted(all_weeks),
+        "series": series,
+    }
+
+
 def main():
     import argparse
     parser = argparse.ArgumentParser(description="Export Supabase data to a static JSON snapshot")
@@ -468,6 +503,7 @@ def main():
     daily_all, weekly_all = get_full_daily_history(db, category_map, lang_map)
     current_repos = sorted({r["repo_name"] for repos in today.values() for r in repos})
     series = get_trending_series(db, current_repos)
+    cluster_timeline = get_cluster_timeline(db)
     history_export = {
         "generated_at": datetime.utcnow().isoformat() + "Z",
         "as_of_date": as_of_date,
@@ -478,11 +514,14 @@ def main():
         "meta": repo_meta,
         "categories": category_map,
         "languages": lang_map,
+        "cluster_timeline": cluster_timeline,
     }
     os.makedirs(os.path.dirname(HISTORY_OUTPUT_PATH), exist_ok=True)
     with open(HISTORY_OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(history_export, f, default=str)
-    print(f"  history: {len(daily_all)} days, {len(weekly_all)} weeks, {len(series)} series, {len(repo_meta)} repo metas")
+    n_keys = len(cluster_timeline.get("series", {}))
+    print(f"  history: {len(daily_all)} days, {len(weekly_all)} weeks, {len(series)} series, "
+          f"{len(repo_meta)} repo metas, {n_keys} cluster timelines")
 
     snapshot = {
         "generated_at": datetime.utcnow().isoformat() + "Z",
