@@ -33,6 +33,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Normalise categories
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        # Phase 1 (alias mapping) always runs, free. Phase 2 re-triages up to
+        # 20 'Other' repos per week via LLM (oldest first) to shrink the bucket.
+        run: python src/normalize_categories.py --apply --retake-other --limit 20
+
       - name: Analyze repos with LLM insights
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
