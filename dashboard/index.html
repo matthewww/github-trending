@@ -11,14 +11,32 @@
 
 <header>
   <div class="header-inner">
-    <div class="header-title">
-      <span class="header-icon">📡</span>
-      <div>
-        <h1>GitHub Trend Intelligence</h1>
-        <div class="header-sub" id="header-date">Loading…</div>
-      </div>
+    <div class="brand">
+      <span class="brand-badge">📡</span>
+      <span class="brand-text">
+        <span class="wordmark">GitHub Trend Intelligence</span>
+        <span class="tagline" id="header-date">Loading…</span>
+      </span>
     </div>
-    <div class="header-right">
+
+    <nav class="view-switcher" aria-label="Site views">
+      <a class="view-tab active" href="./index.html" aria-current="page">
+        <span class="view-icon">📡</span>
+        <span class="view-copy">
+          <span class="view-name">This Week</span>
+          <span class="view-desc">live feed · weekly signal · semantic map</span>
+        </span>
+      </a>
+      <a class="view-tab" href="./trends.html">
+        <span class="view-icon">📈</span>
+        <span class="view-copy">
+          <span class="view-name">The Expansion</span>
+          <span class="view-desc">long-horizon records · growth curves</span>
+        </span>
+      </a>
+    </nav>
+
+    <div class="header-meta">
       <div class="stats-pills" id="stats-pills"></div>
       <div class="date-picker-wrap">
         <label for="date-picker" class="date-picker-label">📅 Archive</label>
