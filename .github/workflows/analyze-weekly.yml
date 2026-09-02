@@ -51,12 +51,23 @@ jobs:
         run: python src/analyze_repos.py
 
       - name: Generate weekly digest
+        id: digest
+        # Non-fatal: export_data falls back to the latest existing digest, so a
+        # Groq failure degrades the site to last week's digest instead of
+        # blocking clustering, export, and the Pages deploy entirely.
+        continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: python src/generate_digest.py
+
+      - name: Digest failure notice
+        if: steps.digest.outcome == 'failure'
+        run: |
+          echo "### ⚠️ Weekly digest generation failed" >> $GITHUB_STEP_SUMMARY
+          echo "The pipeline continued (clustering, export, deploy). The dashboard will fall back to the previous week's digest. Re-run with \`Backfill Digest\` (workflow_dispatch) once the cause is fixed." >> $GITHUB_STEP_SUMMARY
 
   cluster:
     name: Cluster repos

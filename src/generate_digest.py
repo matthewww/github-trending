@@ -190,8 +190,16 @@ def fetch_longitudinal_context(db: SupabaseClient, week_start: date, weeks: int 
     repos_in_any_prior = {rn for w in prior_weeks for rn in week_repo_days[w]}
     multi_week_runs = [rn for rn in current_repos if rn in repos_in_any_prior]
 
-    # Drop-offs: in prev week but not this week
-    drop_offs = [rn for rn in prev_repos if rn not in current_repos]
+    # Drop-offs: in prev week but not this week, biggest first
+    prev_week_max = {
+        rn: max(d["stars"] for d in days)
+        for rn, days in week_repo_days.get(prev_week_key, {}).items()
+    }
+    drop_offs = sorted(
+        (rn for rn in prev_repos if rn not in current_repos),
+        key=lambda rn: prev_week_max.get(rn, 0),
+        reverse=True,
+    )
 
     return {
         "weekly_top5": weekly_top5,
@@ -369,7 +377,7 @@ def build_context(
     top10 = this_week[:10]
     lines.append("## Top repos by daily stars (with days seen in trending this week)")
     for r in top10:
-        purpose = f" — {r['purpose']}" if r.get("purpose") else " — (no analysis yet)"
+        purpose = f" — {r['purpose'][:80]}" if r.get("purpose") else " — (no analysis yet)"
         days = r.get("days_seen", 1)
         days_str = f", {days}d in trending" if days > 1 else ", 1d in trending"
         new_flag = " [NEW]" if r["repo_name"] not in prev_week_names else " [returning]"
@@ -379,8 +387,8 @@ def build_context(
         )
     lines.append("")
 
-    # Full repo list for the rest
-    remaining = this_week[10:]
+    # Full repo list for the rest (capped to bound prompt size)
+    remaining = this_week[10:50]
     if remaining:
         lines.append("## All other repos trending this week")
         for r in remaining:
@@ -390,6 +398,8 @@ def build_context(
                 f"- {r['repo_name']} ({r.get('category', 'Unknown')}, "
                 f"{r['max_stars_today']:,} stars/day, {days}d{new_flag})"
             )
+        if len(this_week) > 50:
+            lines.append(f"- (+{len(this_week) - 50} more repos omitted for brevity)")
         lines.append("")
 
     # New vs returning summary
@@ -471,17 +481,23 @@ def build_context(
 
         streaks = longitudinal.get("streaks_this_week", [])
         if streaks:
-            lines.append(f"## Repos trending 3+ days this week (sustained): {', '.join(streaks)}")
+            shown = ", ".join(streaks[:25])
+            extra = f" (+{len(streaks) - 25} more)" if len(streaks) > 25 else ""
+            lines.append(f"## Repos trending 3+ days this week (sustained): {shown}{extra}")
             lines.append("")
 
         multi = longitudinal.get("multi_week_runs", [])
         if multi:
-            lines.append(f"## Repos appearing in current + previous week(s): {', '.join(multi)}")
+            shown = ", ".join(multi[:25])
+            extra = f" (+{len(multi) - 25} more)" if len(multi) > 25 else ""
+            lines.append(f"## Repos appearing in current + previous week(s): {shown}{extra}")
             lines.append("")
 
         drops = longitudinal.get("drop_offs", [])
         if drops:
-            lines.append(f"## Repos that trended last week but disappeared this week: {', '.join(drops)}")
+            shown = ", ".join(drops[:25])
+            extra = f" (+{len(drops) - 25} more)" if len(drops) > 25 else ""
+            lines.append(f"## Repos that trended last week but disappeared this week: {shown}{extra}")
             lines.append("")
 
     # All-time signals (full history since first collection)
@@ -534,7 +550,8 @@ def extract_repo_mentions(text: str) -> set[str]:
 def validate_digest(result: dict, valid_names: set[str]) -> list[str]:
     """Return repo mentions in the digest that are NOT in the valid name set."""
     text = f"{result.get('headline', '')}\n{result.get('digest', '')}"
-    return sorted(m for m in extract_repo_mentions(text) if m not in valid_names)
+    valid_lower = {n.lower() for n in valid_names}
+    return sorted(m for m in extract_repo_mentions(text) if m.lower() not in valid_lower)
 
 
 def generate_digest(
@@ -573,6 +590,10 @@ Return ONLY valid JSON with these exact fields:
 
     base_system = "You are a sharp technology analyst. Always respond with valid JSON only, no markdown fences."
     max_attempts = 2 if valid_names else 1
+    invalid: list[str] = []
+    max_tokens = 2500
+    est_tokens = (len(base_system) + len(prompt)) // 4 + max_tokens
+    print(f"  Prompt ~{(len(base_system) + len(prompt)) // 4} tokens + max_tokens {max_tokens} = ~{est_tokens} total (TPM limit 8000)")
 
     for attempt in range(1, max_attempts + 1):
         user_prompt = prompt
@@ -591,7 +612,7 @@ Return ONLY valid JSON with these exact fields:
                     {"role": "user", "content": user_prompt},
                 ],
                 temperature=0.5,
-                max_tokens=4000,
+                max_tokens=max_tokens,
                 extra_body={"reasoning_effort": "low"},
             )
             raw = response.choices[0].message.content.strip()
