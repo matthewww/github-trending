@@ -432,6 +432,7 @@ function renderClusterChart(clusters, scatter, mode) {
       responsive: true,
       maintainAspectRatio: false,
       animation: { duration: 400 },
+      animations: { numbers: { type: 'number', properties: ['borderWidth', 'radius', 'tension'] } },
       plugins: {
         legend: {
           display: mode === 'pie' || clusters.length <= 8,
