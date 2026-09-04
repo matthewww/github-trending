@@ -248,7 +248,6 @@ def main():
         if label >= 0:
             cluster_repos.setdefault(label, []).append(idx)
 
-    new_registry_rows: list[dict] = []
     registry_updates: dict[str, dict] = {}
     used_keys: set[str] = set()
     cluster_week_rows: list[dict] = []
@@ -281,7 +280,9 @@ def main():
             label_text, description = label_cluster(llm_client, repo_names_in_cluster, db)
             cluster_key = slugify(label_text, taken_slugs)
             taken_slugs.add(cluster_key)
-            new_registry_rows.append({
+            # Register the newborn before inserting into clusters — the FK on
+            # clusters.cluster_key requires the registry row to exist first.
+            db.client.table("cluster_registry").insert({
                 "cluster_key": cluster_key,
                 "label": label_text,
                 "description": description,
@@ -289,7 +290,16 @@ def main():
                 "last_seen": run_date,
                 "weeks_seen": 1,
                 "status": "active",
-            })
+            }).execute()
+            registry[cluster_key] = {
+                "cluster_key": cluster_key,
+                "label": label_text,
+                "description": description,
+                "first_seen": run_date,
+                "last_seen": run_date,
+                "weeks_seen": 1,
+                "status": "active",
+            }
             print(f"  Cluster {hdb_label}: {len(idxs)} repos — new cluster '{cluster_key}' ('{label_text}')")
 
         for name in repo_names_in_cluster:
@@ -312,9 +322,8 @@ def main():
         db_cluster_id = cluster_resp.data[0]["id"]
         cluster_id_map[hdb_label] = db_cluster_id
 
-    # Registry maintenance: insert newborns, refresh survivors, retire stale ones
-    if new_registry_rows:
-        db.client.table("cluster_registry").insert(new_registry_rows).execute()
+    # Registry maintenance: refresh survivors, retire stale ones
+    # (newborns are registered inline, before their clusters row is inserted)
     for key, upd in registry_updates.items():
         db.client.table("cluster_registry").update(upd).eq("cluster_key", key).execute()
     retire_cutoff = (date.today() - timedelta(days=RETIRE_AFTER_DAYS)).isoformat()
