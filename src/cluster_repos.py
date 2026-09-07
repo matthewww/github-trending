@@ -228,19 +228,27 @@ def main():
 
     llm_client = OpenAI(base_url=MODELS_ENDPOINT, api_key=os.environ.get("GROQ_API_KEY") or "no-key")
 
-    prior = load_prior_identity(db)
-    registry = load_registry(db)
     run_date = date.today().isoformat()
-    taken_slugs = set(registry.keys())
 
-    # Remove any existing clusters for today to avoid duplicates on re-run
+    # Bucket the run into its ISO week (Monday) so off-schedule runs share the
+    # weekly bucket instead of creating stray x-axis points on the timeline.
+    today = date.today()
+    iso_week = (today - timedelta(days=today.weekday())).isoformat()
+
+    # Clear any partial run for today BEFORE loading prior identity. A crashed
+    # attempt leaves keyed clusters rows with no member map; matching against
+    # them (empty member sets) yields Jaccard 0 and orphans the stable identity.
     existing = db.client.table("clusters").select("id").eq("run_date", run_date).execute()
     existing_ids = [r["id"] for r in (existing.data or [])]
     if existing_ids:
         db.client.table("repo_cluster_map").delete().in_("cluster_id", existing_ids).execute()
         db.client.table("clusters").delete().eq("run_date", run_date).execute()
-        db.client.table("cluster_weeks").delete().eq("week", run_date).execute()
+        db.client.table("cluster_weeks").delete().eq("week", iso_week).execute()
         print(f"  Cleared {len(existing_ids)} existing clusters for {run_date}")
+
+    prior = load_prior_identity(db)
+    registry = load_registry(db)
+    taken_slugs = set(registry.keys())
 
     # Build cluster → repo mapping
     cluster_repos: dict[int, list[int]] = {}
@@ -305,7 +313,7 @@ def main():
         for name in repo_names_in_cluster:
             repo_cluster_keys[name] = cluster_key
 
-        cluster_week_rows.append({"cluster_key": cluster_key, "week": run_date, "size": len(idxs)})
+        cluster_week_rows.append({"cluster_key": cluster_key, "week": iso_week, "size": len(idxs)})
 
         cluster_resp = (
             db.client.table("clusters")

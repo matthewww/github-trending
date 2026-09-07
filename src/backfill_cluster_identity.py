@@ -127,16 +127,20 @@ def main():
         return 1
 
     if args.force and not args.dry_run:
+        # Null cluster_key references BEFORE deleting registry rows — the FK
+        # clusters_cluster_key_fkey blocks deleting referenced registry keys.
+        keyed = db.fetch_all(
+            db.client.table("clusters").select("id").not_.is_("cluster_key", "null"))
+        keyless_ids = [r["id"] for r in keyed]
+        for i in range(0, len(keyless_ids), 500):
+            db.client.table("clusters").update({"cluster_key": None}) \
+                .in_("id", keyless_ids[i:i + 500]).execute()
         old_keys = [r["cluster_key"] for r in db.fetch_all(
             db.client.table("cluster_registry").select("cluster_key"))]
         if old_keys:
             db.client.table("cluster_weeks").delete().in_("cluster_key", old_keys).execute()
             db.client.table("cluster_registry").delete().in_("cluster_key", old_keys).execute()
-        keyed = db.fetch_all(
-            db.client.table("clusters").select("id").not_.is_("cluster_key", "null"))
-        for r in keyed:
-            db.client.table("clusters").update({"cluster_key": None}).eq("id", r["id"]).execute()
-        print(f"Cleared {len(old_keys)} registry keys and {len(keyed)} cluster key links")
+        print(f"Cleared {len(old_keys)} registry keys and {len(keyless_ids)} cluster key links")
 
     print("Loading clustering history...")
     runs, centroids = fetch_history(db)
@@ -182,7 +186,9 @@ def main():
             assignments[cid] = key
             cluster_key_by_id[cid] = key
             if members:
-                week_rows.append({"cluster_key": key, "week": run_date, "size": len(members)})
+                week = date.fromisoformat(run_date)
+                week_key = (week - timedelta(days=week.weekday())).isoformat()
+                week_rows.append({"cluster_key": key, "week": week_key, "size": len(members)})
         prev = [
             {"key": assignments[cid], "members": runs[run_date][cid]["members"],
              "centroid": centroids.get(cid)}
@@ -214,23 +220,36 @@ def main():
         db.client.table("cluster_registry").upsert(rows[i:i + 500]).execute()
 
     print(f"Writing {len(week_rows)} cluster_weeks rows...")
+    # Multiple runs can land in the same ISO week — collapse to one row per
+    # (cluster_key, week), last run wins (the walk is in date order). Postgres
+    # upsert cannot affect the same row twice within one command.
+    collapsed: dict[tuple[str, str], dict] = {}
+    for row in week_rows:
+        collapsed[(row["cluster_key"], row["week"])] = row
+    week_rows = list(collapsed.values())
+    print(f"  collapsed to {len(week_rows)} rows after ISO-week dedupe")
     for i in range(0, len(week_rows), 500):
         db.client.table("cluster_weeks").upsert(week_rows[i:i + 500]).execute()
 
     print(f"Linking {len(cluster_key_by_id)} clusters to keys...")
-    done = 0
+    ids_by_key: dict[str, list[int]] = {}
     for cid, key in cluster_key_by_id.items():
-        db.client.table("clusters").update({"cluster_key": key}).eq("id", cid).execute()
-        done += 1
-        if done % 100 == 0:
-            print(f"  {done}/{len(cluster_key_by_id)}")
+        ids_by_key.setdefault(key, []).append(cid)
+    for key, ids in ids_by_key.items():
+        for i in range(0, len(ids), 500):
+            db.client.table("clusters").update({"cluster_key": key}) \
+                .in_("id", ids[i:i + 500]).execute()
 
     latest_date = run_dates[-1]
     latest_links = {cid: key for cid, key in cluster_key_by_id.items() if cid in runs[latest_date]}
     print(f"Setting stable keys on {latest_date} repo_cluster_map rows...")
+    map_ids_by_key: dict[str, list[int]] = {}
     for cid, key in latest_links.items():
-        db.client.table("repo_cluster_map").update({"stable_cluster_key": key}) \
-            .eq("run_date", latest_date).eq("cluster_id", cid).execute()
+        map_ids_by_key.setdefault(key, []).append(cid)
+    for key, ids in map_ids_by_key.items():
+        for i in range(0, len(ids), 500):
+            db.client.table("repo_cluster_map").update({"stable_cluster_key": key}) \
+                .eq("run_date", latest_date).in_("cluster_id", ids[i:i + 500]).execute()
 
     for key in retired:
         db.client.table("cluster_registry").update({"status": "retired"}).eq("cluster_key", key).execute()

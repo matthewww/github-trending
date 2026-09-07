@@ -243,8 +243,8 @@ function clusterRepoCount(cluster) {
 }
 
 function starRadius(stars) {
-  if (!stars || stars <= 0) return 3;
-  return Math.min(12, 3 + Math.log10(stars) * 1.8);
+  if (!stars || stars <= 0) return 2.7;
+  return Math.min(12, 3 + Math.log10(stars) * 1.8) * 0.9;
 }
 
 function fmtStars(n) {
@@ -279,7 +279,7 @@ function buildScatterDatasets(clusters, scatter) {
       pointBackgroundColor: points.map(p => {
         if (dimmed) return 'rgba(139, 148, 158, 0.10)';
         if (searching) return pointMatches(p) ? clusterColorMap[cluster.id] : 'rgba(139, 148, 158, 0.14)';
-        return clusterColorMap[cluster.id];
+        return withAlpha(clusterColorMap[cluster.id], 0.9);
       }),
       pointBorderColor: points.map(p => (searching && pointMatches(p) && !dimmed ? '#f0f6fc' : 'transparent')),
       pointBorderWidth: 1.5,

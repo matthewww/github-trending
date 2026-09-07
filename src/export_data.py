@@ -441,22 +441,32 @@ def get_cluster_timeline(db: SupabaseClient) -> dict:
     labels = {r["cluster_key"]: r["label"] for r in reg_resp}
     first_seen = {r["cluster_key"]: r["first_seen"] for r in reg_resp}
 
-    by_key: dict[str, list] = {}
-    all_weeks: set[str] = set()
+    # Legacy rows key weeks by raw run date (sometimes mid-week); new rows use
+    # ISO Mondays. Normalize to ISO Mondays so multiple runs in one week
+    # collapse to a single bucket — the latest run in the week wins.
+    by_key: dict[str, dict[str, tuple[str, int]]] = {}
     for row in weeks_resp:
-        by_key.setdefault(row["cluster_key"], []).append({"week": row["week"], "size": row["size"]})
-        all_weeks.add(row["week"])
+        w = date.fromisoformat(row["week"])
+        iso_week = (w - timedelta(days=w.weekday())).isoformat()
+        bucket = by_key.setdefault(row["cluster_key"], {})
+        prev = bucket.get(iso_week)
+        if prev is None or row["week"] > prev[0]:
+            bucket[iso_week] = (row["week"], row["size"])
 
     series = {
         key: {
             "label": labels.get(key, key),
             "first_seen": first_seen.get(key),
-            "points": sorted(points, key=lambda p: p["week"]),
+            "points": sorted(
+                ({"week": wk, "size": size} for wk, (_, size) in buckets.items()),
+                key=lambda p: p["week"],
+            ),
         }
-        for key, points in by_key.items()
+        for key, buckets in by_key.items()
     }
+    all_weeks = sorted({wk for buckets in by_key.values() for wk in buckets})
     return {
-        "weeks": sorted(all_weeks),
+        "weeks": all_weeks,
         "series": series,
     }
 
