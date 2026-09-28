@@ -1,66 +1,18 @@
 {
-  "generated_at": "2026-09-27T15:44:40.965629Z",
-  "as_of_date": "2026-09-27",
+  "generated_at": "2026-09-28T17:57:19.385083Z",
+  "as_of_date": "2026-09-28",
   "today": {
     "daily": [
-      {
-        "repo_name": "paperclipai/paperclip",
-        "description": "The open-source app everyone uses to manage agents at work",
-        "language": "TypeScript",
-        "owner_name": "paperclipai",
-        "owner_type": "startup",
-        "stars_in_period": 2527,
-        "total_stars": 88813,
-        "forks": 15569,
-        "rank": 1,
-        "purpose": "Provides an open\u2011source Node.js server and React UI to orchestrate, manage, and monitor teams of AI agents for business goals.",
-        "category": "Productivity",
-        "key_themes": [
-          "AI agent orchestration",
-          "team/goals management",
-          "budget & governance",
-          "multi\u2011LLM integration",
-          "low\u2011code dashboard"
-        ],
-        "notable_because": "Unlike generic developer tools, Paperclip combines a task\u2011manager style UI with deep AI\u2011agent coordination, budgeting, and governance features, offering a turnkey platform for turning AI bots into a managed workforce.",
-        "first_seen": "2026-08-10",
-        "days_trended": 7,
-        "weeks_trended": 2
-      },
-      {
-        "repo_name": "vectorize-io/hindsight",
-        "description": "Hindsight: Agent Memory That Learns",
-        "language": "Python",
-        "owner_name": "vectorize-io",
-        "owner_type": "startup",
-        "stars_in_period": 4463,
-        "total_stars": 35788,
-        "forks": 4538,
-        "rank": 2,
-        "purpose": "Provides an agent memory system that enables AI agents to learn and retain knowledge over time rather than just recall conversation history.",
-        "category": "AI/ML",
-        "key_themes": [
-          "agent memory",
-          "long\u2011term learning",
-          "LLM integration",
-          "knowledge retention",
-          "cloud SDK"
-        ],
-        "notable_because": "Unlike typical RAG or static memory solutions, Hindsight emphasizes continuous learning and reflection for agents, positioning itself as a dedicated learnable memory layer, which differentiates it from more general agent frameworks or chat UI tools.",
-        "first_seen": "2026-09-24",
-        "days_trended": 4,
-        "weeks_trended": 1
-      },
       {
         "repo_name": "debpalash/VoiceStudio",
         "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative \u2014 voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
         "language": "Python",
         "owner_name": "debpalash",
         "owner_type": "individual",
-        "stars_in_period": 3060,
-        "total_stars": 38997,
-        "forks": 4639,
-        "rank": 3,
+        "stars_in_period": 3274,
+        "total_stars": 43100,
+        "forks": 5027,
+        "rank": 1,
         "purpose": "Provides a fully local, open\u2011source alternative to ElevenLabs for voice cloning, text\u2011to\u2011speech, dubbing, transcription and audiobook creation across hundreds of languages.",
         "category": "AI/ML",
         "key_themes": [
@@ -72,78 +24,115 @@
         ],
         "notable_because": "Unlike the comparison repos, VoiceStudio offers a comprehensive, fully offline suite covering 16 TTS and 11 ASR engines with support for 646 languages, eliminating the need for any cloud API keys or usage meters, making it a unique all\u2011in\u2011one local voice AI platform.",
         "first_seen": "2026-09-01",
-        "days_trended": 8,
-        "weeks_trended": 4
+        "days_trended": 9,
+        "weeks_trended": 5
       },
       {
-        "repo_name": "rohitg00/ai-engineering-from-scratch",
-        "description": "Learn it. Build it. Ship it for others.",
-        "language": "Python",
-        "owner_name": "rohitg00",
-        "owner_type": "individual",
-        "stars_in_period": 848,
-        "total_stars": 58885,
-        "forks": 10193,
-        "rank": 4,
-        "purpose": "Learn it. Build it. Ship it for others.",
-        "category": "Education",
-        "key_themes": [
-          "ai",
-          "education",
-          "deep-learning",
-          "python",
-          "from-scratch"
-        ],
-        "notable_because": "This repository offers a comprehensive curriculum with 435 lessons across 20 phases, focusing on building AI systems from the ground up, which is a unique approach compared to other tools that often provide fragmented learning resources.",
-        "first_seen": "2026-05-20",
-        "days_trended": 21,
-        "weeks_trended": 8
-      },
-      {
-        "repo_name": "InfinityLoop1308/PipePipe",
-        "description": "An open-source Android app to let you browse YouTube and other services freely.",
-        "language": "Shell",
-        "owner_name": "InfinityLoop1308",
-        "owner_type": "individual",
-        "stars_in_period": 139,
-        "total_stars": 6432,
-        "forks": 214,
-        "rank": 5,
-        "purpose": "PipePipe is an Android app that extends NewPipe with additional YouTube features like SponsorBlock, dislike restoration, live chat overlays, and enhanced playback controls.",
+        "repo_name": "paperclipai/paperclip",
+        "description": "The open-source app everyone uses to manage agents at work",
+        "language": "TypeScript",
+        "owner_name": "paperclipai",
+        "owner_type": "startup",
+        "stars_in_period": 3185,
+        "total_stars": 92260,
+        "forks": 15851,
+        "rank": 2,
+        "purpose": "Provides an open\u2011source Node.js server and React UI to orchestrate, manage, and monitor teams of AI agents for business goals.",
         "category": "Productivity",
         "key_themes": [
-          "android",
-          "media playback",
-          "youtube enhancements",
-          "ad\u2011free",
-          "open source"
+          "AI agent orchestration",
+          "team/goals management",
+          "budget & governance",
+          "multi\u2011LLM integration",
+          "low\u2011code dashboard"
         ],
-        "notable_because": "Unlike generic YouTube clients, PipePipe bundles multiple community tools (SponsorBlock, ReturnYouTubeDislike) and adds unique UI features such as danmaku chat and swipe gestures, offering a more feature\u2011rich, privacy\u2011focused alternative to standard NewPipe.",
-        "first_seen": "2026-09-27",
+        "notable_because": "Unlike generic developer tools, Paperclip combines a task\u2011manager style UI with deep AI\u2011agent coordination, budgeting, and governance features, offering a turnkey platform for turning AI bots into a managed workforce.",
+        "first_seen": "2026-08-10",
+        "days_trended": 8,
+        "weeks_trended": 3
+      },
+      {
+        "repo_name": "vectorize-io/hindsight",
+        "description": "Hindsight: Agent Memory That Learns",
+        "language": "Python",
+        "owner_name": "vectorize-io",
+        "owner_type": "startup",
+        "stars_in_period": 4413,
+        "total_stars": 40611,
+        "forks": 5487,
+        "rank": 3,
+        "purpose": "Provides an agent memory system that enables AI agents to learn and retain knowledge over time rather than just recall conversation history.",
+        "category": "AI/ML",
+        "key_themes": [
+          "agent memory",
+          "long\u2011term learning",
+          "LLM integration",
+          "knowledge retention",
+          "cloud SDK"
+        ],
+        "notable_because": "Unlike typical RAG or static memory solutions, Hindsight emphasizes continuous learning and reflection for agents, positioning itself as a dedicated learnable memory layer, which differentiates it from more general agent frameworks or chat UI tools.",
+        "first_seen": "2026-09-24",
+        "days_trended": 5,
+        "weeks_trended": 2
+      },
+      {
+        "repo_name": "NawfalMotii79/PLFM_RADAR",
+        "description": "Open-source, low-cost 10.5 GHz PLFM phased array RADAR system",
+        "language": "PLSQL",
+        "owner_name": "NawfalMotii79",
+        "owner_type": "individual",
+        "stars_in_period": 145,
+        "total_stars": 25682,
+        "forks": 5881,
+        "rank": 4,
+        "purpose": "Provides open-source hardware and software for a low-cost 10.5\u202fGHz pulse\u2011linear\u2011frequency\u2011modulated phased\u2011array radar system.",
+        "category": "Infrastructure",
+        "key_themes": [
+          "radar",
+          "phased array",
+          "open hardware",
+          "FPGA",
+          "signal processing",
+          "Python GUI"
+        ],
+        "notable_because": "It stands out as one of the few fully open\u2011source, high\u2011frequency (10.5\u202fGHz) phased\u2011array radar projects with complete hardware schematics, FPGA firmware, and a Python GUI, differentiating it from the primarily software\u2011oriented comparison repos.",
+        "first_seen": "2026-08-19",
+        "days_trended": 2,
+        "weeks_trended": 2
+      },
+      {
+        "repo_name": "cs341-illinois/coursebook",
+        "description": "Open Source Introductory Systems Programming Textbook for the University of Illinois",
+        "language": "TeX",
+        "owner_name": "cs341-illinois",
+        "owner_type": null,
+        "stars_in_period": 316,
+        "total_stars": 2388,
+        "forks": 227,
+        "rank": 5,
+        "purpose": null,
+        "category": "Unknown",
+        "key_themes": [],
+        "notable_because": null,
+        "first_seen": "2026-09-28",
         "days_trended": 1,
         "weeks_trended": 1
       },
       {
-        "repo_name": "vercel-labs/scriptc",
-        "description": "TypeScript-to-Native Compiler",
-        "language": "TypeScript",
-        "owner_name": "vercel-labs",
-        "owner_type": "open_source_org",
-        "stars_in_period": 76,
-        "total_stars": 5261,
-        "forks": 136,
+        "repo_name": "byoungd/up",
+        "description": "An advanced guide which might benefit you a lot \ud83c\udf89 . \u97e9\u5148\u51ef\u7684\u4eba\u751f\u8fdb\u9636\u6307\u5357 \u4eba\u751f\u8fdb\u9636\u6307\u5357 \u79bb\u8c31\u7684\u4eba\u751f \u4eba\u751f\u8fdb\u9636 AI\u5b66\u4e60 AI\u6307\u5357 \u97e9\u5148\u51ef\u7684AI\u5b66\u4e60\u6307\u5357 \u82f1\u8bed\u5b66\u4e60\u6307\u5357/\u82f1\u8bed\u5b66\u4e60\u6559\u7a0b/\u82f1\u8bed\u5b66\u4e60/\u5b66\u82f1\u8bed",
+        "language": "JavaScript",
+        "owner_name": "byoungd",
+        "owner_type": "individual",
+        "stars_in_period": 310,
+        "total_stars": 64564,
+        "forks": 6505,
         "rank": 6,
-        "purpose": "Compiles TypeScript and JavaScript to various low\u2011level targets such as C, LLVM IR, native assembly, object files, executables, and WebAssembly.",
-        "category": "Developer Tools",
-        "key_themes": [
-          "TypeScript compilation",
-          "native executable generation",
-          "WebAssembly",
-          "LLVM",
-          "experimental tooling"
-        ],
-        "notable_because": "Unlike typical TypeScript toolchains, scriptc can produce fully static native binaries and WebAssembly modules directly from TS/JS, requiring no Node runtime for the output and offering a bundled runtime for dynamic code, which sets it apart from standard transpilers and build tools.",
-        "first_seen": "2026-09-27",
+        "purpose": null,
+        "category": "Unknown",
+        "key_themes": [],
+        "notable_because": null,
+        "first_seen": "2026-09-28",
         "days_trended": 1,
         "weeks_trended": 1
       },
@@ -153,9 +142,9 @@
         "language": "TypeScript",
         "owner_name": "mvschwarz",
         "owner_type": "individual",
-        "stars_in_period": 114,
-        "total_stars": 693,
-        "forks": 82,
+        "stars_in_period": 781,
+        "total_stars": 1549,
+        "forks": 128,
         "rank": 7,
         "purpose": "Provides a command\u2011line harness that lets multiple AI coding agents, such as Claude Code and Codex, operate together as a coordinated multi\u2011agent system.",
         "category": "Developer Tools",
@@ -168,8 +157,8 @@
         ],
         "notable_because": "Unlike generic LLM wrappers, OpenRig uniquely combines Claude Code and Codex in a single, tmux\u2011driven rig with YAML\u2011defined team configurations, offering persistent context and coordinated agent roles.",
         "first_seen": "2026-09-27",
-        "days_trended": 1,
-        "weeks_trended": 1
+        "days_trended": 2,
+        "weeks_trended": 2
       },
       {
         "repo_name": "dream-num/univer",
@@ -177,9 +166,9 @@
         "language": "TypeScript",
         "owner_name": "dream-num",
         "owner_type": "startup",
-        "stars_in_period": 920,
-        "total_stars": 19951,
-        "forks": 1694,
+        "stars_in_period": 1105,
+        "total_stars": 21106,
+        "forks": 1795,
         "rank": 8,
         "purpose": "Provides an open\u2011source SDK to embed spreadsheet, document, presentation, board, and PDF functionalities into custom applications.",
         "category": "Productivity",
@@ -193,32 +182,8 @@
         ],
         "notable_because": "Univer stands out by offering a single, extensible Facade API that unifies spreadsheets, docs, slides, boards, and PDFs across browser and Node.js environments, whereas comparable repos focus on single\u2011purpose tools or infrastructure rather than a comprehensive office\u2011app framework.",
         "first_seen": "2026-09-22",
-        "days_trended": 6,
-        "weeks_trended": 1
-      },
-      {
-        "repo_name": "willfaust/Madeira",
-        "description": "Run x86-64 Windows PC games on jailed iOS via FEX-Emu + Wine + DXMT",
-        "language": "C",
-        "owner_name": "willfaust",
-        "owner_type": "individual",
-        "stars_in_period": 171,
-        "total_stars": 722,
-        "forks": 153,
-        "rank": 9,
-        "purpose": "Enables running x86\u201164 Windows PC games on non\u2011jailbroken iOS devices by combining Wine, FEX\u2011Emu, and DXMT.",
-        "category": "Game/Creative",
-        "key_themes": [
-          "iOS emulation",
-          "Wine",
-          "FEX-Emu",
-          "DXMT",
-          "game portability"
-        ],
-        "notable_because": "Unlike the comparison repos, which focus on developer tooling, AI/ML, or infrastructure, this project uniquely tackles the challenge of executing x86\u201164 Windows games on a non\u2011jailbroken iPhone by integrating multiple emulation layers, making it a rare example of cross\u2011architecture gaming on iOS.",
-        "first_seen": "2026-09-27",
-        "days_trended": 1,
-        "weeks_trended": 1
+        "days_trended": 7,
+        "weeks_trended": 2
       }
     ],
     "weekly": [
@@ -228,9 +193,9 @@
         "language": "Python",
         "owner_name": "anthropics",
         "owner_type": "open_source_org",
-        "stars_in_period": 2633,
-        "total_stars": 37790,
-        "forks": 5457,
+        "stars_in_period": 2606,
+        "total_stars": 38013,
+        "forks": 5479,
         "rank": 1,
         "purpose": "This repository provides reference agents, skills, and data connectors for financial services workflows such as investment banking and wealth management.",
         "category": "AI/ML",
@@ -252,9 +217,9 @@
         "language": "TypeScript",
         "owner_name": "paperclipai",
         "owner_type": "startup",
-        "stars_in_period": 5376,
-        "total_stars": 88813,
-        "forks": 15569,
+        "stars_in_period": 7364,
+        "total_stars": 92260,
+        "forks": 15851,
         "rank": 2,
         "purpose": "Provides an open\u2011source Node.js server and React UI to orchestrate, manage, and monitor teams of AI agents for business goals.",
         "category": "Productivity",
@@ -267,8 +232,8 @@
         ],
         "notable_because": "Unlike generic developer tools, Paperclip combines a task\u2011manager style UI with deep AI\u2011agent coordination, budgeting, and governance features, offering a turnkey platform for turning AI bots into a managed workforce.",
         "first_seen": "2026-08-10",
-        "days_trended": 7,
-        "weeks_trended": 2
+        "days_trended": 8,
+        "weeks_trended": 3
       },
       {
         "repo_name": "vectorize-io/hindsight",
@@ -276,9 +241,9 @@
         "language": "Python",
         "owner_name": "vectorize-io",
         "owner_type": "startup",
-        "stars_in_period": 7282,
-        "total_stars": 35789,
-        "forks": 4538,
+        "stars_in_period": 11089,
+        "total_stars": 40611,
+        "forks": 5487,
         "rank": 3,
         "purpose": "Provides an agent memory system that enables AI agents to learn and retain knowledge over time rather than just recall conversation history.",
         "category": "AI/ML",
@@ -291,8 +256,8 @@
         ],
         "notable_because": "Unlike typical RAG or static memory solutions, Hindsight emphasizes continuous learning and reflection for agents, positioning itself as a dedicated learnable memory layer, which differentiates it from more general agent frameworks or chat UI tools.",
         "first_seen": "2026-09-24",
-        "days_trended": 4,
-        "weeks_trended": 1
+        "days_trended": 5,
+        "weeks_trended": 2
       },
       {
         "repo_name": "cloudflare/security-audit-skill",
@@ -300,9 +265,9 @@
         "language": "JavaScript",
         "owner_name": "cloudflare",
         "owner_type": "big_tech",
-        "stars_in_period": 6474,
-        "total_stars": 22218,
-        "forks": 1290,
+        "stars_in_period": 4805,
+        "total_stars": 22649,
+        "forks": 1315,
         "rank": 4,
         "purpose": "Provides a coding\u2011agent skill that orchestrates multi\u2011phase, structured security audits with automated evidence collection, validation, and reporting.",
         "category": "Security",
@@ -319,39 +284,15 @@
         "weeks_trended": 1
       },
       {
-        "repo_name": "Tencent/WeKnora",
-        "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
-        "language": "Go",
-        "owner_name": "Tencent",
-        "owner_type": "big_tech",
-        "stars_in_period": 3015,
-        "total_stars": 30509,
-        "forks": 4085,
-        "rank": 5,
-        "purpose": "WeKnora is an open\u2011source LLM\u2011powered platform that transforms raw documents into a queryable RAG system, autonomous reasoning agents, and a self\u2011maintaining wiki.",
-        "category": "AI/ML",
-        "key_themes": [
-          "RAG",
-          "autonomous agents",
-          "knowledge wiki",
-          "multi\u2011tenant",
-          "vector search"
-        ],
-        "notable_because": "Unlike the comparison repos that focus on single\u2011purpose productivity tools or UI\u2011centric agents, WeKnora offers an integrated, enterprise\u2011grade stack combining RAG, ReAct\u2011style agents, sandboxed execution environments, and a self\u2011updating wiki, positioning it as a comprehensive knowledge\u2011management platform.",
-        "first_seen": "2026-09-16",
-        "days_trended": 2,
-        "weeks_trended": 1
-      },
-      {
         "repo_name": "davila7/claude-code-templates",
         "description": "CLI tool for configuring and monitoring Claude Code",
         "language": "Python",
         "owner_name": "davila7",
         "owner_type": "individual",
-        "stars_in_period": 1142,
-        "total_stars": 31964,
-        "forks": 3640,
-        "rank": 6,
+        "stars_in_period": 1154,
+        "total_stars": 32059,
+        "forks": 3649,
+        "rank": 5,
         "purpose": "CLI tool for configuring and monitoring Claude Code.",
         "category": "Developer Tools",
         "key_themes": [
@@ -368,28 +309,28 @@
         "weeks_trended": 5
       },
       {
-        "repo_name": "stablyai/orca",
-        "description": "Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
-        "language": "TypeScript",
-        "owner_name": "stablyai",
-        "owner_type": "startup",
-        "stars_in_period": 6503,
-        "total_stars": 79323,
-        "forks": 5190,
-        "rank": 7,
-        "purpose": "Orca is the ADE for working with a fleet of parallel agents, allowing users to run coding agents with their own subscription on desktop and mobile.",
-        "category": "Developer Tools",
+        "repo_name": "Tencent/WeKnora",
+        "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
+        "language": "Go",
+        "owner_name": "Tencent",
+        "owner_type": "big_tech",
+        "stars_in_period": 2705,
+        "total_stars": 30908,
+        "forks": 4130,
+        "rank": 6,
+        "purpose": "WeKnora is an open\u2011source LLM\u2011powered platform that transforms raw documents into a queryable RAG system, autonomous reasoning agents, and a self\u2011maintaining wiki.",
+        "category": "AI/ML",
         "key_themes": [
-          "parallel agents",
-          "AI orchestration",
-          "mobile companion",
-          "development environment",
-          "productivity"
+          "RAG",
+          "autonomous agents",
+          "knowledge wiki",
+          "multi\u2011tenant",
+          "vector search"
         ],
-        "notable_because": "Orca stands out by allowing users to run multiple AI coding agents in parallel worktrees, enabling comparison and merging of results, which is not commonly offered by other tools.",
-        "first_seen": "2026-06-24",
-        "days_trended": 3,
-        "weeks_trended": 2
+        "notable_because": "Unlike the comparison repos that focus on single\u2011purpose productivity tools or UI\u2011centric agents, WeKnora offers an integrated, enterprise\u2011grade stack combining RAG, ReAct\u2011style agents, sandboxed execution environments, and a self\u2011updating wiki, positioning it as a comprehensive knowledge\u2011management platform.",
+        "first_seen": "2026-09-16",
+        "days_trended": 2,
+        "weeks_trended": 1
       },
       {
         "repo_name": "vercel/next.js",
@@ -397,10 +338,10 @@
         "language": "JavaScript",
         "owner_name": "vercel",
         "owner_type": "startup",
-        "stars_in_period": 280,
-        "total_stars": 142771,
-        "forks": 33234,
-        "rank": 8,
+        "stars_in_period": 496,
+        "total_stars": 142848,
+        "forks": 33344,
+        "rank": 7,
         "purpose": "Next.js is a React framework that enables the creation of full-stack web applications with server-side rendering and static site generation.",
         "category": "Web Framework",
         "key_themes": [
@@ -416,14 +357,38 @@
         "weeks_trended": 3
       },
       {
+        "repo_name": "stablyai/orca",
+        "description": "Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
+        "language": "TypeScript",
+        "owner_name": "stablyai",
+        "owner_type": "startup",
+        "stars_in_period": 6227,
+        "total_stars": 80523,
+        "forks": 5243,
+        "rank": 8,
+        "purpose": "Orca is the ADE for working with a fleet of parallel agents, allowing users to run coding agents with their own subscription on desktop and mobile.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "parallel agents",
+          "AI orchestration",
+          "mobile companion",
+          "development environment",
+          "productivity"
+        ],
+        "notable_because": "Orca stands out by allowing users to run multiple AI coding agents in parallel worktrees, enabling comparison and merging of results, which is not commonly offered by other tools.",
+        "first_seen": "2026-06-24",
+        "days_trended": 3,
+        "weeks_trended": 2
+      },
+      {
         "repo_name": "HKUDS/CLI-Anything",
         "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub:https://clianything.cc/",
         "language": "Python",
         "owner_name": "HKUDS",
         "owner_type": "open_source_org",
-        "stars_in_period": 1055,
-        "total_stars": 50696,
-        "forks": 4635,
+        "stars_in_period": 1105,
+        "total_stars": 50864,
+        "forks": 4646,
         "rank": 9,
         "purpose": "CLI-Anything aims to make all software agent-native by bridging the gap between AI agents and existing software.",
         "category": "Developer Tools",
@@ -445,9 +410,9 @@
         "language": "Python",
         "owner_name": "pytorch",
         "owner_type": "open_source_org",
-        "stars_in_period": 295,
-        "total_stars": 103404,
-        "forks": 30689,
+        "stars_in_period": 320,
+        "total_stars": 103460,
+        "forks": 30813,
         "rank": 10,
         "purpose": "PyTorch is a Python package that provides tensor computation and deep neural networks with strong GPU acceleration.",
         "category": "AI/ML",
@@ -464,52 +429,28 @@
         "weeks_trended": 1
       },
       {
-        "repo_name": "anthropics/claude-code",
-        "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
-        "language": "TypeScript",
-        "owner_name": "anthropics",
-        "owner_type": "open_source_org",
-        "stars_in_period": 1744,
-        "total_stars": 148301,
-        "forks": 24798,
-        "rank": 11,
-        "purpose": "Claude Code is an agentic coding tool that helps developers code faster by executing routine tasks, explaining complex code, and handling git workflows through natural language commands.",
-        "category": "Developer Tools",
-        "key_themes": [
-          "coding",
-          "AI",
-          "productivity",
-          "natural language processing",
-          "git workflows"
-        ],
-        "notable_because": null,
-        "first_seen": "2026-02-21",
-        "days_trended": 16,
-        "weeks_trended": 7
-      },
-      {
-        "repo_name": "affaan-m/ECC",
-        "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-        "language": "JavaScript",
-        "owner_name": "affaan-m",
+        "repo_name": "debpalash/VoiceStudio",
+        "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative \u2014 voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+        "language": "Python",
+        "owner_name": "debpalash",
         "owner_type": "individual",
-        "stars_in_period": 5522,
-        "total_stars": 268187,
-        "forks": 40063,
-        "rank": 12,
-        "purpose": "The agent harness performance optimization system for Claude Code, Codex, Opencode, Cursor and beyond.",
-        "category": "Developer Tools",
+        "stars_in_period": 7793,
+        "total_stars": 43100,
+        "forks": 5027,
+        "rank": 11,
+        "purpose": "Provides a fully local, open\u2011source alternative to ElevenLabs for voice cloning, text\u2011to\u2011speech, dubbing, transcription and audiobook creation across hundreds of languages.",
+        "category": "AI/ML",
         "key_themes": [
-          "ai-agents",
-          "performance optimization",
-          "developer tools",
-          "continuous learning",
-          "security"
+          "voice cloning",
+          "offline TTS/ASR",
+          "multilingual support",
+          "privacy\u2011first",
+          "cross\u2011platform"
         ],
-        "notable_because": "This repository stands out due to its comprehensive system that integrates skills, memory optimization, and security scanning, built from extensive real-world usage, unlike other tools that may focus on singular aspects of development.",
-        "first_seen": "2026-05-25",
-        "days_trended": 34,
-        "weeks_trended": 11
+        "notable_because": "Unlike the comparison repos, VoiceStudio offers a comprehensive, fully offline suite covering 16 TTS and 11 ASR engines with support for 646 languages, eliminating the need for any cloud API keys or usage meters, making it a unique all\u2011in\u2011one local voice AI platform.",
+        "first_seen": "2026-09-01",
+        "days_trended": 9,
+        "weeks_trended": 5
       },
       {
         "repo_name": "rohitg00/ai-engineering-from-scratch",
@@ -517,10 +458,10 @@
         "language": "Python",
         "owner_name": "rohitg00",
         "owner_type": "individual",
-        "stars_in_period": 3207,
-        "total_stars": 58886,
-        "forks": 10193,
-        "rank": 13,
+        "stars_in_period": 3850,
+        "total_stars": 60193,
+        "forks": 10367,
+        "rank": 12,
         "purpose": "Learn it. Build it. Ship it for others.",
         "category": "Education",
         "key_themes": [
@@ -536,52 +477,76 @@
         "weeks_trended": 8
       },
       {
-        "repo_name": "alibaba/open-code-review",
-        "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
-        "language": "Go",
-        "owner_name": "alibaba",
-        "owner_type": "big_tech",
-        "stars_in_period": 4310,
-        "total_stars": 41817,
-        "forks": 3009,
-        "rank": 14,
-        "purpose": "Open Code Review is an AI-powered code review CLI tool that provides precise line-level comments and built-in fine-tuned rulesets.",
-        "category": "Developer Tools",
+        "repo_name": "trycua/cua",
+        "description": "Scale computer-use 2.0 with open-source drivers, cross-OS fleets, and benchmarks for training, evaluation, and data generation.",
+        "language": "HTML",
+        "owner_name": "trycua",
+        "owner_type": "open_source_org",
+        "stars_in_period": 1559,
+        "total_stars": 26812,
+        "forks": 1863,
+        "rank": 13,
+        "purpose": "Open-source infrastructure for Computer-Use Agents, providing sandboxes, SDKs, and benchmarks to train and evaluate AI agents that can control full desktops.",
+        "category": "AI/ML",
         "key_themes": [
+          "agent",
           "AI",
-          "code review",
-          "automation",
-          "security",
-          "developer productivity"
+          "desktop automation",
+          "sandbox",
+          "virtualization"
         ],
-        "notable_because": "This repository stands out due to its hybrid architecture combining deterministic pipelines with an LLM agent, and its extensive experience in identifying code defects at scale, which is backed by Alibaba's operational history.",
-        "first_seen": "2026-07-24",
-        "days_trended": 11,
+        "notable_because": "Cua stands out by enabling agents to interact with native macOS applications in the background without disrupting user activity, a unique feature not commonly found in other tools.",
+        "first_seen": "2026-05-13",
+        "days_trended": 5,
         "weeks_trended": 4
       },
       {
-        "repo_name": "cloudflare/quiche",
-        "description": "\ud83e\udd67 Savoury implementation of the QUIC transport protocol and HTTP/3",
+        "repo_name": "akitaonrails/ai-memory",
+        "description": "Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors",
         "language": "Rust",
-        "owner_name": "cloudflare",
-        "owner_type": "big_tech",
-        "stars_in_period": 736,
-        "total_stars": 12641,
-        "forks": 1150,
-        "rank": 15,
-        "purpose": "Provides a Rust implementation of the QUIC transport protocol and HTTP/3 with a low\u2011level API for building network applications.",
-        "category": "Infrastructure",
+        "owner_name": "akitaonrails",
+        "owner_type": "individual",
+        "stars_in_period": 1224,
+        "total_stars": 8539,
+        "forks": 582,
+        "rank": 14,
+        "purpose": "Provides long\u2011term, cross\u2011agent memory storage for AI coding assistants to persist context across different LLM backends.",
+        "category": "Developer Tools",
         "key_themes": [
-          "QUIC",
-          "HTTP/3",
-          "Rust",
-          "network protocol",
-          "low\u2011level API"
+          "long\u2011term memory",
+          "AI coding agents",
+          "cross\u2011agent handoff",
+          "CLI integration",
+          "multi\u2011platform support"
         ],
-        "notable_because": "Unlike the comparison repos, quiche is a production\u2011grade, standards\u2011compliant QUIC/HTTP\u20113 stack used by Cloudflare's edge network, Android, and curl, giving it real\u2011world deployment credibility and performance focus.",
-        "first_seen": "2026-09-19",
-        "days_trended": 2,
+        "notable_because": "Unlike the comparison repos, ai-memory specifically addresses the gap of persisting and transferring context between different coding agents, offering native hooks and Docker/OS binaries for seamless integration across Linux, macOS, and Windows.",
+        "first_seen": "2026-08-18",
+        "days_trended": 5,
         "weeks_trended": 2
+      },
+      {
+        "repo_name": "FxEmbed/FxEmbed",
+        "description": "Fix X/Twitter and Bluesky embeds! Use multiple images, videos, polls, translations and more on Discord, Telegram and others",
+        "language": "TypeScript",
+        "owner_name": "FxEmbed",
+        "owner_type": "individual",
+        "stars_in_period": 432,
+        "total_stars": 5543,
+        "forks": 265,
+        "rank": 15,
+        "purpose": "Provides a Cloudflare Worker service that rewrites Twitter/X/Bluesky URLs to embed rich media (videos, polls, translations, etc.) in platforms like Discord and Telegram.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "embed enrichment",
+          "social media",
+          "cloudflare workers",
+          "self\u2011hosting",
+          "discord integration"
+        ],
+        "notable_because": "Unlike the comparison repos that focus on AI/ML or large\u2011scale infrastructure, FxEmbed offers a lightweight, self\u2011hostable solution for richer X/Twitter and Bluesky embeds, leveraging Cloudflare Workers for low\u2011latency edge deployment.",
+        "first_seen": "2026-09-24",
+        "days_trended": 1,
+        "weeks_trended": 1
       },
       {
         "repo_name": "TencentCloud/Octop",
@@ -589,9 +554,9 @@
         "language": "Python",
         "owner_name": "TencentCloud",
         "owner_type": "big_tech",
-        "stars_in_period": 951,
-        "total_stars": 5214,
-        "forks": 632,
+        "stars_in_period": 869,
+        "total_stars": 5486,
+        "forks": 673,
         "rank": 16,
         "purpose": "Octop provides a self\u2011hosted, multi\u2011user, multi\u2011agent AI assistant platform with web, CLI, and messaging integrations.",
         "category": "AI/ML",
@@ -608,51 +573,51 @@
         "weeks_trended": 1
       },
       {
-        "repo_name": "anthropics/knowledge-work-plugins",
-        "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
-        "language": "Python",
-        "owner_name": "anthropics",
-        "owner_type": "open_source_org",
-        "stars_in_period": 664,
-        "total_stars": 25720,
-        "forks": 3040,
+        "repo_name": "cloudflare/quiche",
+        "description": "\ud83e\udd67 Savoury implementation of the QUIC transport protocol and HTTP/3",
+        "language": "Rust",
+        "owner_name": "cloudflare",
+        "owner_type": "big_tech",
+        "stars_in_period": 521,
+        "total_stars": 12686,
+        "forks": 1153,
         "rank": 17,
-        "purpose": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork.",
-        "category": "Productivity",
+        "purpose": "Provides a Rust implementation of the QUIC transport protocol and HTTP/3 with a low\u2011level API for building network applications.",
+        "category": "Infrastructure",
         "key_themes": [
-          "plugins",
-          "productivity",
-          "AI",
-          "knowledge workers",
-          "workflow optimization"
+          "QUIC",
+          "HTTP/3",
+          "Rust",
+          "network protocol",
+          "low\u2011level API"
         ],
-        "notable_because": "This repository offers a comprehensive suite of customizable plugins that integrate with various tools, setting it apart from other trending repositories that focus on specific functionalities or platforms.",
-        "first_seen": "2026-05-25",
-        "days_trended": 6,
+        "notable_because": "Unlike the comparison repos, quiche is a production\u2011grade, standards\u2011compliant QUIC/HTTP\u20113 stack used by Cloudflare's edge network, Android, and curl, giving it real\u2011world deployment credibility and performance focus.",
+        "first_seen": "2026-09-19",
+        "days_trended": 2,
         "weeks_trended": 2
       },
       {
-        "repo_name": "FxEmbed/FxEmbed",
-        "description": "Fix X/Twitter and Bluesky embeds! Use multiple images, videos, polls, translations and more on Discord, Telegram and others",
-        "language": "TypeScript",
-        "owner_name": "FxEmbed",
-        "owner_type": "individual",
-        "stars_in_period": 417,
-        "total_stars": 5486,
-        "forks": 260,
+        "repo_name": "elastic/elasticsearch",
+        "description": "Free and Open Source, Distributed, RESTful Search Engine",
+        "language": "Java",
+        "owner_name": "elastic",
+        "owner_type": "open_source_org",
+        "stars_in_period": 94,
+        "total_stars": 78034,
+        "forks": 26093,
         "rank": 18,
-        "purpose": "Provides a Cloudflare Worker service that rewrites Twitter/X/Bluesky URLs to embed rich media (videos, polls, translations, etc.) in platforms like Discord and Telegram.",
-        "category": "Developer Tools",
+        "purpose": "Elasticsearch is a distributed search and analytics engine optimized for speed and relevance on production-scale workloads.",
+        "category": "Infrastructure",
         "key_themes": [
-          "embed enrichment",
-          "social media",
-          "cloudflare workers",
-          "self\u2011hosting",
-          "discord integration"
+          "search",
+          "analytics",
+          "distributed",
+          "open_source",
+          "performance"
         ],
-        "notable_because": "Unlike the comparison repos that focus on AI/ML or large\u2011scale infrastructure, FxEmbed offers a lightweight, self\u2011hostable solution for richer X/Twitter and Bluesky embeds, leveraging Cloudflare Workers for low\u2011latency edge deployment.",
-        "first_seen": "2026-09-24",
-        "days_trended": 1,
+        "notable_because": "Elasticsearch stands out due to its ability to perform real-time searches over massive datasets and its integration with generative AI applications, making it a versatile tool in the search engine landscape.",
+        "first_seen": "2026-07-03",
+        "days_trended": 2,
         "weeks_trended": 1
       }
     ],
@@ -663,9 +628,9 @@
         "language": "JavaScript",
         "owner_name": "cloudflare",
         "owner_type": "big_tech",
-        "stars_in_period": 19124,
-        "total_stars": 22218,
-        "forks": 1290,
+        "stars_in_period": 19427,
+        "total_stars": 22649,
+        "forks": 1315,
         "rank": 1,
         "purpose": "Provides a coding\u2011agent skill that orchestrates multi\u2011phase, structured security audits with automated evidence collection, validation, and reporting.",
         "category": "Security",
@@ -687,9 +652,9 @@
         "language": "JavaScript",
         "owner_name": "bilawalsidhu",
         "owner_type": "individual",
-        "stars_in_period": 38582,
-        "total_stars": 43849,
-        "forks": 8920,
+        "stars_in_period": 37567,
+        "total_stars": 44462,
+        "forks": 9034,
         "rank": 2,
         "purpose": "Provides a browser\u2011based, photorealistic 3D globe that visualizes live public data streams such as flights, ships, satellites, earthquakes and cameras, with voice\u2011controlled AI interaction.",
         "category": "Web Framework",
@@ -712,9 +677,9 @@
         "language": "TypeScript",
         "owner_name": "miuuyy",
         "owner_type": "individual",
-        "stars_in_period": 10457,
-        "total_stars": 11936,
-        "forks": 951,
+        "stars_in_period": 10481,
+        "total_stars": 12454,
+        "forks": 987,
         "rank": 3,
         "purpose": "Provides a native Codex launcher that lets users run ChatGPT Web (including Pro) models within Codex with full context, tool integration, streaming, and image support.",
         "category": "Developer Tools",
@@ -731,39 +696,15 @@
         "weeks_trended": null
       },
       {
-        "repo_name": "tt-a1i/archify",
-        "description": "Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams\u2014self-contained HTML with motion and crisp export.",
-        "language": "JavaScript",
-        "owner_name": "tt-a1i",
-        "owner_type": "individual",
-        "stars_in_period": 55722,
-        "total_stars": 72597,
-        "forks": 4904,
-        "rank": 4,
-        "purpose": "Archify generates beautiful architecture diagrams with a dark/light theme toggle and various export options.",
-        "category": "Developer Tools",
-        "key_themes": [
-          "architecture-diagram",
-          "dark-mode",
-          "diagram-as-code",
-          "export-options",
-          "developer-tools"
-        ],
-        "notable_because": "Archify stands out by offering a seamless user experience with theme toggling, high-resolution exports, and the ability to generate diagrams from plain-English descriptions, which is not commonly found in similar tools.",
-        "first_seen": "2026-08-27",
-        "days_trended": 5,
-        "weeks_trended": 2
-      },
-      {
         "repo_name": "alibaba/open-code-review",
         "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
         "language": "Go",
         "owner_name": "alibaba",
         "owner_type": "big_tech",
-        "stars_in_period": 20421,
-        "total_stars": 41817,
-        "forks": 3009,
-        "rank": 5,
+        "stars_in_period": 20657,
+        "total_stars": 42234,
+        "forks": 3029,
+        "rank": 4,
         "purpose": "Open Code Review is an AI-powered code review CLI tool that provides precise line-level comments and built-in fine-tuned rulesets.",
         "category": "Developer Tools",
         "key_themes": [
@@ -779,14 +720,38 @@
         "weeks_trended": 4
       },
       {
+        "repo_name": "tt-a1i/archify",
+        "description": "Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams\u2014self-contained HTML with motion and crisp export.",
+        "language": "JavaScript",
+        "owner_name": "tt-a1i",
+        "owner_type": "individual",
+        "stars_in_period": 51711,
+        "total_stars": 73410,
+        "forks": 4955,
+        "rank": 5,
+        "purpose": "Archify generates beautiful architecture diagrams with a dark/light theme toggle and various export options.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "architecture-diagram",
+          "dark-mode",
+          "diagram-as-code",
+          "export-options",
+          "developer-tools"
+        ],
+        "notable_because": "Archify stands out by offering a seamless user experience with theme toggling, high-resolution exports, and the ability to generate diagrams from plain-English descriptions, which is not commonly found in similar tools.",
+        "first_seen": "2026-08-27",
+        "days_trended": 5,
+        "weeks_trended": 2
+      },
+      {
         "repo_name": "superdesigndev/treg",
         "description": "OpenRouter for agent tools. Join community here:https://discord.gg/6mQYYfFMAn",
         "language": "Python",
         "owner_name": "superdesigndev",
         "owner_type": "startup",
-        "stars_in_period": 2846,
-        "total_stars": 3558,
-        "forks": 290,
+        "stars_in_period": 2945,
+        "total_stars": 3696,
+        "forks": 299,
         "rank": 6,
         "purpose": "Provides a centralized catalog and proxy for accessing thousands of third\u2011party tool APIs and CLIs with a single token, handling authentication and billing.",
         "category": "Developer Tools",
@@ -803,39 +768,15 @@
         "weeks_trended": 1
       },
       {
-        "repo_name": "THU-MAIC/OpenMAIC",
-        "description": "Open Multi-Agent Interactive Classroom \u2014 Get an immersive, multi-agent learning experience in just one click",
-        "language": "TypeScript",
-        "owner_name": "THU-MAIC",
-        "owner_type": "academic",
-        "stars_in_period": 18374,
-        "total_stars": 39239,
-        "forks": 6101,
-        "rank": 7,
-        "purpose": "Provides a web-based platform for immersive multi-agent classroom interactions powered by LLMs.",
-        "category": "Education",
-        "key_themes": [
-          "multi-agent",
-          "LLM integration",
-          "interactive classroom",
-          "web app",
-          "educational AI"
-        ],
-        "notable_because": "Unlike generic AI toolkits, OpenMAIC offers a ready-to-deploy, multi-agent classroom experience with built\u2011in support for various LLM providers and a live demo, targeting the niche of AI\u2011enhanced education.",
-        "first_seen": "2026-08-30",
-        "days_trended": 3,
-        "weeks_trended": 2
-      },
-      {
         "repo_name": "debpalash/VoiceStudio",
         "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative \u2014 voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
         "language": "Python",
         "owner_name": "debpalash",
         "owner_type": "individual",
-        "stars_in_period": 24241,
-        "total_stars": 38997,
-        "forks": 4639,
-        "rank": 8,
+        "stars_in_period": 27329,
+        "total_stars": 43100,
+        "forks": 5027,
+        "rank": 7,
         "purpose": "Provides a fully local, open\u2011source alternative to ElevenLabs for voice cloning, text\u2011to\u2011speech, dubbing, transcription and audiobook creation across hundreds of languages.",
         "category": "AI/ML",
         "key_themes": [
@@ -847,44 +788,19 @@
         ],
         "notable_because": "Unlike the comparison repos, VoiceStudio offers a comprehensive, fully offline suite covering 16 TTS and 11 ASR engines with support for 646 languages, eliminating the need for any cloud API keys or usage meters, making it a unique all\u2011in\u2011one local voice AI platform.",
         "first_seen": "2026-09-01",
-        "days_trended": 8,
-        "weeks_trended": 4
-      },
-      {
-        "repo_name": "pollen-robotics/microduck_rl",
-        "description": "RL training environments for Microduck (mjlab)",
-        "language": "Python",
-        "owner_name": "pollen-robotics",
-        "owner_type": "open_source_org",
-        "stars_in_period": 2282,
-        "total_stars": 2285,
-        "forks": 494,
-        "rank": 9,
-        "purpose": "Provides reinforcement learning environments and training pipelines for the Microduck bipedal robot using MuJoCo Warp and PPO.",
-        "category": "AI/ML",
-        "key_themes": [
-          "reinforcement learning",
-          "robotics simulation",
-          "sim2real",
-          "MuJoCo",
-          "policy export",
-          "domain randomization"
-        ],
-        "notable_because": "Unlike generic RL toolkits, this repo offers a complete, domain\u2011specific sim2real pipeline for a physical bipedal robot, including actuator physics, backlash simulation, and ready\u2011to\u2011export ONNX policies, positioning it uniquely for real\u2011world robot deployment.",
-        "first_seen": "2026-08-30",
-        "days_trended": 2,
-        "weeks_trended": 2
+        "days_trended": 9,
+        "weeks_trended": 5
       },
       {
         "repo_name": "magnitudedev/magnitude",
         "description": "Open source inference engine for the hardware you already own. Profiles your machine, recommends the best open models for it, and tunes them for your exact hardware. Works on Apple Silicon, NVIDIA, AMD, or nothing but a CPU.",
-        "language": "TypeScript",
+        "language": "Rust",
         "owner_name": "magnitudedev",
         "owner_type": "individual",
-        "stars_in_period": 3675,
-        "total_stars": 5224,
-        "forks": 377,
-        "rank": 10,
+        "stars_in_period": 3743,
+        "total_stars": 5368,
+        "forks": 381,
+        "rank": 8,
         "purpose": "Provides an open\u2011source inference server that profiles hardware and runs the best local AI models, integrating them with existing agents.",
         "category": "AI/ML",
         "key_themes": [
@@ -900,14 +816,62 @@
         "weeks_trended": 1
       },
       {
+        "repo_name": "anthropics/financial-services",
+        "description": null,
+        "language": "Python",
+        "owner_name": "anthropics",
+        "owner_type": "open_source_org",
+        "stars_in_period": 3340,
+        "total_stars": 38013,
+        "forks": 5479,
+        "rank": 9,
+        "purpose": "This repository provides reference agents, skills, and data connectors for financial services workflows such as investment banking and wealth management.",
+        "category": "AI/ML",
+        "key_themes": [
+          "financial services",
+          "AI agents",
+          "workflow automation",
+          "investment banking",
+          "data connectors"
+        ],
+        "notable_because": "This repository uniquely combines AI-driven agents with specific financial workflows, allowing for tailored solutions in investment banking and wealth management, which is not as prominently featured in other trending repositories.",
+        "first_seen": "2026-05-06",
+        "days_trended": 10,
+        "weeks_trended": 3
+      },
+      {
+        "repo_name": "THU-MAIC/OpenMAIC",
+        "description": "Open Multi-Agent Interactive Classroom \u2014 Get an immersive, multi-agent learning experience in just one click",
+        "language": "TypeScript",
+        "owner_name": "THU-MAIC",
+        "owner_type": "academic",
+        "stars_in_period": 18484,
+        "total_stars": 39391,
+        "forks": 6117,
+        "rank": 10,
+        "purpose": "Provides a web-based platform for immersive multi-agent classroom interactions powered by LLMs.",
+        "category": "Education",
+        "key_themes": [
+          "multi-agent",
+          "LLM integration",
+          "interactive classroom",
+          "web app",
+          "educational AI"
+        ],
+        "notable_because": "Unlike generic AI toolkits, OpenMAIC offers a ready-to-deploy, multi-agent classroom experience with built\u2011in support for various LLM providers and a live demo, targeting the niche of AI\u2011enhanced education.",
+        "first_seen": "2026-08-30",
+        "days_trended": 3,
+        "weeks_trended": 2
+      },
+      {
         "repo_name": "tech-leads-club/agent-skills",
         "description": "The secure, validated skill registry for professional AI coding agents. Extend Antigravity, Claude Code, Cursor, Copilot and more with absolute confidence.",
         "language": "TypeScript",
         "owner_name": "tech-leads-club",
         "owner_type": "open_source_org",
-        "stars_in_period": 1907,
-        "total_stars": 6885,
-        "forks": 554,
+        "stars_in_period": 1954,
+        "total_stars": 6962,
+        "forks": 558,
         "rank": 11,
         "purpose": "The secure, validated skill registry for professional AI coding agents.",
         "category": "AI/ML",
@@ -924,51 +888,28 @@
         "weeks_trended": 3
       },
       {
-        "repo_name": "anthropics/financial-services",
-        "description": null,
+        "repo_name": "pollen-robotics/microduck_rl",
+        "description": "RL training environments for Microduck (mjlab)",
         "language": "Python",
-        "owner_name": "anthropics",
+        "owner_name": "pollen-robotics",
         "owner_type": "open_source_org",
-        "stars_in_period": 3205,
-        "total_stars": 37790,
-        "forks": 5457,
+        "stars_in_period": 2276,
+        "total_stars": 2319,
+        "forks": 501,
         "rank": 12,
-        "purpose": "This repository provides reference agents, skills, and data connectors for financial services workflows such as investment banking and wealth management.",
+        "purpose": "Provides reinforcement learning environments and training pipelines for the Microduck bipedal robot using MuJoCo Warp and PPO.",
         "category": "AI/ML",
         "key_themes": [
-          "financial services",
-          "AI agents",
-          "workflow automation",
-          "investment banking",
-          "data connectors"
+          "reinforcement learning",
+          "robotics simulation",
+          "sim2real",
+          "MuJoCo",
+          "policy export",
+          "domain randomization"
         ],
-        "notable_because": "This repository uniquely combines AI-driven agents with specific financial workflows, allowing for tailored solutions in investment banking and wealth management, which is not as prominently featured in other trending repositories.",
-        "first_seen": "2026-05-06",
-        "days_trended": 10,
-        "weeks_trended": 3
-      },
-      {
-        "repo_name": "ayghri/i-have-adhd",
-        "description": "A skill to stop your coding agent from burying the answer. ADHD-friendly output.",
-        "language": "Python",
-        "owner_name": "ayghri",
-        "owner_type": "individual",
-        "stars_in_period": 27092,
-        "total_stars": 51511,
-        "forks": 2973,
-        "rank": 13,
-        "purpose": "A skill for your coding agent to stop it from burying the answer, providing ADHD-friendly output.",
-        "category": "Developer Tools",
-        "key_themes": [
-          "adhd",
-          "productivity",
-          "developer-tools",
-          "coding-assistant",
-          "output-style"
-        ],
-        "notable_because": "This repository focuses specifically on ADHD-friendly outputs, which is a unique approach compared to other developer tools that do not cater to this specific audience.",
-        "first_seen": "2026-07-22",
-        "days_trended": 5,
+        "notable_because": "Unlike generic RL toolkits, this repo offers a complete, domain\u2011specific sim2real pipeline for a physical bipedal robot, including actuator physics, backlash simulation, and ready\u2011to\u2011export ONNX policies, positioning it uniquely for real\u2011world robot deployment.",
+        "first_seen": "2026-08-30",
+        "days_trended": 2,
         "weeks_trended": 2
       },
       {
@@ -977,10 +918,10 @@
         "language": "Go",
         "owner_name": "Tencent",
         "owner_type": "big_tech",
-        "stars_in_period": 9808,
-        "total_stars": 30509,
-        "forks": 4085,
-        "rank": 14,
+        "stars_in_period": 9985,
+        "total_stars": 30908,
+        "forks": 4130,
+        "rank": 13,
         "purpose": "WeKnora is an open\u2011source LLM\u2011powered platform that transforms raw documents into a queryable RAG system, autonomous reasoning agents, and a self\u2011maintaining wiki.",
         "category": "AI/ML",
         "key_themes": [
@@ -996,52 +937,28 @@
         "weeks_trended": 1
       },
       {
-        "repo_name": "google-research/timesfm",
-        "description": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
+        "repo_name": "ayghri/i-have-adhd",
+        "description": "A skill to stop your coding agent from burying the answer. ADHD-friendly output.",
         "language": "Python",
-        "owner_name": "google-research",
-        "owner_type": "big_tech",
-        "stars_in_period": 5607,
-        "total_stars": 33834,
-        "forks": 3256,
-        "rank": 15,
-        "purpose": "TimesFM is a pretrained time-series foundation model developed for time-series forecasting.",
-        "category": "AI/ML",
+        "owner_name": "ayghri",
+        "owner_type": "individual",
+        "stars_in_period": 26939,
+        "total_stars": 51829,
+        "forks": 2985,
+        "rank": 14,
+        "purpose": "A skill for your coding agent to stop it from burying the answer, providing ADHD-friendly output.",
+        "category": "Developer Tools",
         "key_themes": [
-          "time-series",
-          "forecasting",
-          "machine learning",
-          "foundation model",
-          "Google Research"
+          "adhd",
+          "productivity",
+          "developer-tools",
+          "coding-assistant",
+          "output-style"
         ],
-        "notable_because": null,
-        "first_seen": "2026-02-20",
-        "days_trended": 11,
-        "weeks_trended": 4
-      },
-      {
-        "repo_name": "every-app/open-seo",
-        "description": "Open source alternative to Semrush and Ahrefs",
-        "language": "TypeScript",
-        "owner_name": "every-app",
-        "owner_type": "open_source_org",
-        "stars_in_period": 7749,
-        "total_stars": 21328,
-        "forks": 2736,
-        "rank": 16,
-        "purpose": "OpenSEO is an open source alternative to expensive SEO tools like Semrush and Ahrefs, providing users with control over their SEO data.",
-        "category": "Productivity",
-        "key_themes": [
-          "backlink-analysis",
-          "keyword-research",
-          "site-audit",
-          "seo-tools",
-          "mcp"
-        ],
-        "notable_because": "OpenSEO distinguishes itself by offering a pay-as-you-go model without subscriptions, allowing users to bring their own DataForSEO API key and pay only for what they use, unlike many competitors that require costly subscriptions.",
-        "first_seen": "2026-06-26",
-        "days_trended": 7,
-        "weeks_trended": 4
+        "notable_because": "This repository focuses specifically on ADHD-friendly outputs, which is a unique approach compared to other developer tools that do not cater to this specific audience.",
+        "first_seen": "2026-07-22",
+        "days_trended": 5,
+        "weeks_trended": 2
       },
       {
         "repo_name": "cursor/plugins",
@@ -1049,10 +966,10 @@
         "language": "TypeScript",
         "owner_name": "cursor",
         "owner_type": "open_source_org",
-        "stars_in_period": 3601,
-        "total_stars": 8779,
-        "forks": 821,
-        "rank": 17,
+        "stars_in_period": 3379,
+        "total_stars": 8880,
+        "forks": 832,
+        "rank": 15,
         "purpose": "Cursor plugin specification and official plugins for popular developer tools.",
         "category": "Developer Tools",
         "key_themes": [
@@ -1068,15 +985,39 @@
         "weeks_trended": 4
       },
       {
+        "repo_name": "google-research/timesfm",
+        "description": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
+        "language": "Python",
+        "owner_name": "google-research",
+        "owner_type": "big_tech",
+        "stars_in_period": 5681,
+        "total_stars": 33919,
+        "forks": 3262,
+        "rank": 16,
+        "purpose": "TimesFM is a pretrained time-series foundation model developed for time-series forecasting.",
+        "category": "AI/ML",
+        "key_themes": [
+          "time-series",
+          "forecasting",
+          "machine learning",
+          "foundation model",
+          "Google Research"
+        ],
+        "notable_because": null,
+        "first_seen": "2026-02-20",
+        "days_trended": 11,
+        "weeks_trended": 4
+      },
+      {
         "repo_name": "Tencent/BrowserSkill",
         "description": "Let AI agents use your real, logged-in browser without interrupting your work. CLI + extension for browser automation across any shell-capable AI agent.",
         "language": "TypeScript",
         "owner_name": "Tencent",
         "owner_type": "big_tech",
-        "stars_in_period": 6030,
-        "total_stars": 7457,
-        "forks": 533,
-        "rank": 18,
+        "stars_in_period": 6144,
+        "total_stars": 7710,
+        "forks": 549,
+        "rank": 17,
         "purpose": "Provides a CLI and browser extension that lets AI agents control a real logged\u2011in browser session without interrupting the user.",
         "category": "Productivity",
         "key_themes": [
@@ -1089,6 +1030,54 @@
         "first_seen": "2026-09-17",
         "days_trended": 2,
         "weeks_trended": 1
+      },
+      {
+        "repo_name": "every-app/open-seo",
+        "description": "Open source alternative to Semrush and Ahrefs",
+        "language": "TypeScript",
+        "owner_name": "every-app",
+        "owner_type": "open_source_org",
+        "stars_in_period": 7792,
+        "total_stars": 21525,
+        "forks": 2764,
+        "rank": 18,
+        "purpose": "OpenSEO is an open source alternative to expensive SEO tools like Semrush and Ahrefs, providing users with control over their SEO data.",
+        "category": "Productivity",
+        "key_themes": [
+          "backlink-analysis",
+          "keyword-research",
+          "site-audit",
+          "seo-tools",
+          "mcp"
+        ],
+        "notable_because": "OpenSEO distinguishes itself by offering a pay-as-you-go model without subscriptions, allowing users to bring their own DataForSEO API key and pay only for what they use, unlike many competitors that require costly subscriptions.",
+        "first_seen": "2026-06-26",
+        "days_trended": 7,
+        "weeks_trended": 4
+      },
+      {
+        "repo_name": "DietrichGebert/ponytail",
+        "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+        "language": "JavaScript",
+        "owner_name": "DietrichGebert",
+        "owner_type": "individual",
+        "stars_in_period": 33812,
+        "total_stars": 147425,
+        "forks": 7916,
+        "rank": 19,
+        "purpose": "Provides an AI agent skill that makes code generation ultra\u2011minimal by replacing verbose implementations with single\u2011line solutions.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "AI agents",
+          "prompt engineering",
+          "code minimization",
+          "Claude Code",
+          "developer productivity"
+        ],
+        "notable_because": "Unlike the comparison repos, Ponytail specifically targets the reduction of generated code size and cost by embedding a \u2018lazy senior dev\u2019 skill into LLM agents, offering measurable benchmarks of less code, cheaper runs, and faster execution.",
+        "first_seen": "2026-08-26",
+        "days_trended": 9,
+        "weeks_trended": 2
       }
     ]
   },
@@ -1114,6 +1103,31 @@
     "confidence_label": "high"
   },
   "history": [
+    {
+      "date": "2026-09-28",
+      "repo_count": 8,
+      "top_repos": [
+        "vectorize-io/hindsight",
+        "debpalash/VoiceStudio",
+        "paperclipai/paperclip",
+        "dream-num/univer",
+        "mvschwarz/openrig"
+      ],
+      "category_counts": {
+        "AI/ML": 2,
+        "Productivity": 2,
+        "Unknown": 2,
+        "Infrastructure": 1,
+        "Developer Tools": 1
+      },
+      "language_counts": {
+        "TypeScript": 3,
+        "Python": 2,
+        "PLSQL": 1,
+        "TeX": 1,
+        "JavaScript": 1
+      }
+    },
     {
       "date": "2026-09-27",
       "repo_count": 9,
@@ -1672,12 +1686,13 @@
         "Security": 1
       },
       "language_counts": {
-        "TypeScript": 5,
         "Python": 4,
+        "TypeScript": 4,
         "JavaScript": 3,
         "Shell": 2,
         "C++": 1,
-        "HTML": 1
+        "HTML": 1,
+        "Rust": 1
       }
     },
     {
@@ -1697,12 +1712,13 @@
         "Security": 1
       },
       "language_counts": {
-        "TypeScript": 5,
         "Python": 4,
+        "TypeScript": 4,
         "JavaScript": 3,
         "Shell": 2,
         "C++": 1,
-        "HTML": 1
+        "HTML": 1,
+        "Rust": 1
       }
     },
     {
@@ -1725,12 +1741,12 @@
       "language_counts": {
         "Python": 7,
         "JavaScript": 2,
-        "TypeScript": 2,
         "Shell": 1,
         "C++": 1,
         "Go": 1,
+        "Rust": 1,
         "Kotlin": 1,
-        "HLSL": 1
+        "TypeScript": 1
       }
     },
     {
@@ -1755,10 +1771,10 @@
         "JavaScript": 3,
         "Shell": 2,
         "HTML": 2,
-        "TypeScript": 2,
         "C++": 1,
         "Go": 1,
-        "Kotlin": 1
+        "Kotlin": 1,
+        "Rust": 1
       }
     },
     {
@@ -1897,40 +1913,13 @@
         "PHP": 1,
         "C++": 1
       }
-    },
-    {
-      "date": "2026-08-28",
-      "repo_count": 20,
-      "top_repos": [
-        "tt-a1i/archify",
-        "bilawalsidhu/gods-eye-view",
-        "freestylefly/awesome-gpt-image-2",
-        "DietrichGebert/ponytail",
-        "calesthio/OpenMontage"
-      ],
-      "category_counts": {
-        "Developer Tools": 10,
-        "AI/ML": 7,
-        "Web Framework": 1,
-        "Security": 1,
-        "Education": 1
-      },
-      "language_counts": {
-        "Python": 7,
-        "JavaScript": 4,
-        "TypeScript": 4,
-        "Go": 2,
-        "Java": 1,
-        "PHP": 1,
-        "C++": 1
-      }
     }
   ],
   "stats": {
-    "total_repos": 895,
-    "days_tracked": 211,
+    "total_repos": 897,
+    "days_tracked": 212,
     "first_date": "2026-02-17",
-    "latest_date": "2026-09-27"
+    "latest_date": "2026-09-28"
   },
   "clusters": {
     "run_date": "2026-09-27",
@@ -2800,7 +2789,7 @@
         "cluster_id": 921,
         "x": -7.88255310058594,
         "y": -4.25359058380127,
-        "total_stars": 33834
+        "total_stars": 33919
       },
       {
         "repo_name": "virattt/ai-hedge-fund",
@@ -2835,7 +2824,7 @@
         "cluster_id": 921,
         "x": -7.71514511108398,
         "y": -4.20695972442627,
-        "total_stars": 37790
+        "total_stars": 38013
       },
       {
         "repo_name": "HKUDS/AI-Trader",
@@ -3220,7 +3209,7 @@
         "cluster_id": 924,
         "x": -5.2392840385437,
         "y": -0.0545148514211178,
-        "total_stars": 38997
+        "total_stars": 43100
       },
       {
         "repo_name": "OpenWhispr/openwhispr",
@@ -3626,7 +3615,7 @@
         "cluster_id": 931,
         "x": -4.13829278945923,
         "y": -2.19232320785522,
-        "total_stars": 30509
+        "total_stars": 30908
       },
       {
         "repo_name": "nashsu/llm_wiki",
@@ -3899,7 +3888,7 @@
         "cluster_id": 936,
         "x": -3.08641338348389,
         "y": -4.86615800857544,
-        "total_stars": 7457
+        "total_stars": 7710
       },
       {
         "repo_name": "D4Vinci/Scrapling",
@@ -4060,7 +4049,7 @@
         "cluster_id": 939,
         "x": -2.94121527671814,
         "y": -0.625013053417206,
-        "total_stars": 22218
+        "total_stars": 22649
       },
       {
         "repo_name": "HunxByts/GhostTrack",
@@ -4193,7 +4182,7 @@
         "cluster_id": 941,
         "x": -3.09711480140686,
         "y": -3.25159215927124,
-        "total_stars": 12641
+        "total_stars": 12686
       },
       {
         "repo_name": "neovim/neovim",
@@ -4326,7 +4315,7 @@
         "cluster_id": 944,
         "x": -3.42569780349731,
         "y": -3.7195086479187,
-        "total_stars": 8779
+        "total_stars": 8880
       },
       {
         "repo_name": "dbt-labs/dbt-core",
@@ -4543,7 +4532,7 @@
         "cluster_id": 947,
         "x": -4.09890842437744,
         "y": -4.78524208068848,
-        "total_stars": 3558
+        "total_stars": 3696
       },
       {
         "repo_name": "mattermost/mattermost",
@@ -4592,7 +4581,7 @@
         "cluster_id": 949,
         "x": -3.58846950531006,
         "y": -2.41826915740967,
-        "total_stars": 21328
+        "total_stars": 21525
       },
       {
         "repo_name": "grokability/snipe-it",
@@ -4725,7 +4714,7 @@
         "cluster_id": 952,
         "x": -2.78395342826843,
         "y": -2.18443465232849,
-        "total_stars": 5486
+        "total_stars": 5543
       },
       {
         "repo_name": "eslint/eslint",
@@ -5306,7 +5295,7 @@
         "cluster_id": 959,
         "x": -7.42612791061401,
         "y": -2.33076119422913,
-        "total_stars": 58885
+        "total_stars": 60193
       },
       {
         "repo_name": "karpathy/nn-zero-to-hero",
@@ -5467,7 +5456,7 @@
         "cluster_id": 960,
         "x": -7.00873613357544,
         "y": -1.93960738182068,
-        "total_stars": 2285
+        "total_stars": 2319
       },
       {
         "repo_name": "ggml-org/ggml",
@@ -5516,7 +5505,7 @@
         "cluster_id": 961,
         "x": -6.57625722885132,
         "y": -1.00840365886688,
-        "total_stars": 103404
+        "total_stars": 103460
       },
       {
         "repo_name": "MoonshotAI/FlashKDA",
@@ -5593,14 +5582,14 @@
         "cluster_id": 962,
         "x": -6.30562925338745,
         "y": -3.29485702514648,
-        "total_stars": 8280
+        "total_stars": 8539
       },
       {
         "repo_name": "vectorize-io/hindsight",
         "cluster_id": 962,
         "x": -6.53964853286743,
         "y": -3.02030682563782,
-        "total_stars": 35788
+        "total_stars": 40611
       },
       {
         "repo_name": "playcanvas/supersplat",
