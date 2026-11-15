@@ -1,0 +1,6052 @@
+{
+  "generated_at": "2026-11-15T17:46:25.847805Z",
+  "as_of_date": "2026-11-15",
+  "today": {
+    "daily": [
+      {
+        "repo_name": "dream-num/univer",
+        "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+        "language": "TypeScript",
+        "owner_name": "dream-num",
+        "owner_type": "startup",
+        "stars_in_period": 1041,
+        "total_stars": 25373,
+        "forks": 2320,
+        "rank": 1,
+        "purpose": "Provides an open\u2011source SDK to embed spreadsheet, document, presentation, board, and PDF functionalities into custom applications.",
+        "category": "Productivity",
+        "key_themes": [
+          "office",
+          "SDK",
+          "embedding",
+          "spreadsheet",
+          "document",
+          "collaboration"
+        ],
+        "notable_because": "Univer stands out by offering a single, extensible Facade API that unifies spreadsheets, docs, slides, boards, and PDFs across browser and Node.js environments, whereas comparable repos focus on single\u2011purpose tools or infrastructure rather than a comprehensive office\u2011app framework.",
+        "first_seen": "2026-09-22",
+        "days_trended": 10,
+        "weeks_trended": 3
+      },
+      {
+        "repo_name": "ag-ui-protocol/ag-ui",
+        "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+        "language": "TypeScript",
+        "owner_name": "ag-ui-protocol",
+        "owner_type": "startup",
+        "stars_in_period": 393,
+        "total_stars": 17663,
+        "forks": 1780,
+        "rank": 2,
+        "purpose": "Provides a lightweight, event\u2011based protocol that standardizes how AI agents communicate with user\u2011facing frontend applications.",
+        "category": "Web Framework",
+        "key_themes": [
+          "agent\u2011user interaction",
+          "event\u2011driven protocol",
+          "frontend integration",
+          "AI agents",
+          "low\u2011code"
+        ],
+        "notable_because": "It offers the first open, standardized, event\u2011based protocol specifically for AI agent\u2011frontend communication, filling a gap that existing tools like CopilotKit extensions or generic UI libraries do not address.",
+        "first_seen": "2026-11-14",
+        "days_trended": 2,
+        "weeks_trended": 1
+      },
+      {
+        "repo_name": "google-labs-code/stitch-skills",
+        "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+        "language": "TypeScript",
+        "owner_name": "google-labs-code",
+        "owner_type": "open_source_org",
+        "stars_in_period": 248,
+        "total_stars": 9129,
+        "forks": 1095,
+        "rank": 3,
+        "purpose": "A library of Agent Skills designed to work with the Stitch MCP server, following the Agent Skills open standard.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "Agent Skills",
+          "Stitch MCP",
+          "Plugin Architecture",
+          "Open Standard",
+          "Development Tools"
+        ],
+        "notable_because": "This repository provides a standardized approach to integrating various skills with the Stitch MCP server, which may enhance compatibility and ease of use compared to other tools that lack such standardization.",
+        "first_seen": "2026-07-10",
+        "days_trended": 4,
+        "weeks_trended": 2
+      },
+      {
+        "repo_name": "backnotprop/plannotator",
+        "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+        "language": "TypeScript",
+        "owner_name": "backnotprop",
+        "owner_type": "individual",
+        "stars_in_period": 860,
+        "total_stars": 11679,
+        "forks": 1041,
+        "rank": 4,
+        "purpose": "Provides a local, browser\u2011based interface to annotate, review, and give feedback on outputs from multiple AI coding agents.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "AI agent integration",
+          "code review UI",
+          "annotation workflow",
+          "multi\u2011agent support",
+          "browser based"
+        ],
+        "notable_because": "Unlike the comparison repos, Plannotator focuses on a unified, browser\u2011based annotation layer that works across many different coding agents (Claude, Codex, Copilot, Gemini, etc.) and personal assistants, offering a feedback loop directly back to the agents, which is a distinctive multi\u2011agent review surface.",
+        "first_seen": "2026-11-13",
+        "days_trended": 3,
+        "weeks_trended": 1
+      },
+      {
+        "repo_name": "ChromeDevTools/chrome-devtools-mcp",
+        "description": "Chrome DevTools for coding agents",
+        "language": "TypeScript",
+        "owner_name": "ChromeDevTools",
+        "owner_type": "open_source_org",
+        "stars_in_period": 718,
+        "total_stars": 56746,
+        "forks": 4797,
+        "rank": 5,
+        "purpose": "Chrome DevTools for Agents lets coding agents control and inspect a live Chrome browser.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "browser",
+          "debugging",
+          "automation",
+          "performance",
+          "AI"
+        ],
+        "notable_because": "This repository uniquely combines the capabilities of Chrome DevTools with AI coding agents, providing a robust platform for automation and performance analysis, which is not as prominently featured in other trending repositories.",
+        "first_seen": "2026-04-17",
+        "days_trended": 18,
+        "weeks_trended": 8
+      },
+      {
+        "repo_name": "alibaba/open-code-review",
+        "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+        "language": "Go",
+        "owner_name": "alibaba",
+        "owner_type": "big_tech",
+        "stars_in_period": 688,
+        "total_stars": 51832,
+        "forks": 4056,
+        "rank": 6,
+        "purpose": "Open Code Review is an AI-powered code review CLI tool that provides precise line-level comments and built-in fine-tuned rulesets.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "AI",
+          "code review",
+          "automation",
+          "security",
+          "developer productivity"
+        ],
+        "notable_because": "This repository stands out due to its hybrid architecture combining deterministic pipelines with an LLM agent, and its extensive experience in identifying code defects at scale, which is backed by Alibaba's operational history.",
+        "first_seen": "2026-07-24",
+        "days_trended": 15,
+        "weeks_trended": 6
+      },
+      {
+        "repo_name": "Tencent/LoopForge",
+        "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+        "language": "Go",
+        "owner_name": "Tencent",
+        "owner_type": "big_tech",
+        "stars_in_period": 484,
+        "total_stars": 1303,
+        "forks": 258,
+        "rank": 7,
+        "purpose": "LoopForge provides a self\u2011hosted platform to orchestrate multiple AI coding agents with sandboxed Docker workspaces, SOPs, and human approval gates for repeatable software delivery.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "agent-orchestration",
+          "self-hosted",
+          "coding\u2011agents",
+          "SOP automation",
+          "human\u2011in\u2011the\u2011loop"
+        ],
+        "notable_because": "Unlike the comparison tools, LoopForge combines a wide range of coding agents, Docker sandboxing, and repeatable SOP workflows into a single self\u2011hosted solution, enabling end\u2011to\u2011end AI\u2011assisted code delivery with built\u2011in human approval gates.",
+        "first_seen": "2026-11-14",
+        "days_trended": 2,
+        "weeks_trended": 1
+      },
+      {
+        "repo_name": "ggml-org/ggml",
+        "description": "Tensor library for machine learning",
+        "language": "C++",
+        "owner_name": "ggml-org",
+        "owner_type": "open_source_org",
+        "stars_in_period": 53,
+        "total_stars": 15830,
+        "forks": 1969,
+        "rank": 8,
+        "purpose": "Tensor library for machine learning.",
+        "category": "AI/ML",
+        "key_themes": [
+          "automatic-differentiation",
+          "large-language-models",
+          "machine-learning",
+          "tensor-algebra",
+          "cross-platform"
+        ],
+        "notable_because": null,
+        "first_seen": "2026-02-21",
+        "days_trended": 2,
+        "weeks_trended": 2
+      },
+      {
+        "repo_name": "elementalsouls/Claude-BugHunter",
+        "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+        "language": "Python",
+        "owner_name": "elementalsouls",
+        "owner_type": "individual",
+        "stars_in_period": 221,
+        "total_stars": 6062,
+        "forks": 929,
+        "rank": 9,
+        "purpose": "Provides a comprehensive Claude Code skill bundle that equips Claude with bug\u2011hunting and red\u2011team capabilities, including hundreds of vulnerability patterns and attack matrices.",
+        "category": "Security",
+        "key_themes": [
+          "bug hunting",
+          "red team",
+          "Claude skills",
+          "vulnerability patterns",
+          "attack matrices",
+          "automation"
+        ],
+        "notable_because": "Unlike the comparison repos, this bundle delivers a ready\u2011to\u2011use, large\u2011scale library of 83 Claude skills and 681 curated vulnerability patterns directly within Claude Code, turning the AI assistant into a specialized security analyst without needing custom code or external tooling.",
+        "first_seen": "2026-11-15",
+        "days_trended": 1,
+        "weeks_trended": 1
+      },
+      {
+        "repo_name": "GoogleChrome/modern-web-guidance-src",
+        "description": "Keep your coding agent up to date with the latest web best practices",
+        "language": "TypeScript",
+        "owner_name": "GoogleChrome",
+        "owner_type": "big_tech",
+        "stars_in_period": 1220,
+        "total_stars": 6875,
+        "forks": 552,
+        "rank": 10,
+        "purpose": "Provides source code and tooling for Modern Web Guidance, a set of curated best\u2011practice guides that help coding agents use modern web APIs and patterns.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "modern web APIs",
+          "AI coding assistance",
+          "browser compatibility",
+          "performance",
+          "accessibility"
+        ],
+        "notable_because": "Unlike the comparison repos, this project directly targets the improvement of AI coding agents by embedding curated, browser\u2011specific best\u2011practice guidance, leveraging the authority of multiple leading browser vendors.",
+        "first_seen": "2026-11-11",
+        "days_trended": 5,
+        "weeks_trended": 1
+      },
+      {
+        "repo_name": "tradermonty/claude-trading-skills",
+        "description": "Claude Code skills for equity investors and traders \u2014 market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+        "language": "Python",
+        "owner_name": "tradermonty",
+        "owner_type": "individual",
+        "stars_in_period": 707,
+        "total_stars": 5299,
+        "forks": 1124,
+        "rank": 11,
+        "purpose": "Provides a Claude AI Skills toolkit to structure market analysis, risk management, trade planning, and journaling for individual investors and traders.",
+        "category": "Productivity",
+        "key_themes": [
+          "AI\u2011assisted trading workflow",
+          "risk management",
+          "portfolio review",
+          "journal & improvement",
+          "Claude Skills integration"
+        ],
+        "notable_because": "Unlike the comparison repos which focus on infrastructure, AI coding agents, or general developer tools, this project uniquely combines Claude AI Skills with a complete, open\u2011source trading workflow, targeting personal finance rather than generic software development.",
+        "first_seen": "2026-11-13",
+        "days_trended": 3,
+        "weeks_trended": 1
+      },
+      {
+        "repo_name": "NVIDIA/SkillEvaluator",
+        "description": "Multi-tier framework for evaluating AI agent skills with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
+        "language": "Python",
+        "owner_name": "NVIDIA",
+        "owner_type": "big_tech",
+        "stars_in_period": 205,
+        "total_stars": 1429,
+        "forks": 181,
+        "rank": 12,
+        "purpose": "Provides a multi\u2011tier framework to validate AI agent skills, detect semantic overlap, generate synthetic evaluation datasets, and measure skill impact on agent behavior.",
+        "category": "AI/ML",
+        "key_themes": [
+          "agent evaluation",
+          "skill validation",
+          "synthetic dataset generation",
+          "CI integration",
+          "quality gates"
+        ],
+        "notable_because": "Unlike generic evaluation tools, SkillEvaluator combines tiered quality checks, semantic overlap detection, and live agent impact measurement within a CI\u2011friendly workflow, positioning it as a comprehensive end\u2011to\u2011end solution for verified AI skill pipelines.",
+        "first_seen": "2026-11-15",
+        "days_trended": 1,
+        "weeks_trended": 1
+      }
+    ],
+    "weekly": [
+      {
+        "repo_name": "meta/astryx",
+        "description": "An open source design system that's fully customizable and agent ready",
+        "language": "TypeScript",
+        "owner_name": "meta",
+        "owner_type": "big_tech",
+        "stars_in_period": 13660,
+        "total_stars": 28645,
+        "forks": 2236,
+        "rank": 1,
+        "purpose": "Provides a fully customizable open\u2011source design system with React components and theming for building UI by people and AI agents.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "design system",
+          "React components",
+          "custom theming",
+          "AI\u2011ready",
+          "StyleX"
+        ],
+        "notable_because": "Unlike generic component libraries, Astryx emphasizes open internals, zero styling lock\u2011in, and a design that supports both human developers and AI assistants, leveraging Meta's extensive internal experience.",
+        "first_seen": "2026-11-07",
+        "days_trended": 6,
+        "weeks_trended": 2
+      },
+      {
+        "repo_name": "anthropics/skills",
+        "description": "Public repository for Agent Skills",
+        "language": "Python",
+        "owner_name": "anthropics",
+        "owner_type": "open_source_org",
+        "stars_in_period": 6220,
+        "total_stars": 195190,
+        "forks": 22949,
+        "rank": 2,
+        "purpose": "This repository contains Anthropic's implementation of skills for Claude, allowing for dynamic loading of instructions and resources to enhance performance on specialized tasks.",
+        "category": "AI/ML",
+        "key_themes": [
+          "agent skills",
+          "AI enhancement",
+          "dynamic instructions",
+          "open source",
+          "enterprise workflows"
+        ],
+        "notable_because": "This repository stands out for its comprehensive approach to demonstrating the capabilities of Claude's skills system, offering a range of applications from creative to technical tasks, unlike other trending repositories that focus on specific tools or frameworks.",
+        "first_seen": "2026-05-15",
+        "days_trended": 14,
+        "weeks_trended": 8
+      },
+      {
+        "repo_name": "sherlock-project/sherlock",
+        "description": "Hunt down social media accounts by username across social networks",
+        "language": "Python",
+        "owner_name": "sherlock-project",
+        "owner_type": "open_source_org",
+        "stars_in_period": 12401,
+        "total_stars": 112280,
+        "forks": 12980,
+        "rank": 3,
+        "purpose": "Hunt down social media accounts by username across social networks.",
+        "category": "Security",
+        "key_themes": [
+          "cybersecurity",
+          "osint",
+          "information-gathering",
+          "pentesting",
+          "reconnaissance"
+        ],
+        "notable_because": null,
+        "first_seen": "2026-03-30",
+        "days_trended": 9,
+        "weeks_trended": 3
+      },
+      {
+        "repo_name": "backnotprop/plannotator",
+        "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+        "language": "TypeScript",
+        "owner_name": "backnotprop",
+        "owner_type": "individual",
+        "stars_in_period": 818,
+        "total_stars": 11679,
+        "forks": 1041,
+        "rank": 4,
+        "purpose": "Provides a local, browser\u2011based interface to annotate, review, and give feedback on outputs from multiple AI coding agents.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "AI agent integration",
+          "code review UI",
+          "annotation workflow",
+          "multi\u2011agent support",
+          "browser based"
+        ],
+        "notable_because": "Unlike the comparison repos, Plannotator focuses on a unified, browser\u2011based annotation layer that works across many different coding agents (Claude, Codex, Copilot, Gemini, etc.) and personal assistants, offering a feedback loop directly back to the agents, which is a distinctive multi\u2011agent review surface.",
+        "first_seen": "2026-11-13",
+        "days_trended": 3,
+        "weeks_trended": 1
+      },
+      {
+        "repo_name": "vercel-labs/agent-browser",
+        "description": "Browser automation CLI for AI agents",
+        "language": "Rust",
+        "owner_name": "vercel-labs",
+        "owner_type": "open_source_org",
+        "stars_in_period": 4601,
+        "total_stars": 51489,
+        "forks": 3596,
+        "rank": 5,
+        "purpose": "Provides a native Rust CLI that lets AI agents control a headless Chrome browser via snapshots and element references.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "browser automation",
+          "AI agent integration",
+          "CLI tool",
+          "accessibility tree",
+          "snapshot-based interaction"
+        ],
+        "notable_because": "Unlike generic browser automation libraries, agent-browser offers a snapshot\u2011and\u2011ref model tailored for step\u2011by\u2011step AI agent workflows, keeping the browser session alive across commands and exposing a simple shell interface.",
+        "first_seen": "2026-11-05",
+        "days_trended": 6,
+        "weeks_trended": 2
+      },
+      {
+        "repo_name": "ZhuLinsen/daily_stock_analysis",
+        "description": "LLM \u9a71\u52a8\u7684\u591a\u5e02\u573a\u80a1\u7968\u667a\u80fd\u5206\u6790\u7cfb\u7edf\uff1a\u591a\u6e90\u884c\u60c5\u3001\u5b9e\u65f6\u65b0\u95fb\u3001\u51b3\u7b56\u770b\u677f\u4e0e\u81ea\u52a8\u63a8\u9001\uff0c\u652f\u6301\u96f6\u6210\u672c\u5b9a\u65f6\u8fd0\u884c\u3002 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+        "language": "Python",
+        "owner_name": "ZhuLinsen",
+        "owner_type": "individual",
+        "stars_in_period": 4526,
+        "total_stars": 72437,
+        "forks": 57560,
+        "rank": 6,
+        "purpose": "LLM-powered stock analysis system for A/H/US markets.",
+        "category": "AI/ML",
+        "key_themes": [
+          "agent",
+          "ai",
+          "quantitative-trading",
+          "stock",
+          "llm"
+        ],
+        "notable_because": "This repository uniquely combines multiple data sources for real-time stock analysis and decision-making, along with automated notifications across various platforms, distinguishing it from other tools that focus on single aspects of stock trading.",
+        "first_seen": "2026-04-29",
+        "days_trended": 9,
+        "weeks_trended": 5
+      },
+      {
+        "repo_name": "we-promise/sure",
+        "description": "The personal finance app for everyone (by everyone)",
+        "language": "Ruby",
+        "owner_name": "we-promise",
+        "owner_type": "open_source_org",
+        "stars_in_period": 4483,
+        "total_stars": 15598,
+        "forks": 1366,
+        "rank": 7,
+        "purpose": "A self\u2011hostable personal finance and wealth\u2011management web app with budgeting, net\u2011worth tracking, and an AI\u2011assistant advisor.",
+        "category": "Productivity",
+        "key_themes": [
+          "personal finance",
+          "budgeting",
+          "self\u2011hosted",
+          "open source",
+          "AI advisor",
+          "wealth management"
+        ],
+        "notable_because": "It uniquely revives a previously commercial, feature\u2011rich finance app as a community\u2011maintained, self\u2011hostable solution, offering an integrated AI advisor that few open\u2011source finance tools provide.",
+        "first_seen": "2026-11-10",
+        "days_trended": 5,
+        "weeks_trended": 1
+      },
+      {
+        "repo_name": "milind-soni/OpenMausBot",
+        "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+        "language": "TypeScript",
+        "owner_name": "milind-soni",
+        "owner_type": "individual",
+        "stars_in_period": 6413,
+        "total_stars": 23159,
+        "forks": 3221,
+        "rank": 8,
+        "purpose": "Provides a local\u2011first, open\u2011source chat application where each contact is an autonomous AI agent (Claude or Codex) running in its own VM.",
+        "category": "Productivity",
+        "key_themes": [
+          "local\u2011first",
+          "AI agents",
+          "desktop app",
+          "electron",
+          "typescript"
+        ],
+        "notable_because": "Unlike other frameworks that focus on APIs or browser\u2011based agents, OpenMausBot delivers a native desktop experience with per\u2011agent VMs, making it a ready\u2011to\u2011use, self\u2011hosted alternative to Grok Bot and Meta Muse.",
+        "first_seen": "2026-10-29",
+        "days_trended": 7,
+        "weeks_trended": 3
+      },
+      {
+        "repo_name": "google/elephant-goldfish-model",
+        "description": "Open-source plugin for designing and reviewing software with agents",
+        "language": "Python",
+        "owner_name": "google",
+        "owner_type": "big_tech",
+        "stars_in_period": 5539,
+        "total_stars": 19551,
+        "forks": 1454,
+        "rank": 9,
+        "purpose": "Provides an open\u2011source plugin that lets AI assistants design software specifications (Elephant) and review them with fresh\u2011eye agents (Goldfish).",
+        "category": "Developer Tools",
+        "key_themes": [
+          "AI\u2011assisted design",
+          "specification review",
+          "multi\u2011agent workflow",
+          "plugin ecosystem",
+          "context management"
+        ],
+        "notable_because": "Unlike the comparison tools, this repo combines both specification drafting and independent reviewer agents within a single plugin, offering a closed\u2011loop design\u2011review process that integrates with multiple AI assistants and IDEs.",
+        "first_seen": null,
+        "days_trended": null,
+        "weeks_trended": null
+      },
+      {
+        "repo_name": "google-deepmind/mujoco",
+        "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+        "language": "C++",
+        "owner_name": "google-deepmind",
+        "owner_type": "big_tech",
+        "stars_in_period": 1859,
+        "total_stars": 18047,
+        "forks": 2210,
+        "rank": 10,
+        "purpose": "MuJoCo provides a high-performance physics engine with C and Python APIs for simulating articulated bodies and contacts.",
+        "category": "Game/Creative",
+        "key_themes": [
+          "physics simulation",
+          "robotics",
+          "C API",
+          "Python bindings",
+          "real\u2011time performance"
+        ],
+        "notable_because": "Unlike the comparison repos, MuJoCo stands out as a specialized, high\u2011fidelity physics engine backed by DeepMind, offering both native and WebAssembly versions, extensive documentation, and tight integration with Python and Unity for research\u2011grade simulations.",
+        "first_seen": "2026-11-08",
+        "days_trended": 3,
+        "weeks_trended": 2
+      },
+      {
+        "repo_name": "addyosmani/agent-skills",
+        "description": "Production-grade engineering skills for AI coding agents.",
+        "language": "JavaScript",
+        "owner_name": "addyosmani",
+        "owner_type": "individual",
+        "stars_in_period": 3670,
+        "total_stars": 117824,
+        "forks": 12331,
+        "rank": 11,
+        "purpose": "Production-grade engineering skills for AI coding agents.",
+        "category": "AI/ML",
+        "key_themes": [
+          "agent-skills",
+          "AI coding",
+          "development lifecycle",
+          "automation",
+          "best practices"
+        ],
+        "notable_because": "This repository provides a structured approach to integrating engineering best practices into AI coding agents, distinguishing itself by focusing on the entire development lifecycle with specific commands.",
+        "first_seen": "2026-05-06",
+        "days_trended": 35,
+        "weeks_trended": 10
+      }
+    ],
+    "monthly": [
+      {
+        "repo_name": "Nutlope/hallmark",
+        "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+        "language": "CSS",
+        "owner_name": "Nutlope",
+        "owner_type": "startup",
+        "stars_in_period": 25013,
+        "total_stars": 55330,
+        "forks": 2971,
+        "rank": 1,
+        "purpose": "Hallmark is a design skill for Claude Code, Cursor, and Codex that refuses to look AI-generated.",
+        "category": "AI/ML",
+        "key_themes": [
+          "design",
+          "AI",
+          "user_interface",
+          "creativity",
+          "innovation"
+        ],
+        "notable_because": "Hallmark distinguishes itself by generating unique designs tailored to specific briefs rather than relying on templates, which is a common approach in many design tools.",
+        "first_seen": "2026-07-13",
+        "days_trended": 11,
+        "weeks_trended": 3
+      },
+      {
+        "repo_name": "cloudflare/security-audit-skill",
+        "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+        "language": "JavaScript",
+        "owner_name": "cloudflare",
+        "owner_type": "big_tech",
+        "stars_in_period": 43171,
+        "total_stars": 73012,
+        "forks": 4886,
+        "rank": 2,
+        "purpose": "Provides a coding\u2011agent skill that orchestrates multi\u2011phase, structured security audits with automated evidence collection, validation, and reporting.",
+        "category": "Security",
+        "key_themes": [
+          "automated security auditing",
+          "AI\u2011driven agent orchestration",
+          "structured findings",
+          "coverage\u2011led hunting",
+          "independent verification"
+        ],
+        "notable_because": "Unlike generic security tooling, this repo defines a complete, reproducible workflow for AI\u2011assisted audits, including phased orchestration, coverage ledgers, and independent record verification, directly stemming from Cloudflare's internal vulnerability harness.",
+        "first_seen": "2026-09-16",
+        "days_trended": 14,
+        "weeks_trended": 4
+      },
+      {
+        "repo_name": "pingdotgg/t3code",
+        "description": "The best way to control Claude Code, Codex and more from any computer or phone",
+        "language": "TypeScript",
+        "owner_name": "pingdotgg",
+        "owner_type": "individual",
+        "stars_in_period": 32857,
+        "total_stars": 61247,
+        "forks": 10990,
+        "rank": 3,
+        "purpose": "T3 Code is a minimal web GUI for coding agents, currently supporting Codex and Claude.",
+        "category": "AI/ML",
+        "key_themes": [
+          "coding agents",
+          "web GUI",
+          "AI integration",
+          "minimalist design",
+          "early development"
+        ],
+        "notable_because": "T3 Code is unique in its focus on providing a minimalistic web interface for coding agents, which is less common among existing tools that often prioritize extensive features.",
+        "first_seen": "2026-04-17",
+        "days_trended": 11,
+        "weeks_trended": 6
+      },
+      {
+        "repo_name": "thedotmack/claude-mem",
+        "description": "Persistent Context Across Sessions for Every Agent \u2013 Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+        "language": "TypeScript",
+        "owner_name": "thedotmack",
+        "owner_type": "individual",
+        "stars_in_period": 17051,
+        "total_stars": 117295,
+        "forks": 10183,
+        "rank": 4,
+        "purpose": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI, and injects relevant context back into future sessions.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "ai",
+          "memory",
+          "coding",
+          "automation",
+          "contextualization"
+        ],
+        "notable_because": null,
+        "first_seen": "2026-03-17",
+        "days_trended": 19,
+        "weeks_trended": 7
+      },
+      {
+        "repo_name": "pbakaus/impeccable",
+        "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+        "language": "Rust",
+        "owner_name": "pbakaus",
+        "owner_type": "individual",
+        "stars_in_period": 29487,
+        "total_stars": 110576,
+        "forks": 6606,
+        "rank": 5,
+        "purpose": "Impeccable provides a design language to enhance AI's capabilities in frontend design.",
+        "category": "AI/ML",
+        "key_themes": [
+          "frontend design",
+          "AI assistance",
+          "design patterns",
+          "user experience",
+          "guidance"
+        ],
+        "notable_because": null,
+        "first_seen": "2026-03-08",
+        "days_trended": 21,
+        "weeks_trended": 9
+      },
+      {
+        "repo_name": "anthropics/skills",
+        "description": "Public repository for Agent Skills",
+        "language": "Python",
+        "owner_name": "anthropics",
+        "owner_type": "open_source_org",
+        "stars_in_period": 13927,
+        "total_stars": 195190,
+        "forks": 22949,
+        "rank": 6,
+        "purpose": "This repository contains Anthropic's implementation of skills for Claude, allowing for dynamic loading of instructions and resources to enhance performance on specialized tasks.",
+        "category": "AI/ML",
+        "key_themes": [
+          "agent skills",
+          "AI enhancement",
+          "dynamic instructions",
+          "open source",
+          "enterprise workflows"
+        ],
+        "notable_because": "This repository stands out for its comprehensive approach to demonstrating the capabilities of Claude's skills system, offering a range of applications from creative to technical tasks, unlike other trending repositories that focus on specific tools or frameworks.",
+        "first_seen": "2026-05-15",
+        "days_trended": 14,
+        "weeks_trended": 8
+      },
+      {
+        "repo_name": "HKUDS/DeepTutor",
+        "description": "DeepTutor: Lifelong Personalized Tutoring.https://deeptutor.info/.",
+        "language": "Python",
+        "owner_name": "HKUDS",
+        "owner_type": "open_source_org",
+        "stars_in_period": 18077,
+        "total_stars": 59429,
+        "forks": 7200,
+        "rank": 7,
+        "purpose": "DeepTutor is an agent-native personalized learning assistant designed to enhance interactive learning experiences.",
+        "category": "Education",
+        "key_themes": [
+          "ai-agents",
+          "interactive-learning",
+          "large-language-models",
+          "personalized-learning",
+          "multi-agent-systems"
+        ],
+        "notable_because": "DeepTutor stands out for its unique agent-native architecture and the introduction of TutorBot, which enhances the tutoring experience compared to other AI/ML tools focused on education.",
+        "first_seen": "2026-04-09",
+        "days_trended": 12,
+        "weeks_trended": 3
+      },
+      {
+        "repo_name": "heygen-com/hyperframes",
+        "description": "Write HTML. Render video. Built for agents.",
+        "language": "TypeScript",
+        "owner_name": "heygen-com",
+        "owner_type": "startup",
+        "stars_in_period": 21361,
+        "total_stars": 84621,
+        "forks": 7835,
+        "rank": 8,
+        "purpose": "Hyperframes is an open-source video rendering framework that lets you create, preview, and render HTML-based video compositions with first-class support for AI agents.",
+        "category": "AI/ML",
+        "key_themes": [
+          "ai",
+          "video",
+          "rendering",
+          "html",
+          "framework"
+        ],
+        "notable_because": "Hyperframes stands out by integrating AI coding agents into the video creation process, allowing for dynamic and intelligent video composition, unlike other tools that focus solely on traditional rendering techniques.",
+        "first_seen": "2026-06-22",
+        "days_trended": 6,
+        "weeks_trended": 3
+      },
+      {
+        "repo_name": "sherlock-project/sherlock",
+        "description": "Hunt down social media accounts by username across social networks",
+        "language": "Python",
+        "owner_name": "sherlock-project",
+        "owner_type": "open_source_org",
+        "stars_in_period": 18365,
+        "total_stars": 112280,
+        "forks": 12980,
+        "rank": 9,
+        "purpose": "Hunt down social media accounts by username across social networks.",
+        "category": "Security",
+        "key_themes": [
+          "cybersecurity",
+          "osint",
+          "information-gathering",
+          "pentesting",
+          "reconnaissance"
+        ],
+        "notable_because": null,
+        "first_seen": "2026-03-30",
+        "days_trended": 9,
+        "weeks_trended": 3
+      },
+      {
+        "repo_name": "AgriciDaniel/claude-seo",
+        "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions for live SEO data.",
+        "language": "Python",
+        "owner_name": "AgriciDaniel",
+        "owner_type": "individual",
+        "stars_in_period": 10402,
+        "total_stars": 29590,
+        "forks": 3734,
+        "rank": 10,
+        "purpose": "Provides a free, open\u2011source Claude Code plugin that performs comprehensive SEO audits and generates actionable improvement plans.",
+        "category": "Productivity",
+        "key_themes": [
+          "SEO automation",
+          "Claude Code integration",
+          "AI\u2011driven audits",
+          "technical SEO",
+          "structured data"
+        ],
+        "notable_because": "Unlike generic SEO audit tools, Claude SEO tightly integrates with Claude Code, offering a suite of 26 sub\u2011skills and 19 specialist agents that automate technical, content, and schema checks directly within an AI coding environment, a differentiation highlighted against broader developer or infrastructure tools in the comparison set.",
+        "first_seen": "2026-10-25",
+        "days_trended": 1,
+        "weeks_trended": 1
+      },
+      {
+        "repo_name": "Leonxlnx/taste-skill",
+        "description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
+        "language": "JavaScript",
+        "owner_name": "Leonxlnx",
+        "owner_type": "individual",
+        "stars_in_period": 20043,
+        "total_stars": 116004,
+        "forks": 7782,
+        "rank": 11,
+        "purpose": "Taste-Skill provides AI agents with enhanced design skills to create visually appealing interfaces, avoiding generic outputs.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "AI",
+          "frontend",
+          "design",
+          "agent",
+          "skills"
+        ],
+        "notable_because": "Taste-Skill focuses on enhancing the visual quality of AI-generated outputs, which sets it apart from other tools that primarily focus on functionality or productivity.",
+        "first_seen": "2026-05-25",
+        "days_trended": 7,
+        "weeks_trended": 2
+      },
+      {
+        "repo_name": "anthropics/knowledge-work-plugins",
+        "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+        "language": "Python",
+        "owner_name": "anthropics",
+        "owner_type": "open_source_org",
+        "stars_in_period": 6228,
+        "total_stars": 36097,
+        "forks": 3993,
+        "rank": 12,
+        "purpose": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork.",
+        "category": "Productivity",
+        "key_themes": [
+          "plugins",
+          "productivity",
+          "AI",
+          "knowledge workers",
+          "workflow optimization"
+        ],
+        "notable_because": "This repository offers a comprehensive suite of customizable plugins that integrate with various tools, setting it apart from other trending repositories that focus on specific functionalities or platforms.",
+        "first_seen": "2026-05-25",
+        "days_trended": 12,
+        "weeks_trended": 4
+      },
+      {
+        "repo_name": "Vincentwei1021/video-shotcraft",
+        "description": "AI video skill for Claude Code & Codex \u2014 cinematic, editable product promos with Remotion: 124 shot recipe cards, 150 motion previews, beat sync, sound design, Motion Workbench & JianYing (CapCut CN) export.",
+        "language": "TypeScript",
+        "owner_name": "Vincentwei1021",
+        "owner_type": "individual",
+        "stars_in_period": 7617,
+        "total_stars": 19920,
+        "forks": 1865,
+        "rank": 13,
+        "purpose": "Provides an AI skill for Claude Code and Codex that creates customizable, code\u2011driven product promo videos using Remotion and a library of motion\u2011recipe shots.",
+        "category": "AI/ML",
+        "key_themes": [
+          "AI video generation",
+          "Claude Code skill",
+          "Remotion integration",
+          "motion design",
+          "editable video assets"
+        ],
+        "notable_because": "Unlike generic AI video generators, this repo delivers fully code\u2011driven, frame\u2011by\u2011frame video creation that remains editable, integrates directly with Claude/Codex agents, and ships a large curated shot library, offering a unique blend of AI assistance and motion\u2011design control.",
+        "first_seen": null,
+        "days_trended": null,
+        "weeks_trended": null
+      },
+      {
+        "repo_name": "vercel-labs/agent-browser",
+        "description": "Browser automation CLI for AI agents",
+        "language": "Rust",
+        "owner_name": "vercel-labs",
+        "owner_type": "open_source_org",
+        "stars_in_period": 7152,
+        "total_stars": 51489,
+        "forks": 3596,
+        "rank": 14,
+        "purpose": "Provides a native Rust CLI that lets AI agents control a headless Chrome browser via snapshots and element references.",
+        "category": "Developer Tools",
+        "key_themes": [
+          "browser automation",
+          "AI agent integration",
+          "CLI tool",
+          "accessibility tree",
+          "snapshot-based interaction"
+        ],
+        "notable_because": "Unlike generic browser automation libraries, agent-browser offers a snapshot\u2011and\u2011ref model tailored for step\u2011by\u2011step AI agent workflows, keeping the browser session alive across commands and exposing a simple shell interface.",
+        "first_seen": "2026-11-05",
+        "days_trended": 6,
+        "weeks_trended": 2
+      }
+    ]
+  },
+  "digest": {
+    "week_start": "2026-11-09",
+    "week_end": "2026-11-15",
+    "headline": "Sherlock\u2019s all\u2011time\u2011high star surge outpaces any developer\u2011tool trend, spotlighting unexpected demand for privacy\u2011focused utilities",
+    "digest": "Sherlock\u2011project/sherlock exploded to an all\u2011time\u2011high 4,294 stars per day, eclipsing even the most popular design\u2011system repos. This security\u2011oriented tool, which aggregates social\u2011media profiles by username, is the only security repo to break the 4k\u2011stars/day barrier this week, a surprising outlier given that security only accounts for four trending repos overall. Its rapid rise is likely fueled by recent high\u2011profile data\u2011leak incidents that have driven developers and privacy\u2011conscious users to seek quick reconnaissance tools, turning a niche utility into a viral sensation.\n\nMeta/astryx, a fully customizable open\u2011source design system, posted a 3,324\u2011stars/day spike\u2014its biggest daily haul ever\u2014after a major version 2.0 release that introduced a visual\u2011theming engine and tighter React integration. The sustained presence of astryx (four days this week) underscores how a polished UI framework can dominate developer\u2011tool conversations, especially when it directly competes with established design libraries like Chakra UI and Tailwind UI. Meanwhile, GoogleChrome/modern-web-guidance-src entered the trending list as a brand\u2011new entry, delivering 1,875 stars/day by providing the source code for Chrome\u2019s Modern Web Guidance, a curated best\u2011practice suite that many front\u2011end teams are adopting to align with Chrome\u2019s performance standards.\n\nIn the AI/ML arena, anthropics/skills and anthropics/claude-quickstarts are both climbing steeply, with the former pulling 1,676 stars/day and the latter jumping 20\u00d7 over its previous peak. Their concurrent rise highlights a pattern where developers are not only building AI agents but also curating reusable \u201cskills\u201d to accelerate agent capabilities. This week also marks the debut of openai/codex-security, an AI\u2011powered code\u2011review CLI that garnered 754 stars/day, indicating a growing appetite for automated security tooling that integrates directly into CI pipelines. The sustained runs of vercel-labs/agent-browser (three days) and alibaba/open-code-review (three days) further illustrate a competitive cluster of repos targeting AI\u2011agent\u2011driven automation across browsers and code reviews.\n\nProductivity\u2011focused projects are also making noise: we-promise/sure, a self\u2011hosted personal finance app, achieved 1,079 stars/day in its first five days, while tradermonty/claude-trading-skills (707 stars/day) demonstrates how AI agents are being repurposed for niche financial tasks. The coexistence of these diverse tools\u2014ranging from privacy hunting to design systems and AI\u2011agent skill libraries\u2014reveals a counter\u2011intuitive diversification: while developer tools dominate the count, the most dramatic star spikes are coming from security and AI\u2011agent niches, suggesting that momentary real\u2011world events and major releases can temporarily outweigh category volume.",
+    "top_categories": [
+      "Developer Tools",
+      "AI/ML",
+      "Productivity",
+      "Security"
+    ],
+    "top_repos": [
+      "sherlock-project/sherlock",
+      "meta/astryx",
+      "GoogleChrome/modern-web-guidance-src",
+      "anthropics/skills",
+      "milind-soni/OpenMausBot"
+    ],
+    "data_quality_pct": 100,
+    "confidence_label": "high"
+  },
+  "history": [
+    {
+      "date": "2026-11-15",
+      "repo_count": 12,
+      "top_repos": [
+        "GoogleChrome/modern-web-guidance-src",
+        "dream-num/univer",
+        "backnotprop/plannotator",
+        "ChromeDevTools/chrome-devtools-mcp",
+        "tradermonty/claude-trading-skills"
+      ],
+      "category_counts": {
+        "Developer Tools": 6,
+        "Productivity": 2,
+        "AI/ML": 2,
+        "Web Framework": 1,
+        "Security": 1
+      },
+      "language_counts": {
+        "TypeScript": 6,
+        "Python": 3,
+        "Go": 2,
+        "C++": 1
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "repo_count": 15,
+      "top_repos": [
+        "GoogleChrome/modern-web-guidance-src",
+        "alibaba/open-code-review",
+        "ChromeDevTools/chrome-devtools-mcp",
+        "we-promise/sure",
+        "tradermonty/claude-trading-skills"
+      ],
+      "category_counts": {
+        "Developer Tools": 6,
+        "Productivity": 3,
+        "AI/ML": 2,
+        "Web Framework": 1,
+        "Infrastructure": 1,
+        "Game/Creative": 1,
+        "Security": 1
+      },
+      "language_counts": {
+        "TypeScript": 6,
+        "Go": 3,
+        "Python": 1,
+        "Zig": 1,
+        "JavaScript": 1,
+        "Ruby": 1,
+        "C++": 1,
+        "Rust": 1
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "repo_count": 12,
+      "top_repos": [
+        "GoogleChrome/modern-web-guidance-src",
+        "we-promise/sure",
+        "openai/codex-security",
+        "tailscale/tailcat",
+        "ZhuLinsen/daily_stock_analysis"
+      ],
+      "category_counts": {
+        "Developer Tools": 6,
+        "Productivity": 2,
+        "Security": 1,
+        "AI/ML": 1,
+        "Infrastructure": 1,
+        "Game/Creative": 1
+      },
+      "language_counts": {
+        "TypeScript": 4,
+        "Go": 2,
+        "Python": 2,
+        "Ruby": 1,
+        "JavaScript": 1,
+        "Rust": 1,
+        "C++": 1
+      }
+    },
+    {
+      "date": "2026-11-12",
+      "repo_count": 13,
+      "top_repos": [
+        "meta/astryx",
+        "we-promise/sure",
+        "addyosmani/agent-skills",
+        "GoogleChrome/modern-web-guidance-src",
+        "openai/codex-security"
+      ],
+      "category_counts": {
+        "Developer Tools": 5,
+        "AI/ML": 3,
+        "Productivity": 2,
+        "Security": 1,
+        "Other": 1,
+        "Infrastructure": 1
+      },
+      "language_counts": {
+        "TypeScript": 5,
+        "JavaScript": 2,
+        "Shell": 1,
+        "Objective-C": 1,
+        "Ruby": 1,
+        "Zig": 1,
+        "Python": 1,
+        "C++": 1
+      }
+    },
+    {
+      "date": "2026-11-11",
+      "repo_count": 10,
+      "top_repos": [
+        "meta/astryx",
+        "we-promise/sure",
+        "addyosmani/agent-skills",
+        "vercel-labs/agent-browser",
+        "homeassistant-ai/ha-mcp"
+      ],
+      "category_counts": {
+        "Developer Tools": 4,
+        "AI/ML": 3,
+        "Productivity": 1,
+        "Security": 1,
+        "Education": 1
+      },
+      "language_counts": {
+        "TypeScript": 3,
+        "Python": 2,
+        "JavaScript": 1,
+        "Rust": 1,
+        "Ruby": 1,
+        "Java": 1
+      }
+    },
+    {
+      "date": "2026-11-10",
+      "repo_count": 12,
+      "top_repos": [
+        "meta/astryx",
+        "sherlock-project/sherlock",
+        "anthropics/skills",
+        "mattpocock/skills",
+        "homeassistant-ai/ha-mcp"
+      ],
+      "category_counts": {
+        "Developer Tools": 5,
+        "AI/ML": 3,
+        "Game/Creative": 1,
+        "Productivity": 1,
+        "Security": 1,
+        "Web Framework": 1
+      },
+      "language_counts": {
+        "Python": 4,
+        "TypeScript": 2,
+        "Rust": 2,
+        "JavaScript": 1,
+        "C++": 1,
+        "Ruby": 1,
+        "Shell": 1
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "repo_count": 11,
+      "top_repos": [
+        "sherlock-project/sherlock",
+        "meta/astryx",
+        "milind-soni/OpenMausBot",
+        "anthropics/skills",
+        "vercel-labs/agent-browser"
+      ],
+      "category_counts": {
+        "AI/ML": 4,
+        "Developer Tools": 3,
+        "Productivity": 2,
+        "Security": 1,
+        "Game/Creative": 1
+      },
+      "language_counts": {
+        "Python": 5,
+        "TypeScript": 3,
+        "Rust": 2,
+        "C++": 1
+      }
+    },
+    {
+      "date": "2026-11-08",
+      "repo_count": 9,
+      "top_repos": [
+        "sherlock-project/sherlock",
+        "milind-soni/OpenMausBot",
+        "meta/astryx",
+        "vercel-labs/agent-browser",
+        "anthropics/skills"
+      ],
+      "category_counts": {
+        "Developer Tools": 4,
+        "Security": 1,
+        "Infrastructure": 1,
+        "Productivity": 1,
+        "AI/ML": 1,
+        "Game/Creative": 1
+      },
+      "language_counts": {
+        "Python": 3,
+        "TypeScript": 3,
+        "Go": 1,
+        "Rust": 1,
+        "C++": 1
+      }
+    },
+    {
+      "date": "2026-11-07",
+      "repo_count": 15,
+      "top_repos": [
+        "cloudflare/security-audit-skill",
+        "milind-soni/OpenMausBot",
+        "sherlock-project/sherlock",
+        "zed-industries/zed",
+        "mattpocock/skills"
+      ],
+      "category_counts": {
+        "Developer Tools": 8,
+        "Infrastructure": 3,
+        "Security": 2,
+        "AI/ML": 1,
+        "Productivity": 1
+      },
+      "language_counts": {
+        "Python": 4,
+        "TypeScript": 4,
+        "Rust": 3,
+        "Go": 2,
+        "JavaScript": 1,
+        "Shell": 1
+      }
+    },
+    {
+      "date": "2026-11-06",
+      "repo_count": 18,
+      "top_repos": [
+        "cloudflare/security-audit-skill",
+        "mattpocock/skills",
+        "NVIDIA/auto-ontology",
+        "google/skills",
+        "lz4/lz4"
+      ],
+      "category_counts": {
+        "Developer Tools": 7,
+        "Web Framework": 4,
+        "Infrastructure": 2,
+        "Security": 2,
+        "AI/ML": 1,
+        "Other": 1,
+        "Productivity": 1
+      },
+      "language_counts": {
+        "Rust": 4,
+        "C": 3,
+        "Python": 2,
+        "JavaScript": 2,
+        "TypeScript": 2,
+        "Go": 2,
+        "Ruby": 1,
+        "PHP": 1
+      }
+    },
+    {
+      "date": "2026-11-05",
+      "repo_count": 15,
+      "top_repos": [
+        "NVIDIA/auto-ontology",
+        "vercel-labs/agent-desktop",
+        "mattpocock/skills",
+        "D4Vinci/Scrapling",
+        "JiaFeiMiao-K-Cat/DiscImageStudio"
+      ],
+      "category_counts": {
+        "Developer Tools": 6,
+        "Productivity": 4,
+        "AI/ML": 3,
+        "Game/Creative": 1,
+        "Infrastructure": 1
+      },
+      "language_counts": {
+        "Python": 6,
+        "Rust": 3,
+        "Shell": 1,
+        "TypeScript": 1,
+        "C": 1,
+        "JavaScript": 1,
+        "Java": 1,
+        "C#": 1
+      }
+    },
+    {
+      "date": "2026-11-04",
+      "repo_count": 16,
+      "top_repos": [
+        "vercel-labs/agent-desktop",
+        "NVIDIA/auto-ontology",
+        "D4Vinci/Scrapling",
+        "JiaFeiMiao-K-Cat/DiscImageStudio",
+        "mattpocock/skills"
+      ],
+      "category_counts": {
+        "Developer Tools": 6,
+        "Productivity": 5,
+        "AI/ML": 2,
+        "Infrastructure": 1,
+        "Education": 1,
+        "Game/Creative": 1
+      },
+      "language_counts": {
+        "Python": 7,
+        "Rust": 2,
+        "Shell": 2,
+        "TypeScript": 2,
+        "Java": 1,
+        "C": 1,
+        "C#": 1
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "repo_count": 13,
+      "top_repos": [
+        "vercel-labs/agent-desktop",
+        "D4Vinci/Scrapling",
+        "Donchitos/Claude-Code-Game-Studios",
+        "mattpocock/skills",
+        "thedotmack/claude-mem"
+      ],
+      "category_counts": {
+        "Developer Tools": 5,
+        "Productivity": 3,
+        "AI/ML": 3,
+        "Infrastructure": 1,
+        "Game/Creative": 1
+      },
+      "language_counts": {
+        "Python": 4,
+        "Rust": 3,
+        "TypeScript": 2,
+        "Shell": 2,
+        "C": 1,
+        "Java": 1
+      }
+    },
+    {
+      "date": "2026-11-02",
+      "repo_count": 15,
+      "top_repos": [
+        "pingdotgg/t3code",
+        "vercel-labs/agent-desktop",
+        "thedotmack/claude-mem",
+        "Donchitos/Claude-Code-Game-Studios",
+        "mattpocock/skills"
+      ],
+      "category_counts": {
+        "AI/ML": 7,
+        "Developer Tools": 4,
+        "Productivity": 2,
+        "Infrastructure": 1,
+        "Game/Creative": 1
+      },
+      "language_counts": {
+        "Python": 6,
+        "TypeScript": 3,
+        "Rust": 2,
+        "Shell": 2,
+        "C++": 1,
+        "C": 1
+      }
+    },
+    {
+      "date": "2026-11-01",
+      "repo_count": 17,
+      "top_repos": [
+        "pingdotgg/t3code",
+        "thedotmack/claude-mem",
+        "anomalyco/hex",
+        "Donchitos/Claude-Code-Game-Studios",
+        "Renhuai123/ziwei-doushu"
+      ],
+      "category_counts": {
+        "AI/ML": 4,
+        "Productivity": 4,
+        "Developer Tools": 3,
+        "Security": 2,
+        "Education": 2,
+        "Game/Creative": 1,
+        "Infrastructure": 1
+      },
+      "language_counts": {
+        "TypeScript": 5,
+        "Python": 5,
+        "Rust": 2,
+        "Zig": 1,
+        "Shell": 1,
+        "Jupyter Notebook": 1,
+        "C++": 1
+      }
+    },
+    {
+      "date": "2026-10-31",
+      "repo_count": 14,
+      "top_repos": [
+        "thedotmack/claude-mem",
+        "Donchitos/Claude-Code-Game-Studios",
+        "pbakaus/impeccable",
+        "milind-soni/OpenMausBot",
+        "pingdotgg/t3code"
+      ],
+      "category_counts": {
+        "Developer Tools": 4,
+        "Education": 4,
+        "Productivity": 3,
+        "AI/ML": 2,
+        "Game/Creative": 1
+      },
+      "language_counts": {
+        "TypeScript": 5,
+        "Shell": 3,
+        "Python": 2,
+        "Rust": 1,
+        "Zig": 1,
+        "JavaScript": 1,
+        "Swift": 1
+      }
+    },
+    {
+      "date": "2026-10-30",
+      "repo_count": 15,
+      "top_repos": [
+        "pbakaus/impeccable",
+        "HKUDS/DeepTutor",
+        "togg53192-cmd/jailbreaks",
+        "obra/superpowers",
+        "Renhuai123/ziwei-doushu"
+      ],
+      "category_counts": {
+        "Developer Tools": 6,
+        "Productivity": 3,
+        "AI/ML": 3,
+        "Education": 2,
+        "Security": 1
+      },
+      "language_counts": {
+        "TypeScript": 6,
+        "Shell": 3,
+        "Rust": 2,
+        "Python": 2,
+        "Zig": 1
+      }
+    },
+    {
+      "date": "2026-10-29",
+      "repo_count": 11,
+      "top_repos": [
+        "pbakaus/impeccable",
+        "HKUDS/DeepTutor",
+        "togg53192-cmd/jailbreaks",
+        "milind-soni/OpenMausBot",
+        "elayadesign/ai-design-skills"
+      ],
+      "category_counts": {
+        "Productivity": 4,
+        "Developer Tools": 3,
+        "Education": 1,
+        "AI/ML": 1,
+        "Security": 1,
+        "Game/Creative": 1
+      },
+      "language_counts": {
+        "TypeScript": 5,
+        "Shell": 2,
+        "Python": 1,
+        "Rust": 1
+      }
+    },
+    {
+      "date": "2026-10-28",
+      "repo_count": 14,
+      "top_repos": [
+        "hmjz100/LinkSwift",
+        "HKUDS/DeepTutor",
+        "Nutlope/hallmark",
+        "togg53192-cmd/jailbreaks",
+        "pbakaus/impeccable"
+      ],
+      "category_counts": {
+        "Productivity": 5,
+        "Developer Tools": 3,
+        "AI/ML": 3,
+        "Education": 2,
+        "Security": 1
+      },
+      "language_counts": {
+        "TypeScript": 3,
+        "Rust": 3,
+        "Shell": 2,
+        "Python": 1,
+        "CSS": 1,
+        "JavaScript": 1,
+        "Jupyter Notebook": 1
+      }
+    },
+    {
+      "date": "2026-10-27",
+      "repo_count": 10,
+      "top_repos": [
+        "Nutlope/hallmark",
+        "HKUDS/DeepTutor",
+        "pbakaus/impeccable",
+        "makecindy/cindy",
+        "JetBrains/thinkrail"
+      ],
+      "category_counts": {
+        "Productivity": 3,
+        "Developer Tools": 3,
+        "AI/ML": 2,
+        "Education": 1,
+        "Security": 1
+      },
+      "language_counts": {
+        "TypeScript": 4,
+        "CSS": 1,
+        "Shell": 1,
+        "Rust": 1,
+        "JavaScript": 1,
+        "Python": 1
+      }
+    },
+    {
+      "date": "2026-10-26",
+      "repo_count": 14,
+      "top_repos": [
+        "debpalash/VoiceStudio",
+        "Nutlope/hallmark",
+        "pbakaus/impeccable",
+        "TauricResearch/TradingAgents",
+        "makecindy/cindy"
+      ],
+      "category_counts": {
+        "AI/ML": 5,
+        "Developer Tools": 4,
+        "Productivity": 4,
+        "Security": 1
+      },
+      "language_counts": {
+        "Python": 4,
+        "TypeScript": 4,
+        "Rust": 2,
+        "CSS": 1,
+        "JavaScript": 1,
+        "HTML": 1
+      }
+    },
+    {
+      "date": "2026-10-25",
+      "repo_count": 11,
+      "top_repos": [
+        "cloudflare/security-audit-skill",
+        "debpalash/VoiceStudio",
+        "Nutlope/hallmark",
+        "pbakaus/impeccable",
+        "makecindy/cindy"
+      ],
+      "category_counts": {
+        "AI/ML": 5,
+        "Productivity": 2,
+        "Education": 1,
+        "Developer Tools": 1,
+        "Infrastructure": 1,
+        "Security": 1
+      },
+      "language_counts": {
+        "TypeScript": 3,
+        "Python": 3,
+        "Rust": 2,
+        "CSS": 1,
+        "PHP": 1,
+        "JavaScript": 1
+      }
+    },
+    {
+      "date": "2026-10-24",
+      "repo_count": 10,
+      "top_repos": [
+        "cloudflare/security-audit-skill",
+        "luongnv89/claude-howto",
+        "NVIDIA/OpenShell",
+        "Nutlope/hallmark",
+        "pbakaus/impeccable"
+      ],
+      "category_counts": {
+        "AI/ML": 3,
+        "Security": 2,
+        "Developer Tools": 2,
+        "Education": 2,
+        "Productivity": 1
+      },
+      "language_counts": {
+        "Rust": 3,
+        "Python": 3,
+        "TypeScript": 2,
+        "JavaScript": 1,
+        "CSS": 1
+      }
+    },
+    {
+      "date": "2026-10-23",
+      "repo_count": 8,
+      "top_repos": [
+        "cloudflare/security-audit-skill",
+        "NVIDIA/OpenShell",
+        "php/php-src",
+        "anthropics/knowledge-work-plugins",
+        "Renhuai123/ziwei-doushu"
+      ],
+      "category_counts": {
+        "Security": 3,
+        "Developer Tools": 1,
+        "Productivity": 1,
+        "Education": 1,
+        "AI/ML": 1,
+        "Infrastructure": 1
+      },
+      "language_counts": {
+        "Python": 3,
+        "JavaScript": 2,
+        "C": 1,
+        "Rust": 1,
+        "TypeScript": 1
+      }
+    },
+    {
+      "date": "2026-10-22",
+      "repo_count": 9,
+      "top_repos": [
+        "cloudflare/security-audit-skill",
+        "DietrichGebert/ponytail",
+        "Graphify-Labs/graphify",
+        "supabase/supabase",
+        "luongnv89/claude-howto"
+      ],
+      "category_counts": {
+        "Developer Tools": 2,
+        "Productivity": 1,
+        "Security": 1,
+        "AI/ML": 1,
+        "Infrastructure": 1,
+        "Web Framework": 1,
+        "Education": 1,
+        "Game/Creative": 1
+      },
+      "language_counts": {
+        "Python": 4,
+        "JavaScript": 2,
+        "C": 1,
+        "TypeScript": 1,
+        "Visual Basic .NET": 1
+      }
+    },
+    {
+      "date": "2026-10-21",
+      "repo_count": 13,
+      "top_repos": [
+        "MadsLorentzen/ai-job-search",
+        "DietrichGebert/ponytail",
+        "cloudflare/security-audit-skill",
+        "stablyai/orca",
+        "Graphify-Labs/graphify"
+      ],
+      "category_counts": {
+        "AI/ML": 6,
+        "Developer Tools": 3,
+        "Productivity": 2,
+        "Security": 1,
+        "Infrastructure": 1
+      },
+      "language_counts": {
+        "Python": 6,
+        "TypeScript": 3,
+        "JavaScript": 2,
+        "Go": 1,
+        "Rust": 1
+      }
+    },
+    {
+      "date": "2026-10-20",
+      "repo_count": 15,
+      "top_repos": [
+        "MadsLorentzen/ai-job-search",
+        "stablyai/orca",
+        "anomalyco/opencode",
+        "Comfy-Org/ComfyUI",
+        "YuJunZhiXue/dsh-purge"
+      ],
+      "category_counts": {
+        "AI/ML": 7,
+        "Developer Tools": 4,
+        "Security": 2,
+        "Productivity": 2
+      },
+      "language_counts": {
+        "Python": 8,
+        "JavaScript": 3,
+        "TypeScript": 3,
+        "Shell": 1
+      }
+    },
+    {
+      "date": "2026-10-19",
+      "repo_count": 12,
+      "top_repos": [
+        "MadsLorentzen/ai-job-search",
+        "stablyai/orca",
+        "anomalyco/opencode",
+        "Comfy-Org/ComfyUI",
+        "akitaonrails/ai-memory"
+      ],
+      "category_counts": {
+        "AI/ML": 6,
+        "Developer Tools": 5,
+        "Education": 1
+      },
+      "language_counts": {
+        "Python": 6,
+        "TypeScript": 4,
+        "Rust": 1,
+        "JavaScript": 1
+      }
+    },
+    {
+      "date": "2026-10-18",
+      "repo_count": 13,
+      "top_repos": [
+        "MadsLorentzen/ai-job-search",
+        "debpalash/VoiceStudio",
+        "anomalyco/opencode",
+        "anthropics/claude-plugins-official",
+        "stablyai/orca"
+      ],
+      "category_counts": {
+        "Developer Tools": 7,
+        "AI/ML": 5,
+        "Education": 1
+      },
+      "language_counts": {
+        "Python": 6,
+        "TypeScript": 4,
+        "Rust": 1,
+        "Kotlin": 1
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "repo_count": 13,
+      "top_repos": [
+        "debpalash/VoiceStudio",
+        "MadsLorentzen/ai-job-search",
+        "anthropics/claude-plugins-official",
+        "affaan-m/ECC",
+        "stablyai/orca"
+      ],
+      "category_counts": {
+        "Developer Tools": 8,
+        "AI/ML": 5
+      },
+      "language_counts": {
+        "Python": 5,
+        "TypeScript": 4,
+        "Rust": 2,
+        "JavaScript": 1,
+        "Kotlin": 1
+      }
+    },
+    {
+      "date": "2026-10-16",
+      "repo_count": 13,
+      "top_repos": [
+        "debpalash/VoiceStudio",
+        "xerj-org/xerj",
+        "anthropics/claude-plugins-official",
+        "K-Dense-AI/scientific-agent-skills",
+        "affaan-m/ECC"
+      ],
+      "category_counts": {
+        "Developer Tools": 7,
+        "AI/ML": 5,
+        "Productivity": 1
+      },
+      "language_counts": {
+        "Python": 5,
+        "JavaScript": 3,
+        "TypeScript": 2,
+        "Kotlin": 1,
+        "Shell": 1,
+        "Rust": 1
+      }
+    }
+  ],
+  "clusters": {
+    "run_date": "2026-11-15",
+    "clusters": [
+      {
+        "id": 1440,
+        "label": "Local LLM Inference",
+        "description": "Tools and frameworks for running and serving large language models locally on diverse hardware platforms.",
+        "size": 39,
+        "repos": [
+          "ggml-org/ggml",
+          "NVIDIA/Megatron-LM",
+          "LMCache/LMCache",
+          "microsoft/BitNet",
+          "google-ai-edge/LiteRT-LM",
+          "ggml-org/llama.cpp",
+          "openai/parameter-golf",
+          "z-lab/dflash",
+          "deepseek-ai/DeepGEMM",
+          "deepseek-ai/DeepEP",
+          "LearningCircuit/local-deep-research",
+          "cheahjs/free-llm-api-resources",
+          "jundot/omlx",
+          "FareedKhan-dev/train-llm-from-scratch",
+          "lyogavin/airllm",
+          "Andyyyy64/whichllm",
+          "alexzhang13/rlm",
+          "cupy/cupy",
+          "pytorch/pytorch",
+          "kvcache-ai/ktransformers",
+          "handy-computer/transcribe.cpp",
+          "AlexsJones/llmfit",
+          "MoonshotAI/FlashKDA",
+          "antirez/ds4",
+          "cactus-compute/needle",
+          "MakazhanAlpamys/Soup",
+          "elder-plinius/OBLITERATUS",
+          "youssofal/MTPLX",
+          "MiaAI-Lab/DeepSeek-v4-Flash-DSpark-2x-DGX-Spark",
+          "JustVugg/colibri",
+          "higgsfield-ai/higgsfield",
+          "FlashML-org/FreeToken",
+          "NVIDIA/Model-Optimizer",
+          "tensorflow/tensorflow",
+          "tile-ai/tilelang",
+          "lightseekorg/tokenspeed",
+          "vllm-project/vllm",
+          "FareedKhan-dev/kimi-k3-in-c",
+          "ashhart/TensorFold"
+        ]
+      },
+      {
+        "id": 1404,
+        "label": "AI Video Generation",
+        "description": "Repositories focused on AI-driven video creation, rendering, and related computer vision tools.",
+        "size": 33,
+        "repos": [
+          "ruvnet/wifi-densepose",
+          "GVCLab/PersonaLive",
+          "AIDC-AI/Pixelle-Video",
+          "Anil-matcha/Open-Generative-AI",
+          "playcanvas/supersplat",
+          "NVIDIA-AI-Blueprints/video-search-and-summarization",
+          "heygen-com/hyperframes",
+          "NVlabs/Sana",
+          "HKUDS/ViMax",
+          "NVlabs/LongLive",
+          "godotengine/godot",
+          "Lightricks/LTX-2",
+          "palmier-io/palmier-pro",
+          "browser-use/video-use",
+          "Robbyant/lingbot-map",
+          "bradautomates/claude-video",
+          "YimMenu/YimMenuV2",
+          "microsoft/TRELLIS.2",
+          "lightningpixel/modly",
+          "3b1b/manim",
+          "freestylefly/awesome-gpt-image-2",
+          "bilawalsidhu/gods-eye-view",
+          "ArthurBrussee/brush",
+          "armory3d/armorpaint",
+          "multimodal-art-projection/YuE",
+          "zhouxiaoka/autoclip",
+          "harry7557558/spirula-studio",
+          "meituan-longcat/LongCat-Video",
+          "storytold/artcraft",
+          "Kruk2/jasna",
+          "Likely7/Veyra-NRVideo",
+          "Vincentwei1021/video-shotcraft",
+          "JiaFeiMiao-K-Cat/DiscImageStudio"
+        ]
+      },
+      {
+        "id": 1394,
+        "label": "AI PDF Processing",
+        "description": "Open-source tools that parse, OCR, convert, and structure PDF and office documents into markdown or JSON for use in generative AI and LLM workflows.",
+        "size": 28,
+        "repos": [
+          "alibaba/zvec",
+          "steipete/summarize",
+          "ruvnet/ruvector",
+          "VectifyAI/PageIndex",
+          "microsoft/markitdown",
+          "PaddlePaddle/PaddleOCR",
+          "dmtrKovalenko/fff.nvim",
+          "google/magika",
+          "iamgio/quarkdown",
+          "refactoringhq/tolaria",
+          "joeseesun/qiaomu-anything-to-notebooklm",
+          "wechat-article/wechat-article-exporter",
+          "run-llama/liteparse",
+          "dmtrKovalenko/fff",
+          "lfnovo/open-notebook",
+          "RyanCodrai/turbovec",
+          "Stirling-Tools/Stirling-PDF",
+          "opendatalab/MinerU",
+          "allenai/olmocr",
+          "karakeep-app/karakeep",
+          "dottxt-ai/outlines",
+          "firecrawl/pdf-inspector",
+          "asciimoo/hister",
+          "Tencent/WeKnora",
+          "nashsu/llm_wiki",
+          "jordan-gibbs/hyperresearch",
+          "docling-project/docling",
+          "xerj-org/xerj"
+        ]
+      },
+      {
+        "id": 1414,
+        "label": "JS/TS Tooling",
+        "description": "A collection of libraries and runtimes focused on JavaScript/TypeScript development, compilation, and execution.",
+        "size": 25,
+        "repos": [
+          "vercel/next.js",
+          "eslint/eslint",
+          "Effect-TS/effect-smol",
+          "blackboardsh/electrobun",
+          "servo/servo",
+          "microsoft/typescript-go",
+          "oven-sh/bun",
+          "withastro/flue",
+          "sveltejs/svelte",
+          "swc-project/swc",
+          "dotnet/aspnetcore",
+          "microsoft/TypeScript",
+          "nasa/fprime",
+          "denoland/deno",
+          "angular/angular",
+          "webpack/webpack",
+          "cordiverse/cordis",
+          "genlayerlabs/genlayer-project-boilerplate",
+          "colinhacks/zod",
+          "ryanmcdermott/clean-code-javascript",
+          "nvm-sh/nvm",
+          "vercel-labs/scriptc",
+          "Effect-TS/effect",
+          "nodejs/node",
+          "react/react"
+        ]
+      },
+      {
+        "id": 1392,
+        "label": "AI Trading Finance",
+        "description": "Repositories focused on AI-driven trading systems, financial market modeling, and related data services.",
+        "size": 24,
+        "repos": [
+          "hummingbot/hummingbot",
+          "nautechsystems/nautilus_trader",
+          "google-research/timesfm",
+          "virattt/ai-hedge-fund",
+          "shiyu-coder/Kronos",
+          "warproxxx/poly_data",
+          "ZhuLinsen/daily_stock_analysis",
+          "anthropics/financial-services",
+          "HKUDS/AI-Trader",
+          "stefan-jansen/machine-learning-for-trading",
+          "HKUDS/Vibe-Trading",
+          "xbtlin/ai-berkshire",
+          "tradesdontlie/tradingview-mcp",
+          "paperswithbacktest/awesome-systematic-trading",
+          "Fincept-Corporation/FinceptTerminal",
+          "securo-finance/securo",
+          "sngyai/Sequoia-X",
+          "The-Swarm-Corporation/AutoHedge",
+          "alsk1992/CloddsBot",
+          "Open-Dev-Society/OpenStock",
+          "TNT-Likely/PanWatch",
+          "shy3130/tick-stock-panel",
+          "we-promise/sure",
+          "tradermonty/claude-trading-skills"
+        ]
+      },
+      {
+        "id": 1434,
+        "label": "Speech AI Toolkit",
+        "description": "A collection of open-source projects for speech recognition, voice synthesis, and conversational speech AI.",
+        "size": 20,
+        "repos": [
+          "moonshine-ai/moonshine",
+          "fishaudio/fish-speech",
+          "NVIDIA/personaplex",
+          "OpenBMB/VoxCPM",
+          "jamiepine/voicebox",
+          "supertone-inc/supertonic",
+          "dograh-hq/dograh",
+          "OpenMOSS/MOSS-TTS",
+          "modelscope/FunASR",
+          "openai/whisper",
+          "altic-dev/FluidVoice",
+          "Starmel/OpenSuperWhisper",
+          "huggingface/speech-to-speech",
+          "kyutai-labs/pocket-tts",
+          "abus-aikorea/voice-pro",
+          "debpalash/VoiceStudio",
+          "OpenWhispr/openwhispr",
+          "togatoga/karukan",
+          "anomalyco/hex",
+          "cjpais/Handy"
+        ]
+      },
+      {
+        "id": 1402,
+        "label": "AI Browser Agents",
+        "description": "Frameworks and web UIs that let AI agents control, browse, and interact with browsers for automation and coding tasks.",
+        "size": 17,
+        "repos": [
+          "D4Vinci/Scrapling",
+          "alibaba/page-agent",
+          "jo-inc/camofox-browser",
+          "ChromeDevTools/chrome-devtools-mcp",
+          "browserbase/skills",
+          "CloakHQ/CloakBrowser",
+          "unclecode/crawl4ai",
+          "Panniantong/Agent-Reach",
+          "puppeteer/puppeteer",
+          "firecrawl/firecrawl",
+          "microsoft/Webwright",
+          "NanmiCoder/MediaCrawler",
+          "KnockOutEZ/wigolo",
+          "agegr/pi-web",
+          "citrolabs/ego-lite",
+          "Tencent/BrowserSkill",
+          "vercel-labs/agent-browser"
+        ]
+      },
+      {
+        "id": 1406,
+        "label": "OSINT Investigation Tools",
+        "description": "A collection of open-source utilities for gathering, analyzing, and visualizing open-source intelligence on individuals, accounts, and digital evidence.",
+        "size": 17,
+        "repos": [
+          "HunxByts/GhostTrack",
+          "sepinf-inc/IPED",
+          "sherlock-project/sherlock",
+          "Z4nzu/hackingtool",
+          "soxoj/maigret",
+          "reconurge/flowsint",
+          "smicallef/spiderfoot",
+          "Mebus/cupp",
+          "geo-tp/ESP32-Bit-Pirate",
+          "K2SOsint/Legendary_OSINT",
+          "megadose/holehe",
+          "NationalSecurityAgency/ghidra",
+          "BigBodyCobain/Shadowbroker",
+          "kaifcodec/user-scanner",
+          "mvt-project/mvt",
+          "derv82/wifit3",
+          "martin-olivier/airgorah"
+        ]
+      },
+      {
+        "id": 1421,
+        "label": "C++ Tools Suite",
+        "description": "A collection of C++ libraries, testing frameworks, and related utilities for development, testing, and system introspection.",
+        "size": 14,
+        "repos": [
+          "fastfetch-cli/fastfetch",
+          "facebook/pyrefly",
+          "pytest-dev/pytest",
+          "abseil/abseil-cpp",
+          "jbeder/yaml-cpp",
+          "catchorg/Catch2",
+          "chriskohlhoff/asio",
+          "gabime/spdlog",
+          "Automattic/harper",
+          "google/googletest",
+          "checkstyle/checkstyle",
+          "fmtlib/fmt",
+          "fastapi/fastapi",
+          "astral-sh/ruff"
+        ]
+      },
+      {
+        "id": 1401,
+        "label": "AI Security Suite",
+        "description": "Repositories centered on AI-driven security testing, vulnerability scanning, and assessment of AI agent skills and infrastructure.",
+        "size": 13,
+        "repos": [
+          "Ed1s0nZ/CyberStrikeAI",
+          "KeygraphHQ/shannon",
+          "mukul975/Anthropic-Cybersecurity-Skills",
+          "NVIDIA/SkillSpector",
+          "Unclecheng-li/VulnClaw",
+          "Tencent/AI-Infra-Guard",
+          "zhaoxuya520/reverse-skill",
+          "beenuar/AiSOC",
+          "uber/ADR",
+          "cloudflare/security-audit-skill",
+          "ifixai-ai/iFixAi",
+          "YuJunZhiXue/dsh-purge",
+          "togg53192-cmd/jailbreaks"
+        ]
+      },
+      {
+        "id": 1407,
+        "label": "Apple Ecosystem Utilities",
+        "description": "A collection of macOS/iOS tools and utilities for containerization, device management, app handling, and system enhancements.",
+        "size": 12,
+        "repos": [
+          "apple/container",
+          "opa334/Dopamine",
+          "Lakr233/vphone-cli",
+          "majd/ipatool",
+          "vorssaint/vorssaint-utils",
+          "nab138/iloader",
+          "peetzweg/opendisplay",
+          "Homebrew/BrewUI",
+          "abue-ammar/tinycast",
+          "willfaust/Madeira",
+          "firebase/firebase-ios-sdk",
+          "xtool-org/xtool"
+        ]
+      },
+      {
+        "id": 1416,
+        "label": "Gaming Tools & Emulators",
+        "description": "A collection of projects focused on game emulation, launchers, server hosting, and modding utilities.",
+        "size": 12,
+        "repos": [
+          "opentoonz/opentoonz",
+          "yairm210/Unciv",
+          "rommapp/romm",
+          "SmartlyDressedGames/U3-SDK",
+          "par274/sharpemu",
+          "Pumpkin-MC/Pumpkin",
+          "openrocket/openrocket",
+          "punkpeye/awesome-mcp-servers",
+          "Augani/openreel-video",
+          "OpenCut-app/OpenCut",
+          "boykopovar/AnyPS5",
+          "Meloong-Git/PCL"
+        ]
+      },
+      {
+        "id": 1429,
+        "label": "AI-Enhanced Terminals",
+        "description": "Terminal emulators and workspace tools that integrate AI agents to augment coding and development workflows.",
+        "size": 12,
+        "repos": [
+          "warpdotdev/warp",
+          "ghostty-org/ghostty",
+          "can1357/oh-my-pi",
+          "manaflow-ai/cmux",
+          "ogulcancelik/herdr",
+          "crynta/terax-ai",
+          "wonderwhy-er/DesktopCommanderMCP",
+          "yorukot/superfile",
+          "eneskirca/nodeterm",
+          "Swordfish90/cool-retro-term",
+          "Gaurav-Gosain/tuios",
+          "herdrdev/herdr"
+        ]
+      },
+      {
+        "id": 1425,
+        "label": "Self\u2011Hosting & Free Domains",
+        "description": "Repositories centered on self\u2011hosted platforms, personal cloud services, and free domain/email solutions for developers.",
+        "size": 10,
+        "repos": [
+          "restic/restic",
+          "oblien/openship",
+          "apache/cassandra",
+          "cloudflare/computer",
+          "denoland/celld",
+          "IceWhaleTech/CasaOS",
+          "rustfs/rustfs",
+          "coollabsio/coolify",
+          "floci-io/floci",
+          "etcd-io/etcd"
+        ]
+      },
+      {
+        "id": 1438,
+        "label": "AI Education Resources",
+        "description": "A collection of open-source courses, textbooks, and tutorials covering AI fundamentals, machine learning systems, neural networks, robotics, and algorithmic foundations.",
+        "size": 9,
+        "repos": [
+          "liyupi/ai-guide",
+          "microsoft/ai-agents-for-beginners",
+          "rohitg00/ai-engineering-from-scratch",
+          "karpathy/nn-zero-to-hero",
+          "Introduction-to-Autonomous-Robots/Introduction-to-Autonomous-Robots",
+          "owainlewis/awesome-artificial-intelligence",
+          "microsoft/AI-For-Beginners",
+          "harvard-edge/cs249r_book",
+          "HenryNdubuaku/maths-cs-ai-compendium"
+        ]
+      },
+      {
+        "id": 1398,
+        "label": "Knowledge Management Platforms",
+        "description": "Open-source tools for organizing, discovering, and governing data, metadata, and collaborative knowledge across analytics and project workflows.",
+        "size": 8,
+        "repos": [
+          "toeverything/AFFiNE",
+          "tobi/qmd",
+          "apache/ossie",
+          "microsoft/Ontology-Playground",
+          "semantica-agi/semantica",
+          "open-metadata/OpenMetadata",
+          "GoogleCloudPlatform/knowledge-catalog",
+          "NVIDIA/auto-ontology"
+        ]
+      },
+      {
+        "id": 1400,
+        "label": "AI Sandbox Platforms",
+        "description": "A collection of open\u2011source projects providing sandboxed, secure execution environments for AI agents and untrusted code across cloud and edge infrastructures.",
+        "size": 8,
+        "repos": [
+          "alibaba/OpenSandbox",
+          "tractorjuice/arc-kit",
+          "microsoft/agent-governance-toolkit",
+          "microsoft/mxc",
+          "TencentCloud/CubeSandbox",
+          "superradcompany/microsandbox",
+          "cloudflare/cloudflare-os",
+          "NVIDIA/OpenShell"
+        ]
+      },
+      {
+        "id": 1408,
+        "label": "Developer Tooling",
+        "description": "Tools that enhance code editing, review, and build workflows for developers.",
+        "size": 8,
+        "repos": [
+          "neovim/neovim",
+          "nvim-treesitter/nvim-treesitter",
+          "zed-industries/zed",
+          "github/spec-kit",
+          "vitejs/vite",
+          "biomejs/biome",
+          "nuxt/nuxt",
+          "microsoft/vscode"
+        ]
+      },
+      {
+        "id": 1412,
+        "label": "Identity & Security Tools",
+        "description": "Open-source solutions for authentication, identity management, and data protection.",
+        "size": 8,
+        "repos": [
+          "dani-garcia/vaultwarden",
+          "imthenachoman/How-To-Secure-A-Linux-Server",
+          "logto-io/logto",
+          "veracrypt/VeraCrypt",
+          "goauthentik/authentik",
+          "keycloak/keycloak",
+          "openbao/openbao",
+          "openssl/openssl"
+        ]
+      },
+      {
+        "id": 1415,
+        "label": "Database Development Platforms",
+        "description": "Tools and platforms for building, managing, and interacting with databases and data pipelines.",
+        "size": 8,
+        "repos": [
+          "clockworklabs/SpacetimeDB",
+          "cursor/plugins",
+          "dbt-labs/dbt-core",
+          "t8y2/dbx",
+          "prisma/prisma",
+          "drawdb-io/drawdb",
+          "tursodatabase/turso",
+          "rails/rails"
+        ]
+      },
+      {
+        "id": 1427,
+        "label": "Media Download Suite",
+        "description": "Open\u2011source tools for downloading, managing, and streaming video and audio content across platforms.",
+        "size": 8,
+        "repos": [
+          "iv-org/invidious",
+          "jellyfin/jellyfin",
+          "seerr-team/seerr",
+          "dayanch96/YTLite",
+          "truelockmc/streambert",
+          "MoonTechLab/LunaTV",
+          "Sonarr/Sonarr",
+          "InfinityLoop1308/PipePipe"
+        ]
+      },
+      {
+        "id": 1441,
+        "label": "Vision-Language AI",
+        "description": "Repositories centered on vision-language models and frameworks, spanning Apple silicon MLX tools and advanced multimodal AI for robotics and autonomous systems.",
+        "size": 8,
+        "repos": [
+          "Blaizzy/mlx-vlm",
+          "microsoft/onnxruntime",
+          "Biohub/esm",
+          "NVIDIA/cosmos",
+          "ml-explore/mlx",
+          "modular/modular",
+          "NVlabs/Eagle",
+          "PrismML-Eng/Bonsai-demo"
+        ]
+      },
+      {
+        "id": 1397,
+        "label": "Open Business Solutions",
+        "description": "Open-source platforms for enterprise management, SEO, and job recruitment.",
+        "size": 7,
+        "repos": [
+          "odoo/odoo",
+          "every-app/open-seo",
+          "elastic/elasticsearch",
+          "frappe/erpnext",
+          "ever-co/ever-gauzy",
+          "julyx10/lap",
+          "strelov1/freehire"
+        ]
+      },
+      {
+        "id": 1411,
+        "label": "Windows Optimization Tools",
+        "description": "A collection of utilities and scripts for enhancing performance, privacy, and customization of Windows systems.",
+        "size": 7,
+        "repos": [
+          "Raphire/Win11Debloat",
+          "microsoft/PowerToys",
+          "Greedeks/GTweak",
+          "itsfatduck/optimizerDuck",
+          "vercel-labs/native",
+          "k1tbyte/Wand-Enhancer",
+          "ntdevlabs/tiny11builder"
+        ]
+      },
+      {
+        "id": 1413,
+        "label": "Web HTTP Tools",
+        "description": "Repositories related to HTTP clients, servers, testing, and load generation for web applications.",
+        "size": 7,
+        "repos": [
+          "axios/axios",
+          "paperless-ngx/paperless-ngx",
+          "nginx/nginx",
+          "TryGhost/Ghost",
+          "LadybirdBrowser/ladybird",
+          "caddyserver/caddy",
+          "rakyll/hey"
+        ]
+      },
+      {
+        "id": 1417,
+        "label": "Censorship Bypass Suite",
+        "description": "Repositories offering tools and services to circumvent internet censorship and block unwanted content.",
+        "size": 7,
+        "repos": [
+          "pi-hole/pi-hole",
+          "masterking32/MasterDnsVPN",
+          "apernet/hysteria",
+          "gorhill/uBlock",
+          "Flowseal/zapret-discord-youtube",
+          "bannedbook/fanqiang",
+          "p1neappleXpress/OpenFlux"
+        ]
+      },
+      {
+        "id": 1426,
+        "label": "AI Opinion & Trend Monitoring",
+        "description": "Platforms that leverage AI to aggregate, analyze, rank and monitor public sentiment, news, and social media trends for insight and decision\u2011making.",
+        "size": 7,
+        "repos": [
+          "666ghj/BettaFish",
+          "sansan0/TrendRadar",
+          "yikart/AiToEarn",
+          "aiming-lab/AutoResearchClaw",
+          "koala73/worldmonitor",
+          "xai-org/x-algorithm",
+          "Thysrael/Horizon"
+        ]
+      },
+      {
+        "id": 1439,
+        "label": "Vision & Diffusion",
+        "description": "A collection of tools and libraries for computer vision, image generation, and deep learning-based visual manipulation.",
+        "size": 7,
+        "repos": [
+          "roboflow/trackers",
+          "roboflow/supervision",
+          "opencv/opencv",
+          "deepfakes/faceswap",
+          "roboflow/rf-detr",
+          "huggingface/transformers",
+          "kornia/kornia"
+        ]
+      },
+      {
+        "id": 1405,
+        "label": "Agent Orchestration",
+        "description": "Frameworks for high\u2011density sandboxed agent workloads, networking, and control planes on Kubernetes clusters.",
+        "size": 6,
+        "repos": [
+          "agent-substrate/substrate",
+          "amadeusprotocol/node",
+          "cilium/cilium",
+          "google/ax",
+          "kelseyhightower/kubernetes-the-hard-way",
+          "dsx-ai-factory/nvke"
+        ]
+      },
+      {
+        "id": 1436,
+        "label": "Free CS Learning Resources",
+        "description": "A collection of open-source repositories offering free curricula, courses, and books for learning computer science and data engineering.",
+        "size": 6,
+        "repos": [
+          "TapXWorld/ChinaTextbook",
+          "alchaincyf/zhangxuefeng-skill",
+          "ruanyf/weekly",
+          "withmarbleapp/os-taxonomy",
+          "jbiaojerry/ebook-treasure-chest",
+          "xiaolai/the-craft-of-selfteaching"
+        ]
+      },
+      {
+        "id": 1437,
+        "label": "Free CS Learning",
+        "description": "Curated open-source resources for self\u2011guided computer science education and coursework.",
+        "size": 6,
+        "repos": [
+          "freeCodeCamp/freeCodeCamp",
+          "EbookFoundation/free-programming-books",
+          "ForrestKnight/open-source-cs",
+          "ossu/computer-science",
+          "mihail911/modern-software-dev-assignments",
+          "cs341-illinois/coursebook"
+        ]
+      },
+      {
+        "id": 1393,
+        "label": "Automation SDKs",
+        "description": "Repositories providing SDKs and tools for building automated workflows, agentic applications, and CI/CD pipelines.",
+        "size": 5,
+        "repos": [
+          "PowerShell/PowerShell",
+          "github/copilot-sdk",
+          "CopilotKit/CopilotKit",
+          "jenkinsci/jenkins",
+          "ansible/ansible"
+        ]
+      },
+      {
+        "id": 1395,
+        "label": "Model Context Protocol",
+        "description": "Repositories focused on the Model Context Protocol (MCP) for AI integration, server frameworks, and related tooling.",
+        "size": 5,
+        "repos": [
+          "datagouv/datagouv-mcp",
+          "PrefectHQ/fastmcp",
+          "Universal-Commerce-Protocol/ucp",
+          "modelcontextprotocol/servers",
+          "morluto/rea"
+        ]
+      },
+      {
+        "id": 1409,
+        "label": "Cross\u2011Platform App Frameworks",
+        "description": "Repositories focused on tools and distributions for building and running applications across desktop, mobile, web, and Linux environments.",
+        "size": 5,
+        "repos": [
+          "Axorax/awesome-free-apps",
+          "flutter/flutter",
+          "basecamp/omarchy",
+          "omacom/omarchy",
+          "openwrt/openwrt"
+        ]
+      },
+      {
+        "id": 1418,
+        "label": "Secure Proxy Clients",
+        "description": "Cross\u2011platform applications for VPN, proxy, and network traffic monitoring focusing on privacy and ad\u2011free internet access.",
+        "size": 5,
+        "repos": [
+          "hiddify/hiddify-app",
+          "XTLS/Xray-core",
+          "amnezia-vpn/amnezia-client",
+          "GyulyVGC/sniffnet",
+          "chen08209/FlClash"
+        ]
+      },
+      {
+        "id": 1419,
+        "label": "Android Media Capture",
+        "description": "Open-source Android tools for recording, streaming, visualizing, and processing video, motion, and location data.",
+        "size": 5,
+        "repos": [
+          "freemocap/freemocap",
+          "siddharthvaddem/openscreen",
+          "anonfaded/FadCam",
+          "Genymobile/scrcpy",
+          "mahlernim/google-timeline-visualizer"
+        ]
+      },
+      {
+        "id": 1420,
+        "label": "Rust Network Protocols",
+        "description": "Projects focused on networking, transport protocols, RPC frameworks, and data serialization primarily implemented in Rust.",
+        "size": 5,
+        "repos": [
+          "byJoey/cfnew",
+          "n0-computer/iroh",
+          "grpc/grpc",
+          "protocolbuffers/protobuf",
+          "cloudflare/quiche"
+        ]
+      },
+      {
+        "id": 1423,
+        "label": "Web Utility Services",
+        "description": "Repositories providing free domain/email services, Cloudflare workers, and privacy\u2011focused web tools for developers and users.",
+        "size": 5,
+        "repos": [
+          "is-a-dev/register",
+          "dreamhunter2333/cloudflare_temp_email",
+          "DigitalPlatDev/FreeDomain",
+          "FxEmbed/FxEmbed",
+          "gitroomhq/postiz-app"
+        ]
+      },
+      {
+        "id": 1424,
+        "label": "Monitoring and Analytics",
+        "description": "Tools for collecting, storing, visualizing, and alerting on time-series metrics and telemetry data.",
+        "size": 5,
+        "repos": [
+          "influxdata/telegraf",
+          "grafana/grafana",
+          "teslamate-org/teslamate",
+          "prometheus/prometheus",
+          "louislam/uptime-kuma"
+        ]
+      },
+      {
+        "id": 1428,
+        "label": "Media Download Tools",
+        "description": "Cross\u2011platform applications for downloading files, videos, torrents, and other media from various online sources.",
+        "size": 5,
+        "repos": [
+          "qbittorrent/qBittorrent",
+          "agalwood/Motrix",
+          "yt-dlp/yt-dlp",
+          "jiji262/douyin-downloader",
+          "tonhowtf/omniget"
+        ]
+      },
+      {
+        "id": 1430,
+        "label": "DeepSeek Coding Agents",
+        "description": "A set of tools and middleware that integrate DeepSeek models for API gateways, terminal coding agents, and developer assistance.",
+        "size": 5,
+        "repos": [
+          "CJackHwang/ds2api",
+          "Hmbown/DeepSeek-TUI",
+          "Hmbown/CodeWhale",
+          "esengine/DeepSeek-Reasonix",
+          "deepseek-ai/awesome-deepseek-agent"
+        ]
+      },
+      {
+        "id": 1431,
+        "label": "System Design Resources",
+        "description": "A collection of repositories offering study materials, notes, and visual guides for learning system design and preparing for interviews.",
+        "size": 5,
+        "repos": [
+          "ashishps1/awesome-system-design-resources",
+          "jwasham/coding-interview-university",
+          "donnemartin/system-design-primer",
+          "ByteByteGoHq/system-design-101",
+          "liquidslr/system-design-notes"
+        ]
+      },
+      {
+        "id": 1433,
+        "label": "Awesome Lists",
+        "description": "Curated collections of resources, tools, and references across various topics.",
+        "size": 5,
+        "repos": [
+          "dreammis/social-auto-upload",
+          "mikumifa/biliTickerBuy",
+          "alexpate/awesome-design-systems",
+          "trimstray/the-book-of-secret-knowledge",
+          "sindresorhus/awesome"
+        ]
+      },
+      {
+        "id": 1435,
+        "label": "Generative AI Resources",
+        "description": "A collection of repositories offering guides, tools, tutorials, prompt libraries, and cloud samples for learning, building, and using generative AI applications.",
+        "size": 5,
+        "repos": [
+          "google-ai-edge/gallery",
+          "ollama/ollama",
+          "google-deepmind/weathernext",
+          "galilai-group/stable-worldmodel",
+          "Renhuai123/ziwei-doushu"
+        ]
+      },
+      {
+        "id": 1396,
+        "label": "LLM Context Compression",
+        "description": "Tools and plugins that compress prompts, logs, and RAG data to drastically reduce token usage for large language models.",
+        "size": 4,
+        "repos": [
+          "rtk-ai/rtk",
+          "chopratejas/headroom",
+          "ranxianglei/billion-context",
+          "headroomlabs-ai/headroom"
+        ]
+      },
+      {
+        "id": 1399,
+        "label": "Android Reverse Engineering",
+        "description": "Tools and utilities for decompiling, analyzing, and debloating Android applications and devices.",
+        "size": 4,
+        "repos": [
+          "SimoneAvogadro/android-reverse-engineering-skill",
+          "Universal-Debloater-Alliance/universal-android-debloater-next-generation",
+          "google/guava",
+          "MG1937/ASC"
+        ]
+      },
+      {
+        "id": 1403,
+        "label": "Mesh Processing",
+        "description": "Tools for generating, optimizing, and remeshing 3D meshes for graphics and game applications.",
+        "size": 4,
+        "repos": [
+          "HailToDodongo/pyrite64",
+          "Diolinux/PhotoGIMP",
+          "zeux/meshoptimizer",
+          "clshortfuse/renodx"
+        ]
+      },
+      {
+        "id": 1422,
+        "label": "Observability & Debugging",
+        "description": "Tools for monitoring, tracing, and debugging software applications.",
+        "size": 4,
+        "repos": [
+          "PostHog/posthog",
+          "pranshuparmar/witr",
+          "usekaneo/kaneo",
+          "getsentry/sentry"
+        ]
+      },
+      {
+        "id": 1432,
+        "label": "Curated Resource Lists",
+        "description": "Collections of curated links, tools, guides, and newsletters covering design systems, DevOps, free services, and various tech topics.",
+        "size": 4,
+        "repos": [
+          "ripienaar/free-for-dev",
+          "litu54/DevOps-Interview-Guide",
+          "bregman-arie/devops-exercises",
+          "MichaelCade/90DaysOfDevOps"
+        ]
+      },
+      {
+        "id": 1410,
+        "label": "Cross\u2011Platform UI Frameworks",
+        "description": "A cluster of libraries and component kits for building high\u2011performance, cross\u2011platform user interfaces in Rust and other frameworks.",
+        "size": 3,
+        "repos": [
+          "shadcn-ui/ui",
+          "DioxusLabs/dioxus",
+          "longbridge/gpui-kit"
+        ]
+      }
+    ],
+    "scatter": [
+      {
+        "repo_name": "hummingbot/hummingbot",
+        "cluster_id": 1392,
+        "x": 9.15097522735596,
+        "y": -6.19209241867065,
+        "total_stars": 16866
+      },
+      {
+        "repo_name": "nautechsystems/nautilus_trader",
+        "cluster_id": 1392,
+        "x": 9.17886924743652,
+        "y": -6.18972539901733,
+        "total_stars": 26623
+      },
+      {
+        "repo_name": "google-research/timesfm",
+        "cluster_id": 1392,
+        "x": 9.15834903717041,
+        "y": -6.20726299285889,
+        "total_stars": 33919
+      },
+      {
+        "repo_name": "virattt/ai-hedge-fund",
+        "cluster_id": 1392,
+        "x": 9.20779895782471,
+        "y": -6.15312957763672,
+        "total_stars": 62081
+      },
+      {
+        "repo_name": "shiyu-coder/Kronos",
+        "cluster_id": 1392,
+        "x": 9.19447898864746,
+        "y": -6.18693828582764,
+        "total_stars": 47175
+      },
+      {
+        "repo_name": "warproxxx/poly_data",
+        "cluster_id": 1392,
+        "x": 9.1146821975708,
+        "y": -6.21023273468018,
+        "total_stars": 1394
+      },
+      {
+        "repo_name": "ZhuLinsen/daily_stock_analysis",
+        "cluster_id": 1392,
+        "x": 9.11004638671875,
+        "y": -6.09071016311646,
+        "total_stars": 72437
+      },
+      {
+        "repo_name": "anthropics/financial-services",
+        "cluster_id": 1392,
+        "x": 9.31850147247314,
+        "y": -5.88862180709839,
+        "total_stars": 40609
+      },
+      {
+        "repo_name": "HKUDS/AI-Trader",
+        "cluster_id": 1392,
+        "x": 9.20617961883545,
+        "y": -6.17757320404053,
+        "total_stars": 19313
+      },
+      {
+        "repo_name": "stefan-jansen/machine-learning-for-trading",
+        "cluster_id": 1392,
+        "x": 9.21091461181641,
+        "y": -6.193115234375,
+        "total_stars": 18832
+      },
+      {
+        "repo_name": "HKUDS/Vibe-Trading",
+        "cluster_id": 1392,
+        "x": 9.2315731048584,
+        "y": -6.14900159835815,
+        "total_stars": 30296
+      },
+      {
+        "repo_name": "xbtlin/ai-berkshire",
+        "cluster_id": 1392,
+        "x": 9.22444534301758,
+        "y": -6.13555860519409,
+        "total_stars": 14541
+      },
+      {
+        "repo_name": "tradesdontlie/tradingview-mcp",
+        "cluster_id": 1392,
+        "x": 9.20378875732422,
+        "y": -6.19765043258667,
+        "total_stars": 6361
+      },
+      {
+        "repo_name": "paperswithbacktest/awesome-systematic-trading",
+        "cluster_id": 1392,
+        "x": 9.17197418212891,
+        "y": -6.21249389648438,
+        "total_stars": 13008
+      },
+      {
+        "repo_name": "Fincept-Corporation/FinceptTerminal",
+        "cluster_id": 1392,
+        "x": 9.259202003479,
+        "y": -5.98575592041016,
+        "total_stars": 23624
+      },
+      {
+        "repo_name": "securo-finance/securo",
+        "cluster_id": 1392,
+        "x": 9.29139995574951,
+        "y": -5.77720499038696,
+        "total_stars": 3487
+      },
+      {
+        "repo_name": "sngyai/Sequoia-X",
+        "cluster_id": 1392,
+        "x": 9.16466903686523,
+        "y": -6.17670297622681,
+        "total_stars": 6010
+      },
+      {
+        "repo_name": "The-Swarm-Corporation/AutoHedge",
+        "cluster_id": 1392,
+        "x": 9.1921215057373,
+        "y": -6.16413307189941,
+        "total_stars": 5523
+      },
+      {
+        "repo_name": "alsk1992/CloddsBot",
+        "cluster_id": 1392,
+        "x": 9.24672031402588,
+        "y": -6.16932249069214,
+        "total_stars": 2323
+      },
+      {
+        "repo_name": "Open-Dev-Society/OpenStock",
+        "cluster_id": 1392,
+        "x": 9.11576175689697,
+        "y": -6.22210025787354,
+        "total_stars": 18612
+      },
+      {
+        "repo_name": "TNT-Likely/PanWatch",
+        "cluster_id": 1392,
+        "x": 9.136549949646,
+        "y": -6.14368104934692,
+        "total_stars": 1417
+      },
+      {
+        "repo_name": "shy3130/tick-stock-panel",
+        "cluster_id": 1392,
+        "x": 9.18106174468994,
+        "y": -6.17674779891968,
+        "total_stars": 5066
+      },
+      {
+        "repo_name": "we-promise/sure",
+        "cluster_id": 1392,
+        "x": 9.30183601379395,
+        "y": -5.72824716567993,
+        "total_stars": 15598
+      },
+      {
+        "repo_name": "tradermonty/claude-trading-skills",
+        "cluster_id": 1392,
+        "x": 9.2409782409668,
+        "y": -6.21818208694458,
+        "total_stars": 5299
+      },
+      {
+        "repo_name": "PowerShell/PowerShell",
+        "cluster_id": 1393,
+        "x": 11.2640781402588,
+        "y": -2.19314026832581,
+        "total_stars": 53153
+      },
+      {
+        "repo_name": "github/copilot-sdk",
+        "cluster_id": 1393,
+        "x": 11.1535501480103,
+        "y": -2.44827795028687,
+        "total_stars": 10325
+      },
+      {
+        "repo_name": "CopilotKit/CopilotKit",
+        "cluster_id": 1393,
+        "x": 11.0650405883789,
+        "y": -2.40027284622192,
+        "total_stars": 34944
+      },
+      {
+        "repo_name": "jenkinsci/jenkins",
+        "cluster_id": 1393,
+        "x": 11.1888999938965,
+        "y": -2.25283885002136,
+        "total_stars": 26371
+      },
+      {
+        "repo_name": "ansible/ansible",
+        "cluster_id": 1393,
+        "x": 11.264217376709,
+        "y": -2.20344686508179,
+        "total_stars": 70165
+      },
+      {
+        "repo_name": "alibaba/zvec",
+        "cluster_id": 1394,
+        "x": 10.9979572296143,
+        "y": -1.75457668304443,
+        "total_stars": 14923
+      },
+      {
+        "repo_name": "steipete/summarize",
+        "cluster_id": 1394,
+        "x": 10.0517206192017,
+        "y": -2.14732718467712,
+        "total_stars": 3305
+      },
+      {
+        "repo_name": "ruvnet/ruvector",
+        "cluster_id": 1394,
+        "x": 10.9347066879272,
+        "y": -1.8393542766571,
+        "total_stars": 1685
+      },
+      {
+        "repo_name": "VectifyAI/PageIndex",
+        "cluster_id": 1394,
+        "x": 10.4162559509277,
+        "y": -1.89711248874664,
+        "total_stars": 39769
+      },
+      {
+        "repo_name": "microsoft/markitdown",
+        "cluster_id": 1394,
+        "x": 10.98313331604,
+        "y": -1.82272815704346,
+        "total_stars": 185852
+      },
+      {
+        "repo_name": "PaddlePaddle/PaddleOCR",
+        "cluster_id": 1394,
+        "x": 10.6197938919067,
+        "y": -2.011474609375,
+        "total_stars": 81147
+      },
+      {
+        "repo_name": "dmtrKovalenko/fff.nvim",
+        "cluster_id": 1394,
+        "x": 10.8829641342163,
+        "y": -1.77254486083984,
+        "total_stars": 3640
+      },
+      {
+        "repo_name": "google/magika",
+        "cluster_id": 1394,
+        "x": 10.6509780883789,
+        "y": -1.94900214672089,
+        "total_stars": 15691
+      },
+      {
+        "repo_name": "iamgio/quarkdown",
+        "cluster_id": 1394,
+        "x": 11.0098342895508,
+        "y": -1.80655646324158,
+        "total_stars": 13571
+      },
+      {
+        "repo_name": "refactoringhq/tolaria",
+        "cluster_id": 1394,
+        "x": 10.6122856140137,
+        "y": -1.63567757606506,
+        "total_stars": 17894
+      },
+      {
+        "repo_name": "joeseesun/qiaomu-anything-to-notebooklm",
+        "cluster_id": 1394,
+        "x": 10.180344581604,
+        "y": -2.12492918968201,
+        "total_stars": 2392
+      },
+      {
+        "repo_name": "wechat-article/wechat-article-exporter",
+        "cluster_id": 1394,
+        "x": 9.8922758102417,
+        "y": -1.74569404125214,
+        "total_stars": 10790
+      },
+      {
+        "repo_name": "run-llama/liteparse",
+        "cluster_id": 1394,
+        "x": 10.6648759841919,
+        "y": -1.99837970733643,
+        "total_stars": 11123
+      },
+      {
+        "repo_name": "dmtrKovalenko/fff",
+        "cluster_id": 1394,
+        "x": 10.7880821228027,
+        "y": -1.92148387432098,
+        "total_stars": 7378
+      },
+      {
+        "repo_name": "lfnovo/open-notebook",
+        "cluster_id": 1394,
+        "x": 10.1497383117676,
+        "y": -2.09086537361145,
+        "total_stars": 34872
+      },
+      {
+        "repo_name": "RyanCodrai/turbovec",
+        "cluster_id": 1394,
+        "x": 10.992015838623,
+        "y": -1.8007003068924,
+        "total_stars": 16084
+      },
+      {
+        "repo_name": "Stirling-Tools/Stirling-PDF",
+        "cluster_id": 1394,
+        "x": 10.710467338562,
+        "y": -2.03619337081909,
+        "total_stars": 85094
+      },
+      {
+        "repo_name": "opendatalab/MinerU",
+        "cluster_id": 1394,
+        "x": 10.5212335586548,
+        "y": -2.19584274291992,
+        "total_stars": 70804
+      },
+      {
+        "repo_name": "allenai/olmocr",
+        "cluster_id": 1394,
+        "x": 10.5306510925293,
+        "y": -2.0583803653717,
+        "total_stars": 18981
+      },
+      {
+        "repo_name": "karakeep-app/karakeep",
+        "cluster_id": 1394,
+        "x": 10.3077745437622,
+        "y": -1.7709743976593,
+        "total_stars": 27099
+      },
+      {
+        "repo_name": "dottxt-ai/outlines",
+        "cluster_id": 1394,
+        "x": 10.7448558807373,
+        "y": -2.25174832344055,
+        "total_stars": 15246
+      },
+      {
+        "repo_name": "firecrawl/pdf-inspector",
+        "cluster_id": 1394,
+        "x": 10.8802490234375,
+        "y": -1.89662706851959,
+        "total_stars": 18427
+      },
+      {
+        "repo_name": "asciimoo/hister",
+        "cluster_id": 1394,
+        "x": 10.3793115615845,
+        "y": -1.67213547229767,
+        "total_stars": 5110
+      },
+      {
+        "repo_name": "Tencent/WeKnora",
+        "cluster_id": 1394,
+        "x": 10.2696676254272,
+        "y": -1.90575385093689,
+        "total_stars": 34471
+      },
+      {
+        "repo_name": "nashsu/llm_wiki",
+        "cluster_id": 1394,
+        "x": 10.2824535369873,
+        "y": -1.7794201374054,
+        "total_stars": 18495
+      },
+      {
+        "repo_name": "jordan-gibbs/hyperresearch",
+        "cluster_id": 1394,
+        "x": 10.3440532684326,
+        "y": -1.89965569972992,
+        "total_stars": 2288
+      },
+      {
+        "repo_name": "docling-project/docling",
+        "cluster_id": 1394,
+        "x": 10.5741901397705,
+        "y": -2.03226327896118,
+        "total_stars": 66778
+      },
+      {
+        "repo_name": "xerj-org/xerj",
+        "cluster_id": 1394,
+        "x": 10.4003839492798,
+        "y": -1.93220126628876,
+        "total_stars": 7405
+      },
+      {
+        "repo_name": "datagouv/datagouv-mcp",
+        "cluster_id": 1395,
+        "x": 9.38254642486572,
+        "y": -1.66162085533142,
+        "total_stars": 699
+      },
+      {
+        "repo_name": "PrefectHQ/fastmcp",
+        "cluster_id": 1395,
+        "x": 9.44379425048828,
+        "y": -1.61562764644623,
+        "total_stars": 26687
+      },
+      {
+        "repo_name": "Universal-Commerce-Protocol/ucp",
+        "cluster_id": 1395,
+        "x": 9.41652679443359,
+        "y": -1.65032315254211,
+        "total_stars": 2868
+      },
+      {
+        "repo_name": "modelcontextprotocol/servers",
+        "cluster_id": 1395,
+        "x": 9.42331027984619,
+        "y": -1.63513159751892,
+        "total_stars": 90746
+      },
+      {
+        "repo_name": "morluto/rea",
+        "cluster_id": 1395,
+        "x": 9.98884773254395,
+        "y": -3.39207220077515,
+        "total_stars": 459174
+      },
+      {
+        "repo_name": "rtk-ai/rtk",
+        "cluster_id": 1396,
+        "x": 10.422101020813,
+        "y": -2.55142712593079,
+        "total_stars": 50318
+      },
+      {
+        "repo_name": "chopratejas/headroom",
+        "cluster_id": 1396,
+        "x": 10.2161684036255,
+        "y": -2.56747722625732,
+        "total_stars": 42764
+      },
+      {
+        "repo_name": "ranxianglei/billion-context",
+        "cluster_id": 1396,
+        "x": 10.2347078323364,
+        "y": -2.60990214347839,
+        "total_stars": 6126
+      },
+      {
+        "repo_name": "headroomlabs-ai/headroom",
+        "cluster_id": 1396,
+        "x": 10.2315874099731,
+        "y": -2.53993582725525,
+        "total_stars": 77052
+      },
+      {
+        "repo_name": "odoo/odoo",
+        "cluster_id": 1397,
+        "x": 10.496241569519,
+        "y": -1.45036137104034,
+        "total_stars": 54599
+      },
+      {
+        "repo_name": "every-app/open-seo",
+        "cluster_id": 1397,
+        "x": 10.2082319259644,
+        "y": -1.90815484523773,
+        "total_stars": 21702
+      },
+      {
+        "repo_name": "elastic/elasticsearch",
+        "cluster_id": 1397,
+        "x": 10.3620281219482,
+        "y": -1.70136165618896,
+        "total_stars": 78153
+      },
+      {
+        "repo_name": "frappe/erpnext",
+        "cluster_id": 1397,
+        "x": 10.0525159835815,
+        "y": -1.81265830993652,
+        "total_stars": 34026
+      },
+      {
+        "repo_name": "ever-co/ever-gauzy",
+        "cluster_id": 1397,
+        "x": 10.0804262161255,
+        "y": -1.91700577735901,
+        "total_stars": 8050
+      },
+      {
+        "repo_name": "julyx10/lap",
+        "cluster_id": 1397,
+        "x": 10.6127548217773,
+        "y": -0.511942982673645,
+        "total_stars": 2729
+      },
+      {
+        "repo_name": "strelov1/freehire",
+        "cluster_id": 1397,
+        "x": 10.235068321228,
+        "y": -1.90417468547821,
+        "total_stars": 2088
+      },
+      {
+        "repo_name": "toeverything/AFFiNE",
+        "cluster_id": 1398,
+        "x": 9.89259910583496,
+        "y": -2.41987776756287,
+        "total_stars": 65358
+      },
+      {
+        "repo_name": "tobi/qmd",
+        "cluster_id": 1398,
+        "x": 10.1308813095093,
+        "y": -2.41823673248291,
+        "total_stars": 19136
+      },
+      {
+        "repo_name": "apache/ossie",
+        "cluster_id": 1398,
+        "x": 9.83388614654541,
+        "y": -2.40303897857666,
+        "total_stars": 1624
+      },
+      {
+        "repo_name": "microsoft/Ontology-Playground",
+        "cluster_id": 1398,
+        "x": 9.62713813781738,
+        "y": -2.60425186157227,
+        "total_stars": 2111
+      },
+      {
+        "repo_name": "semantica-agi/semantica",
+        "cluster_id": 1398,
+        "x": 9.8944616317749,
+        "y": -4.19065761566162,
+        "total_stars": 12731
+      },
+      {
+        "repo_name": "open-metadata/OpenMetadata",
+        "cluster_id": 1398,
+        "x": 9.82331275939941,
+        "y": -2.40149617195129,
+        "total_stars": 13500
+      },
+      {
+        "repo_name": "GoogleCloudPlatform/knowledge-catalog",
+        "cluster_id": 1398,
+        "x": 9.89258670806885,
+        "y": -2.49117660522461,
+        "total_stars": 7306
+      },
+      {
+        "repo_name": "NVIDIA/auto-ontology",
+        "cluster_id": 1398,
+        "x": 9.71249103546143,
+        "y": -2.63206648826599,
+        "total_stars": 12497
+      },
+      {
+        "repo_name": "SimoneAvogadro/android-reverse-engineering-skill",
+        "cluster_id": 1399,
+        "x": 10.8065929412842,
+        "y": 0.440265148878098,
+        "total_stars": 5458
+      },
+      {
+        "repo_name": "Universal-Debloater-Alliance/universal-android-debloater-next-generation",
+        "cluster_id": 1399,
+        "x": 10.8075094223022,
+        "y": 0.321993827819824,
+        "total_stars": 8036
+      },
+      {
+        "repo_name": "google/guava",
+        "cluster_id": 1399,
+        "x": 10.8115682601929,
+        "y": 0.371962070465088,
+        "total_stars": 51885
+      },
+      {
+        "repo_name": "MG1937/ASC",
+        "cluster_id": 1399,
+        "x": 10.8232612609863,
+        "y": 0.444275736808777,
+        "total_stars": 1045
+      },
+      {
+        "repo_name": "alibaba/OpenSandbox",
+        "cluster_id": 1400,
+        "x": 9.43833351135254,
+        "y": -3.64799189567566,
+        "total_stars": 5571
+      },
+      {
+        "repo_name": "tractorjuice/arc-kit",
+        "cluster_id": 1400,
+        "x": 9.68567943572998,
+        "y": -4.02638101577759,
+        "total_stars": 1646
+      },
+      {
+        "repo_name": "microsoft/agent-governance-toolkit",
+        "cluster_id": 1400,
+        "x": 9.52722072601318,
+        "y": -4.20030164718628,
+        "total_stars": 4952
+      },
+      {
+        "repo_name": "microsoft/mxc",
+        "cluster_id": 1400,
+        "x": 9.43796348571777,
+        "y": -3.82538819313049,
+        "total_stars": 664
+      },
+      {
+        "repo_name": "TencentCloud/CubeSandbox",
+        "cluster_id": 1400,
+        "x": 9.54709243774414,
+        "y": -3.7812705039978,
+        "total_stars": 10348
+      },
+      {
+        "repo_name": "superradcompany/microsandbox",
+        "cluster_id": 1400,
+        "x": 9.39637279510498,
+        "y": -3.82099056243896,
+        "total_stars": 7815
+      },
+      {
+        "repo_name": "cloudflare/cloudflare-os",
+        "cluster_id": 1400,
+        "x": 9.60392951965332,
+        "y": -3.98761057853699,
+        "total_stars": 10936
+      },
+      {
+        "repo_name": "NVIDIA/OpenShell",
+        "cluster_id": 1400,
+        "x": 9.4335241317749,
+        "y": -3.99993276596069,
+        "total_stars": 20477
+      },
+      {
+        "repo_name": "Ed1s0nZ/CyberStrikeAI",
+        "cluster_id": 1401,
+        "x": 9.30557250976562,
+        "y": -4.4517240524292,
+        "total_stars": 2385
+      },
+      {
+        "repo_name": "KeygraphHQ/shannon",
+        "cluster_id": 1401,
+        "x": 9.31105995178223,
+        "y": -4.48976898193359,
+        "total_stars": 39212
+      },
+      {
+        "repo_name": "mukul975/Anthropic-Cybersecurity-Skills",
+        "cluster_id": 1401,
+        "x": 9.4183464050293,
+        "y": -4.54452514648438,
+        "total_stars": 30170
+      },
+      {
+        "repo_name": "NVIDIA/SkillSpector",
+        "cluster_id": 1401,
+        "x": 9.34146308898926,
+        "y": -4.48694658279419,
+        "total_stars": 21891
+      },
+      {
+        "repo_name": "Unclecheng-li/VulnClaw",
+        "cluster_id": 1401,
+        "x": 9.29544448852539,
+        "y": -4.46205568313599,
+        "total_stars": 1483
+      },
+      {
+        "repo_name": "Tencent/AI-Infra-Guard",
+        "cluster_id": 1401,
+        "x": 9.26950454711914,
+        "y": -4.43927621841431,
+        "total_stars": 5960
+      },
+      {
+        "repo_name": "zhaoxuya520/reverse-skill",
+        "cluster_id": 1401,
+        "x": 9.34155464172363,
+        "y": -4.40432119369507,
+        "total_stars": 37777
+      },
+      {
+        "repo_name": "beenuar/AiSOC",
+        "cluster_id": 1401,
+        "x": 9.28539562225342,
+        "y": -4.48010540008545,
+        "total_stars": 5991
+      },
+      {
+        "repo_name": "uber/ADR",
+        "cluster_id": 1401,
+        "x": 9.33803558349609,
+        "y": -4.46272659301758,
+        "total_stars": 848
+      },
+      {
+        "repo_name": "cloudflare/security-audit-skill",
+        "cluster_id": 1401,
+        "x": 9.28084754943848,
+        "y": -4.44748830795288,
+        "total_stars": 73012
+      },
+      {
+        "repo_name": "ifixai-ai/iFixAi",
+        "cluster_id": 1401,
+        "x": 9.40470695495605,
+        "y": -4.45532512664795,
+        "total_stars": 26768
+      },
+      {
+        "repo_name": "YuJunZhiXue/dsh-purge",
+        "cluster_id": 1401,
+        "x": 9.20662879943848,
+        "y": -4.38058185577393,
+        "total_stars": 15231
+      },
+      {
+        "repo_name": "togg53192-cmd/jailbreaks",
+        "cluster_id": 1401,
+        "x": 9.20307540893555,
+        "y": -4.37108087539673,
+        "total_stars": 12714
+      },
+      {
+        "repo_name": "D4Vinci/Scrapling",
+        "cluster_id": 1402,
+        "x": 12.3403377532959,
+        "y": -2.7069878578186,
+        "total_stars": 102040
+      },
+      {
+        "repo_name": "alibaba/page-agent",
+        "cluster_id": 1402,
+        "x": 12.479793548584,
+        "y": -2.48459410667419,
+        "total_stars": 28303
+      },
+      {
+        "repo_name": "jo-inc/camofox-browser",
+        "cluster_id": 1402,
+        "x": 12.4719514846802,
+        "y": -2.57357597351074,
+        "total_stars": 10237
+      },
+      {
+        "repo_name": "ChromeDevTools/chrome-devtools-mcp",
+        "cluster_id": 1402,
+        "x": 12.3412017822266,
+        "y": -2.44276237487793,
+        "total_stars": 56746
+      },
+      {
+        "repo_name": "browserbase/skills",
+        "cluster_id": 1402,
+        "x": 12.418327331543,
+        "y": -2.60082221031189,
+        "total_stars": 3032
+      },
+      {
+        "repo_name": "CloakHQ/CloakBrowser",
+        "cluster_id": 1402,
+        "x": 12.0798463821411,
+        "y": -0.314075708389282,
+        "total_stars": 26155
+      },
+      {
+        "repo_name": "unclecode/crawl4ai",
+        "cluster_id": 1402,
+        "x": 12.2608861923218,
+        "y": -2.80841279029846,
+        "total_stars": 80716
+      },
+      {
+        "repo_name": "Panniantong/Agent-Reach",
+        "cluster_id": 1402,
+        "x": 12.0032749176025,
+        "y": -3.05053663253784,
+        "total_stars": 106686
+      },
+      {
+        "repo_name": "puppeteer/puppeteer",
+        "cluster_id": 1402,
+        "x": 12.4798145294189,
+        "y": -2.50158071517944,
+        "total_stars": 95142
+      },
+      {
+        "repo_name": "firecrawl/firecrawl",
+        "cluster_id": 1402,
+        "x": 12.3014545440674,
+        "y": -2.7956109046936,
+        "total_stars": 165522
+      },
+      {
+        "repo_name": "microsoft/Webwright",
+        "cluster_id": 1402,
+        "x": 12.4161911010742,
+        "y": -2.575199842453,
+        "total_stars": 5551
+      },
+      {
+        "repo_name": "NanmiCoder/MediaCrawler",
+        "cluster_id": 1402,
+        "x": 12.3578948974609,
+        "y": -2.68099021911621,
+        "total_stars": 62280
+      },
+      {
+        "repo_name": "KnockOutEZ/wigolo",
+        "cluster_id": 1402,
+        "x": 12.2588024139404,
+        "y": -2.81222200393677,
+        "total_stars": 3668
+      },
+      {
+        "repo_name": "agegr/pi-web",
+        "cluster_id": 1402,
+        "x": 12.3431644439697,
+        "y": -2.45394062995911,
+        "total_stars": 4696
+      },
+      {
+        "repo_name": "citrolabs/ego-lite",
+        "cluster_id": 1402,
+        "x": 12.5350217819214,
+        "y": -2.57170271873474,
+        "total_stars": 14276
+      },
+      {
+        "repo_name": "Tencent/BrowserSkill",
+        "cluster_id": 1402,
+        "x": 12.4587097167969,
+        "y": -2.61735510826111,
+        "total_stars": 7710
+      },
+      {
+        "repo_name": "vercel-labs/agent-browser",
+        "cluster_id": 1402,
+        "x": 12.4241895675659,
+        "y": -2.60281038284302,
+        "total_stars": 51489
+      },
+      {
+        "repo_name": "HailToDodongo/pyrite64",
+        "cluster_id": 1403,
+        "x": 9.12905311584473,
+        "y": -1.01691401004791,
+        "total_stars": 2210
+      },
+      {
+        "repo_name": "Diolinux/PhotoGIMP",
+        "cluster_id": 1403,
+        "x": 11.5491466522217,
+        "y": -2.42771196365356,
+        "total_stars": 10344
+      },
+      {
+        "repo_name": "zeux/meshoptimizer",
+        "cluster_id": 1403,
+        "x": 10.8473997116089,
+        "y": -1.3500725030899,
+        "total_stars": 8173
+      },
+      {
+        "repo_name": "clshortfuse/renodx",
+        "cluster_id": 1403,
+        "x": 9.2466459274292,
+        "y": -1.06656265258789,
+        "total_stars": 3428
+      },
+      {
+        "repo_name": "ruvnet/wifi-densepose",
+        "cluster_id": 1404,
+        "x": 8.17450332641602,
+        "y": -1.16693258285522,
+        "total_stars": 18949
+      },
+      {
+        "repo_name": "GVCLab/PersonaLive",
+        "cluster_id": 1404,
+        "x": 8.23502063751221,
+        "y": -0.988704979419708,
+        "total_stars": 2103
+      },
+      {
+        "repo_name": "AIDC-AI/Pixelle-Video",
+        "cluster_id": 1404,
+        "x": 8.33655738830566,
+        "y": -0.956830143928528,
+        "total_stars": 21190
+      },
+      {
+        "repo_name": "Anil-matcha/Open-Generative-AI",
+        "cluster_id": 1404,
+        "x": 8.27453708648682,
+        "y": -0.999218285083771,
+        "total_stars": 21566
+      },
+      {
+        "repo_name": "playcanvas/supersplat",
+        "cluster_id": 1404,
+        "x": 8.50479602813721,
+        "y": -1.13388967514038,
+        "total_stars": 8214
+      },
+      {
+        "repo_name": "NVIDIA-AI-Blueprints/video-search-and-summarization",
+        "cluster_id": 1404,
+        "x": 8.22196483612061,
+        "y": -1.26032149791718,
+        "total_stars": 992
+      },
+      {
+        "repo_name": "heygen-com/hyperframes",
+        "cluster_id": 1404,
+        "x": 8.36763954162598,
+        "y": -1.02016890048981,
+        "total_stars": 84621
+      },
+      {
+        "repo_name": "NVlabs/Sana",
+        "cluster_id": 1404,
+        "x": 8.32404136657715,
+        "y": -0.958916366100311,
+        "total_stars": 6285
+      },
+      {
+        "repo_name": "HKUDS/ViMax",
+        "cluster_id": 1404,
+        "x": 8.48848438262939,
+        "y": -0.813527345657349,
+        "total_stars": 10393
+      },
+      {
+        "repo_name": "NVlabs/LongLive",
+        "cluster_id": 1404,
+        "x": 8.30986022949219,
+        "y": -0.941833674907684,
+        "total_stars": 1931
+      },
+      {
+        "repo_name": "godotengine/godot",
+        "cluster_id": 1404,
+        "x": 9.00834083557129,
+        "y": -1.04827797412872,
+        "total_stars": 111867
+      },
+      {
+        "repo_name": "Lightricks/LTX-2",
+        "cluster_id": 1404,
+        "x": 8.11618804931641,
+        "y": -0.931580722332001,
+        "total_stars": 9155
+      },
+      {
+        "repo_name": "palmier-io/palmier-pro",
+        "cluster_id": 1404,
+        "x": 8.5029354095459,
+        "y": -0.603834271430969,
+        "total_stars": 12371
+      },
+      {
+        "repo_name": "browser-use/video-use",
+        "cluster_id": 1404,
+        "x": 9.07040023803711,
+        "y": -0.426935523748398,
+        "total_stars": 26307
+      },
+      {
+        "repo_name": "Robbyant/lingbot-map",
+        "cluster_id": 1404,
+        "x": 8.4332914352417,
+        "y": -1.09152150154114,
+        "total_stars": 17604
+      },
+      {
+        "repo_name": "bradautomates/claude-video",
+        "cluster_id": 1404,
+        "x": 11.1784963607788,
+        "y": -4.70484685897827,
+        "total_stars": 15253
+      },
+      {
+        "repo_name": "YimMenu/YimMenuV2",
+        "cluster_id": 1404,
+        "x": 8.66899394989014,
+        "y": -0.954797327518463,
+        "total_stars": 1540
+      },
+      {
+        "repo_name": "microsoft/TRELLIS.2",
+        "cluster_id": 1404,
+        "x": 8.3517427444458,
+        "y": -1.03607046604156,
+        "total_stars": 10357
+      },
+      {
+        "repo_name": "lightningpixel/modly",
+        "cluster_id": 1404,
+        "x": 9.09208965301514,
+        "y": -1.14625513553619,
+        "total_stars": 7082
+      },
+      {
+        "repo_name": "3b1b/manim",
+        "cluster_id": 1404,
+        "x": 8.88558387756348,
+        "y": -1.07607853412628,
+        "total_stars": 93598
+      },
+      {
+        "repo_name": "freestylefly/awesome-gpt-image-2",
+        "cluster_id": 1404,
+        "x": 8.41344261169434,
+        "y": -1.07463896274567,
+        "total_stars": 33372
+      },
+      {
+        "repo_name": "bilawalsidhu/gods-eye-view",
+        "cluster_id": 1404,
+        "x": 8.53466320037842,
+        "y": -1.082932472229,
+        "total_stars": 54942
+      },
+      {
+        "repo_name": "ArthurBrussee/brush",
+        "cluster_id": 1404,
+        "x": 8.50195407867432,
+        "y": -1.16629028320312,
+        "total_stars": 4240
+      },
+      {
+        "repo_name": "armory3d/armorpaint",
+        "cluster_id": 1404,
+        "x": 8.78149127960205,
+        "y": -1.13357734680176,
+        "total_stars": 4832
+      },
+      {
+        "repo_name": "multimodal-art-projection/YuE",
+        "cluster_id": 1404,
+        "x": 8.22547912597656,
+        "y": -0.818511486053467,
+        "total_stars": 9208
+      },
+      {
+        "repo_name": "zhouxiaoka/autoclip",
+        "cluster_id": 1404,
+        "x": 8.58294582366943,
+        "y": -0.68156373500824,
+        "total_stars": 8080
+      },
+      {
+        "repo_name": "harry7557558/spirula-studio",
+        "cluster_id": 1404,
+        "x": 8.47175693511963,
+        "y": -1.18731701374054,
+        "total_stars": 658
+      },
+      {
+        "repo_name": "meituan-longcat/LongCat-Video",
+        "cluster_id": 1404,
+        "x": 8.37874412536621,
+        "y": -0.895825386047363,
+        "total_stars": 8631
+      },
+      {
+        "repo_name": "storytold/artcraft",
+        "cluster_id": 1404,
+        "x": 8.92919921875,
+        "y": -1.05676007270813,
+        "total_stars": 40214
+      },
+      {
+        "repo_name": "Kruk2/jasna",
+        "cluster_id": 1404,
+        "x": 8.37829875946045,
+        "y": -0.924724280834198,
+        "total_stars": 2800
+      },
+      {
+        "repo_name": "Likely7/Veyra-NRVideo",
+        "cluster_id": 1404,
+        "x": 8.50368785858154,
+        "y": -0.98362135887146,
+        "total_stars": 1926
+      },
+      {
+        "repo_name": "Vincentwei1021/video-shotcraft",
+        "cluster_id": 1404,
+        "x": 11.1608514785767,
+        "y": -4.67153739929199,
+        "total_stars": 19920
+      },
+      {
+        "repo_name": "JiaFeiMiao-K-Cat/DiscImageStudio",
+        "cluster_id": 1404,
+        "x": 8.34307289123535,
+        "y": -0.923531353473663,
+        "total_stars": 7134
+      },
+      {
+        "repo_name": "agent-substrate/substrate",
+        "cluster_id": 1405,
+        "x": 9.32315921783447,
+        "y": -3.78448414802551,
+        "total_stars": 5641
+      },
+      {
+        "repo_name": "amadeusprotocol/node",
+        "cluster_id": 1405,
+        "x": 9.37503433227539,
+        "y": -3.73159337043762,
+        "total_stars": 4930
+      },
+      {
+        "repo_name": "cilium/cilium",
+        "cluster_id": 1405,
+        "x": 9.27731895446777,
+        "y": -3.75634717941284,
+        "total_stars": 25522
+      },
+      {
+        "repo_name": "google/ax",
+        "cluster_id": 1405,
+        "x": 9.3477954864502,
+        "y": -3.71213150024414,
+        "total_stars": 11177
+      },
+      {
+        "repo_name": "kelseyhightower/kubernetes-the-hard-way",
+        "cluster_id": 1405,
+        "x": 7.19283294677734,
+        "y": -3.62884664535522,
+        "total_stars": 50040
+      },
+      {
+        "repo_name": "dsx-ai-factory/nvke",
+        "cluster_id": 1405,
+        "x": 7.33567667007446,
+        "y": -2.04994702339172,
+        "total_stars": 746
+      },
+      {
+        "repo_name": "HunxByts/GhostTrack",
+        "cluster_id": 1406,
+        "x": 11.3233947753906,
+        "y": 0.880621790885925,
+        "total_stars": 17334
+      },
+      {
+        "repo_name": "sepinf-inc/IPED",
+        "cluster_id": 1406,
+        "x": 11.304931640625,
+        "y": 0.764959394931793,
+        "total_stars": 2298
+      },
+      {
+        "repo_name": "sherlock-project/sherlock",
+        "cluster_id": 1406,
+        "x": 11.3804693222046,
+        "y": 0.848064482212067,
+        "total_stars": 112280
+      },
+      {
+        "repo_name": "Z4nzu/hackingtool",
+        "cluster_id": 1406,
+        "x": 11.3022212982178,
+        "y": 0.617272198200226,
+        "total_stars": 76385
+      },
+      {
+        "repo_name": "soxoj/maigret",
+        "cluster_id": 1406,
+        "x": 11.4143915176392,
+        "y": 0.902475595474243,
+        "total_stars": 34095
+      },
+      {
+        "repo_name": "reconurge/flowsint",
+        "cluster_id": 1406,
+        "x": 11.3525304794312,
+        "y": 0.862007021903992,
+        "total_stars": 8231
+      },
+      {
+        "repo_name": "smicallef/spiderfoot",
+        "cluster_id": 1406,
+        "x": 11.3571405410767,
+        "y": 0.872498214244843,
+        "total_stars": 21038
+      },
+      {
+        "repo_name": "Mebus/cupp",
+        "cluster_id": 1406,
+        "x": 11.4260263442993,
+        "y": 0.677921891212463,
+        "total_stars": 6188
+      },
+      {
+        "repo_name": "geo-tp/ESP32-Bit-Pirate",
+        "cluster_id": 1406,
+        "x": 11.1866340637207,
+        "y": 0.676794111728668,
+        "total_stars": 5212
+      },
+      {
+        "repo_name": "K2SOsint/Legendary_OSINT",
+        "cluster_id": 1406,
+        "x": 11.3673391342163,
+        "y": 0.860991179943085,
+        "total_stars": 1607
+      },
+      {
+        "repo_name": "megadose/holehe",
+        "cluster_id": 1406,
+        "x": 11.4442205429077,
+        "y": 0.723948836326599,
+        "total_stars": 14811
+      },
+      {
+        "repo_name": "NationalSecurityAgency/ghidra",
+        "cluster_id": 1406,
+        "x": 11.0423917770386,
+        "y": 0.588823437690735,
+        "total_stars": 99558
+      },
+      {
+        "repo_name": "BigBodyCobain/Shadowbroker",
+        "cluster_id": 1406,
+        "x": 11.2223415374756,
+        "y": 0.960664868354797,
+        "total_stars": 8022
+      },
+      {
+        "repo_name": "kaifcodec/user-scanner",
+        "cluster_id": 1406,
+        "x": 11.3718700408936,
+        "y": 0.869389474391937,
+        "total_stars": 4076
+      },
+      {
+        "repo_name": "mvt-project/mvt",
+        "cluster_id": 1406,
+        "x": 11.0377960205078,
+        "y": 0.67492401599884,
+        "total_stars": 14626
+      },
+      {
+        "repo_name": "derv82/wifit3",
+        "cluster_id": 1406,
+        "x": 11.2210521697998,
+        "y": 0.837180018424988,
+        "total_stars": 743
+      },
+      {
+        "repo_name": "martin-olivier/airgorah",
+        "cluster_id": 1406,
+        "x": 11.2826280593872,
+        "y": 0.9223513007164,
+        "total_stars": 5602
+      },
+      {
+        "repo_name": "apple/container",
+        "cluster_id": 1407,
+        "x": 10.4050531387329,
+        "y": -0.817490577697754,
+        "total_stars": 47616
+      },
+      {
+        "repo_name": "opa334/Dopamine",
+        "cluster_id": 1407,
+        "x": 10.0450897216797,
+        "y": -0.962692558765411,
+        "total_stars": 6151
+      },
+      {
+        "repo_name": "Lakr233/vphone-cli",
+        "cluster_id": 1407,
+        "x": 10.1629419326782,
+        "y": -0.948977589607239,
+        "total_stars": 14455
+      },
+      {
+        "repo_name": "majd/ipatool",
+        "cluster_id": 1407,
+        "x": 10.1900177001953,
+        "y": -0.990848779678345,
+        "total_stars": 10939
+      },
+      {
+        "repo_name": "vorssaint/vorssaint-utils",
+        "cluster_id": 1407,
+        "x": 10.3939599990845,
+        "y": -0.814899444580078,
+        "total_stars": 31641
+      },
+      {
+        "repo_name": "nab138/iloader",
+        "cluster_id": 1407,
+        "x": 10.1938447952271,
+        "y": -0.962644577026367,
+        "total_stars": 3000
+      },
+      {
+        "repo_name": "peetzweg/opendisplay",
+        "cluster_id": 1407,
+        "x": 10.3264141082764,
+        "y": -0.805417478084564,
+        "total_stars": 3427
+      },
+      {
+        "repo_name": "Homebrew/BrewUI",
+        "cluster_id": 1407,
+        "x": 10.3806991577148,
+        "y": -0.802966952323914,
+        "total_stars": 1117
+      },
+      {
+        "repo_name": "abue-ammar/tinycast",
+        "cluster_id": 1407,
+        "x": 10.3920907974243,
+        "y": -0.82786625623703,
+        "total_stars": 7516
+      },
+      {
+        "repo_name": "willfaust/Madeira",
+        "cluster_id": 1407,
+        "x": 9.85466575622559,
+        "y": -0.972921848297119,
+        "total_stars": 1051
+      },
+      {
+        "repo_name": "firebase/firebase-ios-sdk",
+        "cluster_id": 1407,
+        "x": 10.2421617507935,
+        "y": -0.956424176692963,
+        "total_stars": 6833
+      },
+      {
+        "repo_name": "xtool-org/xtool",
+        "cluster_id": 1407,
+        "x": 10.1749935150146,
+        "y": -0.969694912433624,
+        "total_stars": 10222
+      },
+      {
+        "repo_name": "neovim/neovim",
+        "cluster_id": 1408,
+        "x": 11.8336887359619,
+        "y": -2.39427042007446,
+        "total_stars": 97733
+      },
+      {
+        "repo_name": "nvim-treesitter/nvim-treesitter",
+        "cluster_id": 1408,
+        "x": 11.7454481124878,
+        "y": -2.33643126487732,
+        "total_stars": 13577
+      },
+      {
+        "repo_name": "zed-industries/zed",
+        "cluster_id": 1408,
+        "x": 11.7819499969482,
+        "y": -2.65052223205566,
+        "total_stars": 94933
+      },
+      {
+        "repo_name": "github/spec-kit",
+        "cluster_id": 1408,
+        "x": 11.7506456375122,
+        "y": -2.1571090221405,
+        "total_stars": 148628
+      },
+      {
+        "repo_name": "vitejs/vite",
+        "cluster_id": 1408,
+        "x": 11.8941564559937,
+        "y": -2.34381294250488,
+        "total_stars": 81265
+      },
+      {
+        "repo_name": "biomejs/biome",
+        "cluster_id": 1408,
+        "x": 11.8075199127197,
+        "y": -2.48137450218201,
+        "total_stars": 25148
+      },
+      {
+        "repo_name": "nuxt/nuxt",
+        "cluster_id": 1408,
+        "x": 12.1702709197998,
+        "y": -2.2430374622345,
+        "total_stars": 60758
+      },
+      {
+        "repo_name": "microsoft/vscode",
+        "cluster_id": 1408,
+        "x": 11.9155302047729,
+        "y": -2.42620706558228,
+        "total_stars": 194890
+      },
+      {
+        "repo_name": "Axorax/awesome-free-apps",
+        "cluster_id": 1409,
+        "x": 10.4922752380371,
+        "y": -0.750461220741272,
+        "total_stars": 5593
+      },
+      {
+        "repo_name": "flutter/flutter",
+        "cluster_id": 1409,
+        "x": 10.6340217590332,
+        "y": -0.776959359645844,
+        "total_stars": 180916
+      },
+      {
+        "repo_name": "basecamp/omarchy",
+        "cluster_id": 1409,
+        "x": 10.755500793457,
+        "y": -0.425135523080826,
+        "total_stars": 33123
+      },
+      {
+        "repo_name": "omacom/omarchy",
+        "cluster_id": 1409,
+        "x": 10.672306060791,
+        "y": -0.46672397851944,
+        "total_stars": 42970
+      },
+      {
+        "repo_name": "openwrt/openwrt",
+        "cluster_id": 1409,
+        "x": 10.7590208053589,
+        "y": -0.43119153380394,
+        "total_stars": 26489
+      },
+      {
+        "repo_name": "shadcn-ui/ui",
+        "cluster_id": 1410,
+        "x": 12.0839595794678,
+        "y": -1.74185407161713,
+        "total_stars": 108836
+      },
+      {
+        "repo_name": "DioxusLabs/dioxus",
+        "cluster_id": 1410,
+        "x": 11.8859968185425,
+        "y": -1.08518600463867,
+        "total_stars": 38181
+      },
+      {
+        "repo_name": "longbridge/gpui-kit",
+        "cluster_id": 1410,
+        "x": 11.4970550537109,
+        "y": -1.22066414356232,
+        "total_stars": 18265
+      },
+      {
+        "repo_name": "Raphire/Win11Debloat",
+        "cluster_id": 1411,
+        "x": 11.1172571182251,
+        "y": -1.38370394706726,
+        "total_stars": 52099
+      },
+      {
+        "repo_name": "microsoft/PowerToys",
+        "cluster_id": 1411,
+        "x": 11.0321292877197,
+        "y": -1.40491962432861,
+        "total_stars": 137300
+      },
+      {
+        "repo_name": "Greedeks/GTweak",
+        "cluster_id": 1411,
+        "x": 11.1231107711792,
+        "y": -1.39356076717377,
+        "total_stars": 741
+      },
+      {
+        "repo_name": "itsfatduck/optimizerDuck",
+        "cluster_id": 1411,
+        "x": 11.0387620925903,
+        "y": -1.39983975887299,
+        "total_stars": 3488
+      },
+      {
+        "repo_name": "vercel-labs/native",
+        "cluster_id": 1411,
+        "x": 11.4235076904297,
+        "y": -1.35953545570374,
+        "total_stars": 6560
+      },
+      {
+        "repo_name": "k1tbyte/Wand-Enhancer",
+        "cluster_id": 1411,
+        "x": 11.2109670639038,
+        "y": -1.28302299976349,
+        "total_stars": 23243
+      },
+      {
+        "repo_name": "ntdevlabs/tiny11builder",
+        "cluster_id": 1411,
+        "x": 11.1278314590454,
+        "y": -1.34642744064331,
+        "total_stars": 20072
+      },
+      {
+        "repo_name": "dani-garcia/vaultwarden",
+        "cluster_id": 1412,
+        "x": 11.5253524780273,
+        "y": 0.241168722510338,
+        "total_stars": 67451
+      },
+      {
+        "repo_name": "imthenachoman/How-To-Secure-A-Linux-Server",
+        "cluster_id": 1412,
+        "x": 11.4037132263184,
+        "y": 0.336709380149841,
+        "total_stars": 28792
+      },
+      {
+        "repo_name": "logto-io/logto",
+        "cluster_id": 1412,
+        "x": 11.4328927993774,
+        "y": 0.330294132232666,
+        "total_stars": 13772
+      },
+      {
+        "repo_name": "veracrypt/VeraCrypt",
+        "cluster_id": 1412,
+        "x": 11.3965101242065,
+        "y": 0.210924118757248,
+        "total_stars": 10318
+      },
+      {
+        "repo_name": "goauthentik/authentik",
+        "cluster_id": 1412,
+        "x": 11.4799242019653,
+        "y": 0.33785143494606,
+        "total_stars": 24753
+      },
+      {
+        "repo_name": "keycloak/keycloak",
+        "cluster_id": 1412,
+        "x": 11.4783744812012,
+        "y": 0.274680107831955,
+        "total_stars": 35392
+      },
+      {
+        "repo_name": "openbao/openbao",
+        "cluster_id": 1412,
+        "x": 11.408073425293,
+        "y": 0.200167149305344,
+        "total_stars": 7899
+      },
+      {
+        "repo_name": "openssl/openssl",
+        "cluster_id": 1412,
+        "x": 11.5293779373169,
+        "y": 0.194341480731964,
+        "total_stars": 31239
+      },
+      {
+        "repo_name": "axios/axios",
+        "cluster_id": 1413,
+        "x": 12.446192741394,
+        "y": -1.15467476844788,
+        "total_stars": 108949
+      },
+      {
+        "repo_name": "paperless-ngx/paperless-ngx",
+        "cluster_id": 1413,
+        "x": 12.3920974731445,
+        "y": -1.05413460731506,
+        "total_stars": 45388
+      },
+      {
+        "repo_name": "nginx/nginx",
+        "cluster_id": 1413,
+        "x": 12.48459815979,
+        "y": -1.13331580162048,
+        "total_stars": 30745
+      },
+      {
+        "repo_name": "TryGhost/Ghost",
+        "cluster_id": 1413,
+        "x": 12.2693433761597,
+        "y": -1.27965760231018,
+        "total_stars": 55001
+      },
+      {
+        "repo_name": "LadybirdBrowser/ladybird",
+        "cluster_id": 1413,
+        "x": 12.2898006439209,
+        "y": -0.971703052520752,
+        "total_stars": 65651
+      },
+      {
+        "repo_name": "caddyserver/caddy",
+        "cluster_id": 1413,
+        "x": 12.3270664215088,
+        "y": -0.992254555225372,
+        "total_stars": 76996
+      },
+      {
+        "repo_name": "rakyll/hey",
+        "cluster_id": 1413,
+        "x": 12.39026927948,
+        "y": -1.14510703086853,
+        "total_stars": 20418
+      },
+      {
+        "repo_name": "vercel/next.js",
+        "cluster_id": 1414,
+        "x": 12.6164035797119,
+        "y": -1.91646552085876,
+        "total_stars": 143142
+      },
+      {
+        "repo_name": "eslint/eslint",
+        "cluster_id": 1414,
+        "x": 12.8947238922119,
+        "y": -1.60684406757355,
+        "total_stars": 27086
+      },
+      {
+        "repo_name": "Effect-TS/effect-smol",
+        "cluster_id": 1414,
+        "x": 12.8814821243286,
+        "y": -1.6201651096344,
+        "total_stars": 391
+      },
+      {
+        "repo_name": "blackboardsh/electrobun",
+        "cluster_id": 1414,
+        "x": 12.8017072677612,
+        "y": -1.57388579845428,
+        "total_stars": 6236
+      },
+      {
+        "repo_name": "servo/servo",
+        "cluster_id": 1414,
+        "x": 12.6270408630371,
+        "y": -2.06781125068665,
+        "total_stars": 35811
+      },
+      {
+        "repo_name": "microsoft/typescript-go",
+        "cluster_id": 1414,
+        "x": 12.9532690048218,
+        "y": -1.57347631454468,
+        "total_stars": 25081
+      },
+      {
+        "repo_name": "oven-sh/bun",
+        "cluster_id": 1414,
+        "x": 12.9051923751831,
+        "y": -1.54722046852112,
+        "total_stars": 94820
+      },
+      {
+        "repo_name": "withastro/flue",
+        "cluster_id": 1414,
+        "x": 12.9545612335205,
+        "y": -1.54551362991333,
+        "total_stars": 6766
+      },
+      {
+        "repo_name": "sveltejs/svelte",
+        "cluster_id": 1414,
+        "x": 12.8050117492676,
+        "y": -1.74382340908051,
+        "total_stars": 87211
+      },
+      {
+        "repo_name": "swc-project/swc",
+        "cluster_id": 1414,
+        "x": 12.895281791687,
+        "y": -1.63686668872833,
+        "total_stars": 34093
+      },
+      {
+        "repo_name": "dotnet/aspnetcore",
+        "cluster_id": 1414,
+        "x": 12.4906978607178,
+        "y": -1.70207667350769,
+        "total_stars": 38334
+      },
+      {
+        "repo_name": "microsoft/TypeScript",
+        "cluster_id": 1414,
+        "x": 12.9690914154053,
+        "y": -1.59064650535583,
+        "total_stars": 110600
+      },
+      {
+        "repo_name": "nasa/fprime",
+        "cluster_id": 1414,
+        "x": 12.7847566604614,
+        "y": -1.34495365619659,
+        "total_stars": 11540
+      },
+      {
+        "repo_name": "denoland/deno",
+        "cluster_id": 1414,
+        "x": 12.8433284759521,
+        "y": -1.66096162796021,
+        "total_stars": 108123
+      },
+      {
+        "repo_name": "angular/angular",
+        "cluster_id": 1414,
+        "x": 12.7477569580078,
+        "y": -1.57251048088074,
+        "total_stars": 101210
+      },
+      {
+        "repo_name": "webpack/webpack",
+        "cluster_id": 1414,
+        "x": 12.6598768234253,
+        "y": -1.70508086681366,
+        "total_stars": 65984
+      },
+      {
+        "repo_name": "cordiverse/cordis",
+        "cluster_id": 1414,
+        "x": 12.7670764923096,
+        "y": -1.65872180461884,
+        "total_stars": 8433
+      },
+      {
+        "repo_name": "genlayerlabs/genlayer-project-boilerplate",
+        "cluster_id": 1414,
+        "x": 12.578387260437,
+        "y": -2.15936660766602,
+        "total_stars": 16282
+      },
+      {
+        "repo_name": "colinhacks/zod",
+        "cluster_id": 1414,
+        "x": 12.9632530212402,
+        "y": -1.57041323184967,
+        "total_stars": 43879
+      },
+      {
+        "repo_name": "ryanmcdermott/clean-code-javascript",
+        "cluster_id": 1414,
+        "x": 12.9611854553223,
+        "y": -1.64831376075745,
+        "total_stars": 94453
+      },
+      {
+        "repo_name": "nvm-sh/nvm",
+        "cluster_id": 1414,
+        "x": 12.7835721969604,
+        "y": -1.69360673427582,
+        "total_stars": 95969
+      },
+      {
+        "repo_name": "vercel-labs/scriptc",
+        "cluster_id": 1414,
+        "x": 12.8765411376953,
+        "y": -1.61558103561401,
+        "total_stars": 5261
+      },
+      {
+        "repo_name": "Effect-TS/effect",
+        "cluster_id": 1414,
+        "x": 12.964391708374,
+        "y": -1.58461332321167,
+        "total_stars": 17032
+      },
+      {
+        "repo_name": "nodejs/node",
+        "cluster_id": 1414,
+        "x": 12.8127689361572,
+        "y": -1.69575107097626,
+        "total_stars": 123545
+      },
+      {
+        "repo_name": "react/react",
+        "cluster_id": 1414,
+        "x": 12.5600070953369,
+        "y": -1.91048455238342,
+        "total_stars": 252132
+      },
+      {
+        "repo_name": "clockworklabs/SpacetimeDB",
+        "cluster_id": 1415,
+        "x": 11.9992933273315,
+        "y": -1.27604508399963,
+        "total_stars": 21043
+      },
+      {
+        "repo_name": "cursor/plugins",
+        "cluster_id": 1415,
+        "x": 11.9284610748291,
+        "y": -1.43318951129913,
+        "total_stars": 14978
+      },
+      {
+        "repo_name": "dbt-labs/dbt-core",
+        "cluster_id": 1415,
+        "x": 12.1369686126709,
+        "y": -1.39435291290283,
+        "total_stars": 13288
+      },
+      {
+        "repo_name": "t8y2/dbx",
+        "cluster_id": 1415,
+        "x": 12.0714979171753,
+        "y": -1.29596078395844,
+        "total_stars": 22951
+      },
+      {
+        "repo_name": "prisma/prisma",
+        "cluster_id": 1415,
+        "x": 12.4189462661743,
+        "y": -1.50174391269684,
+        "total_stars": 47322
+      },
+      {
+        "repo_name": "drawdb-io/drawdb",
+        "cluster_id": 1415,
+        "x": 12.3298273086548,
+        "y": -1.55297696590424,
+        "total_stars": 39081
+      },
+      {
+        "repo_name": "tursodatabase/turso",
+        "cluster_id": 1415,
+        "x": 12.0516538619995,
+        "y": -1.33016669750214,
+        "total_stars": 21081
+      },
+      {
+        "repo_name": "rails/rails",
+        "cluster_id": 1415,
+        "x": 12.3526411056519,
+        "y": -1.52720105648041,
+        "total_stars": 58935
+      },
+      {
+        "repo_name": "opentoonz/opentoonz",
+        "cluster_id": 1416,
+        "x": 9.33726692199707,
+        "y": -0.442747473716736,
+        "total_stars": 6092
+      },
+      {
+        "repo_name": "yairm210/Unciv",
+        "cluster_id": 1416,
+        "x": 9.44843006134033,
+        "y": -0.760904967784882,
+        "total_stars": 10770
+      },
+      {
+        "repo_name": "rommapp/romm",
+        "cluster_id": 1416,
+        "x": 9.68765830993652,
+        "y": -0.789974272251129,
+        "total_stars": 10342
+      },
+      {
+        "repo_name": "SmartlyDressedGames/U3-SDK",
+        "cluster_id": 1416,
+        "x": 9.43933391571045,
+        "y": -0.737135946750641,
+        "total_stars": 1720
+      },
+      {
+        "repo_name": "par274/sharpemu",
+        "cluster_id": 1416,
+        "x": 9.66196537017822,
+        "y": -0.835918664932251,
+        "total_stars": 2361
+      },
+      {
+        "repo_name": "Pumpkin-MC/Pumpkin",
+        "cluster_id": 1416,
+        "x": 9.82907390594482,
+        "y": -0.660381257534027,
+        "total_stars": 10458
+      },
+      {
+        "repo_name": "openrocket/openrocket",
+        "cluster_id": 1416,
+        "x": 9.37033653259277,
+        "y": -0.534635663032532,
+        "total_stars": 2309
+      },
+      {
+        "repo_name": "punkpeye/awesome-mcp-servers",
+        "cluster_id": 1416,
+        "x": 9.77622985839844,
+        "y": -0.75985723733902,
+        "total_stars": 94402
+      },
+      {
+        "repo_name": "Augani/openreel-video",
+        "cluster_id": 1416,
+        "x": 9.32893371582031,
+        "y": -0.375094145536423,
+        "total_stars": 1900
+      },
+      {
+        "repo_name": "OpenCut-app/OpenCut",
+        "cluster_id": 1416,
+        "x": 9.32948017120361,
+        "y": -0.391663163900375,
+        "total_stars": 91909
+      },
+      {
+        "repo_name": "boykopovar/AnyPS5",
+        "cluster_id": 1416,
+        "x": 9.61662578582764,
+        "y": -0.891181588172913,
+        "total_stars": 52582
+      },
+      {
+        "repo_name": "Meloong-Git/PCL",
+        "cluster_id": 1416,
+        "x": 9.79403209686279,
+        "y": -0.68219119310379,
+        "total_stars": 8599
+      },
+      {
+        "repo_name": "pi-hole/pi-hole",
+        "cluster_id": 1417,
+        "x": 11.9278984069824,
+        "y": 0.0182419754564762,
+        "total_stars": 56759
+      },
+      {
+        "repo_name": "masterking32/MasterDnsVPN",
+        "cluster_id": 1417,
+        "x": 11.9597778320312,
+        "y": 0.00780272064730525,
+        "total_stars": 6149
+      },
+      {
+        "repo_name": "apernet/hysteria",
+        "cluster_id": 1417,
+        "x": 11.9802856445312,
+        "y": 0.0244878958910704,
+        "total_stars": 21303
+      },
+      {
+        "repo_name": "gorhill/uBlock",
+        "cluster_id": 1417,
+        "x": 12.003023147583,
+        "y": -0.070325531065464,
+        "total_stars": 63869
+      },
+      {
+        "repo_name": "Flowseal/zapret-discord-youtube",
+        "cluster_id": 1417,
+        "x": 11.9604215621948,
+        "y": 0.0490908920764923,
+        "total_stars": 33167
+      },
+      {
+        "repo_name": "bannedbook/fanqiang",
+        "cluster_id": 1417,
+        "x": 11.9672937393188,
+        "y": 0.0283623598515987,
+        "total_stars": 52632
+      },
+      {
+        "repo_name": "p1neappleXpress/OpenFlux",
+        "cluster_id": 1417,
+        "x": 11.9372243881226,
+        "y": 0.0598791018128395,
+        "total_stars": 1303
+      },
+      {
+        "repo_name": "hiddify/hiddify-app",
+        "cluster_id": 1418,
+        "x": 11.9425764083862,
+        "y": -0.162758842110634,
+        "total_stars": 26196
+      },
+      {
+        "repo_name": "XTLS/Xray-core",
+        "cluster_id": 1418,
+        "x": 11.7763071060181,
+        "y": -0.0951188281178474,
+        "total_stars": 37285
+      },
+      {
+        "repo_name": "amnezia-vpn/amnezia-client",
+        "cluster_id": 1418,
+        "x": 11.8442363739014,
+        "y": -0.158626660704613,
+        "total_stars": 13546
+      },
+      {
+        "repo_name": "GyulyVGC/sniffnet",
+        "cluster_id": 1418,
+        "x": 11.7753124237061,
+        "y": -0.00858948472887278,
+        "total_stars": 36665
+      },
+      {
+        "repo_name": "chen08209/FlClash",
+        "cluster_id": 1418,
+        "x": 12.0227365493774,
+        "y": -0.298975974321365,
+        "total_stars": 40483
+      },
+      {
+        "repo_name": "freemocap/freemocap",
+        "cluster_id": 1419,
+        "x": 9.72142314910889,
+        "y": -0.129519283771515,
+        "total_stars": 5639
+      },
+      {
+        "repo_name": "siddharthvaddem/openscreen",
+        "cluster_id": 1419,
+        "x": 9.6856164932251,
+        "y": -0.143220096826553,
+        "total_stars": 34179
+      },
+      {
+        "repo_name": "anonfaded/FadCam",
+        "cluster_id": 1419,
+        "x": 9.97150897979736,
+        "y": 0.112261183559895,
+        "total_stars": 2052
+      },
+      {
+        "repo_name": "Genymobile/scrcpy",
+        "cluster_id": 1419,
+        "x": 10.3659868240356,
+        "y": 0.185413047671318,
+        "total_stars": 140997
+      },
+      {
+        "repo_name": "mahlernim/google-timeline-visualizer",
+        "cluster_id": 1419,
+        "x": 9.77787590026855,
+        "y": 0.0502047464251518,
+        "total_stars": 2640
+      },
+      {
+        "repo_name": "byJoey/cfnew",
+        "cluster_id": 1420,
+        "x": 11.9002227783203,
+        "y": -0.512455642223358,
+        "total_stars": 13387
+      },
+      {
+        "repo_name": "n0-computer/iroh",
+        "cluster_id": 1420,
+        "x": 11.8395185470581,
+        "y": -0.60570764541626,
+        "total_stars": 11774
+      },
+      {
+        "repo_name": "grpc/grpc",
+        "cluster_id": 1420,
+        "x": 11.6487674713135,
+        "y": -0.70630931854248,
+        "total_stars": 45193
+      },
+      {
+        "repo_name": "protocolbuffers/protobuf",
+        "cluster_id": 1420,
+        "x": 11.8428564071655,
+        "y": -0.406166553497314,
+        "total_stars": 71916
+      },
+      {
+        "repo_name": "cloudflare/quiche",
+        "cluster_id": 1420,
+        "x": 11.9224462509155,
+        "y": -0.615563750267029,
+        "total_stars": 12686
+      },
+      {
+        "repo_name": "fastfetch-cli/fastfetch",
+        "cluster_id": 1421,
+        "x": 11.7436895370483,
+        "y": -1.43010473251343,
+        "total_stars": 21278
+      },
+      {
+        "repo_name": "facebook/pyrefly",
+        "cluster_id": 1421,
+        "x": 11.9211339950562,
+        "y": -1.65682339668274,
+        "total_stars": 6462
+      },
+      {
+        "repo_name": "pytest-dev/pytest",
+        "cluster_id": 1421,
+        "x": 11.9143953323364,
+        "y": -1.63142812252045,
+        "total_stars": 14233
+      },
+      {
+        "repo_name": "abseil/abseil-cpp",
+        "cluster_id": 1421,
+        "x": 11.5088195800781,
+        "y": -1.66242218017578,
+        "total_stars": 17984
+      },
+      {
+        "repo_name": "jbeder/yaml-cpp",
+        "cluster_id": 1421,
+        "x": 11.5176296234131,
+        "y": -1.64554584026337,
+        "total_stars": 6114
+      },
+      {
+        "repo_name": "catchorg/Catch2",
+        "cluster_id": 1421,
+        "x": 11.7593288421631,
+        "y": -1.57749211788177,
+        "total_stars": 21395
+      },
+      {
+        "repo_name": "chriskohlhoff/asio",
+        "cluster_id": 1421,
+        "x": 11.4286365509033,
+        "y": -1.54577279090881,
+        "total_stars": 6100
+      },
+      {
+        "repo_name": "gabime/spdlog",
+        "cluster_id": 1421,
+        "x": 11.5451860427856,
+        "y": -1.42026436328888,
+        "total_stars": 29424
+      },
+      {
+        "repo_name": "Automattic/harper",
+        "cluster_id": 1421,
+        "x": 11.8321132659912,
+        "y": -1.60789573192596,
+        "total_stars": 14037
+      },
+      {
+        "repo_name": "google/googletest",
+        "cluster_id": 1421,
+        "x": 11.7519121170044,
+        "y": -1.52699375152588,
+        "total_stars": 39469
+      },
+      {
+        "repo_name": "checkstyle/checkstyle",
+        "cluster_id": 1421,
+        "x": 11.9221076965332,
+        "y": -1.6182359457016,
+        "total_stars": 9551
+      },
+      {
+        "repo_name": "fmtlib/fmt",
+        "cluster_id": 1421,
+        "x": 11.4899015426636,
+        "y": -1.68035078048706,
+        "total_stars": 25852
+      },
+      {
+        "repo_name": "fastapi/fastapi",
+        "cluster_id": 1421,
+        "x": 11.8917427062988,
+        "y": -1.6934449672699,
+        "total_stars": 104269
+      },
+      {
+        "repo_name": "astral-sh/ruff",
+        "cluster_id": 1421,
+        "x": 11.5223236083984,
+        "y": -1.7299439907074,
+        "total_stars": 50867
+      },
+      {
+        "repo_name": "PostHog/posthog",
+        "cluster_id": 1422,
+        "x": 11.7426195144653,
+        "y": -1.21851706504822,
+        "total_stars": 39454
+      },
+      {
+        "repo_name": "pranshuparmar/witr",
+        "cluster_id": 1422,
+        "x": 11.7062005996704,
+        "y": -1.29084062576294,
+        "total_stars": 19996
+      },
+      {
+        "repo_name": "usekaneo/kaneo",
+        "cluster_id": 1422,
+        "x": 11.9262104034424,
+        "y": -1.18279719352722,
+        "total_stars": 8681
+      },
+      {
+        "repo_name": "getsentry/sentry",
+        "cluster_id": 1422,
+        "x": 11.8285875320435,
+        "y": -1.18290817737579,
+        "total_stars": 45298
+      },
+      {
+        "repo_name": "is-a-dev/register",
+        "cluster_id": 1423,
+        "x": 10.9620056152344,
+        "y": -0.430481821298599,
+        "total_stars": 9865
+      },
+      {
+        "repo_name": "dreamhunter2333/cloudflare_temp_email",
+        "cluster_id": 1423,
+        "x": 10.9523277282715,
+        "y": -0.458754330873489,
+        "total_stars": 10950
+      },
+      {
+        "repo_name": "DigitalPlatDev/FreeDomain",
+        "cluster_id": 1423,
+        "x": 10.977837562561,
+        "y": -0.241134375333786,
+        "total_stars": 172187
+      },
+      {
+        "repo_name": "FxEmbed/FxEmbed",
+        "cluster_id": 1423,
+        "x": 11.0366525650024,
+        "y": -0.476451754570007,
+        "total_stars": 5626
+      },
+      {
+        "repo_name": "gitroomhq/postiz-app",
+        "cluster_id": 1423,
+        "x": 11.2185554504395,
+        "y": -0.678132891654968,
+        "total_stars": 39025
+      },
+      {
+        "repo_name": "influxdata/telegraf",
+        "cluster_id": 1424,
+        "x": 11.4184846878052,
+        "y": -0.410451024770737,
+        "total_stars": 17309
+      },
+      {
+        "repo_name": "grafana/grafana",
+        "cluster_id": 1424,
+        "x": 11.4064111709595,
+        "y": -0.466574639081955,
+        "total_stars": 75051
+      },
+      {
+        "repo_name": "teslamate-org/teslamate",
+        "cluster_id": 1424,
+        "x": 11.3668985366821,
+        "y": -0.45697009563446,
+        "total_stars": 8556
+      },
+      {
+        "repo_name": "prometheus/prometheus",
+        "cluster_id": 1424,
+        "x": 11.4329271316528,
+        "y": -0.514311671257019,
+        "total_stars": 67345
+      },
+      {
+        "repo_name": "louislam/uptime-kuma",
+        "cluster_id": 1424,
+        "x": 11.3302135467529,
+        "y": -0.453105509281158,
+        "total_stars": 94116
+      },
+      {
+        "repo_name": "restic/restic",
+        "cluster_id": 1425,
+        "x": 11.172082901001,
+        "y": -0.690509915351868,
+        "total_stars": 34592
+      },
+      {
+        "repo_name": "oblien/openship",
+        "cluster_id": 1425,
+        "x": 10.9189853668213,
+        "y": -0.535728096961975,
+        "total_stars": 13671
+      },
+      {
+        "repo_name": "apache/cassandra",
+        "cluster_id": 1425,
+        "x": 11.3823013305664,
+        "y": -0.629589676856995,
+        "total_stars": 9884
+      },
+      {
+        "repo_name": "cloudflare/computer",
+        "cluster_id": 1425,
+        "x": 11.1333608627319,
+        "y": -0.679846286773682,
+        "total_stars": 8952
+      },
+      {
+        "repo_name": "denoland/celld",
+        "cluster_id": 1425,
+        "x": 11.067813873291,
+        "y": -0.639685869216919,
+        "total_stars": 4468
+      },
+      {
+        "repo_name": "IceWhaleTech/CasaOS",
+        "cluster_id": 1425,
+        "x": 10.9058847427368,
+        "y": -0.455255568027496,
+        "total_stars": 35944
+      },
+      {
+        "repo_name": "rustfs/rustfs",
+        "cluster_id": 1425,
+        "x": 11.3639307022095,
+        "y": -0.781882882118225,
+        "total_stars": 32979
+      },
+      {
+        "repo_name": "coollabsio/coolify",
+        "cluster_id": 1425,
+        "x": 10.9320726394653,
+        "y": -0.503300607204437,
+        "total_stars": 63932
+      },
+      {
+        "repo_name": "floci-io/floci",
+        "cluster_id": 1425,
+        "x": 10.8965244293213,
+        "y": -0.693960428237915,
+        "total_stars": 30205
+      },
+      {
+        "repo_name": "etcd-io/etcd",
+        "cluster_id": 1425,
+        "x": 11.4018497467041,
+        "y": -0.602086365222931,
+        "total_stars": 52533
+      },
+      {
+        "repo_name": "666ghj/BettaFish",
+        "cluster_id": 1426,
+        "x": 8.89603805541992,
+        "y": -3.07051753997803,
+        "total_stars": 37583
+      },
+      {
+        "repo_name": "sansan0/TrendRadar",
+        "cluster_id": 1426,
+        "x": 8.74799728393555,
+        "y": -3.12353539466858,
+        "total_stars": 54143
+      },
+      {
+        "repo_name": "yikart/AiToEarn",
+        "cluster_id": 1426,
+        "x": 8.67659854888916,
+        "y": -3.24697995185852,
+        "total_stars": 22315
+      },
+      {
+        "repo_name": "aiming-lab/AutoResearchClaw",
+        "cluster_id": 1426,
+        "x": 8.82351303100586,
+        "y": -3.42662572860718,
+        "total_stars": 12771
+      },
+      {
+        "repo_name": "koala73/worldmonitor",
+        "cluster_id": 1426,
+        "x": 8.79432010650635,
+        "y": -3.03764796257019,
+        "total_stars": 83596
+      },
+      {
+        "repo_name": "xai-org/x-algorithm",
+        "cluster_id": 1426,
+        "x": 8.6588830947876,
+        "y": -3.1300482749939,
+        "total_stars": 33109
+      },
+      {
+        "repo_name": "Thysrael/Horizon",
+        "cluster_id": 1426,
+        "x": 8.79142379760742,
+        "y": -3.03072714805603,
+        "total_stars": 12393
+      },
+      {
+        "repo_name": "iv-org/invidious",
+        "cluster_id": 1427,
+        "x": 10.0656814575195,
+        "y": -0.0902514830231667,
+        "total_stars": 23663
+      },
+      {
+        "repo_name": "jellyfin/jellyfin",
+        "cluster_id": 1427,
+        "x": 10.1416845321655,
+        "y": -0.0966362953186035,
+        "total_stars": 54876
+      },
+      {
+        "repo_name": "seerr-team/seerr",
+        "cluster_id": 1427,
+        "x": 10.1851778030396,
+        "y": -0.109236687421799,
+        "total_stars": 9212
+      },
+      {
+        "repo_name": "dayanch96/YTLite",
+        "cluster_id": 1427,
+        "x": 9.87790870666504,
+        "y": -0.0657672062516212,
+        "total_stars": 4683
+      },
+      {
+        "repo_name": "truelockmc/streambert",
+        "cluster_id": 1427,
+        "x": 10.1217308044434,
+        "y": -0.106686986982822,
+        "total_stars": 3492
+      },
+      {
+        "repo_name": "MoonTechLab/LunaTV",
+        "cluster_id": 1427,
+        "x": 10.1266899108887,
+        "y": -0.0642072111368179,
+        "total_stars": 10097
+      },
+      {
+        "repo_name": "Sonarr/Sonarr",
+        "cluster_id": 1427,
+        "x": 10.149676322937,
+        "y": -0.100259616971016,
+        "total_stars": 15837
+      },
+      {
+        "repo_name": "InfinityLoop1308/PipePipe",
+        "cluster_id": 1427,
+        "x": 10.0278606414795,
+        "y": 0.110087215900421,
+        "total_stars": 6432
+      },
+      {
+        "repo_name": "qbittorrent/qBittorrent",
+        "cluster_id": 1428,
+        "x": 10.3044424057007,
+        "y": -0.25996470451355,
+        "total_stars": 36901
+      },
+      {
+        "repo_name": "agalwood/Motrix",
+        "cluster_id": 1428,
+        "x": 10.2840394973755,
+        "y": -0.192674115300179,
+        "total_stars": 53934
+      },
+      {
+        "repo_name": "yt-dlp/yt-dlp",
+        "cluster_id": 1428,
+        "x": 10.0057106018066,
+        "y": -0.132477954030037,
+        "total_stars": 165191
+      },
+      {
+        "repo_name": "jiji262/douyin-downloader",
+        "cluster_id": 1428,
+        "x": 10.2995853424072,
+        "y": -0.237142786383629,
+        "total_stars": 11249
+      },
+      {
+        "repo_name": "tonhowtf/omniget",
+        "cluster_id": 1428,
+        "x": 10.3047008514404,
+        "y": -0.234064742922783,
+        "total_stars": 12554
+      },
+      {
+        "repo_name": "warpdotdev/warp",
+        "cluster_id": 1429,
+        "x": 11.1772174835205,
+        "y": -3.03189086914062,
+        "total_stars": 60306
+      },
+      {
+        "repo_name": "ghostty-org/ghostty",
+        "cluster_id": 1429,
+        "x": 11.3220596313477,
+        "y": -2.77721428871155,
+        "total_stars": 63623
+      },
+      {
+        "repo_name": "can1357/oh-my-pi",
+        "cluster_id": 1429,
+        "x": 11.0362358093262,
+        "y": -3.1930878162384,
+        "total_stars": 15264
+      },
+      {
+        "repo_name": "manaflow-ai/cmux",
+        "cluster_id": 1429,
+        "x": 11.2097253799438,
+        "y": -2.8802490234375,
+        "total_stars": 27761
+      },
+      {
+        "repo_name": "ogulcancelik/herdr",
+        "cluster_id": 1429,
+        "x": 11.222882270813,
+        "y": -2.95653104782104,
+        "total_stars": 22175
+      },
+      {
+        "repo_name": "crynta/terax-ai",
+        "cluster_id": 1429,
+        "x": 11.1493530273438,
+        "y": -2.93036437034607,
+        "total_stars": 8159
+      },
+      {
+        "repo_name": "wonderwhy-er/DesktopCommanderMCP",
+        "cluster_id": 1429,
+        "x": 11.0737380981445,
+        "y": -2.69204998016357,
+        "total_stars": 9273
+      },
+      {
+        "repo_name": "yorukot/superfile",
+        "cluster_id": 1429,
+        "x": 11.3236675262451,
+        "y": -2.65423107147217,
+        "total_stars": 21153
+      },
+      {
+        "repo_name": "eneskirca/nodeterm",
+        "cluster_id": 1429,
+        "x": 11.1954669952393,
+        "y": -2.93464994430542,
+        "total_stars": 1308
+      },
+      {
+        "repo_name": "Swordfish90/cool-retro-term",
+        "cluster_id": 1429,
+        "x": 11.3512058258057,
+        "y": -2.74858570098877,
+        "total_stars": 26143
+      },
+      {
+        "repo_name": "Gaurav-Gosain/tuios",
+        "cluster_id": 1429,
+        "x": 11.1624879837036,
+        "y": -2.92013168334961,
+        "total_stars": 5902
+      },
+      {
+        "repo_name": "herdrdev/herdr",
+        "cluster_id": 1429,
+        "x": 11.256236076355,
+        "y": -2.88342690467834,
+        "total_stars": 50247
+      },
+      {
+        "repo_name": "CJackHwang/ds2api",
+        "cluster_id": 1430,
+        "x": 10.6879262924194,
+        "y": -2.8129997253418,
+        "total_stars": 3444
+      },
+      {
+        "repo_name": "Hmbown/DeepSeek-TUI",
+        "cluster_id": 1430,
+        "x": 10.8724060058594,
+        "y": -3.02868103981018,
+        "total_stars": 30885
+      },
+      {
+        "repo_name": "Hmbown/CodeWhale",
+        "cluster_id": 1430,
+        "x": 10.851637840271,
+        "y": -3.00482797622681,
+        "total_stars": 37392
+      },
+      {
+        "repo_name": "esengine/DeepSeek-Reasonix",
+        "cluster_id": 1430,
+        "x": 10.825044631958,
+        "y": -3.02332139015198,
+        "total_stars": 34564
+      },
+      {
+        "repo_name": "deepseek-ai/awesome-deepseek-agent",
+        "cluster_id": 1430,
+        "x": 10.4463863372803,
+        "y": -3.03894233703613,
+        "total_stars": 5844
+      },
+      {
+        "repo_name": "ashishps1/awesome-system-design-resources",
+        "cluster_id": 1431,
+        "x": 7.1240930557251,
+        "y": -3.94222569465637,
+        "total_stars": 32682
+      },
+      {
+        "repo_name": "jwasham/coding-interview-university",
+        "cluster_id": 1431,
+        "x": 7.19916534423828,
+        "y": -3.84966492652893,
+        "total_stars": 352052
+      },
+      {
+        "repo_name": "donnemartin/system-design-primer",
+        "cluster_id": 1431,
+        "x": 7.06354236602783,
+        "y": -3.98839855194092,
+        "total_stars": 367753
+      },
+      {
+        "repo_name": "ByteByteGoHq/system-design-101",
+        "cluster_id": 1431,
+        "x": 7.090407371521,
+        "y": -3.95511722564697,
+        "total_stars": 88144
+      },
+      {
+        "repo_name": "liquidslr/system-design-notes",
+        "cluster_id": 1431,
+        "x": 7.05883502960205,
+        "y": -3.99087715148926,
+        "total_stars": 24387
+      },
+      {
+        "repo_name": "ripienaar/free-for-dev",
+        "cluster_id": 1432,
+        "x": 7.11689281463623,
+        "y": -3.88824987411499,
+        "total_stars": 134810
+      },
+      {
+        "repo_name": "litu54/DevOps-Interview-Guide",
+        "cluster_id": 1432,
+        "x": 7.11077737808228,
+        "y": -3.88530254364014,
+        "total_stars": 785
+      },
+      {
+        "repo_name": "bregman-arie/devops-exercises",
+        "cluster_id": 1432,
+        "x": 7.11177968978882,
+        "y": -3.88956427574158,
+        "total_stars": 85676
+      },
+      {
+        "repo_name": "MichaelCade/90DaysOfDevOps",
+        "cluster_id": 1432,
+        "x": 7.11376619338989,
+        "y": -3.83705234527588,
+        "total_stars": 30272
+      },
+      {
+        "repo_name": "dreammis/social-auto-upload",
+        "cluster_id": 1433,
+        "x": 7.44292736053467,
+        "y": -4.0568151473999,
+        "total_stars": 11955
+      },
+      {
+        "repo_name": "mikumifa/biliTickerBuy",
+        "cluster_id": 1433,
+        "x": 7.41451168060303,
+        "y": -4.08888864517212,
+        "total_stars": 3674
+      },
+      {
+        "repo_name": "alexpate/awesome-design-systems",
+        "cluster_id": 1433,
+        "x": 7.27602958679199,
+        "y": -4.10176134109497,
+        "total_stars": 22925
+      },
+      {
+        "repo_name": "trimstray/the-book-of-secret-knowledge",
+        "cluster_id": 1433,
+        "x": 7.33970594406128,
+        "y": -4.05087184906006,
+        "total_stars": 224085
+      },
+      {
+        "repo_name": "sindresorhus/awesome",
+        "cluster_id": 1433,
+        "x": 7.36570310592651,
+        "y": -4.08427953720093,
+        "total_stars": 482650
+      },
+      {
+        "repo_name": "moonshine-ai/moonshine",
+        "cluster_id": 1434,
+        "x": 7.49405527114868,
+        "y": -0.358662217855453,
+        "total_stars": 10159
+      },
+      {
+        "repo_name": "fishaudio/fish-speech",
+        "cluster_id": 1434,
+        "x": 7.4073691368103,
+        "y": -0.257561922073364,
+        "total_stars": 25964
+      },
+      {
+        "repo_name": "NVIDIA/personaplex",
+        "cluster_id": 1434,
+        "x": 7.55851078033447,
+        "y": -0.42542439699173,
+        "total_stars": 9261
+      },
+      {
+        "repo_name": "OpenBMB/VoxCPM",
+        "cluster_id": 1434,
+        "x": 7.46190404891968,
+        "y": -0.31676834821701,
+        "total_stars": 40069
+      },
+      {
+        "repo_name": "jamiepine/voicebox",
+        "cluster_id": 1434,
+        "x": 7.52752351760864,
+        "y": -0.38782599568367,
+        "total_stars": 54775
+      },
+      {
+        "repo_name": "supertone-inc/supertonic",
+        "cluster_id": 1434,
+        "x": 7.40735673904419,
+        "y": -0.317293137311935,
+        "total_stars": 11986
+      },
+      {
+        "repo_name": "dograh-hq/dograh",
+        "cluster_id": 1434,
+        "x": 7.56805515289307,
+        "y": -0.421808391809464,
+        "total_stars": 3915
+      },
+      {
+        "repo_name": "OpenMOSS/MOSS-TTS",
+        "cluster_id": 1434,
+        "x": 7.41386556625366,
+        "y": -0.267329663038254,
+        "total_stars": 3122
+      },
+      {
+        "repo_name": "modelscope/FunASR",
+        "cluster_id": 1434,
+        "x": 7.51623106002808,
+        "y": -0.379829943180084,
+        "total_stars": 17014
+      },
+      {
+        "repo_name": "openai/whisper",
+        "cluster_id": 1434,
+        "x": 7.53413009643555,
+        "y": -0.398950845003128,
+        "total_stars": 101989
+      },
+      {
+        "repo_name": "altic-dev/FluidVoice",
+        "cluster_id": 1434,
+        "x": 7.44986391067505,
+        "y": -0.299201220273972,
+        "total_stars": 10430
+      },
+      {
+        "repo_name": "Starmel/OpenSuperWhisper",
+        "cluster_id": 1434,
+        "x": 7.47381734848022,
+        "y": -0.268796265125275,
+        "total_stars": 1920
+      },
+      {
+        "repo_name": "huggingface/speech-to-speech",
+        "cluster_id": 1434,
+        "x": 7.56359338760376,
+        "y": -0.436328083276749,
+        "total_stars": 12074
+      },
+      {
+        "repo_name": "kyutai-labs/pocket-tts",
+        "cluster_id": 1434,
+        "x": 7.42558336257935,
+        "y": -0.298586875200272,
+        "total_stars": 6698
+      },
+      {
+        "repo_name": "abus-aikorea/voice-pro",
+        "cluster_id": 1434,
+        "x": 7.48593282699585,
+        "y": -0.34706774353981,
+        "total_stars": 11930
+      },
+      {
+        "repo_name": "debpalash/VoiceStudio",
+        "cluster_id": 1434,
+        "x": 7.43578052520752,
+        "y": -0.295582801103592,
+        "total_stars": 110472
+      },
+      {
+        "repo_name": "OpenWhispr/openwhispr",
+        "cluster_id": 1434,
+        "x": 7.4408016204834,
+        "y": -0.266447275876999,
+        "total_stars": 6610
+      },
+      {
+        "repo_name": "togatoga/karukan",
+        "cluster_id": 1434,
+        "x": 7.53167819976807,
+        "y": -0.404359012842178,
+        "total_stars": 517
+      },
+      {
+        "repo_name": "anomalyco/hex",
+        "cluster_id": 1434,
+        "x": 7.48062086105347,
+        "y": -0.315257042646408,
+        "total_stars": 6127
+      },
+      {
+        "repo_name": "cjpais/Handy",
+        "cluster_id": 1434,
+        "x": 7.42555284500122,
+        "y": -0.266681671142578,
+        "total_stars": 36249
+      },
+      {
+        "repo_name": "google-ai-edge/gallery",
+        "cluster_id": 1435,
+        "x": 8.38351726531982,
+        "y": -2.72683167457581,
+        "total_stars": 22574
+      },
+      {
+        "repo_name": "ollama/ollama",
+        "cluster_id": 1435,
+        "x": 8.41385555267334,
+        "y": -2.73557996749878,
+        "total_stars": 167963
+      },
+      {
+        "repo_name": "google-deepmind/weathernext",
+        "cluster_id": 1435,
+        "x": 8.37449645996094,
+        "y": -2.70396852493286,
+        "total_stars": 7531
+      },
+      {
+        "repo_name": "galilai-group/stable-worldmodel",
+        "cluster_id": 1435,
+        "x": 8.30768585205078,
+        "y": -2.7584080696106,
+        "total_stars": 1525
+      },
+      {
+        "repo_name": "Renhuai123/ziwei-doushu",
+        "cluster_id": 1435,
+        "x": 8.32177448272705,
+        "y": -2.61560034751892,
+        "total_stars": 16895
+      },
+      {
+        "repo_name": "TapXWorld/ChinaTextbook",
+        "cluster_id": 1436,
+        "x": 7.52329540252686,
+        "y": -3.89474940299988,
+        "total_stars": 79706
+      },
+      {
+        "repo_name": "alchaincyf/zhangxuefeng-skill",
+        "cluster_id": 1436,
+        "x": 7.51123523712158,
+        "y": -3.89205002784729,
+        "total_stars": 9389
+      },
+      {
+        "repo_name": "ruanyf/weekly",
+        "cluster_id": 1436,
+        "x": 7.52169895172119,
+        "y": -3.96604228019714,
+        "total_stars": 103848
+      },
+      {
+        "repo_name": "withmarbleapp/os-taxonomy",
+        "cluster_id": 1436,
+        "x": 7.39442920684814,
+        "y": -3.57147884368896,
+        "total_stars": 5974
+      },
+      {
+        "repo_name": "jbiaojerry/ebook-treasure-chest",
+        "cluster_id": 1436,
+        "x": 7.52290487289429,
+        "y": -3.90564632415771,
+        "total_stars": 22350
+      },
+      {
+        "repo_name": "xiaolai/the-craft-of-selfteaching",
+        "cluster_id": 1436,
+        "x": 7.50932025909424,
+        "y": -3.79334616661072,
+        "total_stars": 18386
+      },
+      {
+        "repo_name": "freeCodeCamp/freeCodeCamp",
+        "cluster_id": 1437,
+        "x": 7.40567207336426,
+        "y": -3.59576964378357,
+        "total_stars": 450160
+      },
+      {
+        "repo_name": "EbookFoundation/free-programming-books",
+        "cluster_id": 1437,
+        "x": 7.39745330810547,
+        "y": -3.6608407497406,
+        "total_stars": 386932
+      },
+      {
+        "repo_name": "ForrestKnight/open-source-cs",
+        "cluster_id": 1437,
+        "x": 7.36351108551025,
+        "y": -3.60593008995056,
+        "total_stars": 22206
+      },
+      {
+        "repo_name": "ossu/computer-science",
+        "cluster_id": 1437,
+        "x": 7.37558126449585,
+        "y": -3.64203524589539,
+        "total_stars": 206794
+      },
+      {
+        "repo_name": "mihail911/modern-software-dev-assignments",
+        "cluster_id": 1437,
+        "x": 7.35565185546875,
+        "y": -3.65207147598267,
+        "total_stars": 4438
+      },
+      {
+        "repo_name": "cs341-illinois/coursebook",
+        "cluster_id": 1437,
+        "x": 7.35825538635254,
+        "y": -3.6445472240448,
+        "total_stars": 3660
+      },
+      {
+        "repo_name": "liyupi/ai-guide",
+        "cluster_id": 1438,
+        "x": 8.11404800415039,
+        "y": -3.37550067901611,
+        "total_stars": 7888
+      },
+      {
+        "repo_name": "microsoft/ai-agents-for-beginners",
+        "cluster_id": 1438,
+        "x": 8.00325393676758,
+        "y": -3.48005032539368,
+        "total_stars": 63862
+      },
+      {
+        "repo_name": "rohitg00/ai-engineering-from-scratch",
+        "cluster_id": 1438,
+        "x": 7.94064855575562,
+        "y": -3.47573757171631,
+        "total_stars": 74234
+      },
+      {
+        "repo_name": "karpathy/nn-zero-to-hero",
+        "cluster_id": 1438,
+        "x": 7.86332845687866,
+        "y": -3.45920491218567,
+        "total_stars": 22577
+      },
+      {
+        "repo_name": "Introduction-to-Autonomous-Robots/Introduction-to-Autonomous-Robots",
+        "cluster_id": 1438,
+        "x": 7.81235456466675,
+        "y": -3.34772992134094,
+        "total_stars": 2944
+      },
+      {
+        "repo_name": "owainlewis/awesome-artificial-intelligence",
+        "cluster_id": 1438,
+        "x": 7.89703607559204,
+        "y": -3.43270611763,
+        "total_stars": 14574
+      },
+      {
+        "repo_name": "microsoft/AI-For-Beginners",
+        "cluster_id": 1438,
+        "x": 7.88302326202393,
+        "y": -3.43896269798279,
+        "total_stars": 67643
+      },
+      {
+        "repo_name": "harvard-edge/cs249r_book",
+        "cluster_id": 1438,
+        "x": 7.84480142593384,
+        "y": -3.45683026313782,
+        "total_stars": 27166
+      },
+      {
+        "repo_name": "HenryNdubuaku/maths-cs-ai-compendium",
+        "cluster_id": 1438,
+        "x": 7.86880922317505,
+        "y": -3.44300484657288,
+        "total_stars": 6829
+      },
+      {
+        "repo_name": "roboflow/trackers",
+        "cluster_id": 1439,
+        "x": 8.07754135131836,
+        "y": -1.8497953414917,
+        "total_stars": 2780
+      },
+      {
+        "repo_name": "roboflow/supervision",
+        "cluster_id": 1439,
+        "x": 8.00800037384033,
+        "y": -1.86470329761505,
+        "total_stars": 50763
+      },
+      {
+        "repo_name": "opencv/opencv",
+        "cluster_id": 1439,
+        "x": 7.91148948669434,
+        "y": -1.67398846149445,
+        "total_stars": 89095
+      },
+      {
+        "repo_name": "deepfakes/faceswap",
+        "cluster_id": 1439,
+        "x": 7.9361834526062,
+        "y": -1.72400069236755,
+        "total_stars": 57377
+      },
+      {
+        "repo_name": "roboflow/rf-detr",
+        "cluster_id": 1439,
+        "x": 7.84489011764526,
+        "y": -1.71097564697266,
+        "total_stars": 9345
+      },
+      {
+        "repo_name": "huggingface/transformers",
+        "cluster_id": 1439,
+        "x": 7.81481790542603,
+        "y": -1.74100339412689,
+        "total_stars": 167066
+      },
+      {
+        "repo_name": "kornia/kornia",
+        "cluster_id": 1439,
+        "x": 7.79751539230347,
+        "y": -1.68799567222595,
+        "total_stars": 12076
+      },
+      {
+        "repo_name": "ggml-org/ggml",
+        "cluster_id": 1440,
+        "x": 7.56961011886597,
+        "y": -1.93112993240356,
+        "total_stars": 15830
+      },
+      {
+        "repo_name": "NVIDIA/Megatron-LM",
+        "cluster_id": 1440,
+        "x": 7.49081373214722,
+        "y": -1.88642966747284,
+        "total_stars": 15391
+      },
+      {
+        "repo_name": "LMCache/LMCache",
+        "cluster_id": 1440,
+        "x": 7.03838014602661,
+        "y": -2.23491549491882,
+        "total_stars": 9587
+      },
+      {
+        "repo_name": "microsoft/BitNet",
+        "cluster_id": 1440,
+        "x": 7.05056476593018,
+        "y": -2.20860910415649,
+        "total_stars": 40840
+      },
+      {
+        "repo_name": "google-ai-edge/LiteRT-LM",
+        "cluster_id": 1440,
+        "x": 7.16714382171631,
+        "y": -2.37167739868164,
+        "total_stars": 4689
+      },
+      {
+        "repo_name": "ggml-org/llama.cpp",
+        "cluster_id": 1440,
+        "x": 7.02332162857056,
+        "y": -2.30993914604187,
+        "total_stars": 134406
+      },
+      {
+        "repo_name": "openai/parameter-golf",
+        "cluster_id": 1440,
+        "x": 7.06698322296143,
+        "y": -2.46968722343445,
+        "total_stars": 4812
+      },
+      {
+        "repo_name": "z-lab/dflash",
+        "cluster_id": 1440,
+        "x": 7.00962829589844,
+        "y": -2.19156646728516,
+        "total_stars": 4443
+      },
+      {
+        "repo_name": "deepseek-ai/DeepGEMM",
+        "cluster_id": 1440,
+        "x": 7.40620374679565,
+        "y": -1.89040672779083,
+        "total_stars": 8612
+      },
+      {
+        "repo_name": "deepseek-ai/DeepEP",
+        "cluster_id": 1440,
+        "x": 7.39661693572998,
+        "y": -1.96510779857635,
+        "total_stars": 9550
+      },
+      {
+        "repo_name": "LearningCircuit/local-deep-research",
+        "cluster_id": 1440,
+        "x": 7.18320512771606,
+        "y": -2.05022001266479,
+        "total_stars": 8231
+      },
+      {
+        "repo_name": "cheahjs/free-llm-api-resources",
+        "cluster_id": 1440,
+        "x": 7.0868067741394,
+        "y": -2.24945878982544,
+        "total_stars": 20205
+      },
+      {
+        "repo_name": "jundot/omlx",
+        "cluster_id": 1440,
+        "x": 7.06875371932983,
+        "y": -2.05027747154236,
+        "total_stars": 20708
+      },
+      {
+        "repo_name": "FareedKhan-dev/train-llm-from-scratch",
+        "cluster_id": 1440,
+        "x": 7.15954494476318,
+        "y": -2.5475537776947,
+        "total_stars": 4943
+      },
+      {
+        "repo_name": "lyogavin/airllm",
+        "cluster_id": 1440,
+        "x": 6.97966146469116,
+        "y": -2.34699940681458,
+        "total_stars": 38140
+      },
+      {
+        "repo_name": "Andyyyy64/whichllm",
+        "cluster_id": 1440,
+        "x": 7.20514059066772,
+        "y": -1.95767748355865,
+        "total_stars": 3761
+      },
+      {
+        "repo_name": "alexzhang13/rlm",
+        "cluster_id": 1440,
+        "x": 7.07357931137085,
+        "y": -2.42594265937805,
+        "total_stars": 4996
+      },
+      {
+        "repo_name": "cupy/cupy",
+        "cluster_id": 1440,
+        "x": 7.53988361358643,
+        "y": -1.80942606925964,
+        "total_stars": 11678
+      },
+      {
+        "repo_name": "pytorch/pytorch",
+        "cluster_id": 1440,
+        "x": 7.59807300567627,
+        "y": -1.80728137493134,
+        "total_stars": 104345
+      },
+      {
+        "repo_name": "kvcache-ai/ktransformers",
+        "cluster_id": 1440,
+        "x": 7.01247501373291,
+        "y": -2.33248353004456,
+        "total_stars": 19013
+      },
+      {
+        "repo_name": "handy-computer/transcribe.cpp",
+        "cluster_id": 1440,
+        "x": 6.93702363967896,
+        "y": -2.24278354644775,
+        "total_stars": 1426
+      },
+      {
+        "repo_name": "AlexsJones/llmfit",
+        "cluster_id": 1440,
+        "x": 7.35124588012695,
+        "y": -1.88044667243958,
+        "total_stars": 36177
+      },
+      {
+        "repo_name": "MoonshotAI/FlashKDA",
+        "cluster_id": 1440,
+        "x": 7.39948701858521,
+        "y": -1.83517563343048,
+        "total_stars": 1081
+      },
+      {
+        "repo_name": "antirez/ds4",
+        "cluster_id": 1440,
+        "x": 7.23079824447632,
+        "y": -1.91883361339569,
+        "total_stars": 23314
+      },
+      {
+        "repo_name": "cactus-compute/needle",
+        "cluster_id": 1440,
+        "x": 7.0470757484436,
+        "y": -2.11812615394592,
+        "total_stars": 11451
+      },
+      {
+        "repo_name": "MakazhanAlpamys/Soup",
+        "cluster_id": 1440,
+        "x": 7.07831239700317,
+        "y": -2.16222906112671,
+        "total_stars": 7245
+      },
+      {
+        "repo_name": "elder-plinius/OBLITERATUS",
+        "cluster_id": 1440,
+        "x": 7.09215068817139,
+        "y": -2.5907244682312,
+        "total_stars": 7896
+      },
+      {
+        "repo_name": "youssofal/MTPLX",
+        "cluster_id": 1440,
+        "x": 7.01341533660889,
+        "y": -2.15246224403381,
+        "total_stars": 2259
+      },
+      {
+        "repo_name": "MiaAI-Lab/DeepSeek-v4-Flash-DSpark-2x-DGX-Spark",
+        "cluster_id": 1440,
+        "x": 7.08455848693848,
+        "y": -2.11572408676147,
+        "total_stars": 1283
+      },
+      {
+        "repo_name": "JustVugg/colibri",
+        "cluster_id": 1440,
+        "x": 6.99250268936157,
+        "y": -2.28085970878601,
+        "total_stars": 47097
+      },
+      {
+        "repo_name": "higgsfield-ai/higgsfield",
+        "cluster_id": 1440,
+        "x": 7.20462942123413,
+        "y": -2.0023307800293,
+        "total_stars": 5174
+      },
+      {
+        "repo_name": "FlashML-org/FreeToken",
+        "cluster_id": 1440,
+        "x": 7.12612390518188,
+        "y": -2.03789091110229,
+        "total_stars": 15950
+      },
+      {
+        "repo_name": "NVIDIA/Model-Optimizer",
+        "cluster_id": 1440,
+        "x": 7.38079690933228,
+        "y": -1.87947487831116,
+        "total_stars": 4622
+      },
+      {
+        "repo_name": "tensorflow/tensorflow",
+        "cluster_id": 1440,
+        "x": 7.61908626556396,
+        "y": -1.88382542133331,
+        "total_stars": 200628
+      },
+      {
+        "repo_name": "tile-ai/tilelang",
+        "cluster_id": 1440,
+        "x": 7.40795278549194,
+        "y": -1.79219007492065,
+        "total_stars": 8467
+      },
+      {
+        "repo_name": "lightseekorg/tokenspeed",
+        "cluster_id": 1440,
+        "x": 7.06741094589233,
+        "y": -2.14056301116943,
+        "total_stars": 2338
+      },
+      {
+        "repo_name": "vllm-project/vllm",
+        "cluster_id": 1440,
+        "x": 7.00905799865723,
+        "y": -2.31148219108582,
+        "total_stars": 95443
+      },
+      {
+        "repo_name": "FareedKhan-dev/kimi-k3-in-c",
+        "cluster_id": 1440,
+        "x": 6.89784479141235,
+        "y": -2.28978538513184,
+        "total_stars": 10119
+      },
+      {
+        "repo_name": "ashhart/TensorFold",
+        "cluster_id": 1440,
+        "x": 7.29488229751587,
+        "y": -1.85154676437378,
+        "total_stars": 2113
+      },
+      {
+        "repo_name": "Blaizzy/mlx-vlm",
+        "cluster_id": 1441,
+        "x": 7.93551588058472,
+        "y": -2.11937928199768,
+        "total_stars": 3875
+      },
+      {
+        "repo_name": "microsoft/onnxruntime",
+        "cluster_id": 1441,
+        "x": 8.03055572509766,
+        "y": -2.31337928771973,
+        "total_stars": 21558
+      },
+      {
+        "repo_name": "Biohub/esm",
+        "cluster_id": 1441,
+        "x": 7.70603466033936,
+        "y": -2.35443639755249,
+        "total_stars": 2593
+      },
+      {
+        "repo_name": "NVIDIA/cosmos",
+        "cluster_id": 1441,
+        "x": 7.78232336044312,
+        "y": -1.98902356624603,
+        "total_stars": 10776
+      },
+      {
+        "repo_name": "ml-explore/mlx",
+        "cluster_id": 1441,
+        "x": 8.01469326019287,
+        "y": -2.21706676483154,
+        "total_stars": 27042
+      },
+      {
+        "repo_name": "modular/modular",
+        "cluster_id": 1441,
+        "x": 7.74904203414917,
+        "y": -2.37307000160217,
+        "total_stars": 29794
+      },
+      {
+        "repo_name": "NVlabs/Eagle",
+        "cluster_id": 1441,
+        "x": 7.78518390655518,
+        "y": -2.21556663513184,
+        "total_stars": 2836
+      },
+      {
+        "repo_name": "PrismML-Eng/Bonsai-demo",
+        "cluster_id": 1441,
+        "x": 7.5565938949585,
+        "y": -2.58364105224609,
+        "total_stars": 3203
+      }
+    ]
+  }
+}
